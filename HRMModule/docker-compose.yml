@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  hrmmodule:
+    image: hrmmodule
+    build:
+      context: ./HRMModule
+      dockerfile: Dockerfile
