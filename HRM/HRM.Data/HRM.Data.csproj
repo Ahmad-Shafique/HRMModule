@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2EB3ADBB-D7F3-4E00-AD69-33B2E9E73F37}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HRM.Data</RootNamespace>
+    <AssemblyName>HRM.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdvertiserListRepository.cs" />
+    <Compile Include="AttendenceRepository.cs" />
+    <Compile Include="BonusesRepository.cs" />
+    <Compile Include="BonusRepository.cs" />
+    <Compile Include="CirculerTemplateRepository.cs" />
+    <Compile Include="CommentRepository.cs" />
+    <Compile Include="ConfirmationStatusRepository.cs" />
+    <Compile Include="DepartmentHistoryRepository.cs" />
+    <Compile Include="DepartmentRepository.cs" />
+    <Compile Include="DesignationRepository.cs" />
+    <Compile Include="EmployeeBioRepository.cs" />
+    <Compile Include="EmployeeHistoryRepository.cs" />
+    <Compile Include="EmployeePerformanceMetricRepository.cs" />
+    <Compile Include="EmployeeRepository.cs" />
+    <Compile Include="EmployeeSalaryRepository.cs" />
+    <Compile Include="HireRequestRepository.cs" />
+    <Compile Include="HireThreadRepository.cs" />
+    <Compile Include="HRMDbContext.cs" />
+    <Compile Include="Interfaces\IAdvertiserListRepository.cs" />
+    <Compile Include="Interfaces\IAttendenceReposatory.cs" />
+    <Compile Include="Interfaces\IBonusesReposatory.cs" />
+    <Compile Include="Interfaces\IBonusReposatory.cs" />
+    <Compile Include="Interfaces\ICircularTemplateReposatory.cs" />
+    <Compile Include="Interfaces\ICommentReposatory.cs" />
+    <Compile Include="Interfaces\IConfirmationStatusReposatory.cs" />
+    <Compile Include="Interfaces\IDepartmentHistoryReposatory.cs" />
+    <Compile Include="Interfaces\IDepartmentReposatory.cs" />
+    <Compile Include="Interfaces\IDesignationReposatory.cs" />
+    <Compile Include="Interfaces\IEmployeeBioReposatory.cs" />
+    <Compile Include="Interfaces\IEmployeeHistoryReposatory.cs" />
+    <Compile Include="Interfaces\IEmployeePerformanceMetricReposatory.cs" />
+    <Compile Include="Interfaces\IEmployeeReposatory.cs" />
+    <Compile Include="Interfaces\IEmployeeSalaryReposatory.cs" />
+    <Compile Include="Interfaces\IHireRequestReposatory.cs" />
+    <Compile Include="Interfaces\IHireThreadReposatory.cs" />
+    <Compile Include="Interfaces\IIntervieweeReposatory.cs" />
+    <Compile Include="Interfaces\IInterviewReposatory.cs" />
+    <Compile Include="Interfaces\ILeaveApplicationReposatory.cs" />
+    <Compile Include="Interfaces\INoticeReposatory.cs" />
+    <Compile Include="Interfaces\IProjectReposatory.cs" />
+    <Compile Include="Interfaces\IReposatory.cs" />
+    <Compile Include="Interfaces\ISalgradeHistoryReposatory.cs" />
+    <Compile Include="Interfaces\ISalgradeReposatory.cs" />
+    <Compile Include="Interfaces\ISupportingDocumentReposatory.cs" />
+    <Compile Include="Interfaces\ITrainingReposatory.cs" />
+    <Compile Include="IntervieweeRepository.cs" />
+    <Compile Include="InterviewRepository.cs" />
+    <Compile Include="LeaveApplicationRepository.cs" />
+    <Compile Include="NoticeRepository.cs" />
+    <Compile Include="PrivilegeRepository.cs" />
+    <Compile Include="ProjectRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reposatory.cs" />
+    <Compile Include="SalaryComponentsRepository.cs" />
+    <Compile Include="SalgradeHistoryRepository.cs" />
+    <Compile Include="SalgradeRepository.cs" />
+    <Compile Include="SupportingDocumentRepository.cs" />
+    <Compile Include="TemporaryCVRepository.cs" />
+    <Compile Include="TrainingRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HRM.Entity\HRM.Entity.csproj">
+      <Project>{86e8c7b0-f401-4f4a-8be1-ffadc30c7257}</Project>
+      <Name>HRM.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

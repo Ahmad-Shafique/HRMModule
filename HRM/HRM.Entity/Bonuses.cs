@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace HRM.Entity
 {
-    class Bonuses
+    public class Bonuses
     {
+        public int BonusesId { get; set; }
+        public int BonusId { get; set; }
+        public int BonusValue { get; set; }
+        public string BonusDescription { get; set; }
+        public DateTime BonusesDate { get; set; }
+        public Bonus Bonus { get; set; }
     }
 }
