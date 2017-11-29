@@ -15,6 +15,5 @@ namespace HRM.Entity
         public string Urgency { get; set; }
         public int HireRequestStatus { get; set; }
         public int DepartmentId { get; set; }
-        public Department Department { get; set;}
     }
 }

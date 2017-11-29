@@ -52,12 +52,17 @@
     <Compile Include="Bonuses.cs" />
     <Compile Include="CircularTemplate.cs" />
     <Compile Include="Comment.cs" />
-    <Compile Include="ConfirmationStatus.cs" />
+    <Compile Include="DepartmentDesignation.cs" />
+    <Compile Include="EmployeeAttendance.cs" />
+    <Compile Include="EmployeeDesignation.cs" />
+    <Compile Include="EmployeePrivilege.cs" />
+    <Compile Include="NoticeEmployee.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="DepartmentHistory.cs" />
     <Compile Include="Designation.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeBio.cs" />
+    <Compile Include="EmployeeDepartment.cs" />
     <Compile Include="EmployeeHistory.cs" />
     <Compile Include="EmployeePerformenceMetric.cs" />
     <Compile Include="EmployeeSalary.cs" />
@@ -70,6 +75,7 @@
     <Compile Include="Notice.cs" />
     <Compile Include="Privilege.cs" />
     <Compile Include="Project.cs" />
+    <Compile Include="ProjectEmployee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalaryComponents.cs" />
     <Compile Include="Salgrade.cs" />
@@ -77,6 +83,7 @@
     <Compile Include="SupportingDocument.cs" />
     <Compile Include="TemporaryCV.cs" />
     <Compile Include="Training.cs" />
+    <Compile Include="TrainingEmployee.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
