@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace HRM.Entity
 {
-    public class Designation
+    public class EmployeeDesignation
     {
+        public int EmployeeDesignationId { get; set; }
+        public int EmployeeId { get; set; }
         public int DesignationId { get; set; }
-        public string DesignationName { get; set; }
     }
 }

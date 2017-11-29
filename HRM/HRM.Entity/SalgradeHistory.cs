@@ -14,7 +14,5 @@ namespace HRM.Entity
         public string NewValue { get; set; }
         public DateTime Date { get; set; }
         public int SalgradetId { get; set; }
-
-        public Salgrade Salgrade { get; set; }
     }
 }

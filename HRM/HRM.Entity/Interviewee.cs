@@ -10,8 +10,6 @@ namespace HRM.Entity
     {
        public int IntervieweeId { get; set; }
        public int InterviewId { get; set; }
-       public Interview Interview { get; set; }
        public int TemporaryCVId { get; set; }
-       public TemporaryCV TemporaryCV { get; set; }
     }
 }

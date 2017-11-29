@@ -10,12 +10,5 @@ namespace HRM.Entity
     {
         public int PrivilegeId { get; set; }
         public string PrivilegeName { get; set; }
-        public List<Employee> Employees { get; set; }
-
-        public Privilege()
-        {
-            Employees = new List<Employee>();
-        }
-      
     }
 }

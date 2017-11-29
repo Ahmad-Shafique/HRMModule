@@ -21,7 +21,5 @@ namespace HRM.Entity
         public string JobExperience { get; set; }
         public string Eduction { get; set; }
         public int EmployeeId { get; set; }
-
-        public Employee Employee { get; set; }
     }
 }

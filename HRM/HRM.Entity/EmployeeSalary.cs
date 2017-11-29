@@ -18,9 +18,5 @@ namespace HRM.Entity
         public int BonusId { get; set; }
         public int BonusValue { get; set; }
 
-
-        public Employee Employee { get; set; }
-        public Bonus Bonus { get; set; }
-
     }
 }

@@ -10,10 +10,5 @@ namespace HRM.Entity
     {
         public int LeaveApplicationCategoryId { get; set; }
         public string LeaveApplicationCategoryName { get; set; }
-        public List<LeaveApplication> LeaveApplications { get; set; }
-        public LeaveApplicationCategory()
-        {
-            LeaveApplications = new List<LeaveApplication>();
-        }
     }
 }

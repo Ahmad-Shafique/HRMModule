@@ -14,7 +14,5 @@ namespace HRM.Entity
         public string NewValue { get; set; }
         public DateTime Date { get; set; }
         public int EmployeetId { get; set; }
-
-        public Employee Employee { get; set; }
     }
 }

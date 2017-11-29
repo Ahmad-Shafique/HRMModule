@@ -13,13 +13,5 @@ namespace HRM.Entity
         public string MonthName { get; set; }
         public string Value { get; set; }
         public int MonthlyAbsence { get; set; }
-
-
-        public List<Employee> Employees { get; set; }
-
-        public Attendance()
-        {
-            Employees = new List<Employee>();
-        }
     }
 }

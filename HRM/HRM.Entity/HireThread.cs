@@ -13,11 +13,5 @@ namespace HRM.Entity
         public DateTime StartDate { get; set; }
         public int HireThreadStatus { get; set; }
         public int HireRequestId { get; set; }
-        public HireRequest HireRequest { get; set; }
-        public List<Interview> Interviews { get; set; }
-        public HireThread()
-        {
-            Interviews = new List<Interview>(); 
-        }
     }
 }

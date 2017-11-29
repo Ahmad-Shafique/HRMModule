@@ -12,6 +12,5 @@ namespace HRM.Entity
         public string CVLink { get; set; }
         public int IntervieweeScore { get; set; }
         public int HireThreadId { get; set; }
-        public HireThread HireThread { get; set; }
     }
 }

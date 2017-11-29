@@ -12,6 +12,5 @@ namespace HRM.Entity
         public string SupportingDocumentName { get; set; }
         public string SupportingDocumentLink { get; set; }
         public int LeaveApplicationId { get; set; }
-        public LeaveApplication LeaveApplication { get; set; }
     }
 }

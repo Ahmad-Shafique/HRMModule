@@ -13,6 +13,5 @@ namespace HRM.Entity
         public int BonusValue { get; set; }
         public string BonusDescription { get; set; }
         public DateTime BonusesDate { get; set; }
-        public Bonus Bonus { get; set; }
     }
 }

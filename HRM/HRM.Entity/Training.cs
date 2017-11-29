@@ -14,12 +14,5 @@ namespace HRM.Entity
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int SuccessRate { get; set; }
-
-        public List<Employee> Employees { get; set; }
-
-        public Training()
-        {
-            Employees = new List<Employee>();
-        }
     }
 }

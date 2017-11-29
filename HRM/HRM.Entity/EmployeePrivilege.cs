@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace HRM.Entity
 {
-    public class Comment
+    public class EmployeePrivilege
     {
-        public int CommentId { get; set; }
-        public string CommentText { get; set; }
+        public int EmployeePrivilegeId { get; set; }
         public int EmployeeId { get; set; }
-        public int Noticeid { get; set; }
+        public int PrivilegeId { get; set; }
     }
 }

@@ -13,20 +13,5 @@ namespace HRM.Entity
         public string DepartmentLocation { get; set; }
         public string DepartmentDescription { get; set; }
         public int DepartmentHeadId { get; set; }
-        public List<Employee> Employees { get; set; }
-        public List<Designation> Designations { get; set; }
-        public List<HireRequest> HireRequests { get; set; }
-        public List<DepartmentHistory> DepartmentHistory { get; set; }
-
-        public Department()
-        {
-            Employees = new List<Employee>();
-            Designations = new List<Designation>();
-            HireRequests = new List<HireRequest>();
-            DepartmentHistory = new List<DepartmentHistory>();
-        }
-
-
-
     }
 }
