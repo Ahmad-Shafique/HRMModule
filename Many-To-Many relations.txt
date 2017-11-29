@@ -1,9 +1,10 @@
 Attendance & Employee
-SalaryComponent & Employee
-Department & Employee
-Designation & Employee
-Department & Designation
+SalaryComponent & EmployeeSalary
+EmployeeSalary & Employee
+-----Department & Employee
+-----Designation & Employee
+-----Department & Designation
 Privilege & Employee
 Project & Employee
 Training & Employee
-ConfirmationStatus & Employee
+-----ConfirmationStatus & Employee
