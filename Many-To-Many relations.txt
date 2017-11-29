@@ -1,0 +1,9 @@
+Attendance & Employee
+SalaryComponent & Employee
+Department & Employee
+Designation & Employee
+Department & Designation
+Privilege & Employee
+Project & Employee
+Training & Employee
+ConfirmationStatus & Employee
