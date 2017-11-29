@@ -10,9 +10,12 @@ namespace HRM.Data
 {
     public class HRMDbContext : DbContext
     {
+<<<<<<< HEAD
         public DbSet<AdvertiserListRepository> AdvertiserLists { get; set; }
+=======
         public DbSet<AdvertiserList> AdvertiserLists { get; set; }
-     	public DbSet<Attendance> Attendances { get; set; }
+>>>>>>> 08dbc42a29f76af19054f27c53b671679bd7686a
+        public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Bonus> Bonuses { get; set; }
         public DbSet<Bonuses> LBonuses { get; set; }
         public DbSet<CircularTemplate> CircularTemplates { get; set; }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="AdvertiserListRepository.cs" />
     <Compile Include="AttendenceRepository.cs" />
     <Compile Include="BonusesRepository.cs" />
@@ -66,6 +67,11 @@
     <Compile Include="HRMDbContext.cs" />
     <Compile Include="Interfaces\IAdvertiserListRepository.cs" />
     <Compile Include="Interfaces\IAttendenceReposatory.cs" />
+=======
+    <Compile Include="HRMDbContext.cs" />
+    <Compile Include="Interfaces\IAdvertiserList.cs" />
+    <Compile Include="Interfaces\IAttedenceReposatory.cs" />
+>>>>>>> 08dbc42a29f76af19054f27c53b671679bd7686a
     <Compile Include="Interfaces\IBonusesReposatory.cs" />
     <Compile Include="Interfaces\IBonusReposatory.cs" />
     <Compile Include="Interfaces\ICircularTemplateReposatory.cs" />
@@ -90,6 +96,7 @@
     <Compile Include="Interfaces\ISalgradeHistoryReposatory.cs" />
     <Compile Include="Interfaces\ISalgradeReposatory.cs" />
     <Compile Include="Interfaces\ISupportingDocumentReposatory.cs" />
+<<<<<<< HEAD
     <Compile Include="Interfaces\ITrainingReposatory.cs" />
     <Compile Include="IntervieweeRepository.cs" />
     <Compile Include="InterviewRepository.cs" />
@@ -105,9 +112,10 @@
     <Compile Include="SupportingDocumentRepository.cs" />
     <Compile Include="TemporaryCVRepository.cs" />
     <Compile Include="TrainingRepository.cs" />
+=======
     <Compile Include="Properties\AssemblyInfo.cs" />
-    </ItemGroup>
-    
+>>>>>>> 08dbc42a29f76af19054f27c53b671679bd7686a
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
