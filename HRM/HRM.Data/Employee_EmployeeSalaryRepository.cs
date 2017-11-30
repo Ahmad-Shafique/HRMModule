@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using HRM.Data.Interfaces;
 using HRM.Entity;
 
-namespace HRM.Data
+namespace HRM.Data.Interfaces
 {
-    public class ConfirmationStatusRepository : Reposatory<ConfirmationStatus>, IConfirmationStatusReposatory
+    public class Employee_EmployeeSalaryRepository : Repository<Employee_EmployeeSalary>, Employee_EmployeeSalaryRepository
     {
 
     }

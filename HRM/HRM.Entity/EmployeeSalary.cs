@@ -8,7 +8,7 @@ namespace HRM.Entity
 {
     public class EmployeeSalary
     {
-        public int SalaryId { get; set; }
+        public int EmployeeSalaryId { get; set; }
         public int EmployeeId { get; set; }
         public int BasicSalary { get; set; }
         public int TotalSalary { get; set; }

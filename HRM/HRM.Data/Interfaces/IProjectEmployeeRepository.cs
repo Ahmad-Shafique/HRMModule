@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using HRM.Data.Interfaces;
 using HRM.Entity;
 
-namespace HRM.Data
+namespace HRM.Data.Interfaces
 {
-    public class BonusRepository : Reposatory<Bonus>, IBonusReposatory
+    public interface IProjectEmployeeRepository : IRepository<ProjectEmployee>
     {
-
+        //more methos can be added here
     }
 }

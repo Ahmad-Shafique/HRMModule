@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Data.Interfaces
 {
-    interface IConfirmationStatusReposatory : IReposatory<ConfirmationStatus>
+    interface INoticeEmployeeReposatory : IReposatory<NoticeEmployee>
     {
         //decalring extra methods for confirm status tabel
     }
