@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Data.Interfaces
 {
-    public interface ICircularTemplateReposatory : IReposatory<CircularTemplate>
+    public interface IIntervieweeRepository : IRepository<Interviewee>
     {
-        //extra method for this
     }
 }

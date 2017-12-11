@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Data.Interfaces
 {
-    public interface ICommentReposatory : IReposatory<Comment>
+    public interface IEmployeeBioRepository : IRepository<EmployeeBio>
     {
-        //decalre the extra method for comment table 
     }
 }

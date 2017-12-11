@@ -10,7 +10,7 @@ namespace HRM.Data
 {
     public class HRMDbContext : DbContext
     {
-        public DbSet<AdvertiserListRepository> AdvertiserLists { get; set; }
+        //public DbSet<AdvertiserListRepository> AdvertiserLists { get; set; }
         public DbSet<AdvertiserList> AdvertiserLists { get; set; }
      	public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Bonus> Bonuses { get; set; }
@@ -26,9 +26,9 @@ namespace HRM.Data
         public DbSet<EmployeeAttendance> EmployeeAttendances { get; set; }
         public DbSet<EmployeeBio> EmployeeBios { get; set; }
         public DbSet<EmployeeDepartment> EmployeeDepartments { get; set; }
-        public DbSet<EmployeeDesignations> EmployeeDesignations { get; set; }
+        public DbSet<EmployeeDesignation> EmployeeDesignations { get; set; }
         public DbSet<EmployeeHistory> EmployeeHistories { get; set; }
-        public DbSet<EmployeePerformenceMetric> EmployeePerformenceMetrics { get;set;}
+        public DbSet<EmployeePerformanceMetric> EmployeePerformanceMetrics { get;set;}
         public DbSet<EmployeePrivilege> EmployeePrivileges { get; set; }
         public DbSet<EmployeeSalary> EmployeeSalaries { get; set; }
         public DbSet<HireRequest> HireRequests { get; set; }
@@ -36,12 +36,12 @@ namespace HRM.Data
         public DbSet<Interview> Interviews { get; set; }
         public DbSet<Interviewee> Interviewees{ get; set;}
         public DbSet<LeaveApplication> LeaveApplications { get;set;}
-        public DbSet<LeaveApplicationCategory> LeaveApplicationCatagories { get; set; }
+        public DbSet<LeaveApplicationCategory> LeaveApplicationCategories { get; set; }
         public DbSet<Notice> Notices { get; set; }
         public DbSet<Privilege> Privileges { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectEmployee> ProjectEmployees { get; set; }
-        public DbSet<SalaryComponents> LsalaryComponents { get; set; }
+        public DbSet<SalaryComponents> SalaryComponents { get; set; }
         public DbSet<Salgrade> Salgrades { get; set; }
         public DbSet<SalgradeHistory> SalgradeHistories{ get; set; }
         public DbSet<SupportingDocument> SupportingDocuments { get; set; }
@@ -52,7 +52,8 @@ namespace HRM.Data
         //bhuji nai eta niye ghata lagbe
         public HRMDbContext()
         {
-            var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+            //var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+            Database.SetInitializer(new DropCreateDatabaseAlways<HRMDbContext>());
         }
 
 

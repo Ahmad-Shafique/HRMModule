@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Data.Interfaces
 {
-    public interface ISalgradeReposatory : IReposatory<Salgrade>
+    public interface ILeaveApplicationRepository : IRepository<LeaveApplication>
     {
     }
 }

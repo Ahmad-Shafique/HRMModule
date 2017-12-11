@@ -1,4 +1,4 @@
-﻿using HRM.Entity;
+using HRM.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Data.Interfaces
 {
-    public interface IEmployeeSalaryReposatory : IReposatory<EmployeeSalary>
+    public interface ITrainingRepository : IRepository<Training>
     {
     }
 }

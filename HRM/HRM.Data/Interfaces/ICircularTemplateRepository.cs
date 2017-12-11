@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace HRM.Data.Interfaces
 {
-    public interface IEmployeePerformanceMetricReposatory : IReposatory<EmployeePerformenceMetric>
+    public interface ICircularTemplateRepository : IRepository<CircularTemplate>
     {
+        //extra method for this
     }
 }

@@ -8,7 +8,7 @@ using HRM.Entity;
 
 namespace HRM.Data
 {
-    public class TemporaryCVRepository : Reposatory<TemporaryCV>
+    public class TemporaryCVRepository : Repository<TemporaryCV>
     {
 
     }

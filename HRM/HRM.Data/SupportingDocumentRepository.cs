@@ -8,7 +8,7 @@ using HRM.Entity;
 
 namespace HRM.Data
 {
-    public class SupportingDocumentRepository : Reposatory<SupportingDocument>, ISupportingDocumentReposatory
+    public class SupportingDocumentRepository : Repository<SupportingDocument>, ISupportingDocumentRepository
     {
 
     }

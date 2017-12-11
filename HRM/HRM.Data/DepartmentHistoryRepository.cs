@@ -8,7 +8,7 @@ using HRM.Entity;
 
 namespace HRM.Data
 {
-    public class DepartmentHistoryRepository : Reposatory<DepartmentHistory>, IDepartmentHistoryReposatory
+    public class DepartmentHistoryRepository : Repository<DepartmentHistory>, IDepartmentHistoryRepository
     {
 
     }

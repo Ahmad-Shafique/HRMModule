@@ -8,7 +8,7 @@ using HRM.Entity;
 
 namespace HRM.Data
 {
-    public class HireThreadRepository : Reposatory<HireThread>, IHireThreadReposatory
+    public class HireThreadRepository : Repository<HireThread>, IHireThreadRepository
     {
 
     }

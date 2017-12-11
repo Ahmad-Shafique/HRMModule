@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Data.Interfaces
 {
-    interface IDepartmentHistoryReposatory : IReposatory<DepartmentHistory>
+    public interface IEmployeeHistoryRepository : IRepository<EmployeeHistory>
     {
     }
 }

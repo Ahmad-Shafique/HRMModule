@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Data
 {
-    public abstract class Reposatory<TEntity> : IReposatory<TEntity> where TEntity : class
+    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         internal HRMDbContext context = new HRMDbContext();
         public virtual bool Insert(TEntity entity)

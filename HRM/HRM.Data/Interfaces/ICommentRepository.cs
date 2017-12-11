@@ -1,4 +1,5 @@
-﻿using HRM.Entity;
+﻿
+using HRM.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace HRM.Data.Interfaces
 {
-    interface IInterviewReposatory : IReposatory<Interview>
+    public interface ICommentRepository : IRepository<Comment>
     {
+        //decalre the extra method for comment table 
     }
 }

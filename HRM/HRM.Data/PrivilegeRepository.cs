@@ -8,7 +8,7 @@ using HRM.Entity;
 
 namespace HRM.Data
 {
-    public class PrivilegeRepository : Reposatory<Privilege>
+    public class PrivilegeRepository : Repository<Privilege>
     {
 
     }

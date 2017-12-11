@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace HRM.Data.Interfaces
 {
-    public interface ILeaveApplicationReposatory : IReposatory<LeaveApplication>
+    public interface IBonusRepository: IRepository<Bonus>
+        //declae extra meythd for this bonus table
     {
     }
 }

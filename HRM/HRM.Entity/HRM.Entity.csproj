@@ -65,7 +65,7 @@
     <Compile Include="EmployeeBio.cs" />
     <Compile Include="EmployeeDepartment.cs" />
     <Compile Include="EmployeeHistory.cs" />
-    <Compile Include="EmployeePerformenceMetric.cs" />
+    <Compile Include="EmployeePerformanceMetric.cs" />
     <Compile Include="EmployeeSalary.cs" />
     <Compile Include="HireRequest.cs" />
     <Compile Include="HireThread.cs" />

@@ -8,7 +8,7 @@ using HRM.Entity;
 
 namespace HRM.Data
 {
-    public class CirculerTemplateRepository : Reposatory<CircularTemplate>, ICircularTemplateReposatory
+    public class CircularTemplateRepository : Repository<CircularTemplate>, ICircularTemplateRepository
     {
 
     }

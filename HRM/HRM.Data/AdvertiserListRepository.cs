@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Data
 {
-    public class AdvertiserListRepository : Reposatory<AdvertiserList>, IAdvertiserListRepository
+    public class AdvertiserListRepository : Repository<AdvertiserList>, IAdvertiserListRepository
     {
 
     }

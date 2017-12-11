@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace HRM.Entity
 {
-    public class EmployeePerformenceMetric
+    public class EmployeePerformanceMetric
     {
         [Key]
-        public int EmployeePerformenceMetricId { get; set; }
+        public int EmployeePerformanceMetricId { get; set; }
         public int IllegalLeave { get; set; }
         public int ProjectMissedDateLineCount { get; set; }
         public int TotalProjects { get; set; }

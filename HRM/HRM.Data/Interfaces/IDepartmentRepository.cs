@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace HRM.Data.Interfaces
 {
-    public interface IHireThreadReposatory : IReposatory<HireThread>
+    public interface IDepartmentRepository : IRepository<Department>
     {
+        //declaring extra methods for department table 
     }
 }

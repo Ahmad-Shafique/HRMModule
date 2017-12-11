@@ -8,7 +8,7 @@ using HRM.Entity;
 
 namespace HRM.Data
 {
-    public class LeaveApplicationRepository : Reposatory<LeaveApplication>, ILeaveApplicationReposatory
+    public class LeaveApplicationRepository : Repository<LeaveApplication>, ILeaveApplicationRepository
     {
 
     }
