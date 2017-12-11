@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRM.Data.Interfaces
+namespace HRM.Service
 {
-    public interface IHireRequestRepository : IRepository<HireRequest>
+    class EmployeeBioService : DomainService<EmployeeBio>
     {
     }
 }

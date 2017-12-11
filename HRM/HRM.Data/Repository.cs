@@ -11,7 +11,41 @@ namespace HRM.Data
 {
     public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        internal HRMDbContext context = new HRMDbContext();
+        internal HRMDbContext context = HRMDbContext.GetInstance();
+
+        public virtual IEnumerable<TEntity> GetAll()
+        {
+            Debug.Assert(context != null);
+
+            try
+            {
+                return context.Set<TEntity>().ToList();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error in fetching data list : " + e);
+                return new List<TEntity>();
+            }
+            
+        }
+
+        public virtual TEntity Get<TKey>(TKey id)
+        {
+            Debug.Assert(context != null);
+            Debug.Assert(id != null);
+
+            try
+            {
+                return context.Set<TEntity>().Find(id);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error in fetching data : " + e);
+                return context.Set<TEntity>().ElementAtOrDefault(Int32.Parse(id.ToString()));
+            }
+            
+        }
+
         public virtual bool Insert(TEntity entity)
         {
             Debug.Assert(context != null);
@@ -36,7 +70,7 @@ namespace HRM.Data
 
             try
             {
-                
+
                 context.Entry<TEntity>(entity).State = EntityState.Modified;
                 return context.SaveChanges() > 0;
             }
@@ -47,40 +81,7 @@ namespace HRM.Data
             }
         }
 
-        public virtual IEnumerable<TEntity> GetAll()
-        {
-            Debug.Assert(context != null);
-
-            try
-            {
-                return context.Set<TEntity>().ToList();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error in fetching data  list : " + e);
-                return new List<TEntity>();
-            }
-            
-        }
-
-        public virtual TEntity Get<TKey>(TKey id)
-        {
-            Debug.Assert(context != null);
-            Debug.Assert(id != null);
-
-            try
-            {
-                return context.Set<TEntity>().Find(id);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error in fetching data : " + e);
-                return context.Set<TEntity>().ElementAtOrDefault(Int32.Parse(id.ToString()));
-            }
-            
-        }
-
-        public virtual bool Remove<TKey>(TKey id)
+        public virtual bool RemoveByKey<TKey>(TKey id)
         {
             Debug.Assert(context != null);
             Debug.Assert(id != null);
@@ -99,7 +100,7 @@ namespace HRM.Data
             
         }
 
-        public virtual bool Remove(TEntity entity)
+        public virtual bool RemoveByEntity(TEntity entity)
         {
             Debug.Assert(context != null);
             Debug.Assert(entity != null);

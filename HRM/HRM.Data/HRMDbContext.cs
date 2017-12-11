@@ -10,7 +10,10 @@ namespace HRM.Data
 {
     public class HRMDbContext : DbContext
     {
-        //public DbSet<AdvertiserListRepository> AdvertiserLists { get; set; }
+        private static HRMDbContext instance;
+
+
+
         public DbSet<AdvertiserList> AdvertiserLists { get; set; }
      	public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Bonus> Bonuses { get; set; }
@@ -49,11 +52,22 @@ namespace HRM.Data
         public DbSet<Training> Trainings { get; set; }
         public DbSet<TrainingEmployee> TrainingEmployees { get; set; }
 
-        //bhuji nai eta niye ghata lagbe
-        public HRMDbContext()
+        
+
+        public static HRMDbContext GetInstance()
+        {
+            if(instance == null)
+            {
+                instance = new HRMDbContext();
+
+            }
+            return instance;
+        }
+
+        private HRMDbContext()
         {
             //var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
-            Database.SetInitializer(new DropCreateDatabaseAlways<HRMDbContext>());
+            //Database.SetInitializer(new DropCreateDatabaseAlways<HRMDbContext>());
         }
 
 

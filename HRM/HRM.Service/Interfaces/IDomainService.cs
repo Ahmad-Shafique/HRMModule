@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HRM.Data.Interfaces;
-using HRM.Entity;
 
-namespace HRM.Data.Interfaces
+namespace HRM.Service.Interfaces
 {
-    public interface IRepository <TEntity> where TEntity : class
+    public interface IDomainService<TEntity> where TEntity : class
     {
         IEnumerable<TEntity> GetAll();
         TEntity Get<Tkey>(Tkey id);
@@ -16,6 +14,5 @@ namespace HRM.Data.Interfaces
         bool Update(TEntity entity);
         bool RemoveByKey<TKey>(TKey id);
         bool RemoveByEntity(TEntity entity);
-
     }
 }

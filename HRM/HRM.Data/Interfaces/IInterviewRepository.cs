@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace HRM.Data.Interfaces
 {
-    interface IInterviewRepository : IRepository<Interview>
+    public interface IInterviewRepository : IRepository<Interview>
     {
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Data.Interfaces
 {
-    interface ISupportingDocumentRepository
+    public interface ISupportingDocumentRepository
     {
     }
 }
