@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InnerLayer", "InnerLayer", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.Service", "HRM.Service\HRM.Service.csproj", "{EB917A7B-91D1-47C8-A663-941CBF035B0A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestLayer", "TestLayer", "{67524B7E-5C55-4E0A-92C5-ACEC834C4E13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.Test", "HRM.Test\HRM.Test.csproj", "{16DACDF7-5371-4E18-958B-8F683D6978E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,10 @@ Global
 		{EB917A7B-91D1-47C8-A663-941CBF035B0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB917A7B-91D1-47C8-A663-941CBF035B0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB917A7B-91D1-47C8-A663-941CBF035B0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16DACDF7-5371-4E18-958B-8F683D6978E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16DACDF7-5371-4E18-958B-8F683D6978E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16DACDF7-5371-4E18-958B-8F683D6978E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16DACDF7-5371-4E18-958B-8F683D6978E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +52,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2EB3ADBB-D7F3-4E00-AD69-33B2E9E73F37} = {26E1F865-D50E-4063-8657-2829A45C16C0}
 		{EB917A7B-91D1-47C8-A663-941CBF035B0A} = {844D099F-FDD0-4EFE-9D2F-F11FEBA4FBF7}
+		{16DACDF7-5371-4E18-958B-8F683D6978E3} = {67524B7E-5C55-4E0A-92C5-ACEC834C4E13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E7B24F89-BB3F-40EA-9859-5F3DFC03A107}
