@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Data.Interfaces
 {
-    public interface IAttendenceReposatory : IRepository<Attendance>
+    public interface IAttendanceRepository : IRepository<Attendance>
     {
         //have to decalre this extra methosextra method for this table
 
