@@ -123,6 +123,7 @@
     <Compile Include="Controllers\BonusController.cs" />
     <Compile Include="Controllers\BonusesController.cs" />
     <Compile Include="Controllers\CircularTemplatesController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -159,6 +160,11 @@
     <Content Include="Views\CircularTemplates\Details.cshtml" />
     <Content Include="Views\CircularTemplates\Edit.cshtml" />
     <Content Include="Views\CircularTemplates\Index.cshtml" />
+    <Content Include="Views\Comments\Create.cshtml" />
+    <Content Include="Views\Comments\Delete.cshtml" />
+    <Content Include="Views\Comments\Details.cshtml" />
+    <Content Include="Views\Comments\Edit.cshtml" />
+    <Content Include="Views\Comments\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
