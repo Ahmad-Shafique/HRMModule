@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Service
 {
-    class EmpoloyeeHistoryService : DomainService<EmployeeHistory>
+    class EmployeeHistoryService : DomainService<EmployeeHistory>
     {
     }
 }

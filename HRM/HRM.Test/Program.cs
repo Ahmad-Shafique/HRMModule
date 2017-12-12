@@ -10,19 +10,37 @@ namespace HRM.Test
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-            AdvertiserList adl = new AdvertiserList();
-            adl.AdvertiserName = "New Test Advertiser List name";
-            adl.ContactInfo = "???@advertiser.com";
-            adl.Description = "weird guy with proper reach";
-
             AdvertiserListService service = new AdvertiserListService();
 
-            service.Insert(adl);
 
-            Console.WriteLine("Commands have been executed. Press any key to exit");
+
+
+            // Test Delete
+            //AdvertiserList temp = service.Get(8).Result;
+            bool x = service.RemoveByKey(7).Result;
+            
+            
+
+            // Test GetAll
+            List<AdvertiserList> list = service.GetAll().Result.ToList();
+            Console.WriteLine("List is now : ");
+            foreach(AdvertiserList item in list)
+            {
+                Console.WriteLine(item.AdvertiserName + "   " + item.ContactInfo + "    " + item.Description);
+            }
+
+
+
+
+
             Console.ReadKey();
+
+
+
+
         }
     }
 }

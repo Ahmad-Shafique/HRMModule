@@ -59,7 +59,7 @@
     <Compile Include="EmployeePrivilegeService.cs" />
     <Compile Include="EmployeeSalaryService.cs" />
     <Compile Include="EmployeeService.cs" />
-    <Compile Include="EmpoloyeeHistoryService.cs" />
+    <Compile Include="EmployeeHistoryService.cs" />
     <Compile Include="HireRequestService.cs" />
     <Compile Include="HireThreadService.cs" />
     <Compile Include="Interfaces\IDomainService.cs" />
@@ -76,6 +76,7 @@
     <Compile Include="SalaryComponentsService.cs" />
     <Compile Include="SalgradeHistory.cs" />
     <Compile Include="SalgradeService.cs" />
+    <Compile Include="ServiceFactory.cs" />
     <Compile Include="SupportingDocumentService.cs" />
     <Compile Include="TemporaryCVService.cs" />
     <Compile Include="TrainingEmployeeService.cs" />

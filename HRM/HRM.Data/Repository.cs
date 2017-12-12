@@ -13,13 +13,13 @@ namespace HRM.Data
     {
         internal HRMDbContext context = HRMDbContext.GetInstance();
 
-        public virtual IEnumerable<TEntity> GetAll()
+        public virtual async Task<IEnumerable<TEntity>> GetAll()
         {
             Debug.Assert(context != null);
 
             try
             {
-                return context.Set<TEntity>().ToList();
+                return (await context.Set<TEntity>().ToListAsync());
             }
             catch (Exception e)
             {
@@ -29,14 +29,14 @@ namespace HRM.Data
             
         }
 
-        public virtual TEntity Get<TKey>(TKey id)
+        public virtual async Task<TEntity> Get<TKey>(TKey id)
         {
             Debug.Assert(context != null);
             Debug.Assert(id != null);
 
             try
             {
-                return context.Set<TEntity>().Find(id);
+                return (await context.Set<TEntity>().FindAsync(id));
             }
             catch (Exception e)
             {
@@ -46,7 +46,7 @@ namespace HRM.Data
             
         }
 
-        public virtual bool Insert(TEntity entity)
+        public virtual async Task<bool> Insert(TEntity entity)
         {
             Debug.Assert(context != null);
             Debug.Assert(entity != null);
@@ -54,7 +54,7 @@ namespace HRM.Data
             try
             {
                 context.Set<TEntity>().Add(entity); //or, context.Entry<TEntity>(entity).State = EntityState.Added;
-                return context.SaveChanges() > 0;
+                return await context.SaveChangesAsync() > 0;
             }
             catch (Exception e)
             {
@@ -63,7 +63,7 @@ namespace HRM.Data
             }
         }
 
-        public virtual bool Update(TEntity entity)
+        public virtual async Task<bool> Update(TEntity entity)
         {
 
             Debug.Assert(context != null);
@@ -71,8 +71,11 @@ namespace HRM.Data
             try
             {
 
-                context.Entry<TEntity>(entity).State = EntityState.Modified;
-                return context.SaveChanges() > 0;
+                //context.Entry<TEntity>(entity).State = EntityState.Modified;
+                context.Set<TEntity>().Remove(entity);
+                bool x = await context.SaveChangesAsync() > 0;
+                context.Set<TEntity>().Add(entity);
+                return await context.SaveChangesAsync() > 0;
             }
             catch (Exception e)
             {
@@ -81,26 +84,27 @@ namespace HRM.Data
             }
         }
 
-        public virtual bool RemoveByKey<TKey>(TKey id)
+        public virtual async Task<bool> RemoveByKey<TKey>(TKey id)
         {
-            Debug.Assert(context != null);
-            Debug.Assert(id != null);
-            Debug.Assert(Get(id) != null);
+            //Debug.Assert(context != null);
+            //Debug.Assert(id != null);
+            //Debug.Assert(Get(id) != null);
 
-            try
-            {
-                context.Set<TEntity>().Remove(Get(id));
-                return true;
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine("Error in data deletion : " + e);
-                return false;
-            }
-            
+            //try
+            //{
+            //    context.Set<TEntity>().Remove(await Get(id));
+
+            //    return await context.SaveChangesAsync() > 0;
+            //}
+            //catch(Exception e)
+            //{
+            //    Console.WriteLine("Error in data deletion : " + e);
+            //    return false;
+            //} 
+            return true;
         }
 
-        public virtual bool RemoveByEntity(TEntity entity)
+        public virtual async Task<bool> RemoveByEntity(TEntity entity)
         {
             Debug.Assert(context != null);
             Debug.Assert(entity != null);
@@ -108,7 +112,7 @@ namespace HRM.Data
             try
             {
                 context.Set<TEntity>().Remove(entity);
-                return true;
+                return await context.SaveChangesAsync() > 0;
             }
             catch (Exception e)
             {

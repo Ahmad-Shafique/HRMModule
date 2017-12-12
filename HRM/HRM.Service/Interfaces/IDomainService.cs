@@ -8,11 +8,11 @@ namespace HRM.Service.Interfaces
 {
     public interface IDomainService<TEntity> where TEntity : class
     {
-        IEnumerable<TEntity> GetAll();
-        TEntity Get<Tkey>(Tkey id);
-        bool Insert(TEntity entity);
-        bool Update(TEntity entity);
-        bool RemoveByKey<TKey>(TKey id);
-        bool RemoveByEntity(TEntity entity);
+        Task<IEnumerable<TEntity>> GetAll();
+        Task<TEntity> Get<Tkey>(Tkey id);
+        Task<bool> Insert(TEntity entity);
+        Task<bool> Update(TEntity entity);
+        Task<bool> RemoveByKey<TKey>(TKey id);
+        Task<bool> RemoveByEntity(TEntity entity);
     }
 }

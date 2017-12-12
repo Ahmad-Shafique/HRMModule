@@ -64,7 +64,7 @@ namespace HRM.Data
             return instance;
         }
 
-        private HRMDbContext()
+        public HRMDbContext()
         {
             //var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
             //Database.SetInitializer(new DropCreateDatabaseAlways<HRMDbContext>());
