@@ -22,6 +22,7 @@ namespace HRM.Service
             Repositories.Add(typeof(Comment), typeof(CommentService));
             Repositories.Add(typeof(DepartmentHistory), typeof(DepartmentHistoryService));
             Repositories.Add(typeof(Department), typeof(DepartmentService));
+            Repositories.Add(typeof(DepartmentDesignation), typeof(DepartmentDesignationService));
             Repositories.Add(typeof(Designation), typeof(DesignationService));
             Repositories.Add(typeof(EmployeeBio), typeof(EmployeeBioService));
             Repositories.Add(typeof(EmployeeHistory), typeof(EmployeeHistoryService));
