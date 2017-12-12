@@ -127,6 +127,7 @@
     <Compile Include="Controllers\DepartmentDesignationsController.cs" />
     <Compile Include="Controllers\DepartmentHistoriesController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\DesignationsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -183,6 +184,11 @@
     <Content Include="Views\DepartmentHistories\Details.cshtml" />
     <Content Include="Views\DepartmentHistories\Edit.cshtml" />
     <Content Include="Views\DepartmentHistories\Index.cshtml" />
+    <Content Include="Views\Designations\Create.cshtml" />
+    <Content Include="Views\Designations\Delete.cshtml" />
+    <Content Include="Views\Designations\Details.cshtml" />
+    <Content Include="Views\Designations\Edit.cshtml" />
+    <Content Include="Views\Designations\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
