@@ -9,113 +9,111 @@ using System.Web;
 using System.Web.Mvc;
 using HRM.Data;
 using HRM.Entity;
-using HRM.Service;
 using HRM.Service.Interfaces;
+using HRM.Service;
 
 namespace HRM.Controllers
 {
-    public class AttendancesController : Controller
+    public class CircularTemplatesController : Controller
     {
-        private IDomainService<Attendance> service = new ServiceFactory().Create<Attendance>();
+        private IDomainService<CircularTemplate> service = new ServiceFactory().Create<CircularTemplate>();
 
-        // GET: Attendances
+        // GET: CircularTemplates
         public async Task<ActionResult> Index()
         {
             return View(await service.GetAll());
         }
 
-        // GET: Attendances/Details/5
+        // GET: CircularTemplates/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Attendance attendance = await service.Get(id);
-
-            if (attendance == null)
+            CircularTemplate circularTemplate =  await service.Get(id);
+            if (circularTemplate == null)
             {
                 return HttpNotFound();
             }
-            return View(attendance);
+            return View(circularTemplate);
         }
 
-        // GET: Attendances/Create
+        // GET: CircularTemplates/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Attendances/Create
+        // POST: CircularTemplates/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "AttendanceId,EmployeeId,MonthName,Value,MonthlyAbsence")] Attendance attendance)
+        public async Task<ActionResult> Create([Bind(Include = "CircularTemplateId,TemplateName,Template")] CircularTemplate circularTemplate)
         {
             if (ModelState.IsValid)
             {
-                await service.Insert(attendance);
+                await service.Insert(circularTemplate);
                 return RedirectToAction("Index");
             }
 
-            return View(attendance);
+            return View(circularTemplate);
         }
 
-        // GET: Attendances/Edit/5
+        // GET: CircularTemplates/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Attendance attendance = await service.Get(id);
-            if (attendance == null)
+            CircularTemplate circularTemplate = await service.Get(id);
+            if (circularTemplate == null)
             {
                 return HttpNotFound();
             }
-            return View(attendance);
+            return View(circularTemplate);
         }
 
-        // POST: Attendances/Edit/5
+        // POST: CircularTemplates/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "AttendanceId,EmployeeId,MonthName,Value,MonthlyAbsence")] Attendance attendance)
+        public async Task<ActionResult> Edit([Bind(Include = "CircularTemplateId,TemplateName,Template")] CircularTemplate circularTemplate)
         {
             if (ModelState.IsValid)
             {
-                Attendance temp = await service.Get(attendance.AttendanceId);
+                CircularTemplate temp = await service.Get(circularTemplate.CircularTemplateId);
                 await service.RemoveByEntity(temp);
-                await service.Insert(attendance);
+                await service.Insert(circularTemplate);
             }
-            /////// return View(attendance);
-            return RedirectToAction("Index");
+            return View(circularTemplate);
         }
 
-        // GET: Attendances/Delete/5
+        // GET: CircularTemplates/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Attendance attendance = await service.Get(id);
-            if (attendance == null)
+            CircularTemplate circularTemplate = await service.Get(id);
+            if (circularTemplate == null)
             {
                 return HttpNotFound();
             }
-            return View(attendance);
+            return View(circularTemplate);
         }
 
-        // POST: Attendances/Delete/5
+        // POST: CircularTemplates/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Attendance item = await service.Get(id);
-            await service.RemoveByEntity(item);
+            CircularTemplate circularTemplate = await service.Get(id);
+            await service.RemoveByEntity(circularTemplate);
             return RedirectToAction("Index");
         }
 
