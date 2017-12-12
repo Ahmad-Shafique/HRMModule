@@ -121,6 +121,7 @@
     <Compile Include="Controllers\AdvertiserListsController.cs" />
     <Compile Include="Controllers\AttendancesController.cs" />
     <Compile Include="Controllers\BonusController.cs" />
+    <Compile Include="Controllers\BonusesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -147,6 +148,11 @@
     <Content Include="Views\Bonus\Details.cshtml" />
     <Content Include="Views\Bonus\Edit.cshtml" />
     <Content Include="Views\Bonus\Index.cshtml" />
+    <Content Include="Views\Bonuses\Create.cshtml" />
+    <Content Include="Views\Bonuses\Delete.cshtml" />
+    <Content Include="Views\Bonuses\Details.cshtml" />
+    <Content Include="Views\Bonuses\Edit.cshtml" />
+    <Content Include="Views\Bonuses\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
