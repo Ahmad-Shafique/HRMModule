@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HRM.Entity.Bonus>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BonusValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BonusTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BonusValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BonusTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BonusId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BonusId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BonusId })
+        </td>
+    </tr>
+}
+
+</table>

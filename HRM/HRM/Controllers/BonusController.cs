@@ -9,127 +9,115 @@ using System.Web;
 using System.Web.Mvc;
 using HRM.Data;
 using HRM.Entity;
-using HRM.Service;
 using HRM.Service.Interfaces;
+using HRM.Service;
 
 namespace HRM.Controllers
 {
-    public class AdvertiserListsController : Controller
+    public class BonusController : Controller
     {
-        //private HRMDbContext db = new HRMDbContext();
+        private IDomainService<Bonus> service = new ServiceFactory().Create<Bonus>();
 
-        private IDomainService<AdvertiserList> service = new ServiceFactory().Create<AdvertiserList>();
-
-        // GET: AdvertiserLists
+        // GET: Bonus
         public async Task<ActionResult> Index()
         {
-            //return View(await db.AdvertiserLists.ToListAsync());
             return View(await service.GetAll());
         }
 
-        // GET: AdvertiserLists/Details/5
+        // GET: Bonus/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdvertiserList advertiserList = await service.Get(id);
-            if (advertiserList == null)
+            Bonus bonus = await service.Get(id);
+            if (bonus == null)
             {
                 return HttpNotFound();
             }
-            return View(advertiserList);
+            return View(bonus);
         }
 
-        // GET: AdvertiserLists/Create
+        // GET: Bonus/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AdvertiserLists/Create
+        // POST: Bonus/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "AdvertiserListId,AdvertiserName,Description,ContactInfo")] AdvertiserList advertiserList)
+        public async Task<ActionResult> Create([Bind(Include = "BonusId,BonusValue,BonusTime")] Bonus bonus)
         {
             if (ModelState.IsValid)
             {
-                await service.Insert(advertiserList);
+                await service.Insert(bonus);
                 return RedirectToAction("Index");
             }
 
-            return View(advertiserList);
+            return View(bonus);
         }
 
-        // GET: AdvertiserLists/Edit/5
+        // GET: Bonus/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
-            Console.WriteLine(id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdvertiserList advertiserList = await service.Get(id);
-            if (advertiserList == null)
+            Bonus bonus = await service.Get(id);
+            if (bonus == null)
             {
                 return HttpNotFound();
             }
-            return View(advertiserList);
+            return View(bonus);
         }
 
-        // POST: AdvertiserLists/Edit/5
+        // POST: Bonus/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "AdvertiserListId,AdvertiserName,Description,ContactInfo")] AdvertiserList advertiserList)
+        public async Task<ActionResult> Edit([Bind(Include = "BonusId,BonusValue,BonusTime")] Bonus bonus)
         {
             if (ModelState.IsValid)
             {
-                AdvertiserList temp = await service.Get(advertiserList.AdvertiserListId);
+                Bonus temp = await service.Get(bonus.BonusId);
                 await service.RemoveByEntity(temp);
-                await service.Insert(advertiserList);
-
-                //await service.Update(advertiserList);
-
-
-                return RedirectToAction("Index");
+                await service.Insert(bonus);
             }
-            return View(advertiserList);
+            ////////return View(bonus);
+            return RedirectToAction("Index");
         }
 
-        // GET: AdvertiserLists/Delete/5
+        // GET: Bonus/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdvertiserList advertiserList = await service.Get(id);
-            if (advertiserList == null)
+            Bonus bonus = await service.Get(id);
+            if (bonus == null)
             {
                 return HttpNotFound();
             }
-            return View(advertiserList);
+            return View(bonus);
         }
 
-        // POST: AdvertiserLists/Delete/5
+        // POST: Bonus/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            AdvertiserList item = await service.Get(id);
-            bool x = await service.RemoveByEntity(item);
+            Bonus item = await service.Get(id);
+            await service.RemoveByEntity(item);
             return RedirectToAction("Index");
         }
 
-        /*
-         * Find out what it does
-         * 
-         * */
         //protected override void Dispose(bool disposing)
         //{
         //    if (disposing)

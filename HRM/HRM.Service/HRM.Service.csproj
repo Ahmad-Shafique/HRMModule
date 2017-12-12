@@ -62,6 +62,7 @@
     <Compile Include="EmployeeHistoryService.cs" />
     <Compile Include="HireRequestService.cs" />
     <Compile Include="HireThreadService.cs" />
+    <Compile Include="Interfaces\IAdvertiserListService.cs" />
     <Compile Include="Interfaces\IDomainService.cs" />
     <Compile Include="IntervieweeService.cs" />
     <Compile Include="InterviewService.cs" />

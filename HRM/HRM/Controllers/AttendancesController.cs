@@ -14,122 +14,111 @@ using HRM.Service.Interfaces;
 
 namespace HRM.Controllers
 {
-    public class AdvertiserListsController : Controller
+    public class AttendancesController : Controller
     {
-        //private HRMDbContext db = new HRMDbContext();
+        private IDomainService<Attendance> service = new ServiceFactory().Create<Attendance>();
 
-        private IDomainService<AdvertiserList> service = new ServiceFactory().Create<AdvertiserList>();
-
-        // GET: AdvertiserLists
+        // GET: Attendances
         public async Task<ActionResult> Index()
         {
-            //return View(await db.AdvertiserLists.ToListAsync());
             return View(await service.GetAll());
         }
 
-        // GET: AdvertiserLists/Details/5
+        // GET: Attendances/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdvertiserList advertiserList = await service.Get(id);
-            if (advertiserList == null)
+            Attendance attendance = await service.Get(id);
+
+            if (attendance == null)
             {
                 return HttpNotFound();
             }
-            return View(advertiserList);
+            return View(attendance);
         }
 
-        // GET: AdvertiserLists/Create
+        // GET: Attendances/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AdvertiserLists/Create
+        // POST: Attendances/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "AdvertiserListId,AdvertiserName,Description,ContactInfo")] AdvertiserList advertiserList)
+        public async Task<ActionResult> Create([Bind(Include = "AttendanceId,EmployeeId,MonthName,Value,MonthlyAbsence")] Attendance attendance)
         {
             if (ModelState.IsValid)
             {
-                await service.Insert(advertiserList);
+                await service.Insert(attendance);
                 return RedirectToAction("Index");
             }
 
-            return View(advertiserList);
+            return View(attendance);
         }
 
-        // GET: AdvertiserLists/Edit/5
+        // GET: Attendances/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
-            Console.WriteLine(id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdvertiserList advertiserList = await service.Get(id);
-            if (advertiserList == null)
+            Attendance attendance = await service.Get(id);
+            if (attendance == null)
             {
                 return HttpNotFound();
             }
-            return View(advertiserList);
+            return View(attendance);
         }
 
-        // POST: AdvertiserLists/Edit/5
+        // POST: Attendances/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "AdvertiserListId,AdvertiserName,Description,ContactInfo")] AdvertiserList advertiserList)
+        public async Task<ActionResult> Edit([Bind(Include = "AttendanceId,EmployeeId,MonthName,Value,MonthlyAbsence")] Attendance attendance)
         {
             if (ModelState.IsValid)
             {
-                AdvertiserList temp = await service.Get(advertiserList.AdvertiserListId);
+                Attendance temp = await service.Get(attendance.AttendanceId);
                 await service.RemoveByEntity(temp);
-                await service.Insert(advertiserList);
-
-                //await service.Update(advertiserList);
-
-
-                return RedirectToAction("Index");
+                await service.Insert(attendance);
             }
-            return View(advertiserList);
+            /////// return View(attendance);
+            return RedirectToAction("Index");
         }
 
-        // GET: AdvertiserLists/Delete/5
+        // GET: Attendances/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdvertiserList advertiserList = await service.Get(id);
-            if (advertiserList == null)
+            Attendance attendance = await service.Get(id);
+            if (attendance == null)
             {
                 return HttpNotFound();
             }
-            return View(advertiserList);
+            return View(attendance);
         }
 
-        // POST: AdvertiserLists/Delete/5
+        // POST: Attendances/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            AdvertiserList item = await service.Get(id);
+            Attendance item = await service.Get(id);
             bool x = await service.RemoveByEntity(item);
             return RedirectToAction("Index");
         }
 
-        /*
-         * Find out what it does
-         * 
-         * */
         //protected override void Dispose(bool disposing)
         //{
         //    if (disposing)

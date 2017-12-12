@@ -1,4 +1,5 @@
 ﻿using HRM.Entity;
+using HRM.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Service
 {
-    public class AdvertiserListService : DomainService<AdvertiserList>
+    class AdvertiserListService : DomainService<AdvertiserList>, IAdvertiserListService
     {
     }
 }
