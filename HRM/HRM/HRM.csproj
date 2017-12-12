@@ -125,6 +125,7 @@
     <Compile Include="Controllers\CircularTemplatesController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\DepartmentDesignationsController.cs" />
+    <Compile Include="Controllers\DepartmentHistoriesController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -177,6 +178,11 @@
     <Content Include="Views\DepartmentDesignations\Details.cshtml" />
     <Content Include="Views\DepartmentDesignations\Edit.cshtml" />
     <Content Include="Views\DepartmentDesignations\Index.cshtml" />
+    <Content Include="Views\DepartmentHistories\Create.cshtml" />
+    <Content Include="Views\DepartmentHistories\Delete.cshtml" />
+    <Content Include="Views\DepartmentHistories\Details.cshtml" />
+    <Content Include="Views\DepartmentHistories\Edit.cshtml" />
+    <Content Include="Views\DepartmentHistories\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

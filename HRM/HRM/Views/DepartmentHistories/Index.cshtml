@@ -1,0 +1,57 @@
+﻿@model IEnumerable<HRM.Entity.DepartmentHistory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ColumnName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreviousValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ColumnName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreviousValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DepartmentHistoryId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DepartmentHistoryId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DepartmentHistoryId })
+        </td>
+    </tr>
+}
+
+</table>
