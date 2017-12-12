@@ -1,5 +1,6 @@
 ﻿using HRM.Entity;
 using HRM.Service;
+using HRM.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace HRM.Test
 
         static void Main(string[] args)
         {
-            AdvertiserListService service = new AdvertiserListService();
+            IDomainService<AdvertiserList> service = new ServiceFactory().Create<AdvertiserList>();
 
 
 
