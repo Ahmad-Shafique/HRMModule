@@ -143,6 +143,7 @@
     <Compile Include="Controllers\InterviewsController.cs" />
     <Compile Include="Controllers\LeaveApplicationCategoriesController.cs" />
     <Compile Include="Controllers\LeaveApplicationsController.cs" />
+    <Compile Include="Controllers\NoticeEmployeesController.cs" />
     <Compile Include="Controllers\NoticesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -285,6 +286,11 @@
     <Content Include="Views\Notices\Details.cshtml" />
     <Content Include="Views\Notices\Edit.cshtml" />
     <Content Include="Views\Notices\Index.cshtml" />
+    <Content Include="Views\NoticeEmployees\Create.cshtml" />
+    <Content Include="Views\NoticeEmployees\Delete.cshtml" />
+    <Content Include="Views\NoticeEmployees\Details.cshtml" />
+    <Content Include="Views\NoticeEmployees\Edit.cshtml" />
+    <Content Include="Views\NoticeEmployees\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

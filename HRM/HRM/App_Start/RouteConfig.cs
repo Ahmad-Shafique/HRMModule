@@ -16,7 +16,7 @@ namespace HRM
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Attendances", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "AdvertiserLists", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
