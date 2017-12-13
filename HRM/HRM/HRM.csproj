@@ -132,6 +132,7 @@
     <Compile Include="Controllers\EmployeeBiosController.cs" />
     <Compile Include="Controllers\EmployeeDepartmentsController.cs" />
     <Compile Include="Controllers\EmployeeDesignationsController.cs" />
+    <Compile Include="Controllers\EmployeeHistoriesController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -219,6 +220,11 @@
     <Content Include="Views\EmployeeDesignations\Details.cshtml" />
     <Content Include="Views\EmployeeDesignations\Edit.cshtml" />
     <Content Include="Views\EmployeeDesignations\Index.cshtml" />
+    <Content Include="Views\EmployeeHistories\Create.cshtml" />
+    <Content Include="Views\EmployeeHistories\Delete.cshtml" />
+    <Content Include="Views\EmployeeHistories\Details.cshtml" />
+    <Content Include="Views\EmployeeHistories\Edit.cshtml" />
+    <Content Include="Views\EmployeeHistories\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
