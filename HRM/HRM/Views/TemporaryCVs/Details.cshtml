@@ -1,0 +1,42 @@
+﻿@model HRM.Entity.TemporaryCV
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TemporaryCV</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CVLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CVLink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IntervieweeScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IntervieweeScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HireThreadId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HireThreadId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TemporaryCVId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

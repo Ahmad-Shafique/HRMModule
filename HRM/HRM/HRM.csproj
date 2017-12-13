@@ -151,6 +151,10 @@
     <Compile Include="Controllers\SalaryComponentsController.cs" />
     <Compile Include="Controllers\SalgradeHistoriesController.cs" />
     <Compile Include="Controllers\SalgradesController.cs" />
+    <Compile Include="Controllers\SupportingDocumentsController.cs" />
+    <Compile Include="Controllers\TemporaryCVsController.cs" />
+    <Compile Include="Controllers\TrainingEmployeesController.cs" />
+    <Compile Include="Controllers\TrainingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -327,6 +331,26 @@
     <Content Include="Views\SalgradeHistories\Details.cshtml" />
     <Content Include="Views\SalgradeHistories\Edit.cshtml" />
     <Content Include="Views\SalgradeHistories\Index.cshtml" />
+    <Content Include="Views\SupportingDocuments\Create.cshtml" />
+    <Content Include="Views\SupportingDocuments\Delete.cshtml" />
+    <Content Include="Views\SupportingDocuments\Details.cshtml" />
+    <Content Include="Views\SupportingDocuments\Edit.cshtml" />
+    <Content Include="Views\SupportingDocuments\Index.cshtml" />
+    <Content Include="Views\TemporaryCVs\Create.cshtml" />
+    <Content Include="Views\TemporaryCVs\Delete.cshtml" />
+    <Content Include="Views\TemporaryCVs\Details.cshtml" />
+    <Content Include="Views\TemporaryCVs\Edit.cshtml" />
+    <Content Include="Views\TemporaryCVs\Index.cshtml" />
+    <Content Include="Views\Trainings\Create.cshtml" />
+    <Content Include="Views\Trainings\Delete.cshtml" />
+    <Content Include="Views\Trainings\Details.cshtml" />
+    <Content Include="Views\Trainings\Edit.cshtml" />
+    <Content Include="Views\Trainings\Index.cshtml" />
+    <Content Include="Views\TrainingEmployees\Create.cshtml" />
+    <Content Include="Views\TrainingEmployees\Delete.cshtml" />
+    <Content Include="Views\TrainingEmployees\Details.cshtml" />
+    <Content Include="Views\TrainingEmployees\Edit.cshtml" />
+    <Content Include="Views\TrainingEmployees\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
