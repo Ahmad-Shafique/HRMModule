@@ -1,0 +1,75 @@
+﻿@model IEnumerable<HRM.Entity.EmployeePerformanceMetric>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IllegalLeave)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectMissedDateLineCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalProjects)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AverageProjectScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalTraining)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AverageTrainingScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IllegalLeave)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectMissedDateLineCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalProjects)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AverageProjectScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalTraining)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AverageTrainingScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EmployeePerformanceMetricId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmployeePerformanceMetricId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmployeePerformanceMetricId })
+        </td>
+    </tr>
+}
+
+</table>

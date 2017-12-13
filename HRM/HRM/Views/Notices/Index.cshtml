@@ -1,0 +1,45 @@
+﻿@model IEnumerable<HRM.Entity.Notice>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NoticeTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoticeDetails)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoticeDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoticeTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoticeDetails)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoticeDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NoticeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NoticeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NoticeId })
+        </td>
+    </tr>
+}
+
+</table>

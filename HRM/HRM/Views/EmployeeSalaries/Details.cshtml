@@ -1,0 +1,82 @@
+﻿@model HRM.Entity.EmployeeSalary
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EmployeeSalary</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BasicSalary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BasicSalary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalSalary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalSalary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SalaryMonth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SalaryMonth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BonusId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BonusId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BonusValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BonusValue)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeSalaryId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

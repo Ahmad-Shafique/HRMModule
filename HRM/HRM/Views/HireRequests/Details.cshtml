@@ -1,0 +1,66 @@
+﻿@model HRM.Entity.HireRequest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HireRequest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DesignationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DesignationName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmplyeeRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmplyeeRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Urgency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Urgency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HireRequestStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HireRequestStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartmentId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartmentId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HireRequestId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
