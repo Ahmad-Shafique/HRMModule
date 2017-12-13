@@ -145,6 +145,12 @@
     <Compile Include="Controllers\LeaveApplicationsController.cs" />
     <Compile Include="Controllers\NoticeEmployeesController.cs" />
     <Compile Include="Controllers\NoticesController.cs" />
+    <Compile Include="Controllers\PrivilegesController.cs" />
+    <Compile Include="Controllers\ProjectEmployeesController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\SalaryComponentsController.cs" />
+    <Compile Include="Controllers\SalgradeHistoriesController.cs" />
+    <Compile Include="Controllers\SalgradesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -291,6 +297,36 @@
     <Content Include="Views\NoticeEmployees\Details.cshtml" />
     <Content Include="Views\NoticeEmployees\Edit.cshtml" />
     <Content Include="Views\NoticeEmployees\Index.cshtml" />
+    <Content Include="Views\Privileges\Create.cshtml" />
+    <Content Include="Views\Privileges\Delete.cshtml" />
+    <Content Include="Views\Privileges\Details.cshtml" />
+    <Content Include="Views\Privileges\Edit.cshtml" />
+    <Content Include="Views\Privileges\Index.cshtml" />
+    <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Projects\Delete.cshtml" />
+    <Content Include="Views\Projects\Details.cshtml" />
+    <Content Include="Views\Projects\Edit.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\ProjectEmployees\Create.cshtml" />
+    <Content Include="Views\ProjectEmployees\Delete.cshtml" />
+    <Content Include="Views\ProjectEmployees\Details.cshtml" />
+    <Content Include="Views\ProjectEmployees\Edit.cshtml" />
+    <Content Include="Views\ProjectEmployees\Index.cshtml" />
+    <Content Include="Views\SalaryComponents\Create.cshtml" />
+    <Content Include="Views\SalaryComponents\Delete.cshtml" />
+    <Content Include="Views\SalaryComponents\Details.cshtml" />
+    <Content Include="Views\SalaryComponents\Edit.cshtml" />
+    <Content Include="Views\SalaryComponents\Index.cshtml" />
+    <Content Include="Views\Salgrades\Create.cshtml" />
+    <Content Include="Views\Salgrades\Delete.cshtml" />
+    <Content Include="Views\Salgrades\Details.cshtml" />
+    <Content Include="Views\Salgrades\Edit.cshtml" />
+    <Content Include="Views\Salgrades\Index.cshtml" />
+    <Content Include="Views\SalgradeHistories\Create.cshtml" />
+    <Content Include="Views\SalgradeHistories\Delete.cshtml" />
+    <Content Include="Views\SalgradeHistories\Details.cshtml" />
+    <Content Include="Views\SalgradeHistories\Edit.cshtml" />
+    <Content Include="Views\SalgradeHistories\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
