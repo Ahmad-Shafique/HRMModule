@@ -28,6 +28,7 @@ namespace HRM.Service
             Repositories.Add(typeof(EmployeeHistory), typeof(EmployeeHistoryService));
             Repositories.Add(typeof(EmployeePerformanceMetric), typeof(EmployeePerformanceMetricService));
             Repositories.Add(typeof(Employee), typeof(EmployeeService));
+            Repositories.Add(typeof(EmployeeDepartment), typeof(EmployeeDepartmentService));
             Repositories.Add(typeof(EmployeeAttendance), typeof(EmployeeAttendanceService));
             Repositories.Add(typeof(EmployeeSalary), typeof(EmployeeSalaryService));
             Repositories.Add(typeof(HireRequest), typeof(HireRequestService));
