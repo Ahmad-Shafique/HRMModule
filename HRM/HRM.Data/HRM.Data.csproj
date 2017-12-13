@@ -59,6 +59,7 @@
     <Compile Include="DepartmentHistoryRepository.cs" />
     <Compile Include="DepartmentRepository.cs" />
     <Compile Include="DesignationRepository.cs" />
+    <Compile Include="EmployeeAttendanceRepository.cs" />
     <Compile Include="EmployeeBioRepository.cs" />
     <Compile Include="EmployeeHistoryRepository.cs" />
     <Compile Include="EmployeePerformanceMetricRepository.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="HireRequestRepository.cs" />
     <Compile Include="HireThreadRepository.cs" />
     <Compile Include="HRMDbContext.cs" />
+    <Compile Include="IEmployeeAttendanceRepository.cs" />
     <Compile Include="Interfaces\IAdvertiserListRepository.cs" />
     <Compile Include="Interfaces\IAttendanceRepository.cs" />
     <Compile Include="Interfaces\IBonusesRepository.cs" />

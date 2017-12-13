@@ -14,24 +14,24 @@ using HRM.Service.Interfaces;
 
 namespace HRM.Controllers
 {
-    public class AttendancesController : Controller
+    public class EmployeeBiosController : Controller
     {
-        private IDomainService<Attendance> service = new ServiceFactory().Create<Attendance>();
+        private IDomainService<EmployeeBio> service = new ServiceFactory().Create<EmployeeBio>();
 
-        
+
         public async Task<ActionResult> Index()
         {
             return View(await service.GetAll());
         }
 
-        
+
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Attendance entity = await service.Get(id);
+            EmployeeBio entity = await service.Get(id);
 
             if (entity == null)
             {
@@ -40,18 +40,18 @@ namespace HRM.Controllers
             return View(entity);
         }
 
-        
+
         public ActionResult Create()
         {
             return View();
         }
 
 
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         // ****************************************************************************************************************************************************************
-        public async Task<ActionResult> Create([Bind(Include = "AttendanceId,EmployeeId,MonthName,Value,MonthlyAbsence")] Attendance entity)
+        public async Task<ActionResult> Create([Bind(Include = "EmployeeBioId,EmployeeContactNo,EmployeeAddress,DateofBirth,HireDate,Into,Objectives,Hobbies,Interests,Certificates,JobExperience,Eduction,EmployeeId")] EmployeeBio entity)
         {
             if (ModelState.IsValid)
             {
@@ -62,14 +62,14 @@ namespace HRM.Controllers
             return View(entity);
         }
 
-        
+
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Attendance entity = await service.Get(id);
+            EmployeeBio entity = await service.Get(id);
             if (entity == null)
             {
                 return HttpNotFound();
@@ -77,31 +77,31 @@ namespace HRM.Controllers
             return View(entity);
         }
 
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         // ******************************************************************************************************************************************************************
-        public async Task<ActionResult> Edit([Bind(Include = "AttendanceId,EmployeeId,MonthName,Value,MonthlyAbsence")] Attendance entity)
+        public async Task<ActionResult> Edit([Bind(Include = "EmployeeBioId,EmployeeContactNo,EmployeeAddress,DateofBirth,HireDate,Into,Objectives,Hobbies,Interests,Certificates,JobExperience,Eduction,EmployeeId")] EmployeeBio entity)
         {
             if (ModelState.IsValid)
             {
                 // **********************************************************************************************************************************************************
-                Attendance temp = await service.Get(entity.AttendanceId);
+                EmployeeBio temp = await service.Get(entity.EmployeeBioId);
                 await service.RemoveByEntity(temp);
                 await service.Insert(entity);
             }
-            /////// return View(attendance);
+            /////// return View(EmployeeBio);
             return RedirectToAction("Index");
         }
 
-        
+
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Attendance entity = await service.Get(id);
+            EmployeeBio entity = await service.Get(id);
             if (entity == null)
             {
                 return HttpNotFound();
@@ -109,12 +109,12 @@ namespace HRM.Controllers
             return View(entity);
         }
 
-        
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Attendance entity = await service.Get(id);
+            EmployeeBio entity = await service.Get(id);
             await service.RemoveByEntity(entity);
             return RedirectToAction("Index");
         }
@@ -129,3 +129,10 @@ namespace HRM.Controllers
         //}
     }
 }
+
+
+
+
+
+
+

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using HRM.Data.Interfaces;
 using HRM.Entity;
 
-namespace HRM.Data
+namespace HRM.Data.Interfaces
 {
-    public class EmployeeAttendanceRepository : Repository<EmployeeAttendance>, IEmployeeAttendanceRepository
+    public interface IEmployeeAttendanceRepository : IRepository<EmployeeAttendance>
     {
 
     }
