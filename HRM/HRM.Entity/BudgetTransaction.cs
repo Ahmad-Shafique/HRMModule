@@ -16,6 +16,7 @@ namespace HRM.Entity
         public int TypeId { get; set; } // SalaryId, TrainingId etc. any Id
         public int Amount { get; set; }
         public string Description { get; set; }
+        public DateTime TransactionDate { get; set; }
 
     }
 }

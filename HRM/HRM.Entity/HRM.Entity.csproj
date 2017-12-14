@@ -50,13 +50,17 @@
     <Compile Include="Attendance.cs" />
     <Compile Include="Bonus.cs" />
     <Compile Include="Bonuses.cs" />
+    <Compile Include="BudgetTransaction.cs" />
     <Compile Include="CircularTemplate.cs" />
     <Compile Include="Comment.cs" />
+    <Compile Include="CompanyPolicy.cs" />
     <Compile Include="DepartmentDesignation.cs" />
     <Compile Include="EmployeeAttendance.cs" />
     <Compile Include="EmployeeDesignation.cs" />
     <Compile Include="EmployeePrivilege.cs" />
+    <Compile Include="EmployeeTranportArea.cs" />
     <Compile Include="Employee_EmployeeSalary.cs" />
+    <Compile Include="MonthlyBudget.cs" />
     <Compile Include="NoticeEmployee.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="DepartmentHistory.cs" />
@@ -85,6 +89,9 @@
     <Compile Include="TemporaryCV.cs" />
     <Compile Include="Training.cs" />
     <Compile Include="TrainingEmployee.cs" />
+    <Compile Include="TransportArea.cs" />
+    <Compile Include="TransportAreaVehicle.cs" />
+    <Compile Include="TransportVehicle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

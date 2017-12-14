@@ -90,25 +90,6 @@ namespace HRM.Data
             }
         }
 
-        public virtual async Task<bool> RemoveByKey<TKey>(TKey id)
-        {
-            //Debug.Assert(context != null);
-            //Debug.Assert(id != null);
-            //Debug.Assert(Get(id) != null);
-
-            //try
-            //{
-            //    context.Set<TEntity>().Remove(await Get(id));
-
-            //    return await context.SaveChangesAsync() > 0;
-            //}
-            //catch(Exception e)
-            //{
-            //    Console.WriteLine("Error in data deletion : " + e);
-            //    return false;
-            //} 
-            return true;
-        }
 
         public virtual async Task<bool> RemoveByEntity(TEntity entity)
         {

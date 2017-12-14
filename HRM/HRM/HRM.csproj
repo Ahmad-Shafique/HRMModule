@@ -129,7 +129,6 @@
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\DesignationsController.cs" />
     <Compile Include="Controllers\EmployeeAttendancesController.cs" />
-    <Compile Include="Controllers\EmployeeBiosController.cs" />
     <Compile Include="Controllers\EmployeeDepartmentsController.cs" />
     <Compile Include="Controllers\EmployeeDesignationsController.cs" />
     <Compile Include="Controllers\EmployeeHistoriesController.cs" />
@@ -226,11 +225,6 @@
     <Content Include="Views\EmployeeAttendances\Details.cshtml" />
     <Content Include="Views\EmployeeAttendances\Edit.cshtml" />
     <Content Include="Views\EmployeeAttendances\Index.cshtml" />
-    <Content Include="Views\EmployeeBios\Create.cshtml" />
-    <Content Include="Views\EmployeeBios\Delete.cshtml" />
-    <Content Include="Views\EmployeeBios\Details.cshtml" />
-    <Content Include="Views\EmployeeBios\Edit.cshtml" />
-    <Content Include="Views\EmployeeBios\Index.cshtml" />
     <Content Include="Views\EmployeeDepartments\Create.cshtml" />
     <Content Include="Views\EmployeeDepartments\Delete.cshtml" />
     <Content Include="Views\EmployeeDepartments\Details.cshtml" />

@@ -28,5 +28,6 @@ namespace HRM.Entity
         public string Eduction { get; set; }
         [Required]
         public int EmployeeId { get; set; }
+        public string Image { get; set; }
     }
 }
