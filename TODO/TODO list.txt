@@ -1,6 +1,6 @@
-1. Add budget management for training, project and hire request
-2. Add legal necessary stuff for legal requirements
-3. Add picture for employee
+1. Add budget management for training, project and hire request ---------- Added Entities as necessary
+2. Add legal necessary stuff for legal requirements ---------------------- Added Entities as per necessity
+3. Add picture for employee ---------------------------------------------- DONE
 4. Add transportation usage, related details and entities
 5. Add equipments management, related details and entities
 6. Add succession plan, related details and entities
@@ -8,3 +8,4 @@
 8. Add view for creation and usage of circular templates
 9. Add mechanism for shortlisting CV's
 10. Add mechanism for creation and execution of interviews
+11. Add extra annotations to MonthlyBudget, BudgetTransaction , Company Policy if necessary
