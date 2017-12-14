@@ -19,8 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.Test", "HRM.Test\HRM.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM", "HRM\HRM.csproj", "{5CD4E00A-A306-44CD-8E88-125E47C66C82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.Tests", "HRM.Tests\HRM.Tests.csproj", "{6099BFD2-505E-4045-A19A-06E1C9193773}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{5CD4E00A-A306-44CD-8E88-125E47C66C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CD4E00A-A306-44CD-8E88-125E47C66C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CD4E00A-A306-44CD-8E88-125E47C66C82}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6099BFD2-505E-4045-A19A-06E1C9193773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6099BFD2-505E-4045-A19A-06E1C9193773}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6099BFD2-505E-4045-A19A-06E1C9193773}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6099BFD2-505E-4045-A19A-06E1C9193773}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
