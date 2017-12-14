@@ -2,6 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Core;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Infrastructure;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -63,18 +66,21 @@ namespace HRM.Data
             }
         }
 
-        public virtual async Task<bool> Update(TEntity entity)
+        public virtual async Task<bool> Update(TEntity updated, int key)
         {
 
             Debug.Assert(context != null);
+            Debug.Assert(updated != null);
 
             try
             {
 
                 //context.Entry<TEntity>(entity).State = EntityState.Modified;
-                context.Set<TEntity>().Remove(entity);
-                bool x = await context.SaveChangesAsync() > 0;
-                context.Set<TEntity>().Add(entity);
+                TEntity existing = context.Set<TEntity>().FindAsync(key).Result;
+                if (existing != null)
+                {
+                    context.Entry(existing).CurrentValues.SetValues(updated);
+                }
                 return await context.SaveChangesAsync() > 0;
             }
             catch (Exception e)
@@ -121,5 +127,7 @@ namespace HRM.Data
             }
 
         }
+
+
     }
 }

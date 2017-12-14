@@ -20,18 +20,6 @@
                 </button>
               
                 @*@Html.ActionLink("Attendance", "Index", "Attendances", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Attendance", "Index", "Attendances", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Attendance", "Index", "Attendances", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Attendance", "Index", "Attendances", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Attendance", "Index", "Attendances", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Attendance", "Index", "Attendances", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Attendance", "Index", "Attendances", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Attendance", "Index", "Attendances", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Attendance", "Index", "Attendances", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Attendance", "Index", "Attendances", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Attendance", "Index", "Attendances", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Attendance", "Index", "Attendances", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Attendance", "Index", "Attendances", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Attendance", "Index", "Attendances", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
@@ -41,7 +29,8 @@
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="/Home"></a>
+                        @Html.ActionLink("Home", "Index", "Employees", new { area = "" }, new { @class = "navbar-brand" })
+                        @*<a class="navbar-brand" href="/Home"></a>*@
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="active dropdown">
@@ -93,19 +82,60 @@
                                 <li>@Html.ActionLink("Training Employee", "Index", "TrainingEmployees", new { area = "" }, new { @class = "navbar-brand" })</li>
                             </ul>
                         </li>
+                        @*<li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Training</a>
+                            <ul class="dropdown-menu">
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Legal</a>
+                            <ul class="dropdown-menu">
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Transportation</a>
+                            <ul class="dropdown-menu"></ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Resource Allocation</a>
+                            <ul class="dropdown-menu"></ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Employee Management</a>
+                            <ul class="dropdown-menu"></ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Sales</a>
+                            <ul class="dropdown-menu"></ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Recruitment</a>
+                            <ul class="dropdown-menu"></ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Accounting</a>
+                            <ul class="dropdown-menu"></ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Project</a>
+                            <ul class="dropdown-menu"></ul>
+                        </li>*@
+
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="glyphicon glyphicon-user"></i> NAME
+                                <i class="glyphicon glyphicon-user"></i> name
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="glyphicon glyphicon-user"></i> My Profile</a></li>
-                                <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Settings</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-user"></i> my profile</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-cog"></i> settings</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="/Login"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                                <li><a href="/login"><i class="glyphicon glyphicon-log-out"></i> logout</a></li>
                             </ul>
                         </li>
                     </ul>

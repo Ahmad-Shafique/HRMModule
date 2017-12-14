@@ -13,7 +13,7 @@ namespace HRM.Data.Interfaces
         Task<IEnumerable<TEntity>> GetAll();
         Task<TEntity> Get<Tkey>(Tkey id);
         Task<bool> Insert(TEntity entity);
-        Task<bool> Update(TEntity entity);
+        Task<bool> Update(TEntity entity, int key);
         Task<bool> RemoveByKey<TKey>(TKey id);
         Task<bool> RemoveByEntity(TEntity entity);
 

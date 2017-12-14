@@ -23,9 +23,9 @@ namespace HRM.Service
             return await repository.Insert(entity);
         }
 
-        public virtual async Task<bool> Update(TEntity entity)
+        public virtual async Task<bool> Update(TEntity entity, int key)
         {
-            return await repository.Update(entity);
+            return await repository.Update(entity,key);
         }
 
         public virtual async Task<IEnumerable<TEntity>> GetAll()

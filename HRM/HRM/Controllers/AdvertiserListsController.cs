@@ -89,11 +89,11 @@ namespace HRM.Controllers
         {
             if (ModelState.IsValid)
             {
-                AdvertiserList temp = await service.Get(advertiserList.AdvertiserListId);
-                await service.RemoveByEntity(temp);
-                await service.Insert(advertiserList);
+                //AdvertiserList temp = await service.Get(advertiserList.AdvertiserListId);
+                //await service.RemoveByEntity(temp);
+                //await service.Insert(advertiserList);
 
-                //await service.Update(advertiserList);
+                await service.Update(advertiserList,advertiserList.AdvertiserListId);
 
 
                 return RedirectToAction("Index");
