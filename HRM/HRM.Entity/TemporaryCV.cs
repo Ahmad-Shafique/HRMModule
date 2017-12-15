@@ -11,6 +11,7 @@ namespace HRM.Entity
     {
         [Key]
         public int TemporaryCVId { get; set; }
+        public string CandidateName { get; set; }
         public string CVLink { get; set; }
         public int IntervieweeScore { get; set; }
         [Required]
