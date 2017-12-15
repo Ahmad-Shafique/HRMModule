@@ -1,15 +1,16 @@
-1. Add budget management for training, project and hire request ---------- Added Entities as necessary
-2. Add legal necessary stuff for legal requirements ---------------------- Added Entities as per necessity
+1. Add budget management for training, project and hire request ---------- Drawn necessry diagram plan
+2. Add legal necessary stuff for legal requirements ---------------------- Drawn necessry diagram plan
 3. Add picture for employee ---------------------------------------------- DONE
-4. Add transportation usage, related details and entities ---------------- Added Entities as per necessity
-5. Add equipments management, related details and entities --------------- Added Entities as per necessity
-6. Add succession plan, related details and entities
-7. Add attendance entry
-8. Add view for creation and usage of circular templates
+4. Add transportation usage, related details and entities ---------------- Drawn necessry diagram plan
+5. Add equipments management, related details and entities --------------- Drawn necessry diagram plan
+6. Add succession plan, related details and entities --------------------- Ignore for now
+7. Add attendance entry -------------------------------------------------- Drawn necessry diagram plan
+8. Add view for creation and usage of circular templates ----------------- Ignore for now
 9. Add mechanism for shortlisting CV's ----------------------------------- Ignore for now
 10. Add mechanism for creation and execution of interviews
 
 11. Add extra annotations to MonthlyBudget, BudgetTransaction , 
 CompanyPolicy, TransportVehicle, TransportArea, 
 EmployeeTransportArea, TransportAreaVehicle,
-Equipment, EquipmentAndDepartment, EquipmentTransaction if necessary
+Equipment, EquipmentAndDepartment, EquipmentTransaction,
+EmployeeIdentificationCard if necessary

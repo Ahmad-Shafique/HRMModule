@@ -14,6 +14,7 @@ namespace HRM.Entity
         public string VehicleNumber { get; set; }
         public string DriverName { get; set; }
         public int Capacity { get; set; }
+        public string status { get; set; }
 
     }
 }
