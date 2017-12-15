@@ -101,6 +101,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\equipmentScript.js" />
+    <Content Include="Scripts\Interviews\interviewScript.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -124,6 +125,9 @@
     <Compile Include="Entity\Department.cs" />
     <Compile Include="Entity\Employee.cs" />
     <Compile Include="Entity\Equipment.cs" />
+    <Compile Include="Entity\Interview.cs" />
+    <Compile Include="Entity\Interviewee.cs" />
+    <Compile Include="Entity\TemporaryCV.cs" />
     <Compile Include="Entity\TransportVehicle.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

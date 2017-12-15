@@ -11,8 +11,11 @@ namespace Static_views.Controllers
         // GET: Interviews
         public ActionResult Index()
         {
+            ViewBag.Interviews = Data.DummyData.Interviews();
+            ViewBag.Interviewees = Data.DummyData.Interviewees();
             return View();
         }
+
 
 
 

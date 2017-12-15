@@ -64,5 +64,23 @@ namespace Static_views.Data
 
         }
 
+        public static List<Interview> Interviews()
+        {
+            return new List<Interview>()
+            {
+                new Interview(){ InterviewId=1 , Schedule="16/1/2018 2-5 pm" },
+                new Interview(){ InterviewId=2 , Schedule="16/1/2018 5-8 pm" }
+            };
+        }
+
+        public static List<Interviewee> Interviewees()
+        {
+            return new List<Interviewee>()
+            {
+                new Interviewee(){ IntervieweeId=1, InterviewId=1, TemporaryCVId=1 },
+                new Interviewee(){ IntervieweeId=2, InterviewId=1 , TemporaryCVId=2 }, 
+                new Interviewee(){ IntervieweeId=3, InterviewId=2 , TemporaryCVId=3 }
+            };
+        }
     }
 }
