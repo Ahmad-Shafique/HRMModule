@@ -100,6 +100,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\equipmentScript.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -116,9 +117,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EquipmentsController.cs" />
     <Compile Include="Controllers\TransportationController.cs" />
     <Compile Include="Data\DummyData.cs" />
+    <Compile Include="Entity\Department.cs" />
     <Compile Include="Entity\Employee.cs" />
+    <Compile Include="Entity\Equipment.cs" />
     <Compile Include="Entity\TransportVehicle.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -133,6 +137,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Transportation\TransportArea.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Equipments\Index.cshtml" />
+    <Content Include="Views\Equipments\Equip.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,4 +1,5 @@
-﻿using Static_views.Entity;
+﻿using HRM.Entity;
+using Static_views.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,28 @@ namespace Static_views.Data
                 new Employee(){ EmployeeId= 1 , EmployeeName ="Shobuj" , AreaId = 1},
                 new Employee(){ EmployeeId= 2 , EmployeeName ="Shaykat" , AreaId = 1},
                 new Employee(){ EmployeeId= 3 , EmployeeName ="Nawaz" , AreaId = 2}
+            };
+
+        }
+
+        public static List<Department> Departments()
+        {
+            return new List<Department>()
+            {
+                new Department(){ DepartmentId=1 , DepartmentName="IT"},
+                new Department(){ DepartmentId=2 , DepartmentName="=HR"},
+                new Department(){ DepartmentId=3 , DepartmentName="Sales"}
+            };
+
+        }
+
+        public static List<Equipment> Equipments()
+        {
+            return new List<Equipment>()
+            {
+                new Equipment(){EquipmentId=1 , Name="PC"},
+                new Equipment(){EquipmentId=2 , Name="Table"},
+                new Equipment(){EquipmentId=3 , Name="Vaccum cleaner"}
             };
 
         }
