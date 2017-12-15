@@ -21,7 +21,7 @@ namespace HRM.Test
 
             // Test Delete
             //AdvertiserList temp = service.Get(8).Result;
-            bool x = service.RemoveByKey(7).Result;
+            //bool x = service.RemoveByKey(7).Result;
             
             
 

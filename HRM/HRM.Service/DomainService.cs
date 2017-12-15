@@ -38,10 +38,10 @@ namespace HRM.Service
             return await repository.Get(id);
         }
 
-        public async Task<bool> RemoveByKey<TKey>(TKey id)
-        {
-            return await repository.RemoveByKey(id);
-        }
+        //public async Task<bool> RemoveByKey<TKey>(TKey id)
+        //{
+        //    return await repository.RemoveByKey(id);
+        //}
 
         public async Task<bool> RemoveByEntity(TEntity entity)
         {

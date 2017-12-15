@@ -7,7 +7,8 @@
 7. Add attendance entry -------------------------------------------------- Drawn necessry diagram plan
 8. Add view for creation and usage of circular templates ----------------- Ignore for now
 9. Add mechanism for shortlisting CV's ----------------------------------- Ignore for now
-10. Add mechanism for creation and execution of interviews
+10. Add mechanism for creation and execution of interviews --------------- Drawn necessary diagram
+11. Add mechanism for salary payment
 
 11. Add extra annotations to MonthlyBudget, BudgetTransaction , 
 CompanyPolicy, TransportVehicle, TransportArea, 
