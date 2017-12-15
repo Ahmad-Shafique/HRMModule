@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Area";
+}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/bootstrap.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="~/Scripts/transportationScript.js"></script>
+    </head>
+    <body>
+        <!-- Modal -->
+        <div class="modal fade" id="employeeModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">Employee list</div>
+                    <div class="modal-body">
+                        @foreach (var employee in ViewBag.Employees)
+                        {
+                            <input type="checkbox" name="bonusEnabledEmployee" value="@employee.EmployeeId" />
+                            @employee.EmployeeName<br />
+                        }
+                    </div>
+                    <div class="modal-footer">
+                        @*on click of this button a jquery script fires from myscript.js*@
+                        <button id="buttonConfirmEmployee" class="btn btn-block" data-dismiss="modal">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*the div for employee list modal ends here*@
+
+        <!-- Modal -->
+        <div class="modal fade" id="transportModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">Transport list</div>
+                    <div class="modal-body">
+                        @foreach (var vehicle in ViewBag.vehicles)
+                        {
+                            <input type="checkbox" name="bonusEnabledTransport" value=@vehicle.TransportVehicleId />
+                            @vehicle.VehicleName <br />
+                        }
+                    </div>
+                    <div class="modal-footer">
+                        @*on click of this button a jquery script fires from myscript.js*@
+                        <button id="buttonConfirmTransport" class="btn btn-block" data-dismiss="modal">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*the div for transport list modal ends here*@
+
+        <h2>@ViewBag.AreaName</h2>
+        <h3>Area demand: @ViewBag.AreaDemand</h3>
+        <h3>Current Capacity: @ViewBag.CurrentCapacity</h3>
+
+        <button id="buttonConfirmEmployee" class="btn btn-primary" data-toggle="modal" data-target="#employeeModal">Add Employee</button>
+        <button id="buttonConfirmTransport" class="btn btn-primary" data-toggle="modal" data-target="#transportModal">Add Transports</button><br />
+
+       
+    </body>
+</html>
+
+
+
+
+@*@if(ViewBag.Employees != null)
+{
+    <h4>Employees in this area : </h4><br />
+    foreach (var emp in ViewBag.Employees)
+    {
+        <label>@emp.EmployeeName</label><br />
+    }
+}*@
+
+
+
