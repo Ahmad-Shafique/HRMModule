@@ -120,11 +120,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EquipmentsController.cs" />
+    <Compile Include="Controllers\HireController.cs" />
     <Compile Include="Controllers\TransportationController.cs" />
     <Compile Include="Data\DummyData.cs" />
     <Compile Include="Entity\Department.cs" />
     <Compile Include="Entity\Employee.cs" />
     <Compile Include="Entity\Equipment.cs" />
+    <Compile Include="Entity\HireRequest.cs" />
     <Compile Include="Entity\TransportVehicle.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -142,6 +144,8 @@
     <Content Include="Views\Equipments\Equip.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Employee\Display.cshtml" />
+    <Content Include="Views\Hire\Index.cshtml" />
+    <Content Include="Views\Hire\ConfirmHires.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
