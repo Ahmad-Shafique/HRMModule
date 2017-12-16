@@ -67,6 +67,8 @@
     <Compile Include="EmployeePerformanceMetricRepository.cs" />
     <Compile Include="EmployeeRepository.cs" />
     <Compile Include="EmployeeSalaryRepository.cs" />
+    <Compile Include="EquipmentAndDepartmentRepository.cs" />
+    <Compile Include="EquipmentRepository.cs" />
     <Compile Include="HireRequestRepository.cs" />
     <Compile Include="HireThreadRepository.cs" />
     <Compile Include="HRMDbContext.cs" />
@@ -117,6 +119,9 @@
     <Compile Include="TemporaryCVRepository.cs" />
     <Compile Include="TrainingEmployeeRepository.cs" />
     <Compile Include="TrainingRepository.cs" />
+    <Compile Include="TransportAreaRepository.cs" />
+    <Compile Include="TransportAreaVehicleRepository.cs" />
+    <Compile Include="TransportVehicleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

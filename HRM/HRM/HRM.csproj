@@ -139,7 +139,6 @@
     <Compile Include="Controllers\HireRequestsController.cs" />
     <Compile Include="Controllers\HireThreadsController.cs" />
     <Compile Include="Controllers\IntervieweesController.cs" />
-    <Compile Include="Controllers\InterviewsController.cs" />
     <Compile Include="Controllers\LeaveApplicationCategoriesController.cs" />
     <Compile Include="Controllers\LeaveApplicationsController.cs" />
     <Compile Include="Controllers\NoticeEmployeesController.cs" />
@@ -264,11 +263,6 @@
     <Content Include="Views\HireThreads\Details.cshtml" />
     <Content Include="Views\HireThreads\Edit.cshtml" />
     <Content Include="Views\HireThreads\Index.cshtml" />
-    <Content Include="Views\Interviews\Create.cshtml" />
-    <Content Include="Views\Interviews\Delete.cshtml" />
-    <Content Include="Views\Interviews\Details.cshtml" />
-    <Content Include="Views\Interviews\Edit.cshtml" />
-    <Content Include="Views\Interviews\Index.cshtml" />
     <Content Include="Views\Interviewees\Create.cshtml" />
     <Content Include="Views\Interviewees\Delete.cshtml" />
     <Content Include="Views\Interviewees\Details.cshtml" />
@@ -329,11 +323,6 @@
     <Content Include="Views\SupportingDocuments\Details.cshtml" />
     <Content Include="Views\SupportingDocuments\Edit.cshtml" />
     <Content Include="Views\SupportingDocuments\Index.cshtml" />
-    <Content Include="Views\TemporaryCVs\Create.cshtml" />
-    <Content Include="Views\TemporaryCVs\Delete.cshtml" />
-    <Content Include="Views\TemporaryCVs\Details.cshtml" />
-    <Content Include="Views\TemporaryCVs\Edit.cshtml" />
-    <Content Include="Views\TemporaryCVs\Index.cshtml" />
     <Content Include="Views\Trainings\Create.cshtml" />
     <Content Include="Views\Trainings\Delete.cshtml" />
     <Content Include="Views\Trainings\Details.cshtml" />
