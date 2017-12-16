@@ -3,36 +3,34 @@
     ViewBag.Title = "Index";
 }
 
-<html>
-<head>
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
-    <script src="~/Scripts/jquery-1.10.2.intellisense.js"></script>
-    <script src="~/Scripts/jquery.validate.js"></script>
-    <script src="~/Scripts/bootstrap.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-</head>
-<body>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Employee</th>
-                <th>Salary</th>
-                <th>Action</th>
+<div class="container" style="text-align: center">
+    <h2>Salary Details</h2> <hr />
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <table class="table table-striped" style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center">Employee</th>
+                                <th style="text-align: center">Salary</th>
+                                <th style="text-align: center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (EmployeeSalary es in ViewBag.Salaries)
+                            {
+                                <tr>
+                                    <td>@es.EmployeeName</td>
+                                    <td>Taka: @es.TotalSalary </td>
+                                    <td><button class="btn btn-primary">Pay</button></td>
 
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (EmployeeSalary es in ViewBag.Salaries)
-            {
-                <tr>
-                    <td>@es.EmployeeName</td>
-                    <td>Taka: @es.TotalSalary </td>
-                    <td><button class="btn btn-primary">Pay</button></td>
-
-                </tr>
-            }
-        </tbody>
-    </table>
-</body>
-</html>
-
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
