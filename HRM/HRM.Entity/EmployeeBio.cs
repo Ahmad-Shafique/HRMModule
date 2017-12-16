@@ -19,7 +19,7 @@ namespace HRM.Entity
         public DateTime DateofBirth { get; set; }
         [Required]
         public DateTime HireDate { get; set; }
-        public string Into { get; set; }
+        public string Intro { get; set; }
         public string Objectives { get; set; }
         public string Hobbies { get; set; }
         public string Interests { get; set; }

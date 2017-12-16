@@ -10,5 +10,9 @@ namespace HRM.Data.Interfaces
     {
         dynamic GetTrainingAndRelatedEmployees(int trainingId);
         dynamic GetEmployeeAndRelatedTraining(int employeeId);
+        dynamic GetAllEmployeeDetails();
+        Task<bool> AddEmployeesToTrainingProgram(int trainingId, string employeeIdsString);
+        Task<bool> AddTrainingsToEmployee(int employeeId, string trainingIdsString);
+        Task<bool> ApproveHireRequests(string hireRequestIdsString);
     }
 }
