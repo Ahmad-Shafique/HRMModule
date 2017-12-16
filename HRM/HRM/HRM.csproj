@@ -151,7 +151,6 @@
     <Compile Include="Controllers\SalgradeHistoriesController.cs" />
     <Compile Include="Controllers\SalgradesController.cs" />
     <Compile Include="Controllers\SupportingDocumentsController.cs" />
-    <Compile Include="Controllers\TemporaryCVsController.cs" />
     <Compile Include="Controllers\TrainingEmployeesController.cs" />
     <Compile Include="Controllers\TrainingsController.cs" />
     <Compile Include="Global.asax.cs">
