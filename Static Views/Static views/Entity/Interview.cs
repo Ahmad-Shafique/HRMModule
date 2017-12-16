@@ -11,7 +11,9 @@ namespace HRM.Entity
     {
         [Key]
         public int InterviewId {get;set;}
-        public string Schedule { get; set; }
+        public DateTime Schedule { get; set; }
         public int HireThreadId { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
     }
 }

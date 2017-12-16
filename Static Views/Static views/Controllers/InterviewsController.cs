@@ -15,9 +15,7 @@ namespace Static_views.Controllers
             ViewBag.Interviewees = Data.DummyData.Interviewees();
             return View();
         }
-
-
-
+        
 
         //// GET: Interviews/Create
         //public ActionResult Create()
