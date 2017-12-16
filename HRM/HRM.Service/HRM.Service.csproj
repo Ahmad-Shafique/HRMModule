@@ -61,6 +61,7 @@
     <Compile Include="EmployeeSalaryService.cs" />
     <Compile Include="EmployeeService.cs" />
     <Compile Include="EmployeeHistoryService.cs" />
+    <Compile Include="EquipmentService.cs" />
     <Compile Include="HireRequestService.cs" />
     <Compile Include="HireThreadService.cs" />
     <Compile Include="Interfaces\IAdvertiserListService.cs" />

@@ -46,6 +46,8 @@ namespace HRM.Service
             Repositories.Add(typeof(SupportingDocument), typeof(SupportingDocumentService));
             Repositories.Add(typeof(TemporaryCV), typeof(TemporaryCVService));
             Repositories.Add(typeof(Training), typeof(TrainingService));
+            Repositories.Add(typeof(Equipment), typeof(EquipmentService));
+
         }
 
         public IDomainService<TEntity> Create<TEntity>() where TEntity : class

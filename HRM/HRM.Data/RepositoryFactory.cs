@@ -46,7 +46,8 @@ namespace HRM.Data
             Repositories.Add(typeof(SupportingDocument), typeof(SupportingDocumentRepository));
             Repositories.Add(typeof(TemporaryCV), typeof(TemporaryCVRepository));
             Repositories.Add(typeof(Training), typeof(TrainingRepository));
-            
+            Repositories.Add(typeof(Equipment), typeof(Equipment));
+
         }
 
         public IRepository<TEntity> Create<TEntity>() where TEntity : class
