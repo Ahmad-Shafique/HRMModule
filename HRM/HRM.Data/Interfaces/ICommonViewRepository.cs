@@ -20,5 +20,8 @@ namespace HRM.Data.Interfaces
         Task<bool> AddBonusToEmployeeList(int departmentId, Bonuses bonus, string employeeIdsList);
         Task<bool> AssignTransportsToAnArea(int transportAreaId, string transportIdsList);
         IEnumerable<TransportVehicle> GetAvailableTransport();
+        Task<bool> AssignEquipmentsToADepartment(int departmentId, string equipmentIdsList);
+        Task<bool> AssignCandidatesToInterview(int interviewId, string candidateIdsList);
+        IEnumerable<TemporaryCV> GetAllUnassignedTemporaryCVs();
     }
 }

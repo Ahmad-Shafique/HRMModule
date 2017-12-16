@@ -13,5 +13,6 @@ namespace HRM.Entity
         public int InterviewId {get;set;}
         public string Schedule { get; set; }
         public int HireThreadId { get; set; }
+        public int NumberOfCandidatesAssigned { get; set; }
     }
 }

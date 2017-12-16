@@ -11,11 +11,9 @@ namespace HRM.Entity
     {
         [Key]
         public int EquipmentId { get; set; }
-        public string Type { get; set; }
-        public string Name { get; set; } 
-        public string Model { get; set; }
-        public int TotalNumberPresent { get; set; }
-        public int AvailableNumber { get; set; }
+        public int EquipmentTypeId { get; set; }
+        public string Status { get; set; }
+        public int BuyPrice { get; set; }
         
     }
 }

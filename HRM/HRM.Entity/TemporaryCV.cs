@@ -16,5 +16,6 @@ namespace HRM.Entity
         public int IntervieweeScore { get; set; }
         [Required]
         public int HireThreadId { get; set; }
+        public string Status { get; set; }
     }
 }
