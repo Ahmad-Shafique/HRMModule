@@ -24,8 +24,11 @@ display interviewee name)
 16. Add leave application create view
 17. Join table and display employee evaluation
 18. Join table and display salary and pay employee option
+19. Attendance display
+20. 
 
 
 Extra TODO for future iteration/s of the project:
 1. Improve interview schdule maintenance system (add start tiem, end time, date etc.)
 2. Add time period for leave approval display
+3. Attendance providing should have a option for late attendance and the amount by which attendance was missed
