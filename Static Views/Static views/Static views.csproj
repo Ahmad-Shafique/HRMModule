@@ -123,11 +123,13 @@
     <Compile Include="Controllers\InterviewsController.cs" />
     <Compile Include="Controllers\LeaveApplcationController.cs" />
     <Compile Include="Controllers\LeaveRecordController.cs" />
+    <Compile Include="Controllers\SalaryPaymentController.cs" />
     <Compile Include="Controllers\TransportationController.cs" />
     <Compile Include="Data\DummyData.cs" />
     <Compile Include="Entity\Department.cs" />
     <Compile Include="Entity\Employee.cs" />
     <Compile Include="Entity\EmployeePerformance.cs" />
+    <Compile Include="Entity\EmployeeSalary.cs" />
     <Compile Include="Entity\Equipment.cs" />
     <Compile Include="Entity\Interview.cs" />
     <Compile Include="Entity\Interviewee.cs" />
@@ -154,6 +156,7 @@
     <Content Include="Views\LeaveApplcation\Index.cshtml" />
     <Content Include="Views\EmployeeEvaluation\Index.cshtml" />
     <Content Include="Views\EmployeeEvaluation\EmployeeDisplay.cshtml" />
+    <Content Include="Views\SalaryPayment\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

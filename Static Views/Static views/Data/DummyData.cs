@@ -104,5 +104,15 @@ namespace Static_views.Data
 
             };
         }
+
+        public static List<EmployeeSalary> Salaries()
+        {
+            return new List<EmployeeSalary>()
+            {
+                new EmployeeSalary(){ EmployeeName="Shekhor", TotalSalary = 5000},
+                new EmployeeSalary(){ EmployeeName="Shaykat", TotalSalary = 3000}
+            };
+
+        }
     }
 }

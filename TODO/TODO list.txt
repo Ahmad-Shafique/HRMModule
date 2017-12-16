@@ -23,6 +23,7 @@ display interviewee name)
 15. Table joining to display leave application
 16. Add leave application create view
 17. Join table and display employee evaluation
+18. Join table and display salary and pay employee option
 
 
 Extra TODO for future iteration/s of the project:

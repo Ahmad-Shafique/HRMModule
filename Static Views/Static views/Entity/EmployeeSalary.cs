@@ -11,6 +11,7 @@ namespace HRM.Entity
     {
         [Key]
         public int EmployeeSalaryId { get; set; }
+        public string EmployeeName { get; set; }
         [Required]
         public int EmployeeId { get; set; }
         [Required, Range(10000, 300000)]

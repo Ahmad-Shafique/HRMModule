@@ -1,0 +1,38 @@
+﻿@using HRM.Entity;
+@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.intellisense.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <th>Salary</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (EmployeeSalary es in ViewBag.Salaries)
+            {
+                <tr>
+                    <td>@es.EmployeeName</td>
+                    <td>Taka: @es.TotalSalary </td>
+                    <td><button>Pay</button></td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+
