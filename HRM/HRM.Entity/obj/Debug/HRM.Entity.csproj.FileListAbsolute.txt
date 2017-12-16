@@ -1,0 +1,10 @@
+C:\Users\RafatBOOYAH\HRMModule\HRM\HRM.Entity\bin\Debug\HRM.Entity.dll.config
+C:\Users\RafatBOOYAH\HRMModule\HRM\HRM.Entity\bin\Debug\HRM.Entity.dll
+C:\Users\RafatBOOYAH\HRMModule\HRM\HRM.Entity\bin\Debug\HRM.Entity.pdb
+C:\Users\RafatBOOYAH\HRMModule\HRM\HRM.Entity\bin\Debug\EntityFramework.dll
+C:\Users\RafatBOOYAH\HRMModule\HRM\HRM.Entity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\RafatBOOYAH\HRMModule\HRM\HRM.Entity\bin\Debug\EntityFramework.xml
+C:\Users\RafatBOOYAH\HRMModule\HRM\HRM.Entity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\RafatBOOYAH\HRMModule\HRM\HRM.Entity\obj\Debug\HRM.Entity.csprojResolveAssemblyReference.cache
+C:\Users\RafatBOOYAH\HRMModule\HRM\HRM.Entity\obj\Debug\HRM.Entity.dll
+C:\Users\RafatBOOYAH\HRMModule\HRM\HRM.Entity\obj\Debug\HRM.Entity.pdb
