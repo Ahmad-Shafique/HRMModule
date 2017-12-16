@@ -1,0 +1,13 @@
+﻿@model IEnumerable<int>
+@{
+    ViewBag.Title = "ConfirmedHires";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ConfirmedHires</h2>
+
+@foreach(int x in Model)
+{
+    @x 
+    <br />
+}

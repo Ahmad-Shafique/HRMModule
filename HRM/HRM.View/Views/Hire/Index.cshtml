@@ -1,0 +1,48 @@
+﻿@using HRM.Entity;
+@model IEnumerable<HireRequest>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts {
+<script src="~/Scripts/HireScripts/indexScripts.js"></script>
+}
+
+<div style="text-align: center" class="container">
+    <h2>Hire Requests</h2> <hr />
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-info">
+                <form action="/hire/confirmhires" method="post">
+                    <div class="panel-body">
+                        <table style="width: 100%; text-align:center" class="table table-striped">
+                            <tr>
+                                <th>Urgency</th>
+                                <th>Department</th>
+                                <th>Rank</th>
+                                <th>Designation</th>
+                                <th>Required Employee</th>
+                                <th>Approve</th>
+                            </tr>
+                            @foreach (var hire in Model)
+                            {
+                                <tr>
+                                    <td>@hire.Urgency</td>
+                                    <td>@hire.DepartmentId</td>
+                                    <td>some rank</td>
+                                    <td>@hire.DesignationName</td>
+                                    <td>@hire.EmplyeeRequired</td>
+                                    <td><input type="checkbox" name="approved" value="@hire.HireRequestId" /></td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <button id="buttonConfirm" class="btn btn-primary">Confirm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

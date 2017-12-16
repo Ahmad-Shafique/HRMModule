@@ -145,6 +145,7 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmployeeEvaluationController.cs" />
     <Compile Include="Controllers\EquipmentsController.cs" />
+    <Compile Include="Controllers\HireController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -197,6 +198,8 @@
     <Content Include="Views\EmployeeEvaluation\Index.cshtml" />
     <Content Include="Views\Equipments\Equip.cshtml" />
     <Content Include="Views\Equipments\Index.cshtml" />
+    <Content Include="Views\Hire\ConfirmHires.cshtml" />
+    <Content Include="Views\Hire\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
