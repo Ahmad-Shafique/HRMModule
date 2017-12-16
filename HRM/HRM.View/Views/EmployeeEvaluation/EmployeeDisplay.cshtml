@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "EmployeeDisplay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="text-align: center" class="container">
+    <h2>Employee Statistics</h2> <hr />
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <table class="table table-striped" style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th style="padding-left: 5%">Employee</th>
+                                <th style="padding-left: 5%">Project</th>
+                                <th style="padding-left: 5%">Training</th>
+                                <th style="padding-left: 5%">Attendance</th>
+                                <th style="padding-left: 5%">Aggregate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if(ViewBag.Employees != null)
+                            {
+                                @foreach (var ep in ViewBag.Employees)
+                                {
+                                    <tr>
+                                        <td>@ep.EmployeeName</td>
+                                        <td>@ep.ProjectScore %</td>
+                                        <td>@ep.TrainingScore %</td>
+                                        <td>@ep.AttendanceScore %</td>
+                                        <td>@ep.AggregateScore %</td>
+                                    </tr>
+                                }
+                            }
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <a href="/EmployeeEvaluation/Index" class="btn">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    

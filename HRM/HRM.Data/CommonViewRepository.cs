@@ -233,7 +233,8 @@ namespace HRM.Data
 
                        ProjectScore = empPerf.AverageProjectScore,
                        TrainingScore = empPerf.AverageTrainingScore,
-                       AttendanceScore = 100
+                       AttendanceScore = 100,
+                       AggregateScore = (empPerf.AverageProjectScore + empPerf.AverageTrainingScore + 100) /3
                    };
         }
 
