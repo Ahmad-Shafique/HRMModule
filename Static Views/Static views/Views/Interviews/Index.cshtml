@@ -2,19 +2,12 @@
 @{
     ViewBag.Title = "Index";
 }
+@section scripts 
+{
+<script src="~/Scripts/Interviews/interviewScript.js"></script>
+}
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
-    <script src="~/Scripts/jquery.validate.js"></script>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.js"></script>
-    <script src="~/Scripts/Interviews/interviewScript.js"></script>
-
-</head>
-<body>
+<div style="text-align: center">
     <table>
         <thead>
             <tr>
@@ -25,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach(Interview interview in ViewBag.Interviews)
+            @foreach (Interview interview in ViewBag.Interviews)
             {
                 <tr>
                     <td>@interview.InterviewId</td>
@@ -67,7 +60,7 @@
                 <div class="modal-header">Interview Schedule</div>
                 <div class="modal-body">
 
-                    <input type="text" name="schedule" placeholder="Interview Schedule" id="scheduleText"/>
+                    <input type="text" name="schedule" placeholder="Interview Schedule" id="scheduleText" />
                 </div>
                 <div class="modal-footer">
                     <button id="CreateInterview" class="btn btn-block" data-dismiss="modal">Create</button>
@@ -75,12 +68,4 @@
             </div>
         </div>
     </div>
-
-
-
-
-    
-
-</body>
-</html>
-
+</div>
