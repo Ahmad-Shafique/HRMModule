@@ -56,6 +56,7 @@
     <Compile Include="CompanyPolicy.cs" />
     <Compile Include="DepartmentDesignation.cs" />
     <Compile Include="EmployeeAttendance.cs" />
+    <Compile Include="EmployeeBio.cs" />
     <Compile Include="EmployeeDesignation.cs" />
     <Compile Include="EmployeeIdentificationCard.cs" />
     <Compile Include="EmployeePrivilege.cs" />
@@ -70,7 +71,6 @@
     <Compile Include="DepartmentHistory.cs" />
     <Compile Include="Designation.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="EmployeeBio.cs" />
     <Compile Include="EmployeeDepartment.cs" />
     <Compile Include="EmployeeHistory.cs" />
     <Compile Include="EmployeePerformanceMetric.cs" />
