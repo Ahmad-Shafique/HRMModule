@@ -37,7 +37,9 @@ namespace Static_views.Data
             {
                 new Employee(){ EmployeeId= 1 , EmployeeName ="Shobuj" , AreaId = 1, DateofBirth = new DateTime(1993, 5, 10), Designation = "programmer" },
                 new Employee(){ EmployeeId= 2 , EmployeeName ="Shaykat" , AreaId = 1, DateofBirth = new DateTime(1990, 5, 10), Designation = "designer"},
-                new Employee(){ EmployeeId= 3 , EmployeeName ="Nawaz" , AreaId = 2, DateofBirth = new DateTime(2005, 5, 10), Designation = "tester"}
+                new Employee(){ EmployeeId= 3 , EmployeeName ="Nawaz" , AreaId = 2, DateofBirth = new DateTime(2005, 5, 10), Designation = "tester"},
+                new Employee(){ EmployeeId= 3 , EmployeeName ="Ahmed" , AreaId = 3, DateofBirth = new DateTime(2005, 5, 10), Designation = "tester"},
+                new Employee(){ EmployeeId= 3 , EmployeeName ="Imran" , AreaId = 1, DateofBirth = new DateTime(2005, 5, 10), Designation = "tester"}
             };
 
         }
@@ -60,6 +62,18 @@ namespace Static_views.Data
                 new Equipment(){EquipmentId=1 , Name="PC"},
                 new Equipment(){EquipmentId=2 , Name="Table"},
                 new Equipment(){EquipmentId=3 , Name="Vaccum cleaner"}
+            };
+            
+        }
+
+        public static List<HireRequest> HireRequests()
+        {
+            return new List<HireRequest>()
+            {
+                new HireRequest(){HireRequestId=1 , DepartmentId=1, DesignationName="Developer", EmplyeeRequired=5, HireRequestStatus=0, Urgency="Urgent"},
+                new HireRequest(){HireRequestId=2 , DepartmentId=2, DesignationName="HR admin", EmplyeeRequired=10, HireRequestStatus=0, Urgency="Future"},
+                new HireRequest(){HireRequestId=3 , DepartmentId=3, DesignationName="Sales manager", EmplyeeRequired=15, HireRequestStatus=0, Urgency="Urgent"},
+                new HireRequest(){HireRequestId=4 , DepartmentId=2, DesignationName="HR something", EmplyeeRequired=22, HireRequestStatus=0, Urgency="Past"}
             };
 
         }

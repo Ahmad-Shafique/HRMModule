@@ -127,6 +127,7 @@
     <Compile Include="Controllers\LeaveApplcationController.cs" />
     <Compile Include="Controllers\LeaveRecordController.cs" />
     <Compile Include="Controllers\SalaryPaymentController.cs" />
+    <Compile Include="Controllers\HireController.cs" />
     <Compile Include="Controllers\TransportationController.cs" />
     <Compile Include="Data\DummyData.cs" />
     <Compile Include="Entity\Department.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Entity\Interviewee.cs" />
     <Compile Include="Entity\LeaveApplication.cs" />
     <Compile Include="Entity\TemporaryCV.cs" />
+    <Compile Include="Entity\HireRequest.cs" />
     <Compile Include="Entity\TransportVehicle.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -163,6 +165,8 @@
     <Content Include="Views\SalaryPayment\Index.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Employee\Display.cshtml" />
+    <Content Include="Views\Hire\Index.cshtml" />
+    <Content Include="Views\Hire\ConfirmHires.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

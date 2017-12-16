@@ -24,7 +24,19 @@ namespace Static_views.Controllers
             return View(empList);
         }
 
-        [HttpGet]
-        public 
+        [HttpPost]
+        public ActionResult Display(FormCollection form)
+        {
+            string searchTerm = form["searchTerm"];
+            if(searchTerm == "")
+            {
+                return RedirectToAction("/display");
+            }
+
+            //search and return employees with the 'serachTerm' name
+            List<Employee> empList = DummyData.Employees().Where(x => x.EmployeeName.Contains(searchTerm)).ToList();
+            return View(empList);
+        }
+        
     }
 }
