@@ -37,7 +37,9 @@ namespace Static_views.Data
             {
                 new Employee(){ EmployeeId= 1 , EmployeeName ="Shobuj" , AreaId = 1, DateofBirth = new DateTime(1993, 5, 10), Designation = "programmer" },
                 new Employee(){ EmployeeId= 2 , EmployeeName ="Shaykat" , AreaId = 1, DateofBirth = new DateTime(1990, 5, 10), Designation = "designer"},
-                new Employee(){ EmployeeId= 3 , EmployeeName ="Nawaz" , AreaId = 2, DateofBirth = new DateTime(2005, 5, 10), Designation = "tester"}
+                new Employee(){ EmployeeId= 3 , EmployeeName ="Nawaz" , AreaId = 2, DateofBirth = new DateTime(2005, 5, 10), Designation = "tester"},
+                new Employee(){ EmployeeId= 3 , EmployeeName ="Ahmed" , AreaId = 3, DateofBirth = new DateTime(2005, 5, 10), Designation = "tester"},
+                new Employee(){ EmployeeId= 3 , EmployeeName ="Imran" , AreaId = 1, DateofBirth = new DateTime(2005, 5, 10), Designation = "tester"}
             };
 
         }
@@ -63,6 +65,6 @@ namespace Static_views.Data
             };
 
         }
-
+        
     }
 }
