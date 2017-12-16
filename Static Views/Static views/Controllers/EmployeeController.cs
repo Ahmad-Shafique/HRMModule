@@ -23,8 +23,6 @@ namespace Static_views.Controllers
             List<Employee> empList = DummyData.Employees();
             return View(empList);
         }
-
-        [HttpGet]
-        public 
+        
     }
 }
