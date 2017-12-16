@@ -82,8 +82,9 @@ namespace Static_views.Data
         {
             return new List<Interview>()
             {
-                new Interview(){ InterviewId=1 , Schedule="16/1/2018 2-5 pm" },
-                new Interview(){ InterviewId=2 , Schedule="16/1/2018 5-8 pm" }
+                new Interview(){ InterviewId=1, Schedule=new DateTime(2017, 12, 29), StartTime=new DateTime(2017, 12, 29, 10, 30, 0), EndTime=new DateTime(2017, 12, 29, 12, 30, 0) },
+                new Interview(){ InterviewId=1, Schedule=new DateTime(2018, 10, 25), StartTime=new DateTime(2018, 10, 25, 4, 30, 0), EndTime=new DateTime(2018, 10, 25, 5, 30, 0) },
+                new Interview(){ InterviewId=1, Schedule=new DateTime(2017, 6, 15), StartTime=new DateTime(2017, 6, 15, 10, 30, 0), EndTime=new DateTime(2017, 6, 15, 11, 30, 0) },
             };
         }
 

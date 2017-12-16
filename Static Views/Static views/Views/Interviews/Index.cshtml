@@ -16,6 +16,8 @@
             <tr>
                 <td>Interview</td>
                 <td>Schedule</td>
+                <td>Start time</td>
+                <td>End time</td>
                 <td>Candidates</td>
                 <td>Action</td>
             </tr>
@@ -25,7 +27,9 @@
             {
                 <tr>
                     <td>@interview.InterviewId</td>
-                    <td>@interview.Schedule</td>
+                    <td>@interview.Schedule.Day/@interview.Schedule.Month/@interview.Schedule.Year</td>
+                    <td>@interview.StartTime.TimeOfDay</td>
+                    <td>@interview.EndTime.TimeOfDay</td>
                     <td>5</td>
                     <td>
                         <button id="buttonCandidateAddition" class="btn btn-primary" data-toggle="modal" data-target="#candidateModal">Add Cadidate</button>
