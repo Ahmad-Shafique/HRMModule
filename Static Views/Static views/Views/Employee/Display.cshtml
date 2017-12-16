@@ -15,12 +15,14 @@
             <div class="panel panel-info">
                 <div class="panel-heading" style="background-color:black">
                     <div class="row">
-                        <div class="form-group col-md-3 col-md-offset-8" style="padding-right: 0">
-                            <input id="searchTerm" class="form-control" type="text" name="searchTerm" placeholder="Search by name"  />
-                        </div>
-                        <div class="col-md-1">
-                            <span id="searchButton" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></span>
-                        </div>
+                        <form action="./display" id="searchForm" method="post">
+                            <div class="form-group col-md-3 col-md-offset-8" style="padding-right: 0">
+                                <input id="searchTerm" class="form-control" type="text" name="searchTerm" placeholder="Search by name" />
+                            </div>
+                            <div class="col-md-1">
+                                <button id="searchButton" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="panel-body">

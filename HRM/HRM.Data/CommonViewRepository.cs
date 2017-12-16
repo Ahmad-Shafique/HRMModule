@@ -262,6 +262,10 @@ namespace HRM.Data
                     bonusesItem.BonusDescription = bonus.BonusDescription;
                     bonusesItem.BonusesDate = bonus.BonusesDate;
                     await bonusesRepo.Insert(bonusesItem);
+
+                    Bonus tempBonus = bonusRepo.Get(item.BonusId).Result;
+                    tempBonus.BonusValue += bonus.BonusValue;
+                    await bonusRepo.Update(tempBonus, item.BonusId);
                 }
                 return true;
             }
@@ -304,6 +308,10 @@ namespace HRM.Data
                         BonusesDate = bonus.BonusesDate
                     };
                     await bonusesRepo.Insert(bonusesItem);
+
+                    Bonus tempBonus = bonusRepo.Get(item.BonusId).Result;
+                    tempBonus.BonusValue += bonus.BonusValue;
+                    await bonusRepo.Update(tempBonus, item.BonusId);
                 }
                 return true;
             }
@@ -358,8 +366,134 @@ namespace HRM.Data
 
         IEnumerable<TransportVehicle> GetAvailableTransport()
         {
-            return new TransportVehicleRepository().GetAll().Result.Where(item => (item.status == "free" || item.status == "available" || item.status == null));
+            return new TransportVehicleRepository().GetAll().Result.Where(item => (item.status == "free" || item.status == "available" || item.status == null || item.status.Trim() == ""));
         }
+
+
+        async Task<bool> AssignEquipmentsToADepartment(int departmentId, string equipmentIdsList)
+        {
+            EquipmentRepository eRepo = new EquipmentRepository();
+            EquipmentAndDepartmentRepository eDRepo = new EquipmentAndDepartmentRepository();
+            try
+            {
+                
+                var idList = equipmentIdsList.Trim().Split(',');
+                foreach (var tempId in idList)
+                {
+                    if (tempId != null && tempId.Trim() != "")
+                    {
+                        int id = Int32.Parse(tempId);
+
+                        await eDRepo.Insert(new EquipmentAndDepartment
+                        {
+                            DepartmentId = departmentId,
+                            EquipmentId = id
+                        });
+
+                        Equipment temp = eRepo.Get(id).Result;
+                        temp.Status = "assigned";
+                        await eRepo.Update(temp, id);
+                    }
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
+
+
+        async Task<bool> AssignCandidatesToInterview(int interviewId, string candidateIdsList)
+        {
+
+            try
+            {
+                InterviewRepository iRepo = new InterviewRepository();
+                IntervieweeRepository iCRepo = new IntervieweeRepository();
+                TemporaryCVRepository tCVRepo = new TemporaryCVRepository();
+                var idList = candidateIdsList.Trim().Split(',');
+                int newCapacity = 0;
+                foreach (var tempId in idList)
+                {
+                    if (tempId != null && tempId.Trim() != "")
+                    {
+                        int id = Int32.Parse(tempId);
+
+                        await iCRepo.Insert(new Interviewee
+                        {
+                            InterviewId = interviewId,
+                            IntervieweeId = id
+                        });
+
+                        TemporaryCV temp = tCVRepo.Get(id).Result;
+                        temp.Status = "assigned";
+                        await tCVRepo.Update(temp, id);
+                        newCapacity += 1;
+                    }
+                }
+
+                Interview tempInter = iRepo.Get(interviewId).Result;
+                tempInter.NumberOfCandidatesAssigned += newCapacity;
+                await iRepo.Update(tempInter, tempInter.InterviewId);
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
+
+
+        IEnumerable<TemporaryCV> GetAllUnassignedTemporaryCVs()
+        {
+            return new TemporaryCVRepository().GetAll().Result.Where(item => (item.Status == "free" || item.Status == "available" || item.Status == null || item.Status.Trim()==""));
+        }
+
+
+        dynamic CalculateAllEmployeeTotalSalary()
+        {
+            IEnumerable<SalaryComponents> salCList = new SalaryComponentsRepository().GetAll().Result;
+            IEnumerable<EmployeeSalary> empSalList = new EmployeeSalaryRepository().GetAll().Result;
+            List<EmployeeSalary> newEmpSalList = new List<EmployeeSalary>();
+            foreach (EmployeeSalary empSalItem in empSalList)
+            {
+                foreach (SalaryComponents sC in salCList)
+                {
+                    if (sC.Type.Trim() == "credit")
+                    {
+                        empSalItem.TotalSalary -= (empSalItem.BasicSalary * sC.ComponentValue);
+                    }
+                    else if (sC.Type.Trim() == "debit")
+                    {
+                        empSalItem.TotalSalary += (empSalItem.BasicSalary * sC.ComponentValue);
+                    }
+
+
+                }
+
+                newEmpSalList.Add(empSalItem);
+            }
+
+            var resultList = from emp in new EmployeeRepository().GetAll().Result
+                             join empSal in newEmpSalList on emp.EmployeeId equals empSal.EmployeeId
+                             join salBonus in new BonusRepository().GetAll().Result on empSal.BonusId equals salBonus.BonusId
+                             select new
+                             {
+                                 EmployeeId = emp.EmployeeId,
+                                 EmployeeName = emp.EmployeeName,
+                                 TotalSalary = empSal.TotalSalary+salBonus.BonusValue,
+                                 BonusSalary = salBonus.BonusValue
+                                 
+                             };
+
+            return resultList;
+
+        }
+
+
 
 
 

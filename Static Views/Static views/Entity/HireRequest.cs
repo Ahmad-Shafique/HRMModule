@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRM.Entity
+namespace Static_views.Entity
 {
     public class HireRequest
     {
