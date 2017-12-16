@@ -1,0 +1,38 @@
+﻿@using Static_views.Entity;
+@{
+    ViewBag.Title = "EmployeeDisplay";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <th>Project</th>
+                <th>Training</th>
+                <th>Attendance</th>
+                <th>Aggregate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(EmployeePerformance ep in ViewBag.Employees)
+            {
+                <tr>
+                    <td>@ep.EmployeeName</td>
+                    <td>@ep.ProjectScore %</td>
+                    <td>@ep.TrainingScore %</td>
+                    <td>@ep.AttendanceScore %</td>
+                    <td>@ep.AggregateScore %</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+

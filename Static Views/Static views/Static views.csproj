@@ -118,15 +118,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployeeEvaluationController.cs" />
     <Compile Include="Controllers\EquipmentsController.cs" />
     <Compile Include="Controllers\InterviewsController.cs" />
+    <Compile Include="Controllers\LeaveApplcationController.cs" />
+    <Compile Include="Controllers\LeaveRecordController.cs" />
     <Compile Include="Controllers\TransportationController.cs" />
     <Compile Include="Data\DummyData.cs" />
     <Compile Include="Entity\Department.cs" />
     <Compile Include="Entity\Employee.cs" />
+    <Compile Include="Entity\EmployeePerformance.cs" />
     <Compile Include="Entity\Equipment.cs" />
     <Compile Include="Entity\Interview.cs" />
     <Compile Include="Entity\Interviewee.cs" />
+    <Compile Include="Entity\LeaveApplication.cs" />
     <Compile Include="Entity\TemporaryCV.cs" />
     <Compile Include="Entity\TransportVehicle.cs" />
     <Compile Include="Global.asax.cs">
@@ -145,6 +150,10 @@
     <Content Include="Views\Equipments\Index.cshtml" />
     <Content Include="Views\Equipments\Equip.cshtml" />
     <Content Include="Views\Interviews\Index.cshtml" />
+    <Content Include="Views\LeaveRecord\Index.cshtml" />
+    <Content Include="Views\LeaveApplcation\Index.cshtml" />
+    <Content Include="Views\EmployeeEvaluation\Index.cshtml" />
+    <Content Include="Views\EmployeeEvaluation\EmployeeDisplay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

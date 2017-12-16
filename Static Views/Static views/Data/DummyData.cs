@@ -82,5 +82,27 @@ namespace Static_views.Data
                 new Interviewee(){ IntervieweeId=3, InterviewId=2 , TemporaryCVId=3 }
             };
         }
+
+        public static List<LeaveApplication> LeaveRecords()
+        {
+            return new List<LeaveApplication>()
+            {
+                new LeaveApplication() { LeaveApplicationId=1 , EmployeeId=1 , ApplicationsStatus=1},
+                new LeaveApplication() { LeaveApplicationId=2 , EmployeeId=1 , ApplicationsStatus=1},
+                new LeaveApplication() { LeaveApplicationId=3 , EmployeeId=1 , ApplicationsStatus=0},
+                new LeaveApplication() { LeaveApplicationId=4 , EmployeeId=2 , ApplicationsStatus=0},
+                new LeaveApplication() { LeaveApplicationId=5 , EmployeeId=2 , ApplicationsStatus=1},
+            };
+        }
+
+        public static List<EmployeePerformance> EmployeePerformances()
+        {
+            return new List<EmployeePerformance>()
+            {
+                new EmployeePerformance(){ EmployeeName="Shaykat", ProjectScore=50, TrainingScore=60 , AttendanceScore=40, AggregateScore = 50 },
+                new EmployeePerformance(){ EmployeeName="Shekhor", ProjectScore=60, TrainingScore=50 , AttendanceScore=70, AggregateScore = 60 }
+
+            };
+        }
     }
 }
