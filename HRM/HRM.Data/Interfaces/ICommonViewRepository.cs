@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HRM.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,10 @@ namespace HRM.Data.Interfaces
         Task<bool> AddEmployeesToTrainingProgram(int trainingId, string employeeIdsString);
         Task<bool> AddTrainingsToEmployee(int employeeId, string trainingIdsString);
         Task<bool> ApproveHireRequests(string hireRequestIdsString);
+        dynamic GetAllEmployeePerformance();
+        Task<bool> AddDepartmentWideBonus(int departmentId, Bonuses bonus);
+        Task<bool> AddBonusToEmployeeList(int departmentId, Bonuses bonus, string employeeIdsList);
+        Task<bool> AssignTransportsToAnArea(int transportAreaId, string transportIdsList);
+        IEnumerable<TransportVehicle> GetAvailableTransport();
     }
 }

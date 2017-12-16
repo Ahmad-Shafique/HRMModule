@@ -236,5 +236,132 @@ namespace HRM.Data
                        AttendanceScore = 100
                    };
         }
+
+
+        async Task<bool> AddDepartmentWideBonus(int departmentId, Bonuses bonus)
+        {
+            
+            try
+            {
+                EmployeeSalaryRepository empSalRepo = new EmployeeSalaryRepository();
+                BonusRepository bonusRepo = new BonusRepository();
+                BonusesRepository bonusesRepo = new BonusesRepository();
+
+                var salaryBonus = from empSal in empSalRepo.GetAll().Result
+                                  join bon in bonusRepo.GetAll().Result on empSal.BonusId equals bon.BonusId
+                                  select new
+                                  {
+                                      BonusId = empSal.BonusId
+                                  };
+
+                foreach(var item in salaryBonus)
+                {
+                    Bonuses bonusesItem = new Bonuses();
+                    bonusesItem.BonusId = item.BonusId;
+                    bonusesItem.BonusValue = bonus.BonusValue;
+                    bonusesItem.BonusDescription = bonus.BonusDescription;
+                    bonusesItem.BonusesDate = bonus.BonusesDate;
+                    await bonusesRepo.Insert(bonusesItem);
+                }
+                return true;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
+
+
+        async Task<bool> AddBonusToEmployeeList (int departmentId, Bonuses bonus , string employeeIdsList)
+        {
+
+            try
+            {
+                EmployeeSalaryRepository empSalRepo = new EmployeeSalaryRepository();
+                BonusRepository bonusRepo = new BonusRepository();
+                BonusesRepository bonusesRepo = new BonusesRepository();
+
+                var idList = employeeIdsList.Trim().Split(',');
+
+                var salaryBonus = from empSal in empSalRepo.GetAll().Result
+                                  join bon in bonusRepo.GetAll().Result on empSal.BonusId equals bon.BonusId
+                                  select new
+                                  {
+                                      EmployeeId = empSal.EmployeeId,
+                                      BonusId = empSal.BonusId
+                                  };
+
+                salaryBonus = salaryBonus.Where(item => idList.Contains(item.EmployeeId.ToString()));
+
+                foreach (var item in salaryBonus)
+                {
+                    Bonuses bonusesItem = new Bonuses
+                    {
+                        BonusId = item.BonusId,
+                        BonusValue = bonus.BonusValue,
+                        BonusDescription = bonus.BonusDescription,
+                        BonusesDate = bonus.BonusesDate
+                    };
+                    await bonusesRepo.Insert(bonusesItem);
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
+
+
+        async Task<bool> AssignTransportsToAnArea(int transportAreaId, string transportIdsList)
+        {
+            try
+            {
+                TransportAreaVehicleRepository tAVRepo = new TransportAreaVehicleRepository();
+                TransportVehicleRepository tVRepo = new TransportVehicleRepository();
+                TransportAreaRepository TARepo = new TransportAreaRepository();
+                var idList = transportIdsList.Trim().Split(',');
+                int newCapacity = 0;
+                foreach(var tempId in idList)
+                {
+                    if(tempId != null && tempId.Trim() != "")
+                    {
+                        int id = Int32.Parse(tempId);
+
+                        await tAVRepo.Insert(new TransportAreaVehicle
+                        {
+                            TranspoertAreaId = transportAreaId,
+                            TransportVehicleId = id
+                        });
+
+                        TransportVehicle temp = tVRepo.Get(id).Result;
+                        temp.status = "assigned";
+                        await tVRepo.Update(temp, id);
+                        newCapacity += temp.Capacity;
+                    }
+                }
+
+                TransportArea tempArea = TARepo.Get(transportAreaId).Result;
+                tempArea.AssignedCapacity += newCapacity;
+                await TARepo.Update(tempArea, tempArea.TransportAreaId);
+                return true;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
+
+
+        IEnumerable<TransportVehicle> GetAvailableTransport()
+        {
+            return new TransportVehicleRepository().GetAll().Result.Where(item => (item.status == "free" || item.status == "available" || item.status == null));
+        }
+
+
+
     }
 }

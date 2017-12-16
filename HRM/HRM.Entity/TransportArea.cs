@@ -14,5 +14,6 @@ namespace HRM.Entity
         public string AreaName { get; set; }
         public string Description { get; set; }
         public int AreaDemand { get; set; }
+        public int AssignedCapacity { get; set; }
     }
 }
