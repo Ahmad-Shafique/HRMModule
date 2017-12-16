@@ -9,9 +9,9 @@ using HRM.Data.Interfaces;
 
 namespace HRM.Data
 {
-    public class CommonViewRepository
+    class CommonViewRepository: ICommonViewRepository
     {
-        dynamic GetTrainingAndRelatedEmployees(int trainingId)
+        public virtual dynamic GetTrainingAndRelatedEmployees(int trainingId)
         {
             IEnumerable<Training> trainingList = new TrainingRepository().GetAll().Result;
             IEnumerable<Employee> employeeList = new EmployeeRepository().GetAll().Result;
@@ -41,7 +41,7 @@ namespace HRM.Data
         }
 
 
-        dynamic GetEmployeeAndRelatedTraining(int employeeId)
+        public virtual dynamic GetEmployeeAndRelatedTraining(int employeeId)
         {
             IEnumerable<Training> trainingList = new TrainingRepository().GetAll().Result;
             IEnumerable<Employee> employeeList = new EmployeeRepository().GetAll().Result;
@@ -71,7 +71,7 @@ namespace HRM.Data
         }
 
 
-        async Task<bool> AddEmployeesToTrainingProgram(int trainingId , List<int> employeeIdList)
+        public virtual async Task<bool> AddEmployeesToTrainingProgram(int trainingId , List<int> employeeIdList)
         {
             try
             {
@@ -95,7 +95,7 @@ namespace HRM.Data
             
         }
 
-        async Task<bool> AddEmployeesToTrainingProgram(int trainingId, string employeeIdsString)
+        public virtual async Task<bool> AddEmployeesToTrainingProgram(int trainingId, string employeeIdsString)
         {
             try
             {
@@ -117,7 +117,7 @@ namespace HRM.Data
         }
 
 
-        async Task<bool> AddTrainingsToEmployee(int employeeId, List<int> trainingList)
+        public virtual async Task<bool> AddTrainingsToEmployee(int employeeId, List<int> trainingList)
         {
             try
             {
@@ -141,7 +141,7 @@ namespace HRM.Data
 
         }
 
-        async Task<bool> AddTrainingsToEmployee(int employeeId, string trainingIdsString)
+        public virtual async Task<bool> AddTrainingsToEmployee(int employeeId, string trainingIdsString)
         {
             try
             {
@@ -163,7 +163,7 @@ namespace HRM.Data
 
         }
 
-        dynamic GetAllEmployeeDetails()
+        public virtual dynamic GetAllEmployeeDetails()
         {
             EmployeeRepository empRepo = new EmployeeRepository();
             EmployeeBioRepository empBioRepo = new EmployeeBioRepository();
@@ -193,7 +193,7 @@ namespace HRM.Data
         }
 
 
-        async Task<bool> ApproveHireRequests(string hireRequestIdsString)
+        public virtual async Task<bool> ApproveHireRequests(string hireRequestIdsString)
         {
             try
             {
@@ -220,7 +220,7 @@ namespace HRM.Data
         }
 
 
-        dynamic GetAllEmployeePerformance()
+        public virtual dynamic GetAllEmployeePerformance()
         {
             EmployeeRepository empRepo = new EmployeeRepository();
             EmployeePerformanceMetricRepository empBioRepo = new EmployeePerformanceMetricRepository();
@@ -238,7 +238,7 @@ namespace HRM.Data
         }
 
 
-        async Task<bool> AddDepartmentWideBonus(int departmentId, Bonuses bonus)
+        public virtual async Task<bool> AddDepartmentWideBonus(int departmentId, Bonuses bonus)
         {
             
             try
@@ -277,7 +277,7 @@ namespace HRM.Data
         }
 
 
-        async Task<bool> AddBonusToEmployeeList (int departmentId, Bonuses bonus , string employeeIdsList)
+        public virtual async Task<bool> AddBonusToEmployeeList (int departmentId, Bonuses bonus , string employeeIdsList)
         {
 
             try
@@ -323,7 +323,7 @@ namespace HRM.Data
         }
 
 
-        async Task<bool> AssignTransportsToAnArea(int transportAreaId, string transportIdsList)
+        public virtual async Task<bool> AssignTransportsToAnArea(int transportAreaId, string transportIdsList)
         {
             try
             {
@@ -364,13 +364,13 @@ namespace HRM.Data
         }
 
 
-        IEnumerable<TransportVehicle> GetAvailableTransport()
+        public virtual IEnumerable<TransportVehicle> GetAvailableTransport()
         {
             return new TransportVehicleRepository().GetAll().Result.Where(item => (item.status == "free" || item.status == "available" || item.status == null || item.status.Trim() == ""));
         }
 
 
-        async Task<bool> AssignEquipmentsToADepartment(int departmentId, string equipmentIdsList)
+        public virtual async Task<bool> AssignEquipmentsToADepartment(int departmentId, string equipmentIdsList)
         {
             EquipmentRepository eRepo = new EquipmentRepository();
             EquipmentAndDepartmentRepository eDRepo = new EquipmentAndDepartmentRepository();
@@ -405,7 +405,7 @@ namespace HRM.Data
         }
 
 
-        async Task<bool> AssignCandidatesToInterview(int interviewId, string candidateIdsList)
+        public virtual async Task<bool> AssignCandidatesToInterview(int interviewId, string candidateIdsList)
         {
 
             try
@@ -447,13 +447,13 @@ namespace HRM.Data
         }
 
 
-        IEnumerable<TemporaryCV> GetAllUnassignedTemporaryCVs()
+        public virtual IEnumerable<TemporaryCV> GetAllUnassignedTemporaryCVs()
         {
             return new TemporaryCVRepository().GetAll().Result.Where(item => (item.Status == "free" || item.Status == "available" || item.Status == null || item.Status.Trim()==""));
         }
 
 
-        dynamic CalculateAllEmployeeTotalSalary()
+        public virtual dynamic CalculateAllEmployeeTotalSalary()
         {
             IEnumerable<SalaryComponents> salCList = new SalaryComponentsRepository().GetAll().Result;
             IEnumerable<EmployeeSalary> empSalList = new EmployeeSalaryRepository().GetAll().Result;

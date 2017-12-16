@@ -33,3 +33,4 @@ Extra TODO for future iteration/s of the project:
 3. Attendance providing should have a option for late attendance and the amount by which attendance was missed
 4. Editable employee bio
 5. Correct euipment assignment and update
+6. Remove DateOfBirth and Designation from employee

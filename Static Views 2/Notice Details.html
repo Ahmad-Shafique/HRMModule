@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Assign Bonus</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#Showcomment').click(function () {
+                
+                //alert($(this).text());
+                if ($(this).text() == "Show Comments") {
+                    $('#commentsDiv').show();
+                    $(this).text("Hide Comments");
+                }
+                else {
+                    $('#commentsDiv').hide();
+                    $(this).text("Show Comments");
+                }
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    <div id="NoticeDetails" style="background-color:lightgray; width:700px">
+
+        <b>Company Will remain close till x to y</b><br />
+        <b>25 Jan 2016</b>
+        <hr />
+        <b>Details :</b> <br />
+        <p>Most, however, will appreciate the time to have you help with the transition.
+         This can be beneficial to you as well, offering you the opportunity to leave the position with a
+         good impression of your professionalism.
+         Use this resignation letter example when you are providing 
+         your employer with two weeks notice of your resignation.
+         Also, review an example of an email-based resignation message. You don't need to include any more information than the fact you are leaving and when your last day of work will be. </p>
+        <p style="color:blue">Seen By :  30</p>
+        <input type="text" width="100" placeholder="Write a comment..." />
+        <input type="submit" value="Comment" />
+ </div>
+
+    <button type="button" class="btn" id="Showcomment">Show Comments</button>
+    <hr />
+    <div id="commentsDiv" hidden>
+        <a><b>Nahid Hasan</b><br /></a>
+         Thank You!<br />
+        <hr />
+        <a><b>Ahmed Shafique</b><br /></a>
+        Would You Lease Explain it More? <br />
+    </div>
+</body>
+</html>

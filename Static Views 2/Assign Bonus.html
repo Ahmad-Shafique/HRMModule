@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Assign Bonus</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/scripts/jquery.js"></script>
+    <script src="~/scripts/bootstrap.js"></script>
+    <link href="~/Contents/bootstrap.css" rel="stylesheet" />
+    <!--<script src="~/scripts/myscript.js"></script>-->
+</head>
+<body>
+
+   <!--assigning bonus whole div start-->
+    <div class="row">
+        <!--8 column for select criteria-->
+        <div class="col-sm-8" id="AssingingBonusDetails">
+
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                   Select Department
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">It</a></li>
+                    <li><a href="#">HR</a></li>
+                    <li><a href="#">Pay Roll</a></li>
+                </ul>
+            </div>
+            <br />
+            Amount: <br />
+            <input type="text" id="BonusAmount" />
+            <br />
+            Reason:<br />
+            <input type="text"  id="BonusReason" />
+            
+
+        </div>
+        <!--4 column for selected employee lis for bonus-->
+        <div class="col-sm-4" hidden>
+            Selected Employee's <br />
+            <div style="text-align:center" id="SelectedEmployeesIdForBonus" ></div>
+
+        </div>
+
+    </div>
+
+    <!--assgining bnus whole div ends-->
+   
+
+</body>
+</html>

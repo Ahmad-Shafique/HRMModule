@@ -46,12 +46,18 @@ namespace HRM.Data
             Repositories.Add(typeof(SupportingDocument), typeof(SupportingDocumentRepository));
             Repositories.Add(typeof(TemporaryCV), typeof(TemporaryCVRepository));
             Repositories.Add(typeof(Training), typeof(TrainingRepository));
+            
         }
 
         public IRepository<TEntity> Create<TEntity>() where TEntity : class
         {
             Type type = Repositories[typeof(TEntity)];
             return Activator.CreateInstance(type) as IRepository<TEntity>;
+        }
+
+        public static ICommonViewRepository GetCommonViewRepository()
+        {
+            return new CommonViewRepository();
         }
     }
 }

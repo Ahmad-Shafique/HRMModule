@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Static_views
+namespace HRM.View
 {
     public class RouteConfig
     {
@@ -16,7 +16,7 @@ namespace Static_views
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Transportation", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Employee", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

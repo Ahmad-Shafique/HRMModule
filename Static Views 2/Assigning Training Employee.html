@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Training Emmployee Management</title>
+    <meta name="viewport" content="width=device-width" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#AddEmployeeToTraingbtn").click(function () {
+                $(this).attr('disabled', 'disabled');
+                $("#AddTrainingtoEmployeebtn").attr("disabled", false);
+                $('#AddTraingToEmployeediv').hide();
+                $('#AddEmployeeToTrainingdiv').show();
+                $('#EmployeeDescriptionDiv').hide();
+               
+            });
+            $("#AddTrainingtoEmployeebtn").click(function () {
+                $(this).attr('disabled', 'disabled');
+                $("#AddEmployeeToTraingbtn").attr("disabled", false);
+                $('#AddTraingToEmployeediv').show();
+                $('#AddEmployeeToTrainingdiv').hide();
+                $('#TrainingDescriptionDiv').hide();
+            });
+
+            //select the specific training or student
+            $('#TraningListoptions').on('change', function () {
+                //alert($(this).val());
+                //id of the selected training 
+                var trainingid = $(this).val();
+                //eda diye ajax diye data ene specific div ta banate hbe
+                $('#TrainingDescriptionDiv').show();
+            });
+            //select the specific student
+            $('#Employeelistoptions').on('change', function () {
+                //alert($(this).val());
+                //id of the selected training 
+                var employeeid = $(this).val();
+                //eda diye ajax diye data ene specific div ta banate hbe
+                $('#EmployeeDescriptionDiv').show();
+            });
+
+            
+        });
+    </script>
+</head>
+<body>
+    <!--    Traing Emloyee Management-->
+    <div id="TraingEmployeeMangementoption">
+        <button type="button" class="btn" id="AddTrainingtoEmployeebtn" disabled>Add Training To employees</button>
+        <button type="button" class="btn" id="AddEmployeeToTraingbtn">Add Employee To Training</button>
+        <hr />
+    </div>
+    <!--Notice list div auto gnerated view ta ehkn e add korlei hbe-->
+
+    <!--Add Traing to Employee div-->
+    <div id="AddTraingToEmployeediv" style="background-color:lightgray; width:700px" >
+        <label>Select Training</label><br />
+        <select id="TraningListoptions">
+            <option value="1" disabled>Select Training</option>
+            <option value="id1">Trainging 1</option>
+            <option value="id1">Trainging 2</option>
+
+        </select>
+        <!--Specificc traing details-->
+        <hr />
+        <div id="TrainingDescriptionDiv" style="background-color:lightgray; width:700px" hidden>
+            <b>Program : Improvement Discipline</b> <br />
+            <b>Code : 7101</b> <br />
+            <a href="#"><b>Training Details</b></a><br />
+            <hr />
+            <div class="row">
+                <div class="col-sm-6">
+                    <b>  Employee involved</b>
+                    <br />
+                    <a href="#">1.Abdul Mutaleb Shaykat</a><br />
+                    <a href="#">2.Ahmed Shafique</a><br />
+
+                </div>
+                <div class="col-sm-6">
+                    <!--modal buton hobe-->
+                    <button type="button" class="btn" id="AddEmployeebtn">Add Employee</button>
+                </div>
+            </div>
+
+        </div>
+        <!--end Specificc traing details-->
+    </div>
+    <!---Add Traing to Employee div-->
+    <!--Add Employee to training div-->
+    <div id="AddEmployeeToTrainingdiv" style="background-color:lightgray; width:700px" hidden >
+        <label>Select Employee</label><br />
+        <select id="Employeelistoptions">
+            <option value="1" disabled>Select Employee</option>
+            <option value="id1">Nahid Hasan </option>
+            <option value="id2">Ahmed Shafique</option>
+            <option value="id3">Nawaz Sharif </option>
+            <option value="id4">Shaykat Md Abdul</option>
+           
+        </select>
+        <!--Specificc Employee details-->
+        <hr />
+        <div id="EmployeeDescriptionDiv" style="background-color:lightgray; width:700px" hidden>
+            <b>Employee Name : Nahid hasan</b> <br />
+            <b>Id : 101</b> <br />
+            <a href="#"><b>Employee Details</b></a><br />
+            <hr />
+            <div class="row">
+                <div class="col-sm-6">
+                    <b>Involved Training</b>
+                    <br />
+                    <a href="#">1.Program Discipline</a><br />
+                    <a href="#">2.Trainingg 2</a><br />
+
+                </div>
+                <div class="col-sm-6">
+                    <!--modal buton hobe-->
+                    <button type="button" class="btn" id="AddTrainingbtn">Add Training</button>
+                </div>
+            </div>
+
+        </div>
+        <!--Specificc employee details-->
+        
+    </div>
+    <!---Add Employee to training div-->
+    
+</body>
+</html>

@@ -53,5 +53,10 @@ namespace HRM.Service
             Type type = Repositories[typeof(TEntity)];
             return Activator.CreateInstance(type) as IDomainService<TEntity>;
         }
+
+        public static ICommonViewServiceInterface GetCommonViewService()
+        {
+            return new CommonViewService();
+        }
     }
 }

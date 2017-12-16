@@ -23,5 +23,7 @@ namespace HRM.Entity
         public int Salary { get; set; }
         public int MGR { get; set; }
 
+        public DateTime DateofBirth { get; set; }
+
     }
 }

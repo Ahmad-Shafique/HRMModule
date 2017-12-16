@@ -46,6 +46,7 @@
     <Compile Include="BonusService.cs" />
     <Compile Include="CircularTemplateService.cs" />
     <Compile Include="CommentService.cs" />
+    <Compile Include="CommonViewService.cs" />
     <Compile Include="DepartmentDesignationService.cs" />
     <Compile Include="DepartmentHistoryService.cs" />
     <Compile Include="DepartmentService.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="HireRequestService.cs" />
     <Compile Include="HireThreadService.cs" />
     <Compile Include="Interfaces\IAdvertiserListService.cs" />
+    <Compile Include="Interfaces\ICommonViewServiceInterface.cs" />
     <Compile Include="Interfaces\IDomainService.cs" />
     <Compile Include="IntervieweeService.cs" />
     <Compile Include="InterviewService.cs" />

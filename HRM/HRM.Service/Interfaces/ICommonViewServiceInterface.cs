@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRM.Data.Interfaces
+namespace HRM.Service.Interfaces
 {
-    public interface ICommonViewRepository
+    public interface ICommonViewServiceInterface
     {
         dynamic GetTrainingAndRelatedEmployees(int trainingId);
         dynamic GetEmployeeAndRelatedTraining(int employeeId);

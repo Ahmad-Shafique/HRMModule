@@ -1,0 +1,102 @@
+﻿<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Assign Bonus</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#allocatebuttonId').click(function () {
+                $('#AllocateBudgetDiv').show();
+                $('input[type="radio"]').click(function () {
+                    //alert($(this).val());
+                    $('#ItemLabel').html('Select Item: <br>');
+                    var BudgetType = $(this).val();
+                    if (BudgetType == 'Training') {
+                        $('#TrainingItemDiv').show();
+                        $('#PrjectItemDiv').hide();
+                        $('#HireRequestItemDiv').hide();
+                    }
+                    else if (BudgetType == 'Project') {
+                        $('#TrainingItemDiv').hide();
+                        $('#PrjectItemDiv').show();
+                        $('#HireRequestItemDiv').hide();
+                    }
+                    else {
+                        $('#TrainingItemDiv').hide();
+                        $('#PrjectItemDiv').hide();
+                        $('#HireRequestItemDiv').show();
+                    }
+                });
+
+            });
+
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <h3>Budget Allocation</h3>
+    <div id="BudgetAllocation">
+        <button type="button" class="btn">Summary</button>
+        <button type="button" class="btn" id="allocatebuttonId">Allocate New Budget</button>
+        <hr />
+    </div>
+    <div id="AllocateBudgetDiv" hidden>
+        <form>
+            <input type="radio" name="BudgetRad" value="Training">Training
+            <input type="radio" name="BudgetRad" value="Project">Project
+            <input type="radio" name="BudgetRad" value="HireRequest">Hire Request
+
+            <br />
+            <br />
+            <label id="ItemLabel"></label><br />
+            <!--menu onujayi div gula tkbe-->
+            <div id="PrjectItemDiv" hidden>
+
+                <select>
+
+                    <option value="id1">Project 1</option>
+                    <option value="id1">Project 2</option>
+
+                </select>
+            </div>
+            <div id="TrainingItemDiv" hidden>
+                <select>
+                    <option value="1" disabled>select Item</option>
+                    <option value="id1">Trainging 1</option>
+                    <option value="id1">Trainging 2</option>
+
+                </select>
+            </div>
+            <div id="HireRequestItemDiv" hidden>
+                <select>
+                    <option value="1" disabled>select Item</option>
+                    <option value="id1">Hire request 1</option>
+                    <option value="id1">Hire Request 2</option>
+
+                </select>
+            </div>
+            <!--endo of items -->
+            <label for="BudgetAmount">Budget Amount:</label> <br />
+            <input type="text" id="BudgetAmount" /><br />
+            <label for="BudgetDesciption">Budget Description:</label>
+            <br />
+            <textarea rows="5" cols="60" id="BudgetDesciption"></textarea><br />
+
+            <input id="btnSubmit" type="submit" value="submit" />
+
+        </form>
+
+
+    </div>
+</body>
+</html>
