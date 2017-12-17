@@ -105,6 +105,7 @@
     <Compile Include="IntervieweeRepository.cs" />
     <Compile Include="InterviewRepository.cs" />
     <Compile Include="LeaveApplicationRepository.cs" />
+    <Compile Include="NoticeCommentRepository.cs" />
     <Compile Include="NoticeRepository.cs" />
     <Compile Include="PrivilegeRepository.cs" />
     <Compile Include="Program.cs" />

@@ -67,6 +67,7 @@
     <Compile Include="EquipmentTransaction.cs" />
     <Compile Include="EquipmentType.cs" />
     <Compile Include="MonthlyBudget.cs" />
+    <Compile Include="NoticeComment.cs" />
     <Compile Include="NoticeEmployee.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="DepartmentHistory.cs" />

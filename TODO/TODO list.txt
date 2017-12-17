@@ -34,3 +34,4 @@ Extra TODO for future iteration/s of the project:
 4. Editable employee bio
 5. Correct euipment assignment and update
 6. Remove DateOfBirth and Designation from employee
+7. Add Employee assignment to transport area and make transportation assignment functional

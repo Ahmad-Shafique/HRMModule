@@ -71,6 +71,7 @@
     <Compile Include="InterviewService.cs" />
     <Compile Include="LeaveApplicationCategoryService.cs" />
     <Compile Include="LeaveApplicationService.cs" />
+    <Compile Include="NoticeCommentService.cs" />
     <Compile Include="NoticeEmployeeService.cs" />
     <Compile Include="NoticeService.cs" />
     <Compile Include="PrivilegeService.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="TemporaryCVService.cs" />
     <Compile Include="TrainingEmployeeService.cs" />
     <Compile Include="TrainingService.cs" />
+    <Compile Include="TransportAreaService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HRM.Data\HRM.Data.csproj">

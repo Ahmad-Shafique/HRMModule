@@ -24,6 +24,7 @@ namespace HRM.Controllers
             return View(await service.GetAll());
         }
 
+
         // GET: Employees/Details/5
         public async Task<ActionResult> Details(int? id)
         {
