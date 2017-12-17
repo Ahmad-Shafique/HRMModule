@@ -52,7 +52,6 @@
     <Compile Include="Bonuses.cs" />
     <Compile Include="BudgetTransaction.cs" />
     <Compile Include="CircularTemplate.cs" />
-    <Compile Include="Comment.cs" />
     <Compile Include="CompanyPolicy.cs" />
     <Compile Include="DepartmentDesignation.cs" />
     <Compile Include="EmployeeAttendance.cs" />
@@ -61,7 +60,6 @@
     <Compile Include="EmployeeIdentificationCard.cs" />
     <Compile Include="EmployeePrivilege.cs" />
     <Compile Include="EmployeeTranportArea.cs" />
-    <Compile Include="Employee_EmployeeSalary.cs" />
     <Compile Include="Equipment.cs" />
     <Compile Include="EquipmentAndDepartment.cs" />
     <Compile Include="EquipmentTransaction.cs" />

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Entity
 {
-    public class EmployeeTranportArea
+    public class EmployeeTransportArea
     {
         [Key]
         public int EmployeeTransportAreaId { get; set; }

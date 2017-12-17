@@ -19,7 +19,7 @@ namespace HRM.Entity
         public int TotalSalary { get; set; }
         public string SalaryMonth { get; set; }
         public int Year { get; set; }
-        public int status { get; set; }
+        public int Status { get; set; }
         public int BonusId { get; set; }
         public int BonusValue { get; set; }
 

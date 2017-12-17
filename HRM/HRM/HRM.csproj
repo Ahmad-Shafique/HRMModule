@@ -123,7 +123,6 @@
     <Compile Include="Controllers\BonusController.cs" />
     <Compile Include="Controllers\BonusesController.cs" />
     <Compile Include="Controllers\CircularTemplatesController.cs" />
-    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\DepartmentDesignationsController.cs" />
     <Compile Include="Controllers\DepartmentHistoriesController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
@@ -188,11 +187,6 @@
     <Content Include="Views\CircularTemplates\Details.cshtml" />
     <Content Include="Views\CircularTemplates\Edit.cshtml" />
     <Content Include="Views\CircularTemplates\Index.cshtml" />
-    <Content Include="Views\Comments\Create.cshtml" />
-    <Content Include="Views\Comments\Delete.cshtml" />
-    <Content Include="Views\Comments\Details.cshtml" />
-    <Content Include="Views\Comments\Edit.cshtml" />
-    <Content Include="Views\Comments\Index.cshtml" />
     <Content Include="Views\Departments\Create.cshtml" />
     <Content Include="Views\Departments\Delete.cshtml" />
     <Content Include="Views\Departments\Details.cshtml" />

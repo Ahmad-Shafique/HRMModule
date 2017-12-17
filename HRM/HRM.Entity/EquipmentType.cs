@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Entity
 {
-    class EquipmentType
+    public class EquipmentType
     {
         public int EquipmentTypeId { get; set; }
         public string TypeName { get; set; }

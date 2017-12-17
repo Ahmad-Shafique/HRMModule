@@ -12,7 +12,7 @@ namespace HRM.Entity
         [Key]
         public int HireRequestId { get; set; }
         public string DesignationName { get; set; }
-        public int EmplyeeRequired { get; set; }
+        public int EmployeeRequired { get; set; }
         public DateTime RequestDate { get; set; }
         public string Urgency { get; set; }
         public int HireRequestStatus { get; set; }

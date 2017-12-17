@@ -19,7 +19,6 @@ namespace HRM.Service
             Repositories.Add(typeof(Bonuses), typeof(BonusesService));
             Repositories.Add(typeof(Bonus), typeof(BonusService));
             Repositories.Add(typeof(CircularTemplate), typeof(CircularTemplateService));
-            Repositories.Add(typeof(Comment), typeof(CommentService));
             Repositories.Add(typeof(DepartmentHistory), typeof(DepartmentHistoryService));
             Repositories.Add(typeof(Department), typeof(DepartmentService));
             Repositories.Add(typeof(DepartmentDesignation), typeof(DepartmentDesignationService));

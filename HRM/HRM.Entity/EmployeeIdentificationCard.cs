@@ -12,7 +12,7 @@ namespace HRM.Entity
         [Key]
         public int EmployeeIdentificationCardId { get; set; }
         public int EmployeeId { get; set; }
-        public string CardHolderNsme { get; set; }
+        public string CardHolderName { get; set; }
         public string CardHolderImage { get; set; }
         public DateTime CardExpiry { get; set; }
     }

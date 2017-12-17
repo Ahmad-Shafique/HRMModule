@@ -13,7 +13,7 @@ namespace HRM.Entity
         public int NoticeCommentId { get; set; }
         public int NoticeId { get; set; }
         public int EmployeeId { get; set; }
-        public int EmployeeName { get; set; }
+        public string EmployeeName { get; set; }
         public string Comment { get; set; }
     }
 }

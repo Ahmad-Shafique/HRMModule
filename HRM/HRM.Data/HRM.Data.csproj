@@ -54,7 +54,6 @@
     <Compile Include="BonusesRepository.cs" />
     <Compile Include="BonusRepository.cs" />
     <Compile Include="CircularTemplateRepository.cs" />
-    <Compile Include="CommentRepository.cs" />
     <Compile Include="CommonViewRepository.cs" />
     <Compile Include="DepartmentDesignationRepository.cs" />
     <Compile Include="DepartmentHistoryRepository.cs" />
@@ -78,7 +77,6 @@
     <Compile Include="Interfaces\IBonusesRepository.cs" />
     <Compile Include="Interfaces\IBonusRepository.cs" />
     <Compile Include="Interfaces\ICircularTemplateRepository.cs" />
-    <Compile Include="Interfaces\ICommentRepository.cs" />
     <Compile Include="Interfaces\ICommonViewRepository.cs" />
     <Compile Include="Interfaces\IDepartmentDesignationRepository.cs" />
     <Compile Include="Interfaces\IDepartmentHistoryRepository.cs" />

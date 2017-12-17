@@ -19,7 +19,6 @@ namespace HRM.Data
             Repositories.Add(typeof(Bonuses), typeof(BonusesRepository));
             Repositories.Add(typeof(Bonus), typeof(BonusRepository));
             Repositories.Add(typeof(CircularTemplate), typeof(CircularTemplateRepository));
-            Repositories.Add(typeof(Comment), typeof(CommentRepository));
             Repositories.Add(typeof(DepartmentHistory), typeof(DepartmentHistoryRepository));
             Repositories.Add(typeof(Department), typeof(DepartmentRepository));
             Repositories.Add(typeof(DepartmentDesignation), typeof(DepartmentDesignationRepository));

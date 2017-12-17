@@ -19,7 +19,6 @@ namespace HRM.Data
         public DbSet<Bonus> Bonuses { get; set; }
         public DbSet<Bonuses> LBonuses { get; set; }
         public DbSet<CircularTemplate> CircularTemplates { get; set; }
-        public DbSet<Comment> Comments { get; set; }
         public DbSet<NoticeEmployee> NoticeEmployees { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<DepartmentDesignation> DepartmentDesignations { get; set; }
@@ -59,6 +58,11 @@ namespace HRM.Data
         public DbSet<TransportArea> TransportAreas { get; set; }
         public DbSet<TransportAreaVehicle> TransportAreaVehicles { get; set; }
         public DbSet<TransportVehicle> TransportVehicles { get; set; }
+        public DbSet<EmployeeTransportArea> EmployeeTransportAreas { get; set; }
+        public DbSet<Equipment> Equipments { get; set; }
+        public DbSet<EquipmentAndDepartment> EquipmentAndDepartments { get; set; }
+        public DbSet<EquipmentTransaction> EquipmentTransactions { get; set; }
+        public DbSet<EquipmentType> EquipmentTypes { get; set; }
 
 
 

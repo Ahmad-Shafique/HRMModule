@@ -1,0 +1,311 @@
+insert into Bonus (BonusValue, BonusTime) values (98, '04/14/2017');
+insert into Bonus (BonusValue, BonusTime) values (67, '10/29/2017');
+insert into Bonus (BonusValue, BonusTime) values (7, '03/22/2017');
+insert into Bonus (BonusValue, BonusTime) values (47, '06/30/2017');
+insert into Bonus (BonusValue, BonusTime) values (74, '09/01/2017');
+insert into Bonus (BonusValue, BonusTime) values (37, '12/11/2017');
+insert into Bonus (BonusValue, BonusTime) values (4, '05/02/2017');
+insert into Bonus (BonusValue, BonusTime) values (61, '02/14/2017');
+insert into Bonus (BonusValue, BonusTime) values (75, '09/26/2017');
+insert into Bonus (BonusValue, BonusTime) values (26, '08/30/2017');
+
+
+
+insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (1, 164, 'Nulla ut erat id mauris vulputate elementum. Nullam varius.', '11/11/2017');
+insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (2, 245, 'Integer ac leo. Pellentesque ultrices mattis odio.', '05/22/2017');
+insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (3, 203, 'Nulla facilisi.', '05/31/2017');
+insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (4, 804, 'Aenean auctor gravida sem.', '11/28/2017');
+insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (5, 510, 'Donec posuere metus vitae ipsum.', '07/15/2017');
+insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (6, 803, 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.', '10/11/2017');
+insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (7, 405, 'Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', '11/09/2017');
+insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (8, 456, 'Curabitur at ipsum ac tellus semper interdum.', '07/28/2017');
+insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (9, 557, 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.', '01/28/2017');
+insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (10, 680, 'Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.', '10/27/2017');
+
+
+
+insert into BudgetTransactions (MonthlyBudgetId, Type, TypeId, Amount, Description, TransactionDate) values (1, 'Nunc purus.', 1, 33833, 'In blandit ultrices enim.', '02/28/2017');
+insert into BudgetTransactions (MonthlyBudgetId, Type, TypeId, Amount, Description, TransactionDate) values (2, 'Sed accumsan felis.', 2, 38531, 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', '03/01/2017');
+insert into BudgetTransactions (MonthlyBudgetId, Type, TypeId, Amount, Description, TransactionDate) values (3, 'Donec dapibus. Duis at velit eu est congue elementum.', 3, 40117, 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', '07/25/2017');
+insert into BudgetTransactions (MonthlyBudgetId, Type, TypeId, Amount, Description, TransactionDate) values (4, 'Aenean sit amet justo.', 4, 40973, 'Integer a nibh. In quis justo.', '06/11/2017');
+insert into BudgetTransactions (MonthlyBudgetId, Type, TypeId, Amount, Description, TransactionDate) values (5, 'Praesent blandit. Nam nulla.', 5, 47481, 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.', '10/22/2017');
+insert into BudgetTransactions (MonthlyBudgetId, Type, TypeId, Amount, Description, TransactionDate) values (6, 'Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', 6, 49009, 'Integer a nibh.', '06/27/2017');
+insert into BudgetTransactions (MonthlyBudgetId, Type, TypeId, Amount, Description, TransactionDate) values (7, 'Suspendisse accumsan tortor quis turpis.', 7, 43863, 'Aliquam erat volutpat. In congue.', '06/12/2017');
+insert into BudgetTransactions (MonthlyBudgetId, Type, TypeId, Amount, Description, TransactionDate) values (8, 'Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.', 8, 28470, 'Pellentesque ultrices mattis odio. Donec vitae nisi.', '04/29/2017');
+insert into BudgetTransactions (MonthlyBudgetId, Type, TypeId, Amount, Description, TransactionDate) values (9, 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.', 9, 21832, 'Aliquam non mauris.', '09/25/2017');
+insert into BudgetTransactions (MonthlyBudgetId, Type, TypeId, Amount, Description, TransactionDate) values (10, 'In sagittis dui vel nisl.', 10, 40540, 'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '09/17/2017');
+
+
+
+insert into CircularTemplates (TemplateName, Template) values ('fermentum donec ut', 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.');
+insert into CircularTemplates (TemplateName, Template) values ('pellentesque ultrices', 'Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.');
+insert into CircularTemplates (TemplateName, Template) values ('ipsum aliquam non', 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.');
+insert into CircularTemplates (TemplateName, Template) values ('cursus urna', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.');
+insert into CircularTemplates (TemplateName, Template) values ('non interdum in', 'Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.');
+insert into CircularTemplates (TemplateName, Template) values ('velit nec', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.');
+insert into CircularTemplates (TemplateName, Template) values ('nisl duis ac', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.');
+insert into CircularTemplates (TemplateName, Template) values ('consectetuer adipiscing', 'Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.');
+insert into CircularTemplates (TemplateName, Template) values ('id ornare imperdiet', 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.');
+insert into CircularTemplates (TemplateName, Template) values ('aenean auctor gravida', 'Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.');
+
+
+
+insert into CompanyPolicies (PolicyName, PolicyDescription) values ('ullamcorper augue a', 'Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.');
+insert into CompanyPolicies (PolicyName, PolicyDescription) values ('vulputate nonummy maecenas', 'Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.');
+insert into CompanyPolicies (PolicyName, PolicyDescription) values ('non pretium', 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.');
+insert into CompanyPolicies (PolicyName, PolicyDescription) values ('ipsum primis in', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo.');
+insert into CompanyPolicies (PolicyName, PolicyDescription) values ('nibh in lectus', 'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat.');
+insert into CompanyPolicies (PolicyName, PolicyDescription) values ('nunc purus phasellus', 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.');
+insert into CompanyPolicies (PolicyName, PolicyDescription) values ('interdum venenatis turpis', 'Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.');
+insert into CompanyPolicies (PolicyName, PolicyDescription) values ('in magna bibendum', 'Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.');
+insert into CompanyPolicies (PolicyName, PolicyDescription) values ('potenti in eleifend', 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.');
+insert into CompanyPolicies (PolicyName, PolicyDescription) values ('eleifend donec ut', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.');
+
+
+
+insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('vel ipsum', 'Myrzakent', 'Fusce consequat. Nulla nisl. Nunc nisl.', 1);
+insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('amet cursus', 'Caçador', 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.', 2);
+insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('maecenas', 'San Antonio', 'Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna.', 3);
+insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('quisque id', 'Zhujiang', 'Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.', 4);
+insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('et commodo', 'Mene de Mauroa', 'Nulla ut erat id mauris vulputate elementum. Nullam varius.', 5);
+insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('dui proin', 'Tianzhu', 'Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.', 6);
+insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('adipiscing', 'Wilwerwiltz', 'Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus.', 7);
+insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('ullamcorper', 'Weitang', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.', 8);
+insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('duis ac', 'Achoma', 'Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla.', 9);
+insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('dui', 'Baklashi', 'Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla.', 10);
+
+
+
+insert into DepartmentDesignations (DepartmentId, DesignationId) values (1, 1);
+insert into DepartmentDesignations (DepartmentId, DesignationId) values (2, 2);
+insert into DepartmentDesignations (DepartmentId, DesignationId) values (3, 3);
+insert into DepartmentDesignations (DepartmentId, DesignationId) values (4, 4);
+insert into DepartmentDesignations (DepartmentId, DesignationId) values (5, 5);
+insert into DepartmentDesignations (DepartmentId, DesignationId) values (6, 6);
+insert into DepartmentDesignations (DepartmentId, DesignationId) values (7, 7);
+insert into DepartmentDesignations (DepartmentId, DesignationId) values (8, 8);
+insert into DepartmentDesignations (DepartmentId, DesignationId) values (9, 9);
+insert into DepartmentDesignations (DepartmentId, DesignationId) values (10, 10);
+
+
+
+insert into Designations (DesignationName) values ('Intuitive');
+insert into Designations (DesignationName) values ('paradigm');
+insert into Designations (DesignationName) values ('hub');
+insert into Designations (DesignationName) values ('Compatible');
+insert into Designations (DesignationName) values ('explicit');
+insert into Designations (DesignationName) values ('interactive');
+insert into Designations (DesignationName) values ('Pre-emptive');
+insert into Designations (DesignationName) values ('mobile');
+insert into Designations (DesignationName) values ('Visionary');
+insert into Designations (DesignationName) values ('emulation');
+
+
+
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Anaëlle', 'lclowsley0@trellian.com', 'iWv8xc', 36403, 1, '9/23/1987');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Marie-thérèse', 'chammerson1@auda.org.au', 'RTmW9YWp', 44292, 2, '1/26/1993');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Léone', 'mwebb2@cpanel.net', '4vbI6DHQ', 41741, 3, '10/4/1989');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Laurélie', 'fsimond3@bravesites.com', 'A5HTWjjiT', 42694, 4, '12/14/1986');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Adèle', 'wschachter4@g.co', 'DolW8kV', 39497, 5, '4/28/1993');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Loïca', 'tmaccallum5@salon.com', 'djtNd8hy', 47357, 6, '4/24/1992');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('André', 'cgerssam6@ibm.com', 'RuuHUYjlq5', 48808, 7, '8/10/1985');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Félicie', 'jgoddard7@cyberchimps.com', 'Xe4mph3hNP', 32360, 8, '6/22/1981');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Méryl', 'ldurrett8@qq.com', 'pMyPEGM', 57908, 9, '1/19/1992');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Yáo', 'lsmallsman9@arstechnica.com', 'mEeREGB', 49488, 10, '12/29/1989');
+
+
+
+insert into EmployeeBios (EmployeeContactNo, EmployeeAddress, DateofBirth, HireDate, Intro, Objectives, Hobbies, Interests, Certificates, JobExperience, Eduction, EmployeeId, Image) values ('9221251630', '47 Morning Hill', '06/13/1993', '03/14/2017', 'Nullam molestie nibh in lectus. Pellentesque at nulla.', 'Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.', 'Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.', 'Vestibulum sed magna at nunc commodo placerat. Praesent blandit.', 'Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.', 'amet eleifend pede libero quis', 1, 'http://dummyimage.com/222x141.bmp/ff4444/ffffff');
+insert into EmployeeBios (EmployeeContactNo, EmployeeAddress, DateofBirth, HireDate, Intro, Objectives, Hobbies, Interests, Certificates, JobExperience, Eduction, EmployeeId, Image) values ('4886827154', '2572 Bay Center', '03/12/1990', '07/15/2017', 'In hac habitasse platea dictumst.', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', 'Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla.', 'Suspendisse potenti. Cras in purus eu magna vulputate luctus.', 'Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.', 'ac diam cras', 2, 'http://dummyimage.com/163x145.jpg/dddddd/000000');
+insert into EmployeeBios (EmployeeContactNo, EmployeeAddress, DateofBirth, HireDate, Intro, Objectives, Hobbies, Interests, Certificates, JobExperience, Eduction, EmployeeId, Image) values ('8853410771', '89 Dottie Park', '02/20/1981', '08/15/2017', 'Nulla nisl.', 'In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.', 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 'In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.', 'Morbi a ipsum. Integer a nibh. In quis justo.', 'Pellentesque ultrices mattis odio. Donec vitae nisi.', 'adipiscing elit proin interdum mauris', 3, 'http://dummyimage.com/184x199.png/cc0000/ffffff');
+insert into EmployeeBios (EmployeeContactNo, EmployeeAddress, DateofBirth, HireDate, Intro, Objectives, Hobbies, Interests, Certificates, JobExperience, Eduction, EmployeeId, Image) values ('4976773459', '898 Nelson Crossing', '06/26/1989', '09/24/2017', 'In quis justo. Maecenas rhoncus aliquam lacus.', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.', 'Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.', 'Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.', 'Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.', 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.', 'sit amet lobortis', 4, 'http://dummyimage.com/227x173.png/ff4444/ffffff');
+insert into EmployeeBios (EmployeeContactNo, EmployeeAddress, DateofBirth, HireDate, Intro, Objectives, Hobbies, Interests, Certificates, JobExperience, Eduction, EmployeeId, Image) values ('3027103025', '19 Dennis Plaza', '12/29/1987', '08/04/2017', 'Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.', 'Aliquam erat volutpat. In congue. Etiam justo.', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 'Duis at velit eu est congue elementum. In hac habitasse platea dictumst.', 'justo eu massa donec dapibus', 5, 'http://dummyimage.com/220x113.bmp/dddddd/000000');
+insert into EmployeeBios (EmployeeContactNo, EmployeeAddress, DateofBirth, HireDate, Intro, Objectives, Hobbies, Interests, Certificates, JobExperience, Eduction, EmployeeId, Image) values ('2729407752', '58 Birchwood Crossing', '09/07/1987', '07/22/2017', 'Proin at turpis a pede posuere nonummy. Integer non velit.', 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.', 'Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue.', 'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 'justo sit amet sapien dignissim', 6, 'http://dummyimage.com/189x216.png/dddddd/000000');
+insert into EmployeeBios (EmployeeContactNo, EmployeeAddress, DateofBirth, HireDate, Intro, Objectives, Hobbies, Interests, Certificates, JobExperience, Eduction, EmployeeId, Image) values ('1111261570', '02966 Quincy Road', '06/13/1991', '10/20/2017', 'Praesent id massa id nisl venenatis lacinia.', 'Donec posuere metus vitae ipsum. Aliquam non mauris.', 'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.', 'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.', 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', 'sociis natoque penatibus et', 7, 'http://dummyimage.com/242x165.bmp/ff4444/ffffff');
+insert into EmployeeBios (EmployeeContactNo, EmployeeAddress, DateofBirth, HireDate, Intro, Objectives, Hobbies, Interests, Certificates, JobExperience, Eduction, EmployeeId, Image) values ('1615054386', '2 Jay Road', '09/02/1993', '04/18/2017', 'Nulla facilisi. Cras non velit nec nisi vulputate nonummy.', 'Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.', 'Nullam molestie nibh in lectus. Pellentesque at nulla.', 'Integer ac leo. Pellentesque ultrices mattis odio.', 'Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.', 'luctus et ultrices', 8, 'http://dummyimage.com/202x208.bmp/dddddd/000000');
+insert into EmployeeBios (EmployeeContactNo, EmployeeAddress, DateofBirth, HireDate, Intro, Objectives, Hobbies, Interests, Certificates, JobExperience, Eduction, EmployeeId, Image) values ('4906524912', '0517 Buena Vista Crossing', '11/26/1992', '06/09/2017', 'Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.', 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', 'Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.', 'In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.', 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', 'Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.', 'eu felis fusce', 9, 'http://dummyimage.com/126x225.bmp/ff4444/ffffff');
+insert into EmployeeBios (EmployeeContactNo, EmployeeAddress, DateofBirth, HireDate, Intro, Objectives, Hobbies, Interests, Certificates, JobExperience, Eduction, EmployeeId, Image) values ('6624252245', '530 Grasskamp Circle', '08/03/1990', '05/20/2017', 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', 'Nullam molestie nibh in lectus. Pellentesque at nulla.', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.', 'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.', 'Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio.', 'porta volutpat quam pede lobortis', 10, 'http://dummyimage.com/147x236.png/cc0000/ffffff');
+
+
+
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (1, 1);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (2, 2);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (3, 3);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (4, 4);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (5, 5);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (6, 6);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (7, 7);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (8, 8);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (9, 9);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (10, 10);
+
+
+
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (1, 1);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (2, 2);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (3, 3);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (4, 4);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (5, 5);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (6, 6);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (7, 7);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (8, 8);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (9, 9);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (10, 10);
+
+
+insert into EmployeeIdentificationCards (EmployeeId, CardHolderName, CardHolderImage, CardExpiry) values (1, 'Christophe Baseley', 'http://dummyimage.com/222x210.bmp/ff4444/ffffff', '5/7/2023');
+insert into EmployeeIdentificationCards (EmployeeId, CardHolderName, CardHolderImage, CardExpiry) values (2, 'Bobette Simonich', 'http://dummyimage.com/136x138.jpg/dddddd/000000', '3/27/2023');
+insert into EmployeeIdentificationCards (EmployeeId, CardHolderName, CardHolderImage, CardExpiry) values (3, 'Elbertine Erridge', 'http://dummyimage.com/192x158.bmp/dddddd/000000', '2/12/2020');
+insert into EmployeeIdentificationCards (EmployeeId, CardHolderName, CardHolderImage, CardExpiry) values (4, 'Abra Buxam', 'http://dummyimage.com/117x186.jpg/cc0000/ffffff', '6/20/2020');
+insert into EmployeeIdentificationCards (EmployeeId, CardHolderName, CardHolderImage, CardExpiry) values (5, 'Rafi Halbord', 'http://dummyimage.com/183x181.bmp/cc0000/ffffff', '1/30/2023');
+insert into EmployeeIdentificationCards (EmployeeId, CardHolderName, CardHolderImage, CardExpiry) values (6, 'Jackson Fildery', 'http://dummyimage.com/208x177.bmp/cc0000/ffffff', '4/28/2024');
+insert into EmployeeIdentificationCards (EmployeeId, CardHolderName, CardHolderImage, CardExpiry) values (7, 'Pierre Hollingdale', 'http://dummyimage.com/107x234.jpg/ff4444/ffffff', '12/11/2024');
+insert into EmployeeIdentificationCards (EmployeeId, CardHolderName, CardHolderImage, CardExpiry) values (8, 'Clementius Karet', 'http://dummyimage.com/178x106.png/ff4444/ffffff', '11/26/2020');
+insert into EmployeeIdentificationCards (EmployeeId, CardHolderName, CardHolderImage, CardExpiry) values (9, 'Jesselyn Chopping', 'http://dummyimage.com/232x115.jpg/dddddd/000000', '9/22/2021');
+insert into EmployeeIdentificationCards (EmployeeId, CardHolderName, CardHolderImage, CardExpiry) values (10, 'Ileane Sowood', 'http://dummyimage.com/131x181.png/ff4444/ffffff', '12/16/2022');
+
+
+
+insert into EmployeePerformanceMetrics (EmployeeId, IllegalLeave, ProjectMissedDateLineCount, TotalProjects, AverageProjectScore, TotalTraining, AverageTrainingScore, Year) values (1, 24, 3, 2, 53, 70, 65, 2018);
+insert into EmployeePerformanceMetrics (EmployeeId, IllegalLeave, ProjectMissedDateLineCount, TotalProjects, AverageProjectScore, TotalTraining, AverageTrainingScore, Year) values (2, 18, 2, 2, 66, 69, 87, 2017);
+insert into EmployeePerformanceMetrics (EmployeeId, IllegalLeave, ProjectMissedDateLineCount, TotalProjects, AverageProjectScore, TotalTraining, AverageTrainingScore, Year) values (3, 8, 1, 4, 87, 73, 80, 2018);
+insert into EmployeePerformanceMetrics (EmployeeId, IllegalLeave, ProjectMissedDateLineCount, TotalProjects, AverageProjectScore, TotalTraining, AverageTrainingScore, Year) values (4, 5, 1, 1, 60, 63, 89, 2017);
+insert into EmployeePerformanceMetrics (EmployeeId, IllegalLeave, ProjectMissedDateLineCount, TotalProjects, AverageProjectScore, TotalTraining, AverageTrainingScore, Year) values (5, 5, 1, 1, 59, 70, 69, 2017);
+insert into EmployeePerformanceMetrics (EmployeeId, IllegalLeave, ProjectMissedDateLineCount, TotalProjects, AverageProjectScore, TotalTraining, AverageTrainingScore, Year) values (6, 18, 4, 1, 79, 90, 54, 2019);
+insert into EmployeePerformanceMetrics (EmployeeId, IllegalLeave, ProjectMissedDateLineCount, TotalProjects, AverageProjectScore, TotalTraining, AverageTrainingScore, Year) values (7, 44, 5, 5, 78, 72, 77, 2018);
+insert into EmployeePerformanceMetrics (EmployeeId, IllegalLeave, ProjectMissedDateLineCount, TotalProjects, AverageProjectScore, TotalTraining, AverageTrainingScore, Year) values (8, 8, 3, 4, 65, 59, 55, 2017);
+insert into EmployeePerformanceMetrics (EmployeeId, IllegalLeave, ProjectMissedDateLineCount, TotalProjects, AverageProjectScore, TotalTraining, AverageTrainingScore, Year) values (9, 40, 3, 4, 81, 71, 76, 2017);
+insert into EmployeePerformanceMetrics (EmployeeId, IllegalLeave, ProjectMissedDateLineCount, TotalProjects, AverageProjectScore, TotalTraining, AverageTrainingScore, Year) values (10, 12, 5, 4, 81, 56, 59, 2017);
+
+
+
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (1, 1);
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (2, 2);
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (3, 3);
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (4, 4);
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (5, 5);
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (6, 6);
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (7, 7);
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (8, 8);
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (9, 9);
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (10, 10);
+
+
+
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue) values (1, 27702, 0, '', 2017, 1, 1, 276);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue) values (2, 36337, 0, '', 2017, 0, 2, 895);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue) values (3, 35951, 0, '', 2017, 1, 3, 242);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue) values (4, 37405, 0, '', 2017, 1, 4, 253);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue) values (5, 20579, 0, '', 2017, 1, 5, 991);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue) values (6, 22327, 0, '', 2017, 1, 6, 472);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue) values (7, 26443, 0, '', 2017, 0, 7, 400);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue) values (8, 32175, 0, '', 2017, 1, 8, 219);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue) values (9, 24786, 0, '', 2017, 0, 9, 120);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue) values (10, 38844, 0, '', 2017, 0, 10, 250);
+
+
+
+
+insert into EmployeeTransportAreas (EmployeeId, TransportAreaId) values (1, 1);
+insert into EmployeeTransportAreas (EmployeeId, TransportAreaId) values (2, 2);
+insert into EmployeeTransportAreas (EmployeeId, TransportAreaId) values (3, 3);
+insert into EmployeeTransportAreas (EmployeeId, TransportAreaId) values (4, 4);
+insert into EmployeeTransportAreas (EmployeeId, TransportAreaId) values (5, 5);
+insert into EmployeeTransportAreas (EmployeeId, TransportAreaId) values (6, 6);
+insert into EmployeeTransportAreas (EmployeeId, TransportAreaId) values (7, 7);
+insert into EmployeeTransportAreas (EmployeeId, TransportAreaId) values (8, 8);
+insert into EmployeeTransportAreas (EmployeeId, TransportAreaId) values (9, 9);
+insert into EmployeeTransportAreas (EmployeeId, TransportAreaId) values (10, 10);
+
+
+
+
+insert into Equipments (EquipmentTypeId, Status, BuyPrice) values (1, 'turpis', 6067);
+insert into Equipments (EquipmentTypeId, Status, BuyPrice) values (2, 'consequat', 8112);
+insert into Equipments (EquipmentTypeId, Status, BuyPrice) values (3, 'sagittis', 6813);
+insert into Equipments (EquipmentTypeId, Status, BuyPrice) values (4, 'dapibus', 4722);
+insert into Equipments (EquipmentTypeId, Status, BuyPrice) values (5, 'lorem', 705);
+insert into Equipments (EquipmentTypeId, Status, BuyPrice) values (6, 'vulputate', 6655);
+insert into Equipments (EquipmentTypeId, Status, BuyPrice) values (7, 'tortor', 9669);
+insert into Equipments (EquipmentTypeId, Status, BuyPrice) values (8, 'non', 9500);
+insert into Equipments (EquipmentTypeId, Status, BuyPrice) values (9, 'pede', 8836);
+insert into Equipments (EquipmentTypeId, Status, BuyPrice) values (10, 'nulla', 3269);
+
+
+
+
+insert into EquipmentAndDepartments (EquipmentId, DepartmentId) values (1, 1);
+insert into EquipmentAndDepartments (EquipmentId, DepartmentId) values (2, 2);
+insert into EquipmentAndDepartments (EquipmentId, DepartmentId) values (3, 3);
+insert into EquipmentAndDepartments (EquipmentId, DepartmentId) values (4, 4);
+insert into EquipmentAndDepartments (EquipmentId, DepartmentId) values (5, 5);
+insert into EquipmentAndDepartments (EquipmentId, DepartmentId) values (6, 6);
+insert into EquipmentAndDepartments (EquipmentId, DepartmentId) values (7, 7);
+insert into EquipmentAndDepartments (EquipmentId, DepartmentId) values (8, 8);
+insert into EquipmentAndDepartments (EquipmentId, DepartmentId) values (9, 9);
+insert into EquipmentAndDepartments (EquipmentId, DepartmentId) values (10, 10);
+
+
+
+insert into EquipmentTransactions (TransactionType, TransactionAmount, InvolvedPartType, ReceivingPartyId, TransactionDate) values ('De-engineered', 12, 'matrix', 1, '09/04/2017');
+insert into EquipmentTransactions (TransactionType, TransactionAmount, InvolvedPartType, ReceivingPartyId, TransactionDate) values ('Streamlined', 84, 'demand-driven', 2, '05/07/2017');
+insert into EquipmentTransactions (TransactionType, TransactionAmount, InvolvedPartType, ReceivingPartyId, TransactionDate) values ('Realigned', 17, 'Devolved', 3, '01/16/2017');
+insert into EquipmentTransactions (TransactionType, TransactionAmount, InvolvedPartType, ReceivingPartyId, TransactionDate) values ('focus group', 56, 'well-modulated', 4, '06/28/2017');
+insert into EquipmentTransactions (TransactionType, TransactionAmount, InvolvedPartType, ReceivingPartyId, TransactionDate) values ('24 hour', 3, 'array', 5, '09/21/2017');
+insert into EquipmentTransactions (TransactionType, TransactionAmount, InvolvedPartType, ReceivingPartyId, TransactionDate) values ('Cloned', 4, 'Implemented', 6, '07/02/2017');
+insert into EquipmentTransactions (TransactionType, TransactionAmount, InvolvedPartType, ReceivingPartyId, TransactionDate) values ('system engine', 26, 'Graphical User Interface', 7, '12/02/2017');
+insert into EquipmentTransactions (TransactionType, TransactionAmount, InvolvedPartType, ReceivingPartyId, TransactionDate) values ('parallelism', 100, 'leading edge', 8, '01/23/2017');
+insert into EquipmentTransactions (TransactionType, TransactionAmount, InvolvedPartType, ReceivingPartyId, TransactionDate) values ('User-friendly', 12, 'high-level', 9, '05/20/2017');
+insert into EquipmentTransactions (TransactionType, TransactionAmount, InvolvedPartType, ReceivingPartyId, TransactionDate) values ('optimizing', 11, 'user-facing', 10, '08/03/2017');
+
+
+
+insert into EquipmentTypes (TypeName, Model, TotalNumberPresent, TotalNumberAssigned) values ('sem duis', 'urna', 84, 9);
+insert into EquipmentTypes (TypeName, Model, TotalNumberPresent, TotalNumberAssigned) values ('curabitur', 'massa tempor', 60, 29);
+insert into EquipmentTypes (TypeName, Model, TotalNumberPresent, TotalNumberAssigned) values ('fermentum donec', 'erat volutpat', 51, 50);
+insert into EquipmentTypes (TypeName, Model, TotalNumberPresent, TotalNumberAssigned) values ('morbi', 'elit', 90, 11);
+insert into EquipmentTypes (TypeName, Model, TotalNumberPresent, TotalNumberAssigned) values ('eu est', 'potenti', 70, 1);
+insert into EquipmentTypes (TypeName, Model, TotalNumberPresent, TotalNumberAssigned) values ('ipsum', 'luctus', 87, 44);
+insert into EquipmentTypes (TypeName, Model, TotalNumberPresent, TotalNumberAssigned) values ('maecenas', 'eget', 71, 9);
+insert into EquipmentTypes (TypeName, Model, TotalNumberPresent, TotalNumberAssigned) values ('eros', 'volutpat dui', 98, 31);
+insert into EquipmentTypes (TypeName, Model, TotalNumberPresent, TotalNumberAssigned) values ('mi', 'orci', 92, 35);
+insert into EquipmentTypes (TypeName, Model, TotalNumberPresent, TotalNumberAssigned) values ('tempus vel', 'posuere cubilia', 79, 10);
+
+
+
+insert into HireRequests (DesignationName, EmployeeRequired, RequestDate, Urgency, HireRequestStatus, DepartmentId) values ('proin leo', 5, '11/18/2017', 'Operative', 1, 1);
+insert into HireRequests (DesignationName, EmployeeRequired, RequestDate, Urgency, HireRequestStatus, DepartmentId) values ('quis', 6, '11/14/2017', 'maximized', 0, 2);
+insert into HireRequests (DesignationName, EmployeeRequired, RequestDate, Urgency, HireRequestStatus, DepartmentId) values ('ipsum', 2, '12/01/2017', 'hub', 1, 3);
+insert into HireRequests (DesignationName, EmployeeRequired, RequestDate, Urgency, HireRequestStatus, DepartmentId) values ('semper', 3, '11/29/2017', 'Innovative', 0, 4);
+insert into HireRequests (DesignationName, EmployeeRequired, RequestDate, Urgency, HireRequestStatus, DepartmentId) values ('nulla', 2, '11/17/2017', 'website', 1, 5);
+insert into HireRequests (DesignationName, EmployeeRequired, RequestDate, Urgency, HireRequestStatus, DepartmentId) values ('dui maecenas', 6, '11/05/2017', 'leading edge', 0, 6);
+insert into HireRequests (DesignationName, EmployeeRequired, RequestDate, Urgency, HireRequestStatus, DepartmentId) values ('mi', 10, '11/25/2017', 'Multi-tiered', 0, 7);
+insert into HireRequests (DesignationName, EmployeeRequired, RequestDate, Urgency, HireRequestStatus, DepartmentId) values ('pellentesque', 1, '11/02/2017', 'Progressive', 1, 8);
+insert into HireRequests (DesignationName, EmployeeRequired, RequestDate, Urgency, HireRequestStatus, DepartmentId) values ('eu', 6, '11/16/2017', 'Cloned', 1, 9);
+insert into HireRequests (DesignationName, EmployeeRequired, RequestDate, Urgency, HireRequestStatus, DepartmentId) values ('quam', 2, '11/06/2017', 'web-enabled', 0, 10);
+
+
+
+
+insert into HireThreads (Budget, StartDate, HireThreadStatus, HireRequestId) values (0, '11/17/2017', 0, 1);
+insert into HireThreads (Budget, StartDate, HireThreadStatus, HireRequestId) values (0, '11/26/2017', 1, 2);
+insert into HireThreads (Budget, StartDate, HireThreadStatus, HireRequestId) values (0, '11/21/2017', 0, 3);
+insert into HireThreads (Budget, StartDate, HireThreadStatus, HireRequestId) values (0, '12/04/2017', 1, 4);
+insert into HireThreads (Budget, StartDate, HireThreadStatus, HireRequestId) values (0, '11/30/2017', 1, 5);
+insert into HireThreads (Budget, StartDate, HireThreadStatus, HireRequestId) values (0, '12/13/2017', 1, 6);
+insert into HireThreads (Budget, StartDate, HireThreadStatus, HireRequestId) values (0, '11/29/2017', 1, 7);
+insert into HireThreads (Budget, StartDate, HireThreadStatus, HireRequestId) values (0, '12/01/2017', 1, 8);
+insert into HireThreads (Budget, StartDate, HireThreadStatus, HireRequestId) values (0, '12/10/2017', 0, 9);
+insert into HireThreads (Budget, StartDate, HireThreadStatus, HireRequestId) values (0, '12/14/2017', 0, 10);
+
+
+
+
+
+
+
+
+
+
+
+
