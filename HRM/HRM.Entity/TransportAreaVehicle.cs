@@ -11,7 +11,7 @@ namespace HRM.Entity
     {
         [Key]
         public int TransportAreaVehicleId { get; set; }
-        public int TranspoertAreaId { get; set; }
+        public int TransportAreaId { get; set; }
         public int TransportVehicleId { get; set; }
 
     }

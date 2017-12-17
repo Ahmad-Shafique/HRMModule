@@ -69,6 +69,7 @@ namespace HRM.Data
 
 
 
+
         public static HRMDbContext GetInstance()
         {
             if(instance == null)
