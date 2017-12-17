@@ -22,9 +22,11 @@ namespace HRM.View.Controllers
 
         //Action for displaying employees
         [HttpGet]
-        public ActionResult Display()
+        public async Task<ActionResult> Display()
         {
-            List<Employee> empList = Service.GetAll().Result.ToList();
+            Console.WriteLine("*******************************   Entered display method");
+            IEnumerable<Employee> empList = await Service.GetAll();
+            Console.WriteLine("Recieved list from db : " + empList);
             return View(empList);
         }
 
@@ -34,7 +36,7 @@ namespace HRM.View.Controllers
             string searchTerm = form["searchTerm"];
             if (searchTerm == "")
             {
-                return RedirectToAction("/display");
+                return RedirectToAction("/Display");
             }
 
             //search and return employees with the 'serachTerm' name

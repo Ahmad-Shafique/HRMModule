@@ -51,8 +51,19 @@ namespace HRM.Data
         public DbSet<TemporaryCV> TemporaryCVs { get; set; }
         public DbSet<Training> Trainings { get; set; }
         public DbSet<TrainingEmployee> TrainingEmployees { get; set; }
+        public DbSet<BudgetTransaction> BudgetTransactions { get; set; }
+        public DbSet<CompanyPolicy> CompanyPolicies { get; set; }
+        public DbSet<EmployeeIdentificationCard> EmployeeIdentificationCards { get; set; }
+        public DbSet<MonthlyBudget> MonthlyBudgets { get; set; }
+        public DbSet<NoticeComment> NoticeComments { get; set; }
+        public DbSet<TransportArea> TransportAreas { get; set; }
+        public DbSet<TransportAreaVehicle> TransportAreaVehicles { get; set; }
+        public DbSet<TransportVehicle> TransportVehicles { get; set; }
 
-        
+
+
+
+
 
         public static HRMDbContext GetInstance()
         {

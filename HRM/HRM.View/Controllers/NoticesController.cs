@@ -30,14 +30,21 @@ namespace HRM.View.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
+            Console.WriteLine("Id found : " + id);
             Notice entity = await service.Get(id);
+            Console.WriteLine("Notice header is : " + entity.NoticeTitle);
 
             if (entity == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Notice = entity;
-            ViewBag.Comments = CommentService.GetAll().Result.Where(item => item.NoticeId == entity.NoticeId);
+            ViewBag.NoticeTitle = entity.NoticeTitle;
+            ViewBag.NoticeDate = entity.NoticeDate;
+            ViewBag.NoticeDetails = entity.NoticeDetails;
+            
+            IEnumerable<NoticeComment> comments = await CommentService.GetAll();
+            ViewBag.Comments = comments.Where(item => item.NoticeId == entity.NoticeId);
             return View();
         }
 

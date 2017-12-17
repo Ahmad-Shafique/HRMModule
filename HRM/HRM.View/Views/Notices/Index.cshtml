@@ -52,7 +52,7 @@
             foreach(Notice notice in ViewBag.Notices)
             {
                 @Html.ActionLink(notice.NoticeTitle, "Details", new { id = notice.NoticeId}, new { @class = "navbar-brand" })
-                <b>@notice.NoticeDate</b>
+                <b>@notice.NoticeDate.Date</b>
                 <hr />
             }
         }
