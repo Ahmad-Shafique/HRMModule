@@ -301,6 +301,62 @@ insert into HireThreads (Budget, StartDate, HireThreadStatus, HireRequestId) val
 
 
 
+insert into Interviews (Schedule, HireThreadId, NumberOfCandidatesAssigned, StartTime, EndTime) values ('12/22/2017', 1, 8, '2017-12-21 11:29:11', '2017-12-24 11:11:36');
+insert into Interviews (Schedule, HireThreadId, NumberOfCandidatesAssigned, StartTime, EndTime) values ('12/23/2017', 2, 5, '2017-12-18 03:30:05', '2017-12-26 20:22:07');
+insert into Interviews (Schedule, HireThreadId, NumberOfCandidatesAssigned, StartTime, EndTime) values ('12/24/2017', 3, 10, '2017-12-25 11:10:29', '2017-12-19 15:54:30');
+insert into Interviews (Schedule, HireThreadId, NumberOfCandidatesAssigned, StartTime, EndTime) values ('12/26/2017', 4, 10, '2017-12-26 08:55:49', '2017-12-26 16:31:57');
+insert into Interviews (Schedule, HireThreadId, NumberOfCandidatesAssigned, StartTime, EndTime) values ('12/26/2017', 5, 5, '2017-12-23 20:24:35', '2017-12-18 02:24:41');
+insert into Interviews (Schedule, HireThreadId, NumberOfCandidatesAssigned, StartTime, EndTime) values ('12/25/2017', 6, 10, '2017-12-25 00:50:41', '2017-12-23 12:06:52');
+insert into Interviews (Schedule, HireThreadId, NumberOfCandidatesAssigned, StartTime, EndTime) values ('12/26/2017', 7, 7, '2017-12-18 22:22:58', '2017-12-21 04:28:16');
+insert into Interviews (Schedule, HireThreadId, NumberOfCandidatesAssigned, StartTime, EndTime) values ('12/24/2017', 8, 1, '2017-12-22 15:59:08', '2017-12-17 07:16:19');
+insert into Interviews (Schedule, HireThreadId, NumberOfCandidatesAssigned, StartTime, EndTime) values ('12/23/2017', 9, 9, '2017-12-18 12:36:41', '2017-12-17 14:35:31');
+insert into Interviews (Schedule, HireThreadId, NumberOfCandidatesAssigned, StartTime, EndTime) values ('12/21/2017', 10, 9, '2017-12-23 16:31:43', '2017-12-17 16:49:21');
+
+
+
+
+insert into Interviewees (InterviewId, TemporaryCVId) values (1, 1);
+insert into Interviewees (InterviewId, TemporaryCVId) values (2, 2);
+insert into Interviewees (InterviewId, TemporaryCVId) values (3, 3);
+insert into Interviewees (InterviewId, TemporaryCVId) values (4, 4);
+insert into Interviewees (InterviewId, TemporaryCVId) values (5, 5);
+insert into Interviewees (InterviewId, TemporaryCVId) values (6, 6);
+insert into Interviewees (InterviewId, TemporaryCVId) values (7, 7);
+insert into Interviewees (InterviewId, TemporaryCVId) values (8, 8);
+insert into Interviewees (InterviewId, TemporaryCVId) values (9, 9);
+insert into Interviewees (InterviewId, TemporaryCVId) values (10, 10);
+
+
+
+insert into LeaveApplications (LeaveApplicationCategoryId, EmployeeId, ApplicationDescription, LeaveApplicationDuration, StartDate, EndtDate, Applydate, ApplicationsStatus) values (1, 1, 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', 2, '12/21/2017', '12/18/2017', '12/22/2017', 1);
+insert into LeaveApplications (LeaveApplicationCategoryId, EmployeeId, ApplicationDescription, LeaveApplicationDuration, StartDate, EndtDate, Applydate, ApplicationsStatus) values (2, 2, 'Aenean fermentum.', 5, '12/18/2017', '12/18/2017', '12/20/2017', 1);
+insert into LeaveApplications (LeaveApplicationCategoryId, EmployeeId, ApplicationDescription, LeaveApplicationDuration, StartDate, EndtDate, Applydate, ApplicationsStatus) values (3, 3, 'Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', 25, '12/25/2017', '12/26/2017', '12/22/2017', 0);
+insert into LeaveApplications (LeaveApplicationCategoryId, EmployeeId, ApplicationDescription, LeaveApplicationDuration, StartDate, EndtDate, Applydate, ApplicationsStatus) values (4, 4, 'Curabitur gravida nisi at nibh.', 27, '12/26/2017', '12/26/2017', '12/20/2017', 0);
+insert into LeaveApplications (LeaveApplicationCategoryId, EmployeeId, ApplicationDescription, LeaveApplicationDuration, StartDate, EndtDate, Applydate, ApplicationsStatus) values (5, 5, 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 12, '12/22/2017', '12/25/2017', '12/21/2017', 0);
+insert into LeaveApplications (LeaveApplicationCategoryId, EmployeeId, ApplicationDescription, LeaveApplicationDuration, StartDate, EndtDate, Applydate, ApplicationsStatus) values (6, 6, 'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis.', 17, '12/25/2017', '12/23/2017', '12/18/2017', 0);
+insert into LeaveApplications (LeaveApplicationCategoryId, EmployeeId, ApplicationDescription, LeaveApplicationDuration, StartDate, EndtDate, Applydate, ApplicationsStatus) values (7, 7, 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 4, '12/20/2017', '12/18/2017', '12/21/2017', 1);
+insert into LeaveApplications (LeaveApplicationCategoryId, EmployeeId, ApplicationDescription, LeaveApplicationDuration, StartDate, EndtDate, Applydate, ApplicationsStatus) values (8, 8, 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.', 27, '12/23/2017', '12/23/2017', '12/25/2017', 0);
+insert into LeaveApplications (LeaveApplicationCategoryId, EmployeeId, ApplicationDescription, LeaveApplicationDuration, StartDate, EndtDate, Applydate, ApplicationsStatus) values (9, 9, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus.', 4, '12/20/2017', '12/18/2017', '12/23/2017', 1);
+insert into LeaveApplications (LeaveApplicationCategoryId, EmployeeId, ApplicationDescription, LeaveApplicationDuration, StartDate, EndtDate, Applydate, ApplicationsStatus) values (10, 10, 'In hac habitasse platea dictumst. Etiam faucibus cursus urna.', 3, '12/25/2017', '12/18/2017', '12/18/2017', 1);
+
+
+
+
+insert into LeaveApplicationCategories (LeaveApplicationCategoryName) values ('optimizing');
+insert into LeaveApplicationCategories (LeaveApplicationCategoryName) values ('next generation');
+insert into LeaveApplicationCategories (LeaveApplicationCategoryName) values ('product');
+insert into LeaveApplicationCategories (LeaveApplicationCategoryName) values ('Future-proofed');
+insert into LeaveApplicationCategories (LeaveApplicationCategoryName) values ('Assimilated');
+insert into LeaveApplicationCategories (LeaveApplicationCategoryName) values ('analyzer');
+insert into LeaveApplicationCategories (LeaveApplicationCategoryName) values ('Phased');
+insert into LeaveApplicationCategories (LeaveApplicationCategoryName) values ('Integrated');
+insert into LeaveApplicationCategories (LeaveApplicationCategoryName) values ('task-force');
+insert into LeaveApplicationCategories (LeaveApplicationCategoryName) values ('database');
+
+
+
+
+
 
 
 
