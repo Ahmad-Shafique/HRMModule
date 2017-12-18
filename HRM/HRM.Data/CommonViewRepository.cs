@@ -341,7 +341,7 @@ namespace HRM.Data
 
                         await tAVRepo.Insert(new TransportAreaVehicle
                         {
-                            TranspoertAreaId = transportAreaId,
+                            TransportAreaId = transportAreaId,
                             TransportVehicleId = id
                         });
 

@@ -142,15 +142,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\EmployeeController.cs" />
-    <Compile Include="Controllers\EmployeeEvaluationController.cs" />
+    <Compile Include="Controllers\BonusesController.cs" />
+    <Compile Include="Controllers\BudgetsController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\EmployeeEvaluationsController.cs" />
     <Compile Include="Controllers\EquipmentsController.cs" />
     <Compile Include="Controllers\HireController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InterviewsController.cs" />
     <Compile Include="Controllers\NoticesController.cs" />
-    <Compile Include="Controllers\SalaryPaymentController.cs" />
-    <Compile Include="Controllers\TransportationController.cs" />
+    <Compile Include="Controllers\SalaryPaymentsController.cs" />
+    <Compile Include="Controllers\TrainingsController.cs" />
+    <Compile Include="Controllers\TransportationsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,26 +199,29 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Employee\Display.cshtml" />
-    <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\Employee\Create.cshtml" />
-    <Content Include="Views\EmployeeEvaluation\EmployeeDisplay.cshtml" />
-    <Content Include="Views\EmployeeEvaluation\Index.cshtml" />
+    <Content Include="Views\Employees\Display.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\EmployeeEvaluations\EmployeeDisplay.cshtml" />
+    <Content Include="Views\EmployeeEvaluations\Index.cshtml" />
     <Content Include="Views\Equipments\Equip.cshtml" />
     <Content Include="Views\Equipments\Index.cshtml" />
     <Content Include="Views\Hire\ConfirmHires.cshtml" />
     <Content Include="Views\Hire\Index.cshtml" />
     <Content Include="Views\Interviews\Index.cshtml" />
-    <Content Include="Views\SalaryPayment\Index.cshtml" />
-    <Content Include="Views\Transportation\Area.cshtml" />
-    <Content Include="Views\Transportation\Index.cshtml" />
-    <Content Include="Views\Transportation\TransportArea.cshtml" />
-    <Content Include="Views\Transportation\TransportVehicle.cshtml" />
+    <Content Include="Views\SalaryPayments\Index.cshtml" />
+    <Content Include="Views\Transportations\Area.cshtml" />
+    <Content Include="Views\Transportations\Index.cshtml" />
+    <Content Include="Views\Transportations\TransportArea.cshtml" />
+    <Content Include="Views\Transportations\TransportVehicle.cshtml" />
     <Content Include="Views\Notices\Create.cshtml" />
     <Content Include="Views\Notices\Delete.cshtml" />
     <Content Include="Views\Notices\Details.cshtml" />
     <Content Include="Views\Notices\Edit.cshtml" />
     <Content Include="Views\Notices\Index.cshtml" />
+    <Content Include="Views\Bonuses\Index.cshtml" />
+    <Content Include="Views\Trainings\Index.cshtml" />
+    <Content Include="Views\Budgets\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

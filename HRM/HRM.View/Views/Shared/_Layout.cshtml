@@ -27,7 +27,7 @@
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        @Html.ActionLink("Home", "Display", "Employee", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Home", "Display", "Employees", new { area = "" }, new { @class = "navbar-brand" })
                         @*<a class="navbar-brand" href="/Home"></a>*@
                     </div>
                     <ul class="nav navbar-nav">
@@ -36,10 +36,10 @@
                             <a class="dropdown-toggle" data-toggle="dropdown">Employee Management</a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    @Html.ActionLink("Show employees", "Display", "Employee", new { area = "" }, new { @class = "navbar-brand" })
+                                    @Html.ActionLink("Show employees", "Display", "Employees", new { area = "" }, new { @class = "navbar-brand" })
                                 </li>
                                 <li>
-                                    @Html.ActionLink("Add employeee", "Create", "Employee", new { area = "" }, new { @class = "navbar-brand" })
+                                    @Html.ActionLink("Add employeee", "Create", "Employees", new { area = "" }, new { @class = "navbar-brand" })
                                 </li>
                             </ul>
                         </li>
@@ -59,7 +59,7 @@
                             <a class="dropdown-toggle" data-toggle="dropdown">Salary Payment</a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    @Html.ActionLink("Salary management", "Index", "SalaryPayment", new { area = "" }, new { @class = "navbar-brand" })
+                                    @Html.ActionLink("Salary management", "Index", "SalaryPayments", new { area = "" }, new { @class = "navbar-brand" })
                                 </li>
                             </ul>
                         </li>
@@ -67,7 +67,7 @@
                             <a class="dropdown-toggle" data-toggle="dropdown">Employee Evaluation</a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    @Html.ActionLink("Employee Evaluation", "Index", "EmployeeEvaluation", new { area = "" }, new { @class = "navbar-brand" })
+                                    @Html.ActionLink("Employee Evaluation", "Index", "EmployeeEvaluations", new { area = "" }, new { @class = "navbar-brand" })
                                 </li>
                             </ul>
                         </li>
@@ -79,6 +79,55 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Reward program</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @Html.ActionLink("Bonus management", "Index", "Bonuses", new { area = "" }, new { @class = "navbar-brand" })
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Budget</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @Html.ActionLink("Budget management", "Index", "Budgets", new { area = "" }, new { @class = "navbar-brand" })
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Hire</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @Html.ActionLink("Hiring management", "Index", "Hire", new { area = "" }, new { @class = "navbar-brand" })
+                                    @Html.ActionLink("Hiring management", "ConfirmHires", "Hire", new { area = "" }, new { @class = "navbar-brand" })
+                                </li>
+                            </ul>
+                        </li>
+                        @*<li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Interview</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @Html.ActionLink("Interview management", "Index", "Interviews", new { area = "" }, new { @class = "navbar-brand" })
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Training</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @Html.ActionLink("Training management", "Index", "Trainings", new { area = "" }, new { @class = "navbar-brand" })
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Transportation</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @Html.ActionLink("Transport management", "Index", "Transportations", new { area = "" }, new { @class = "navbar-brand" })
+                                </li>
+                            </ul>
+                        </li>*@
                     </ul>
 
                     @*<ul class="nav navbar-nav navbar-right">

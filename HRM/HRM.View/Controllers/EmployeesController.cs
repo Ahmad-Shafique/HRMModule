@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace HRM.View.Controllers
 {
-    public class EmployeeController : Controller
+    public class EmployeesController : Controller
     {
         private IDomainService<Employee> Service = new ServiceFactory().Create<Employee>();
         private ICommonViewServiceInterface CommonService = ServiceFactory.GetCommonViewService();

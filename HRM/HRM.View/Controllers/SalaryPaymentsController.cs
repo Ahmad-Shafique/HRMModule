@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace HRM.View.Controllers
 {
-    public class SalaryPaymentController : Controller
+    public class SalaryPaymentsController : Controller
     {
         private ICommonViewServiceInterface Service = ServiceFactory.GetCommonViewService();
         // GET: SalaryPayment

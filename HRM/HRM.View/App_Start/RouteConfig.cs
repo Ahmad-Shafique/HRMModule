@@ -16,7 +16,7 @@ namespace HRM.View
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Employee", action = "Display", id = UrlParameter.Optional }
+                defaults: new { controller = "Employees", action = "Display", id = UrlParameter.Optional }
             );
         }
     }

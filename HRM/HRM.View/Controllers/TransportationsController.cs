@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace HRM.View.Controllers
 {
-    public class TransportationController : Controller
+    public class TransportationsController : Controller
     {
         private IDomainService<TransportArea> AreaService = new ServiceFactory().Create<TransportArea>();
         private IDomainService<Equipment> EquipmentService = new ServiceFactory().Create<Equipment>();

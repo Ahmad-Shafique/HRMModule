@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace HRM.View.Controllers
 {
-    public class EmployeeEvaluationController : Controller
+    public class EmployeeEvaluationsController : Controller
     {
         private IDomainService<Department> DepartmentService = new ServiceFactory().Create<Department>();
         private ICommonViewServiceInterface CommonService = ServiceFactory.GetCommonViewService();
