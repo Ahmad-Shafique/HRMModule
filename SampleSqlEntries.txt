@@ -1,4 +1,4 @@
-insert into Bonus (BonusValue, BonusTime) values (98, '04/14/2017');
+﻿insert into Bonus (BonusValue, BonusTime) values (98, '04/14/2017');
 insert into Bonus (BonusValue, BonusTime) values (67, '10/29/2017');
 insert into Bonus (BonusValue, BonusTime) values (7, '03/22/2017');
 insert into Bonus (BonusValue, BonusTime) values (47, '06/30/2017');
@@ -447,16 +447,7 @@ insert into ProjectEmployees (ProjectId, EmployeeId) values (10, 10);
 
 
 
-insert into SalaryComponents (ComponentName, ComponentValue, Type) values ('User-centric', 21, 'Business-focused demand-driven policy');
-insert into SalaryComponents (ComponentName, ComponentValue, Type) values ('standardization', 6, 'Horizontal systematic portal');
-insert into SalaryComponents (ComponentName, ComponentValue, Type) values ('Proactive', 51, 'Cross-platform optimizing circuit');
-insert into SalaryComponents (ComponentName, ComponentValue, Type) values ('needs-based', 97, 'Implemented fresh-thinking success');
-insert into SalaryComponents (ComponentName, ComponentValue, Type) values ('dynamic', 3, 'Multi-channelled non-volatile neural-net');
-insert into SalaryComponents (ComponentName, ComponentValue, Type) values ('bandwidth-monitored', 3, 'Triple-buffered tertiary leverage');
-insert into SalaryComponents (ComponentName, ComponentValue, Type) values ('client-server', 27, 'Triple-buffered systematic success');
-insert into SalaryComponents (ComponentName, ComponentValue, Type) values ('Reactive', 82, 'Face to face discrete instruction set');
-insert into SalaryComponents (ComponentName, ComponentValue, Type) values ('Versatile', 89, 'Self-enabling multi-state conglomeration');
-insert into SalaryComponents (ComponentName, ComponentValue, Type) values ('Cloned', 28, 'Visionary client-server access');
+insert into SalaryComponents (ComponentName, ComponentValue, Type) values ('Profit sharing', 21, 'debit');
 
 
 

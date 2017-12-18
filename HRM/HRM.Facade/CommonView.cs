@@ -5,16 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using HRM.Entity;
 using HRM.Data;
+using HRM.Facade.Interfaces;
 using HRM.Data.Interfaces;
+using HRM.Entity.Facade;
 
-namespace HRM.Data
+namespace HRM.Facade
 {
-    class CommonViewRepository: ICommonViewRepository
+    class CommonView: ICommonView
     {
         public virtual dynamic GetTrainingAndRelatedEmployees(int trainingId)
         {
-            IEnumerable<Training> trainingList = new TrainingRepository().GetAll().Result;
-            IEnumerable<Employee> employeeList = new EmployeeRepository().GetAll().Result;
+            
+            IEnumerable<Training> trainingList = new RepositoryFactory().Create<Training>().GetAll().Result;
+            IEnumerable<Employee> employeeList = new RepositoryFactory().Create<Employee>().GetAll().Result;
             IEnumerable<TrainingEmployee> trainingEmployeeList = new TrainingEmployeeRepository().GetAll().Result;
 
             try
@@ -22,7 +25,7 @@ namespace HRM.Data
                 var result = from training in trainingList
                              join combo in trainingEmployeeList on training.TrainingId equals combo.TrainingId
                              join employee in employeeList on combo.EmployeeId equals employee.EmployeeId
-                             select new
+                             select new TrainingAndRelatedEmployees
                              {
                                  TrainingId = training.TrainingId,
                                  TrainingName = training.TrainingName,
@@ -43,16 +46,16 @@ namespace HRM.Data
 
         public virtual dynamic GetEmployeeAndRelatedTraining(int employeeId)
         {
-            IEnumerable<Training> trainingList = new TrainingRepository().GetAll().Result;
-            IEnumerable<Employee> employeeList = new EmployeeRepository().GetAll().Result;
-            IEnumerable<TrainingEmployee> trainingEmployeeList = new TrainingEmployeeRepository().GetAll().Result;
+            IEnumerable<Training> trainingList = new RepositoryFactory().Create<Training>().GetAll().Result;
+            IEnumerable<Employee> employeeList = new RepositoryFactory().Create<Employee>().GetAll().Result;
+            IEnumerable<TrainingEmployee> trainingEmployeeList = new RepositoryFactory().Create<TrainingEmployee>().GetAll().Result;
 
             try
             {
                 var result = from emp in  employeeList
                              join combo in trainingEmployeeList on emp.EmployeeId equals combo.EmployeeId
                              join train in trainingList on combo.TrainingId equals train.TrainingId
-                             select new
+                             select new EmployeeAndRelatedTrainings
                              {
                                  EmployeeId = emp.EmployeeId,
                                  EmployeeName = emp.EmployeeName,
@@ -75,7 +78,7 @@ namespace HRM.Data
         {
             try
             {
-                TrainingEmployeeRepository comboRepo = new TrainingEmployeeRepository();
+                IRepository<TrainingEmployee> comboRepo = new RepositoryFactory().Create<TrainingEmployee>();
                 foreach(int id in employeeIdList)
                 {
                     TrainingEmployee item = new TrainingEmployee();
@@ -121,7 +124,7 @@ namespace HRM.Data
         {
             try
             {
-                TrainingEmployeeRepository comboRepo = new TrainingEmployeeRepository();
+                IRepository<TrainingEmployee> comboRepo = new RepositoryFactory().Create<TrainingEmployee>();
                 foreach (int id in trainingList)
                 {
                     TrainingEmployee item = new TrainingEmployee();
@@ -165,11 +168,11 @@ namespace HRM.Data
 
         public virtual dynamic GetAllEmployeeDetails()
         {
-            EmployeeRepository empRepo = new EmployeeRepository();
-            EmployeeBioRepository empBioRepo = new EmployeeBioRepository();
+            IRepository<Employee> empRepo = new RepositoryFactory().Create<Employee>();
+            IRepository<EmployeeBio> empBioRepo = new RepositoryFactory().Create<EmployeeBio>();
             return from emp in empRepo.GetAll().Result
                    join empBio in empBioRepo.GetAll().Result on emp.EmployeeId equals empBio.EmployeeId
-                   select new
+                   select new EmployeeAndBio
                     {
                         EmployeeId = emp.EmployeeId,
                         EmployeeName = emp.EmployeeName,
@@ -188,6 +191,7 @@ namespace HRM.Data
                         Interests = empBio.Interests,
                         Certificates = empBio.Certificates,
                         JobExperience = empBio.JobExperience,
+                        Education = empBio.Eduction,
                         Image  = empBio.Image
                     };
         }
@@ -198,8 +202,8 @@ namespace HRM.Data
             try
             {
                 var tempIdsList = hireRequestIdsString.Trim().Split(',');
-                HireRequestRepository hireRepo = new HireRequestRepository();
-                foreach(var item in tempIdsList)
+                IRepository<HireRequest> hireRepo = new RepositoryFactory().Create<HireRequest>();
+                foreach (var item in tempIdsList)
                 {
                     if(item.Trim() != null && item.Trim() != "")
                     {
@@ -222,11 +226,11 @@ namespace HRM.Data
 
         public virtual dynamic GetAllEmployeePerformance()
         {
-            EmployeeRepository empRepo = new EmployeeRepository();
-            EmployeePerformanceMetricRepository empBioRepo = new EmployeePerformanceMetricRepository();
+            IRepository<Employee> empRepo = new RepositoryFactory().Create<Employee>();
+            IRepository<EmployeePerformanceMetric> empBioRepo = new RepositoryFactory().Create<EmployeePerformanceMetric>();
             return from emp in empRepo.GetAll().Result
                    join empPerf in empBioRepo.GetAll().Result on emp.EmployeeId equals empPerf.EmployeeId
-                   select new
+                   select new EmployeePerformance
                    {
                        EmployeeId = emp.EmployeeId,
                        EmployeeName = emp.EmployeeName,
@@ -244,9 +248,9 @@ namespace HRM.Data
             
             try
             {
-                EmployeeSalaryRepository empSalRepo = new EmployeeSalaryRepository();
-                BonusRepository bonusRepo = new BonusRepository();
-                BonusesRepository bonusesRepo = new BonusesRepository();
+                IRepository<EmployeeSalary> empSalRepo = new RepositoryFactory().Create<EmployeeSalary>();
+                IRepository<Bonus> bonusRepo = new RepositoryFactory().Create<Bonus>();
+                IRepository<Bonuses> bonusesRepo = new RepositoryFactory().Create<Bonuses>();
 
                 var salaryBonus = from empSal in empSalRepo.GetAll().Result
                                   join bon in bonusRepo.GetAll().Result on empSal.BonusId equals bon.BonusId
@@ -257,11 +261,13 @@ namespace HRM.Data
 
                 foreach(var item in salaryBonus)
                 {
-                    Bonuses bonusesItem = new Bonuses();
-                    bonusesItem.BonusId = item.BonusId;
-                    bonusesItem.BonusValue = bonus.BonusValue;
-                    bonusesItem.BonusDescription = bonus.BonusDescription;
-                    bonusesItem.BonusesDate = bonus.BonusesDate;
+                    Bonuses bonusesItem = new Bonuses
+                    {
+                        BonusId = item.BonusId,
+                        BonusValue = bonus.BonusValue,
+                        BonusDescription = bonus.BonusDescription,
+                        BonusesDate = bonus.BonusesDate
+                    };
                     await bonusesRepo.Insert(bonusesItem);
 
                     Bonus tempBonus = bonusRepo.Get(item.BonusId).Result;
@@ -328,9 +334,9 @@ namespace HRM.Data
         {
             try
             {
-                TransportAreaVehicleRepository tAVRepo = new TransportAreaVehicleRepository();
-                TransportVehicleRepository tVRepo = new TransportVehicleRepository();
-                TransportAreaRepository TARepo = new TransportAreaRepository();
+                IRepository<TransportAreaVehicle> tAVRepo = new RepositoryFactory().Create<TransportAreaVehicle>();
+                IRepository<TransportVehicle> tVRepo = new RepositoryFactory().Create<TransportVehicle>();
+                IRepository<TransportArea> TARepo = new RepositoryFactory().Create<TransportArea>();
                 var idList = transportIdsList.Trim().Split(',');
                 int newCapacity = 0;
                 foreach(var tempId in idList)
@@ -367,14 +373,14 @@ namespace HRM.Data
 
         public virtual IEnumerable<TransportVehicle> GetAvailableTransport()
         {
-            return new TransportVehicleRepository().GetAll().Result.Where(item => (item.status == "free" || item.status == "available" || item.status == null || item.status.Trim() == ""));
+            return new RepositoryFactory().Create<TransportVehicle>().GetAll().Result.Where(item => (item.status == "free" || item.status == "available" || item.status == null || item.status.Trim() == ""));
         }
 
 
         public virtual async Task<bool> AssignEquipmentsToADepartment(int departmentId, string equipmentIdsList)
         {
-            EquipmentRepository eRepo = new EquipmentRepository();
-            EquipmentAndDepartmentRepository eDRepo = new EquipmentAndDepartmentRepository();
+            IRepository<Equipment> eRepo = new RepositoryFactory().Create<Equipment>();
+            IRepository<EquipmentAndDepartment> eDRepo = new RepositoryFactory().Create<EquipmentAndDepartment>();
             try
             {
                 
@@ -454,11 +460,9 @@ namespace HRM.Data
         }
 
 
+
         public virtual async Task<dynamic> CalculateAllEmployeeTotalSalary()
         {
-
-            
-
             IEnumerable<SalaryComponents> salCList = await new SalaryComponentsRepository().GetAll();
 
             IEnumerable<EmployeeSalary> empSalList = await new EmployeeSalaryRepository().GetAll();
@@ -487,7 +491,7 @@ namespace HRM.Data
             var resultList = from emp in new EmployeeRepository().GetAll().Result
                              join empSal in ienumerableEmpSal on emp.EmployeeId equals empSal.EmployeeId
                              join salBonus in new BonusRepository().GetAll().Result on empSal.BonusId equals salBonus.BonusId
-                             select new
+                             select new EmployeeTotalSalary
                              {
                                  EmployeeId = emp.EmployeeId,
                                  EmployeeName = emp.EmployeeName,

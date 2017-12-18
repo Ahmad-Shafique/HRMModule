@@ -22,7 +22,11 @@ namespace HRM.Data
 
             try
             {
+                //Console.WriteLine("//////////////****************** ENTERED REPO");
+                var LIST = await context.Set<TEntity>().ToListAsync();
+                //Console.WriteLine(LIST.Count);
                 return (await context.Set<TEntity>().ToListAsync());
+
             }
             catch (Exception e)
             {

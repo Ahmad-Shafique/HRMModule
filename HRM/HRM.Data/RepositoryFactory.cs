@@ -48,6 +48,7 @@ namespace HRM.Data
             Repositories.Add(typeof(Equipment), typeof(Equipment));
             Repositories.Add(typeof(TransportArea), typeof(TransportAreaRepository));
             Repositories.Add(typeof(NoticeComment), typeof(NoticeCommentRepository));
+            Repositories.Add(typeof(TrainingEmployee), typeof(TrainingEmployeeRepository));
 
 
         }
@@ -58,9 +59,5 @@ namespace HRM.Data
             return Activator.CreateInstance(type) as IRepository<TEntity>;
         }
 
-        public static ICommonViewRepository GetCommonViewRepository()
-        {
-            return new CommonViewRepository();
-        }
     }
 }

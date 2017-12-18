@@ -13,7 +13,7 @@ namespace HRM.View.Controllers
     {
         private IDomainService<HireRequest> HireRequestService = new ServiceFactory().Create<HireRequest>();
         private IDomainService<Equipment> EquipmentService = new ServiceFactory().Create<Equipment>();
-        private ICommonViewServiceInterface CommonService = ServiceFactory.GetCommonViewService();
+        private ICommonViewService CommonService = ServiceFactory.GetCommonViewService();
         // GET: Hire
         public ActionResult Index()
         {

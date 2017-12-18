@@ -64,7 +64,7 @@
     <Compile Include="HireRequestService.cs" />
     <Compile Include="HireThreadService.cs" />
     <Compile Include="Interfaces\IAdvertiserListService.cs" />
-    <Compile Include="Interfaces\ICommonViewServiceInterface.cs" />
+    <Compile Include="Interfaces\ICommonViewService.cs" />
     <Compile Include="Interfaces\IDomainService.cs" />
     <Compile Include="IntervieweeService.cs" />
     <Compile Include="InterviewService.cs" />
@@ -95,6 +95,10 @@
     <ProjectReference Include="..\HRM.Entity\HRM.Entity.csproj">
       <Project>{86E8C7B0-F401-4F4A-8BE1-FFADC30C7257}</Project>
       <Name>HRM.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HRM.Facade\HRM.Facade.csproj">
+      <Project>{3D73C751-B9E6-4BAD-8918-73971BB3099B}</Project>
+      <Name>HRM.Facade</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

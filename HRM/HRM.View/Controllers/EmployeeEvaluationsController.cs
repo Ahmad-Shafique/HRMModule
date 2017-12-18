@@ -12,7 +12,7 @@ namespace HRM.View.Controllers
     public class EmployeeEvaluationsController : Controller
     {
         private IDomainService<Department> DepartmentService = new ServiceFactory().Create<Department>();
-        private ICommonViewServiceInterface CommonService = ServiceFactory.GetCommonViewService();
+        private ICommonViewService CommonService = ServiceFactory.GetCommonViewService();
         // GET: EmployeeEvaluation
         public ActionResult Index()
         {

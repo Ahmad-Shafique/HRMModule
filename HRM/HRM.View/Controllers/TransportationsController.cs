@@ -13,7 +13,7 @@ namespace HRM.View.Controllers
     {
         private IDomainService<TransportArea> AreaService = new ServiceFactory().Create<TransportArea>();
         private IDomainService<Equipment> EquipmentService = new ServiceFactory().Create<Equipment>();
-        private ICommonViewServiceInterface CommonService = ServiceFactory.GetCommonViewService();
+        private ICommonViewService CommonService = ServiceFactory.GetCommonViewService();
         // GET: Transportation
         public ActionResult Index()
         {

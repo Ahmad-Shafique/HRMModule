@@ -7,17 +7,19 @@ using System.Threading.Tasks;
 using HRM.Entity;
 using HRM.Data.Interfaces;
 using HRM.Data;
+using HRM.Facade.Interfaces;
+using HRM.Facade;
 
 namespace HRM.Service
 {
     
-    class CommonViewService : ICommonViewServiceInterface
+    class CommonViewService : ICommonViewService
     {
-        protected internal ICommonViewRepository repository;
+        protected internal ICommonView repository;
 
         public CommonViewService()
         {
-            repository = RepositoryFactory.GetCommonViewRepository();
+            repository = FacadeFactory.GetCommonView();
         }
 
 
@@ -61,9 +63,9 @@ namespace HRM.Service
             return repository.AssignTransportsToAnArea(transportAreaId, transportIdsList);
         }
 
-        public dynamic CalculateAllEmployeeTotalSalary()
+        public async Task<dynamic> CalculateAllEmployeeTotalSalary()
         {
-            return repository.CalculateAllEmployeeTotalSalary();
+            return await repository.CalculateAllEmployeeTotalSalary();
         }
 
         public dynamic GetAllEmployeeDetails()

@@ -57,7 +57,7 @@ namespace HRM.Service
             return Activator.CreateInstance(type) as IDomainService<TEntity>;
         }
 
-        public static ICommonViewServiceInterface GetCommonViewService()
+        public static ICommonViewService GetCommonViewService()
         {
             return new CommonViewService();
         }

@@ -64,6 +64,11 @@
     <Compile Include="EquipmentAndDepartment.cs" />
     <Compile Include="EquipmentTransaction.cs" />
     <Compile Include="EquipmentType.cs" />
+    <Compile Include="Facade\EmployeeAndBio.cs" />
+    <Compile Include="Facade\EmployeeAndRelatedTrainings.cs" />
+    <Compile Include="Facade\EmployeePerformance.cs" />
+    <Compile Include="Facade\EmployeeTotalSalary.cs" />
+    <Compile Include="Facade\TrainingAndRelatedEmployees.cs" />
     <Compile Include="MonthlyBudget.cs" />
     <Compile Include="NoticeComment.cs" />
     <Compile Include="NoticeEmployee.cs" />
@@ -101,6 +106,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

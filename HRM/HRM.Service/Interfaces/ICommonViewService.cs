@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Service.Interfaces
 {
-    public interface ICommonViewServiceInterface
+    public interface ICommonViewService
     {
         dynamic GetTrainingAndRelatedEmployees(int trainingId);
         dynamic GetEmployeeAndRelatedTraining(int employeeId);
@@ -23,6 +23,6 @@ namespace HRM.Service.Interfaces
         Task<bool> AssignEquipmentsToADepartment(int departmentId, string equipmentIdsList);
         Task<bool> AssignCandidatesToInterview(int interviewId, string candidateIdsList);
         IEnumerable<TemporaryCV> GetAllUnassignedTemporaryCVs();
-        dynamic CalculateAllEmployeeTotalSalary();
+        Task<dynamic> CalculateAllEmployeeTotalSalary();
     }
 }

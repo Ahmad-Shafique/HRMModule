@@ -59,7 +59,6 @@ namespace HRM.View.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        // ****************************************************************************************************************************************************************
         public async Task<ActionResult> Create([Bind(Include = "NoticeId,NoticeTitle,NoticeDetails,NoticeDate")] Notice entity)
         {
             if (ModelState.IsValid)
@@ -89,12 +88,11 @@ namespace HRM.View.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        // ******************************************************************************************************************************************************************
         public async Task<ActionResult> Edit([Bind(Include = "NoticeId,NoticeTitle,NoticeDetails,NoticeDate")] Notice entity)
         {
             if (ModelState.IsValid)
             {
-                // **********************************************************************************************************************************************************
+
                 Notice temp = await service.Get(entity.NoticeId);
                 await service.RemoveByEntity(temp);
                 await service.Insert(entity);
@@ -131,13 +129,21 @@ namespace HRM.View.Controllers
         [HttpPost]
         public async Task<ActionResult> SubmitComment(int noticeId, string comment)
         {
-            NoticeComment noticeComment = new NoticeComment();
-            // **************************************************************************   CHANGE LATER
-            noticeComment.EmployeeId = 1;
-            noticeComment.EmployeeName = "tEST eMPLOYEE";
-            // **************************************************************************   CHANGE LATER
-            noticeComment.NoticeId = noticeId;
-            noticeComment.Comment = comment;
+            NoticeComment noticeComment = new NoticeComment
+            {
+
+
+
+                // **************************************************************************   CHANGE LATER
+                EmployeeId = 1,
+                EmployeeName = "tEST eMPLOYEE",
+                // **************************************************************************   CHANGE LATER
+
+
+
+                NoticeId = noticeId,
+                Comment = comment
+            };
             await CommentService.Insert(noticeComment);
             return RedirectToAction("Details",new { id = noticeId });
         }
