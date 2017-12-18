@@ -16,13 +16,13 @@ namespace HRM.View.Controllers
         // GET: EmployeeEvaluation
         public ActionResult Index()
         {
-            ViewBag.Departments = DepartmentService.GetAll().Result;
+            //ViewBag.Departments = DepartmentService.GetAll().Result;
             return View();
         }
 
         public ActionResult EmployeeDisplay(int? DepartmentId)
         {
-            ViewBag.Employees = CommonService.GetAllEmployeePerformance();
+            //ViewBag.Employees = CommonService.GetAllEmployeePerformance();
             return View();
         }
     }

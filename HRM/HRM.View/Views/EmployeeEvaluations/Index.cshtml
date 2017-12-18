@@ -9,10 +9,11 @@
         <li class="active dropdown">
             <a class="" data-toggle="dropdown">Select Department <i class="caret"></i> </a>
             <ul class="dropdown-menu">
-                @foreach (Department dept in ViewBag.Departments)
+                <li>@Html.ActionLink("First department", "EmployeeDisplay", new { DepartmentId = 1 })</li>
+                @*@foreach (Department dept in ViewBag.Departments)
                 {
                     <li>@Html.ActionLink(dept.DepartmentName, "EmployeeDisplay", new { DepartmentId = dept.DepartmentId})</li>
-                }
+                }*@
             </ul>
         </li>
 
