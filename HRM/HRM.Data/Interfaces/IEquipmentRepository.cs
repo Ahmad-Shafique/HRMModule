@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRM.Data
+namespace HRM.Data.Interfaces
 {
-    public class EquipmentRepository:Repository<Equipment>
+    public interface IEquipmentRepository : IRepository<Equipment>
     {
-
     }
 }

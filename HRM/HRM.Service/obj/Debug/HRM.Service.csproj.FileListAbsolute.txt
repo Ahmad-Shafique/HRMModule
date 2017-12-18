@@ -15,15 +15,15 @@ C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\HRM.Service.dll
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\HRM.Service.pdb
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\HRM.Data.dll
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\HRM.Entity.dll
+C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\HRM.Facade.dll
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\EntityFramework.dll
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\HRM.Data.pdb
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\HRM.Data.dll.config
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\HRM.Entity.pdb
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\HRM.Entity.dll.config
+C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\HRM.Facade.pdb
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\EntityFramework.xml
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\obj\Debug\HRM.Service.csprojResolveAssemblyReference.cache
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\obj\Debug\HRM.Service.csproj.CoreCompileInputs.cache
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\obj\Debug\HRM.Service.dll
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\obj\Debug\HRM.Service.pdb
-C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\HRM.Facade.dll
-C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\HRM.Facade.pdb

@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-info">
-                <form action="/hire/confirmhires" method="post">
+                <form action="/Hire/ConfirmHires" method="post">
                     <div class="panel-body">
                         <table style="width: 100%; text-align:center" class="table table-striped">
                             <tr>
@@ -24,17 +24,17 @@
                                 <th>Required Employee</th>
                                 <th>Approve</th>
                             </tr>
-                            @foreach (var hire in Model)
+                            @*@foreach (var hire in Model)
                             {
                                 <tr>
                                     <td>@hire.Urgency</td>
                                     <td>@hire.DepartmentId</td>
                                     <td>some rank</td>
                                     <td>@hire.DesignationName</td>
-                                    <td>@hire.EmplyeeRequired</td>
+                                    <td>@hire.EmployeeRequired</td>
                                     <td><input type="checkbox" name="approved" value="@hire.HireRequestId" /></td>
                                 </tr>
-                            }
+                            }*@
                         </table>
                     </div>
                     <div class="panel-footer">

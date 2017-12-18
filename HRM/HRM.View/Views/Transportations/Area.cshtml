@@ -20,11 +20,11 @@
                 <div class="modal-content">
                     <div class="modal-header">Employee list</div>
                     <div class="modal-body">
-                        @foreach (var employee in ViewBag.Employees)
+                        @*@foreach (var employee in ViewBag.Employees)
                         {
                             <input type="checkbox" name="bonusEnabledEmployee" value="@employee.EmployeeId" />
                             @employee.EmployeeName<br />
-                        }
+                        }*@
                     </div>
                     <div class="modal-footer">
                         @*on click of this button a jquery script fires from myscript.js*@
@@ -41,11 +41,11 @@
                 <div class="modal-content">
                     <div class="modal-header">Transport list</div>
                     <div class="modal-body">
-                        @foreach (var vehicle in ViewBag.vehicles)
+                        @*@foreach (var vehicle in ViewBag.vehicles)
                         {
                             <input type="checkbox" name="bonusEnabledTransport" value=@vehicle.TransportVehicleId />
                             @vehicle.VehicleNumber <br />
-                        }
+                        }*@
                     </div>
                     <div class="modal-footer">
                         @*on click of this button a jquery script fires from myscript.js*@

@@ -17,7 +17,7 @@ namespace HRM.View.Controllers
         // GET: Transportation
         public ActionResult Index()
         {
-            ViewBag.areas = AreaService.GetAll().Result;
+            //ViewBag.areas = AreaService.GetAll().Result;
 
 
             return View();

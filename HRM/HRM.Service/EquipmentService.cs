@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Service
 {
-    class EquipmentService:DomainService<Equipment>
+    class EquipmentService : DomainService<Equipment>
     {
     }
 }

@@ -17,26 +17,33 @@ namespace HRM.View.Controllers
         // GET: Hire
         public ActionResult Index()
         {
-            List<HireRequest> hireReqs = HireRequestService.GetAll().Result.ToList();
-            return View(hireReqs);
+            //IEnumerable<HireRequest> hireReqs = HireRequestService.GetAll().Result;
+            //return View(hireReqs);
+            return View();
         }
 
-        [HttpPost]
-        public ActionResult ConfirmHires(FormCollection form)
-        {
-            //the "commaSeperated" holds the comma included string from the checkbox
-            string commaSeperated = form["approved"];
-            string[] approvedIdString = commaSeperated.Split(',');
-            List<int> approvedIds = new List<int>();
+        //[HttpPost]
+        //public ActionResult ConfirmHires(FormCollection form)
+        //{
+        //    //the "commaSeperated" holds the comma included string from the checkbox
+        //    string commaSeperated = form["approved"];
+        //    string[] approvedIdString = commaSeperated.Split(',');
+        //    List<int> approvedIds = new List<int>();
 
-            //the following loop converts to int all seperated ids and creates a list
-            foreach (string s in approvedIdString)
-            {
-                int x;
-                Int32.TryParse(s, out x);
-                approvedIds.Add(x);
-            }
-            return View(approvedIds);
+        //    //the following loop converts to int all seperated ids and creates a list
+        //    //foreach (string s in approvedIdString)
+        //    //{
+        //    //    int x;
+        //    //    Int32.TryParse(s, out x);
+        //    //    approvedIds.Add(x);
+        //    //}
+        //    //return View(approvedIds);
+        //    return View();
+        //}
+
+        public ActionResult ConfirmHires()
+        {
+            return View();
         }
     }
 }

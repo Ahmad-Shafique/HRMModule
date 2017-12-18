@@ -15,7 +15,7 @@ namespace HRM.View.Controllers
         private IDomainService<Employee> Service = new ServiceFactory().Create<Employee>();
         private ICommonViewService CommonService = ServiceFactory.GetCommonViewService();
         // GET: Employee
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
             return View();
         }

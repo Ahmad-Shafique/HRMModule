@@ -15,7 +15,6 @@ C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Entity\bin\Debug\EntityFramework.dll
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Entity\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Entity\bin\Debug\EntityFramework.xml
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Entity\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Entity\obj\Debug\HRM.Entity.csprojResolveAssemblyReference.cache
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Entity\obj\Debug\HRM.Entity.csproj.CoreCompileInputs.cache
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Entity\obj\Debug\HRM.Entity.dll
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Entity\obj\Debug\HRM.Entity.pdb

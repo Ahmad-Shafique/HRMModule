@@ -18,11 +18,11 @@
 <body>
     <h1>@ViewBag.DepartmentName</h1>
     <div>
-        @foreach (var item in ViewBag.Equipments)
+        @*@foreach (var item in ViewBag.Equipments)
         {
             <input type="checkbox" name="EnabledEquipment" value="@item.EquipmentId" />
             @item.Name<br />
-        }
+        }*@
     </div>
 
     <button id="buttonAssignEquipment" class="btn btn-primary" >Assign Equipmemt</button>

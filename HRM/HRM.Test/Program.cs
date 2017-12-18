@@ -24,22 +24,59 @@ namespace HRM.Test
         static void Main(string[] args)
         {
 
-            var result = Test.TestMethod().Result;
+            //var result = Test.TestMethod().Result;
 
-            Console.WriteLine("Printing result now: ");
+            //Console.WriteLine("Printing result now: ");
 
-            foreach (var item in result)
-            {
-                Console.WriteLine(item.EmployeeName + " : " + item.TotalSalary);
-            }
-            Console.WriteLine("Printing result finished");
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.EmployeeName + " : " + item.TotalSalary);
+            //}
+            //Console.WriteLine("Printing result finished");
 
 
+
+
+
+            //var result = new ServiceFactory().Create<Department>().GetAll().Result;
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.DepartmentName);
+            //}
+
+            //var result = new ServiceFactory().Create<Equipment>().GetAll().Result;
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.BuyPrice);
+            //}
+
+            //var result = ServiceFactory.GetCommonViewService().GetAllEmployeePerformance();
+            //foreach(var item in result)
+            //{
+            //    Console.WriteLine(item.EmployeeName + " " + item.ProjectScore + " " + item.TrainingScore + " " + item.AggregateScore);
+            //}
+
+            //var result = new ServiceFactory().Create<Interview>().GetAll().Result;
+            //var result2 = new ServiceFactory().Create<Interviewee>().GetAll().Result;
+            //Console.WriteLine(result.Count());
+            //Console.WriteLine(result2.Count());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n Press any key to exit");
             Console.ReadKey();
-
-
-
-
         }
     }
 }

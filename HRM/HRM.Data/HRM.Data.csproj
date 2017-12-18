@@ -86,6 +86,7 @@
     <Compile Include="Interfaces\IEmployeePerformanceMetricRepository.cs" />
     <Compile Include="Interfaces\IEmployeeRepository.cs" />
     <Compile Include="Interfaces\IEmployeeSalaryRepository.cs" />
+    <Compile Include="Interfaces\IEquipmentRepository.cs" />
     <Compile Include="Interfaces\IHireRequestRepository.cs" />
     <Compile Include="Interfaces\IHireThreadRepository.cs" />
     <Compile Include="Interfaces\IIntervieweeRepository.cs" />
