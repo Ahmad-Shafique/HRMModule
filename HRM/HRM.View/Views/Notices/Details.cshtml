@@ -39,6 +39,7 @@
 </head>
 <body>
     <div id="NoticeDetails" style="background-color:lightgray; width:700px">
+        <h1 id="noticeId">@ViewBag.NoticeId</h1>
 
         <b>@ViewBag.NoticeTitle</b><br />
         <b>@ViewBag.NoticeDate</b>
@@ -48,24 +49,27 @@
             @ViewBag.NoticeDetails
         </p>
         <p style="color:blue">Seen By :  30</p>
-        <input type="text" width="100" placeholder="Write a comment..." />
-        <input type="submit" value="Comment" />
+        <input id="commentText" type="text" width="100" placeholder="Write a comment..." />
+        <input id="commentSubmit" type="submit" value="Comment" />
     </div>
 
     <button type="button" class="btn" id="Showcomment">Show Comments</button>
-    <hr />
     <div id="commentsDiv" hidden>
         @foreach (NoticeComment comment in ViewBag.Comments)
         {
-            <a><b>@comment.EmployeeName</b><br /></a>
-            @comment.Comment< br />
-            < hr />
+            <hr/>
+            <a><b>@comment.EmployeeName</b></a>
+            <br/>@comment.Comment
         }
-        @*<a><b>Nahid Hasan</b><br /></a>
-        Thank You!<br />
-        <hr />
-        <a><b>Ahmed Shafique</b><br /></a>
-        Would You Lease Explain it More? <br />*@
     </div>
 </body>
 </html>
+
+<script>
+    $("#commentSubmit").click(function () {
+        var data = "noticeId=" + $("#noticeId").html() + "&comment=" + $("#commentText").val();
+        alert(data);
+
+        $.post("/Notices/SubmitComment", data);
+    });
+</script>

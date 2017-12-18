@@ -42,6 +42,7 @@ namespace HRM.View.Controllers
             ViewBag.NoticeTitle = entity.NoticeTitle;
             ViewBag.NoticeDate = entity.NoticeDate;
             ViewBag.NoticeDetails = entity.NoticeDetails;
+            ViewBag.NoticeId = id;
             
             IEnumerable<NoticeComment> comments = await CommentService.GetAll();
             ViewBag.Comments = comments.Where(item => item.NoticeId == entity.NoticeId);
@@ -127,6 +128,20 @@ namespace HRM.View.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public async Task<ActionResult> SubmitComment(int noticeId, string comment)
+        {
+            NoticeComment noticeComment = new NoticeComment();
+            // **************************************************************************   CHANGE LATER
+            noticeComment.EmployeeId = 1;
+            noticeComment.EmployeeName = "tEST eMPLOYEE";
+            // **************************************************************************   CHANGE LATER
+            noticeComment.NoticeId = noticeId;
+            noticeComment.Comment = comment;
+            await CommentService.Insert(noticeComment);
+            return RedirectToAction("Details",new { id = noticeId });
+        }
+
         //protected override void Dispose(bool disposing)
         //{
         //    if (disposing)
@@ -135,5 +150,7 @@ namespace HRM.View.Controllers
         //    }
         //    base.Dispose(disposing);
         //}
+
+
     }
 }
