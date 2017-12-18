@@ -1,4 +1,5 @@
-﻿using HRM.Service;
+﻿using HRM.Entity;
+using HRM.Service;
 using HRM.Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,10 @@ namespace HRM.View.Controllers
         // GET: SalaryPayment
         public async Task<ActionResult> Index()
         {
-            ViewBag.Salaries = await Service.CalculateAllEmployeeTotalSalary();
+            Console.WriteLine("Entered salary payments display");
+
+            ViewBag.Employees = await Service.Test();
+            //ViewBag.Salaries = await Service.CalculateAllEmployeeTotalSalary();
             return View();
         }
     }

@@ -24,5 +24,6 @@ namespace HRM.Service.Interfaces
         Task<bool> AssignCandidatesToInterview(int interviewId, string candidateIdsList);
         IEnumerable<TemporaryCV> GetAllUnassignedTemporaryCVs();
         Task<dynamic> CalculateAllEmployeeTotalSalary();
+        Task<dynamic> Test();
     }
 }

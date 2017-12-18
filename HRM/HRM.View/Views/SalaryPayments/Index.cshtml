@@ -1,4 +1,4 @@
-﻿
+﻿@using HRM.Entity.Facade;
 @{
     ViewBag.Title = "Index";
 }
@@ -18,7 +18,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var es in ViewBag.Salaries)
+                            @*@foreach(var item in ViewBag.Employees)
+                            {
+                                <tr>
+                                    <td>@item.EmployeeName</td>
+                                </tr>
+                            }*@
+                            @foreach (EmployeeTotalSalary es in ViewBag.Salaries)
                             {
                                 <tr>
                                     <td>@es.EmployeeName</td>

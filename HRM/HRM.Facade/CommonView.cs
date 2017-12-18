@@ -505,6 +505,13 @@ namespace HRM.Facade
 
 
 
+        public virtual async Task<dynamic> Test()
+        {
+            return await new RepositoryFactory().Create<Employee>().GetAll();
+        }
+
+
+
 
 
 

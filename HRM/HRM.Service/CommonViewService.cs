@@ -97,5 +97,10 @@ namespace HRM.Service
         {
             return repository.GetTrainingAndRelatedEmployees(trainingId);
         }
+
+        public Task<dynamic> Test()
+        {
+            return repository.Test();
+        }
     }
 }
