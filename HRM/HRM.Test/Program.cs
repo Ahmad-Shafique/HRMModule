@@ -63,7 +63,12 @@ namespace HRM.Test
 
 
 
-
+            var result = ServiceFactory.GetCommonViewService().CalculateAllEmployeeTotalSalary().Result;
+            Console.WriteLine("In program");
+            foreach(var item in result)
+            {
+                Console.WriteLine(item.EmployeeName + " : " + item.TotalSalary);
+            }
 
 
 

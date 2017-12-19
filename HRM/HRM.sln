@@ -22,6 +22,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreLayer", "CoreLayer", "{F7B8A2C0-E10C-4509-8826-7F1180CC0FDA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{8645CDB8-BA91-42FF-9885-6E6D3E23B8B8}"
+	ProjectSection(SolutionItems) = preProject
+		HRM.Facade\FacadeFactory.cs = HRM.Facade\FacadeFactory.cs
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.View", "HRM.View\HRM.View.csproj", "{ECA0517C-4DA4-46EB-AF3F-5DB945D1AB5D}"
 EndProject

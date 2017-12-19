@@ -45,6 +45,7 @@
     <Compile Include="BonusesService.cs" />
     <Compile Include="BonusService.cs" />
     <Compile Include="CircularTemplateService.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="CommonViewService.cs" />
     <Compile Include="DepartmentDesignationService.cs" />
     <Compile Include="DepartmentHistoryService.cs" />

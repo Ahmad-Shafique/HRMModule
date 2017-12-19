@@ -1,4 +1,5 @@
 ﻿using HRM.Entity;
+using HRM.Entity.Facade;
 using HRM.Service;
 using HRM.Service.Interfaces;
 using System;
@@ -18,8 +19,12 @@ namespace HRM.View.Controllers
         {
             Console.WriteLine("Entered salary payments display");
 
-            ViewBag.Employees = await Service.Test();
-            //ViewBag.Salaries = await Service.CalculateAllEmployeeTotalSalary();
+            //ViewBag.Employees = Service.Test().Result;
+            IEnumerable<EmployeeTotalSalary> result = await Service.CalculateAllEmployeeTotalSalary();
+            Console.WriteLine("Result received");
+            Console.WriteLine("aa*****************************");
+            Console.WriteLine("aa*****************************");
+            //return View(result);
             return View();
         }
     }

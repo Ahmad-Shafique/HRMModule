@@ -14,7 +14,8 @@ namespace HRM.Data
 {
     public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        internal HRMDbContext context = HRMDbContext.GetInstance();
+        //internal HRMDbContext context = HRMDbContext.GetInstance();
+        internal HRMDbContext context = new HRMDbContext();
 
         public virtual async Task<IEnumerable<TEntity>> GetAll()
         {

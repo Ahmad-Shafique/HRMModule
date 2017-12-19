@@ -1,4 +1,5 @@
-﻿@using HRM.Entity.Facade;
+﻿@model IEnumerable<HRM.Entity.Facade.EmployeeTotalSalary>
+@using HRM.Entity.Facade;
 @{
     ViewBag.Title = "Index";
 }
@@ -10,21 +11,18 @@
             <div class="panel panel-info">
                 <div class="panel-body">
                     <table class="table table-striped" style="width: 100%">
-                        <thead>
                             <tr>
                                 <th style="text-align: center">Employee</th>
                                 <th style="text-align: center">Salary</th>
                                 <th style="text-align: center">Action</th>
                             </tr>
-                        </thead>
-                        <tbody>
                             @*@foreach(var item in ViewBag.Employees)
                             {
                                 <tr>
                                     <td>@item.EmployeeName</td>
                                 </tr>
                             }*@
-                            @*@foreach (EmployeeTotalSalary es in ViewBag.Salaries)
+                            @*@foreach (EmployeeTotalSalary es in Model)
                             {
                                 <tr>
                                     <td>@es.EmployeeName</td>
@@ -33,7 +31,6 @@
 
                                 </tr>
                             }*@
-                        </tbody>
                     </table>
                 </div>
             </div>

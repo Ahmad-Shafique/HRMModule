@@ -36,7 +36,7 @@ namespace HRM.View.Controllers
             string searchTerm = form["searchTerm"];
             if (searchTerm == "")
             {
-                return RedirectToAction("/Display");
+                return RedirectToAction("Display");
             }
 
             //search and return employees with the 'serachTerm' name

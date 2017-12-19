@@ -1,4 +1,5 @@
 ﻿using HRM.Entity;
+using HRM.Entity.Facade;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace HRM.Service.Interfaces
         Task<bool> AssignEquipmentsToADepartment(int departmentId, string equipmentIdsList);
         Task<bool> AssignCandidatesToInterview(int interviewId, string candidateIdsList);
         IEnumerable<TemporaryCV> GetAllUnassignedTemporaryCVs();
-        Task<dynamic> CalculateAllEmployeeTotalSalary();
+        Task<IEnumerable<EmployeeTotalSalary>> CalculateAllEmployeeTotalSalary();
         Task<dynamic> Test();
     }
 }

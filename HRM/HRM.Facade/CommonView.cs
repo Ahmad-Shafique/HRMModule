@@ -461,11 +461,11 @@ namespace HRM.Facade
 
 
 
-        public virtual async Task<dynamic> CalculateAllEmployeeTotalSalary()
+        public virtual async Task<IEnumerable<EmployeeTotalSalary>> CalculateAllEmployeeTotalSalary()
         {
-            IEnumerable<SalaryComponents> salCList = await new SalaryComponentsRepository().GetAll();
+            IEnumerable<SalaryComponents> salCList = await new RepositoryFactory().Create<SalaryComponents>().GetAll();
 
-            IEnumerable<EmployeeSalary> empSalList = await new EmployeeSalaryRepository().GetAll();
+            IEnumerable<EmployeeSalary> empSalList = await new RepositoryFactory().Create<EmployeeSalary>().GetAll();
 
             List<EmployeeSalary> newEmpSalList = new List<EmployeeSalary>();
             foreach (EmployeeSalary empSalItem in empSalList)
@@ -488,7 +488,7 @@ namespace HRM.Facade
             }
             IEnumerable<EmployeeSalary> ienumerableEmpSal = newEmpSalList;
 
-            var resultList = from emp in new EmployeeRepository().GetAll().Result
+            IEnumerable<EmployeeTotalSalary> resultList = from emp in new EmployeeRepository().GetAll().Result
                              join empSal in ienumerableEmpSal on emp.EmployeeId equals empSal.EmployeeId
                              join salBonus in new BonusRepository().GetAll().Result on empSal.BonusId equals salBonus.BonusId
                              select new EmployeeTotalSalary
@@ -498,6 +498,13 @@ namespace HRM.Facade
                                  TotalSalary = empSal.TotalSalary + salBonus.BonusValue,
                                  BonusSalary = salBonus.BonusValue
                              };
+
+            //Console.WriteLine("Finished all employee total salary calculation");
+            //Console.WriteLine(resultList.Count());
+            //foreach(var item in resultList)
+            //{
+            //    Console.WriteLine(item.EmployeeName + " " + item.TotalSalary);
+            //}
 
             return resultList;
 

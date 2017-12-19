@@ -9,6 +9,7 @@ using HRM.Data.Interfaces;
 using HRM.Data;
 using HRM.Facade.Interfaces;
 using HRM.Facade;
+using HRM.Entity.Facade;
 
 namespace HRM.Service
 {
@@ -63,10 +64,7 @@ namespace HRM.Service
             return repository.AssignTransportsToAnArea(transportAreaId, transportIdsList);
         }
 
-        public async Task<dynamic> CalculateAllEmployeeTotalSalary()
-        {
-            return await repository.CalculateAllEmployeeTotalSalary();
-        }
+        
 
         public dynamic GetAllEmployeeDetails()
         {
@@ -101,6 +99,12 @@ namespace HRM.Service
         public Task<dynamic> Test()
         {
             return repository.Test();
+        }
+
+
+        public async Task<IEnumerable<EmployeeTotalSalary>> CalculateAllEmployeeTotalSalary()
+        {
+            return await repository.CalculateAllEmployeeTotalSalary();
         }
     }
 }
