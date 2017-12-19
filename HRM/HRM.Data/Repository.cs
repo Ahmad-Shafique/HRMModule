@@ -17,16 +17,16 @@ namespace HRM.Data
         //internal HRMDbContext context = HRMDbContext.GetInstance();
         internal HRMDbContext context = new HRMDbContext();
 
-        public virtual async Task<IEnumerable<TEntity>> GetAll()
+        public virtual  IEnumerable<TEntity> GetAll()
         {
             Debug.Assert(context != null);
 
             try
             {
                 //Console.WriteLine("//////////////****************** ENTERED REPO");
-                var LIST = await context.Set<TEntity>().ToListAsync();
+                var LIST =  context.Set<TEntity>().ToList();
                 //Console.WriteLine(LIST.Count);
-                return (await context.Set<TEntity>().ToListAsync());
+                return ( context.Set<TEntity>().ToList());
 
             }
             catch (Exception e)
@@ -37,14 +37,14 @@ namespace HRM.Data
             
         }
 
-        public virtual async Task<TEntity> Get<TKey>(TKey id)
+        public virtual  TEntity Get<TKey>(TKey id)
         {
             Debug.Assert(context != null);
             Debug.Assert(id != null);
 
             try
             {
-                return (await context.Set<TEntity>().FindAsync(id));
+                return ( context.Set<TEntity>().Find(id));
             }
             catch (Exception e)
             {
@@ -54,7 +54,7 @@ namespace HRM.Data
             
         }
 
-        public virtual async Task<bool> Insert(TEntity entity)
+        public virtual  bool Insert(TEntity entity)
         {
             Debug.Assert(context != null);
             Debug.Assert(entity != null);
@@ -62,7 +62,7 @@ namespace HRM.Data
             try
             {
                 context.Set<TEntity>().Add(entity); //or, context.Entry<TEntity>(entity).State = EntityState.Added;
-                return await context.SaveChangesAsync() > 0;
+                return  context.SaveChanges() > 0;
             }
             catch (Exception e)
             {
@@ -71,7 +71,7 @@ namespace HRM.Data
             }
         }
 
-        public virtual async Task<bool> Update(TEntity updated, int key)
+        public virtual  bool Update(TEntity updated, int key)
         {
 
             Debug.Assert(context != null);
@@ -81,12 +81,12 @@ namespace HRM.Data
             {
 
                 //context.Entry<TEntity>(entity).State = EntityState.Modified;
-                TEntity existing = context.Set<TEntity>().FindAsync(key).Result;
+                TEntity existing = context.Set<TEntity>().Find(key);
                 if (existing != null)
                 {
                     context.Entry(existing).CurrentValues.SetValues(updated);
                 }
-                return await context.SaveChangesAsync() > 0;
+                return  context.SaveChanges() > 0;
             }
             catch (Exception e)
             {
@@ -96,7 +96,7 @@ namespace HRM.Data
         }
 
 
-        public virtual async Task<bool> RemoveByEntity(TEntity entity)
+        public virtual  bool RemoveByEntity(TEntity entity)
         {
             Debug.Assert(context != null);
             Debug.Assert(entity != null);
@@ -104,7 +104,7 @@ namespace HRM.Data
             try
             {
                 context.Set<TEntity>().Remove(entity);
-                return await context.SaveChangesAsync() > 0;
+                return  context.SaveChanges() > 0;
             }
             catch (Exception e)
             {

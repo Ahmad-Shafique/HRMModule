@@ -19,20 +19,20 @@ namespace HRM.Controllers
         private IDomainService<Employee> service = new ServiceFactory().Create<Employee>();
 
         // GET: Employees
-        public async Task<ActionResult> Index()
+        public  ActionResult> Index()
         {
-            return View(await service.GetAll());
+            return View( service.GetAll());
         }
 
 
         // GET: Employees/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public  ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = await service.Get(id);
+            Employee employee =  service.Get(id);
             if (employee == null)
             {
                 return HttpNotFound();
@@ -51,11 +51,11 @@ namespace HRM.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "EmployeeId,EmployeeName,EmployeeEmail,EmployeePassword,Salary,MGR")] Employee employee)
+        public  ActionResult> Create([Bind(Include = "EmployeeId,EmployeeName,EmployeeEmail,EmployeePassword,Salary,MGR")] Employee employee)
         {
             if (ModelState.IsValid)
             {
-                await service.Insert(employee);
+                 service.Insert(employee);
                 return RedirectToAction("Index");
             }
 
@@ -63,13 +63,13 @@ namespace HRM.Controllers
         }
 
         // GET: Employees/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public  ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = await service.Get(id);
+            Employee employee =  service.Get(id);
             if (employee == null)
             {
                 return HttpNotFound();
@@ -82,25 +82,25 @@ namespace HRM.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "EmployeeId,EmployeeName,EmployeeEmail,EmployeePassword,Salary,MGR")] Employee employee)
+        public  ActionResult> Edit([Bind(Include = "EmployeeId,EmployeeName,EmployeeEmail,EmployeePassword,Salary,MGR")] Employee employee)
         {
             if (ModelState.IsValid)
             {
-                Employee temp = await service.Get(employee.EmployeeId);
-                await service.RemoveByEntity(temp);
-                await service.Insert(employee);
+                Employee temp =  service.Get(employee.EmployeeId);
+                 service.RemoveByEntity(temp);
+                 service.Insert(employee);
             }
             return View(employee);
         }
 
         // GET: Employees/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public  ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = await service.Get(id);
+            Employee employee =  service.Get(id);
             if (employee == null)
             {
                 return HttpNotFound();
@@ -111,10 +111,10 @@ namespace HRM.Controllers
         // POST: Employees/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public  ActionResult> DeleteConfirmed(int id)
         {
-            Employee item = await service.Get(id);
-            await service.RemoveByEntity(item);
+            Employee item =  service.Get(id);
+             service.RemoveByEntity(item);
             return RedirectToAction("Index");
         }
 

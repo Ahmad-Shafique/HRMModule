@@ -16,16 +16,16 @@ namespace HRM.View.Controllers
         private IDomainService<Equipment> EquipmentService = new ServiceFactory().Create<Equipment>();
         private ICommonViewService CommonService = ServiceFactory.GetCommonViewService();
         // GET: Equipments
-        public async Task<ActionResult> Index()
+        public  ActionResult Index()
         {
-            //ViewBag.Departments = DepartmentService.GetAll().Result;
+            //ViewBag.Departments = DepartmentService.GetAll();
             return View();
         }
 
-        public async Task<ActionResult> Equip(int? Id)
+        public  ActionResult Equip(int? Id)
         {
-            //ViewBag.Equipments = EquipmentService.GetAll().Result;
-            //Department dept = await DepartmentService.Get(Id);
+            //ViewBag.Equipments = EquipmentService.GetAll();
+            //Department dept =  DepartmentService.Get(Id);
             //ViewBag.DepartmentName = dept.DepartmentName;
 
             return View();

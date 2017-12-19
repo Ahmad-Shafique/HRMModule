@@ -19,19 +19,19 @@ namespace HRM.Controllers
         private IDomainService<SupportingDocument> service = new ServiceFactory().Create<SupportingDocument>();
 
 
-        public async Task<ActionResult> Index()
+        public  ActionResult> Index()
         {
-            return View(await service.GetAll());
+            return View( service.GetAll());
         }
 
 
-        public async Task<ActionResult> Details(int? id)
+        public  ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SupportingDocument entity = await service.Get(id);
+            SupportingDocument entity =  service.Get(id);
 
             if (entity == null)
             {
@@ -51,11 +51,11 @@ namespace HRM.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         // ****************************************************************************************************************************************************************
-        public async Task<ActionResult> Create([Bind(Include = "SupportingDocumentId,SupportingDocumentName,SupportingDocumentLink,LeaveApplicationId")] SupportingDocument entity)
+        public  ActionResult> Create([Bind(Include = "SupportingDocumentId,SupportingDocumentName,SupportingDocumentLink,LeaveApplicationId")] SupportingDocument entity)
         {
             if (ModelState.IsValid)
             {
-                await service.Insert(entity);
+                 service.Insert(entity);
                 return RedirectToAction("Index");
             }
 
@@ -63,13 +63,13 @@ namespace HRM.Controllers
         }
 
 
-        public async Task<ActionResult> Edit(int? id)
+        public  ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SupportingDocument entity = await service.Get(id);
+            SupportingDocument entity =  service.Get(id);
             if (entity == null)
             {
                 return HttpNotFound();
@@ -81,27 +81,27 @@ namespace HRM.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         // ******************************************************************************************************************************************************************
-        public async Task<ActionResult> Edit([Bind(Include = "SupportingDocumentId,SupportingDocumentName,SupportingDocumentLink,LeaveApplicationId")] SupportingDocument entity)
+        public  ActionResult> Edit([Bind(Include = "SupportingDocumentId,SupportingDocumentName,SupportingDocumentLink,LeaveApplicationId")] SupportingDocument entity)
         {
             if (ModelState.IsValid)
             {
                 // **********************************************************************************************************************************************************
-                SupportingDocument temp = await service.Get(entity.SupportingDocumentId);
-                await service.RemoveByEntity(temp);
-                await service.Insert(entity);
+                SupportingDocument temp =  service.Get(entity.SupportingDocumentId);
+                 service.RemoveByEntity(temp);
+                 service.Insert(entity);
             }
             /////// return View(SupportingDocument);
             return RedirectToAction("Index");
         }
 
 
-        public async Task<ActionResult> Delete(int? id)
+        public  ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SupportingDocument entity = await service.Get(id);
+            SupportingDocument entity =  service.Get(id);
             if (entity == null)
             {
                 return HttpNotFound();
@@ -112,10 +112,10 @@ namespace HRM.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public  ActionResult> DeleteConfirmed(int id)
         {
-            SupportingDocument entity = await service.Get(id);
-            await service.RemoveByEntity(entity);
+            SupportingDocument entity =  service.Get(id);
+             service.RemoveByEntity(entity);
             return RedirectToAction("Index");
         }
 

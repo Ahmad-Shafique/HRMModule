@@ -19,20 +19,20 @@ namespace HRM.Controllers
         private IDomainService<DepartmentDesignation> service = new ServiceFactory().Create<DepartmentDesignation>();
 
         // GET: DepartmentDesignations
-        public async Task<ActionResult> Index()
+        public  ActionResult> Index()
         {
-            return View(await service.GetAll());
+            return View( service.GetAll());
 
         }
 
         // GET: DepartmentDesignations/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public  ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DepartmentDesignation departmentDesignation = await service.Get(id);
+            DepartmentDesignation departmentDesignation =  service.Get(id);
             if (departmentDesignation == null)
             {
                 return HttpNotFound();
@@ -51,11 +51,11 @@ namespace HRM.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "DepartmentDesignationId,DepartmentId,DesignationId")] DepartmentDesignation departmentDesignation)
+        public  ActionResult> Create([Bind(Include = "DepartmentDesignationId,DepartmentId,DesignationId")] DepartmentDesignation departmentDesignation)
         {
             if (ModelState.IsValid)
             {
-                await service.Insert(departmentDesignation);
+                 service.Insert(departmentDesignation);
                 return RedirectToAction("Index");
             }
 
@@ -63,13 +63,13 @@ namespace HRM.Controllers
         }
 
         // GET: DepartmentDesignations/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public  ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DepartmentDesignation departmentDesignation = await service.Get(id);
+            DepartmentDesignation departmentDesignation =  service.Get(id);
             if (departmentDesignation == null)
             {
                 return HttpNotFound();
@@ -82,25 +82,25 @@ namespace HRM.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "DepartmentDesignationId,DepartmentId,DesignationId")] DepartmentDesignation departmentDesignation)
+        public  ActionResult> Edit([Bind(Include = "DepartmentDesignationId,DepartmentId,DesignationId")] DepartmentDesignation departmentDesignation)
         {
             if (ModelState.IsValid)
             {
-                DepartmentDesignation temp = await service.Get(departmentDesignation.DepartmentDesignationId);
-                await service.RemoveByEntity(temp);
-                await service.Insert(departmentDesignation);
+                DepartmentDesignation temp =  service.Get(departmentDesignation.DepartmentDesignationId);
+                 service.RemoveByEntity(temp);
+                 service.Insert(departmentDesignation);
             }
             return View(departmentDesignation);
         }
 
         // GET: DepartmentDesignations/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public  ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DepartmentDesignation departmentDesignation = await service.Get(id);
+            DepartmentDesignation departmentDesignation =  service.Get(id);
             if (departmentDesignation == null)
             {
                 return HttpNotFound();
@@ -111,10 +111,10 @@ namespace HRM.Controllers
         // POST: DepartmentDesignations/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public  ActionResult> DeleteConfirmed(int id)
         {
-            DepartmentDesignation item = await service.Get(id);
-            await service.RemoveByEntity(item);
+            DepartmentDesignation item =  service.Get(id);
+             service.RemoveByEntity(item);
             return RedirectToAction("Index");
         }
 

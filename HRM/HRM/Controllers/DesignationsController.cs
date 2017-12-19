@@ -19,19 +19,19 @@ namespace HRM.Controllers
         private IDomainService<Designation> service = new ServiceFactory().Create<Designation>();
 
         // GET: Designations
-        public async Task<ActionResult> Index()
+        public  ActionResult> Index()
         {
-            return View(await service.GetAll());
+            return View( service.GetAll());
         }
 
         // GET: Designations/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public  ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Designation designation = await service.Get(id);
+            Designation designation =  service.Get(id);
             if (designation == null)
             {
                 return HttpNotFound();
@@ -50,11 +50,11 @@ namespace HRM.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "DesignationId,DesignationName")] Designation designation)
+        public  ActionResult> Create([Bind(Include = "DesignationId,DesignationName")] Designation designation)
         {
             if (ModelState.IsValid)
             {
-                await service.Insert(designation);
+                 service.Insert(designation);
                 return RedirectToAction("Index");
             }
 
@@ -62,13 +62,13 @@ namespace HRM.Controllers
         }
 
         // GET: Designations/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public  ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Designation designation = await service.Get(id);
+            Designation designation =  service.Get(id);
             if (designation == null)
             {
                 return HttpNotFound();
@@ -81,25 +81,25 @@ namespace HRM.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "DesignationId,DesignationName")] Designation designation)
+        public  ActionResult> Edit([Bind(Include = "DesignationId,DesignationName")] Designation designation)
         {
             if (ModelState.IsValid)
             {
-                Designation temp = await service.Get(designation.DesignationId);
-                await service.RemoveByEntity(temp);
-                await service.Insert(designation);
+                Designation temp =  service.Get(designation.DesignationId);
+                 service.RemoveByEntity(temp);
+                 service.Insert(designation);
             }
             return View(designation);
         }
 
         // GET: Designations/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public  ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Designation designation = await service.Get(id);
+            Designation designation =  service.Get(id);
             if (designation == null)
             {
                 return HttpNotFound();
@@ -110,10 +110,10 @@ namespace HRM.Controllers
         // POST: Designations/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public  ActionResult> DeleteConfirmed(int id)
         {
-            Designation item = await service.Get(id);
-            await service.RemoveByEntity(item);
+            Designation item =  service.Get(id);
+             service.RemoveByEntity(item);
             return RedirectToAction("Index");
         }
 

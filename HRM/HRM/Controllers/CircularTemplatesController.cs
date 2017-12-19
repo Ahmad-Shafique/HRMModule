@@ -19,19 +19,19 @@ namespace HRM.Controllers
         private IDomainService<CircularTemplate> service = new ServiceFactory().Create<CircularTemplate>();
 
         // GET: CircularTemplates
-        public async Task<ActionResult> Index()
+        public  ActionResult> Index()
         {
-            return View(await service.GetAll());
+            return View( service.GetAll());
         }
 
         // GET: CircularTemplates/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public  ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CircularTemplate circularTemplate =  await service.Get(id);
+            CircularTemplate circularTemplate =   service.Get(id);
             if (circularTemplate == null)
             {
                 return HttpNotFound();
@@ -50,11 +50,11 @@ namespace HRM.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "CircularTemplateId,TemplateName,Template")] CircularTemplate circularTemplate)
+        public  ActionResult> Create([Bind(Include = "CircularTemplateId,TemplateName,Template")] CircularTemplate circularTemplate)
         {
             if (ModelState.IsValid)
             {
-                await service.Insert(circularTemplate);
+                 service.Insert(circularTemplate);
                 return RedirectToAction("Index");
             }
 
@@ -62,13 +62,13 @@ namespace HRM.Controllers
         }
 
         // GET: CircularTemplates/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public  ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CircularTemplate circularTemplate = await service.Get(id);
+            CircularTemplate circularTemplate =  service.Get(id);
             if (circularTemplate == null)
             {
                 return HttpNotFound();
@@ -81,25 +81,25 @@ namespace HRM.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "CircularTemplateId,TemplateName,Template")] CircularTemplate circularTemplate)
+        public  ActionResult> Edit([Bind(Include = "CircularTemplateId,TemplateName,Template")] CircularTemplate circularTemplate)
         {
             if (ModelState.IsValid)
             {
-                CircularTemplate temp = await service.Get(circularTemplate.CircularTemplateId);
-                await service.RemoveByEntity(temp);
-                await service.Insert(circularTemplate);
+                CircularTemplate temp =  service.Get(circularTemplate.CircularTemplateId);
+                 service.RemoveByEntity(temp);
+                 service.Insert(circularTemplate);
             }
             return View(circularTemplate);
         }
 
         // GET: CircularTemplates/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public  ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CircularTemplate circularTemplate = await service.Get(id);
+            CircularTemplate circularTemplate =  service.Get(id);
             if (circularTemplate == null)
             {
                 return HttpNotFound();
@@ -110,10 +110,10 @@ namespace HRM.Controllers
         // POST: CircularTemplates/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public  ActionResult> DeleteConfirmed(int id)
         {
-            CircularTemplate circularTemplate = await service.Get(id);
-            await service.RemoveByEntity(circularTemplate);
+            CircularTemplate circularTemplate =  service.Get(id);
+             service.RemoveByEntity(circularTemplate);
             return RedirectToAction("Index");
         }
 

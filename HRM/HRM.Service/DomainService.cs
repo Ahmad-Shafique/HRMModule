@@ -18,34 +18,34 @@ namespace HRM.Service
             repository = new RepositoryFactory().Create<TEntity>();
         }
 
-        public virtual async Task<bool> Insert(TEntity entity)
+        public virtual  bool Insert(TEntity entity)
         {
-            return await repository.Insert(entity);
+            return  repository.Insert(entity);
         }
 
-        public virtual async Task<bool> Update(TEntity entity, int key)
+        public virtual  bool Update(TEntity entity, int key)
         {
-            return await repository.Update(entity,key);
+            return  repository.Update(entity,key);
         }
 
-        public virtual async Task<IEnumerable<TEntity>> GetAll()
+        public virtual  IEnumerable<TEntity> GetAll()
         {
-            return await repository.GetAll();
+            return  repository.GetAll();
         }
 
-        public virtual async Task<TEntity> Get<Tkey>(Tkey id)
+        public virtual  TEntity Get<Tkey>(Tkey id)
         {
-            return await repository.Get(id);
+            return  repository.Get(id);
         }
 
-        //public async Task<bool> RemoveByKey<TKey>(TKey id)
+        //public  bool> RemoveByKey<TKey>(TKey id)
         //{
-        //    return await repository.RemoveByKey(id);
+        //    return  repository.RemoveByKey(id);
         //}
 
-        public async Task<bool> RemoveByEntity(TEntity entity)
+        public  bool RemoveByEntity(TEntity entity)
         {
-            return await repository.RemoveByEntity(entity);
+            return  repository.RemoveByEntity(entity);
         }
     }
 }

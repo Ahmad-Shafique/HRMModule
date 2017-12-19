@@ -19,19 +19,19 @@ namespace HRM.Controllers
         private IDomainService<SalgradeHistory> service = new ServiceFactory().Create<SalgradeHistory>();
 
 
-        public async Task<ActionResult> Index()
+        public  ActionResult> Index()
         {
-            return View(await service.GetAll());
+            return View( service.GetAll());
         }
 
 
-        public async Task<ActionResult> Details(int? id)
+        public  ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SalgradeHistory entity = await service.Get(id);
+            SalgradeHistory entity =  service.Get(id);
 
             if (entity == null)
             {
@@ -51,11 +51,11 @@ namespace HRM.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         // ****************************************************************************************************************************************************************
-        public async Task<ActionResult> Create([Bind(Include = "SalgradeHistoryId,ColumnName,PreviousValue,NewValue,Date,SalgradetId")] SalgradeHistory entity)
+        public  ActionResult> Create([Bind(Include = "SalgradeHistoryId,ColumnName,PreviousValue,NewValue,Date,SalgradetId")] SalgradeHistory entity)
         {
             if (ModelState.IsValid)
             {
-                await service.Insert(entity);
+                 service.Insert(entity);
                 return RedirectToAction("Index");
             }
 
@@ -63,13 +63,13 @@ namespace HRM.Controllers
         }
 
 
-        public async Task<ActionResult> Edit(int? id)
+        public  ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SalgradeHistory entity = await service.Get(id);
+            SalgradeHistory entity =  service.Get(id);
             if (entity == null)
             {
                 return HttpNotFound();
@@ -81,27 +81,27 @@ namespace HRM.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         // ******************************************************************************************************************************************************************
-        public async Task<ActionResult> Edit([Bind(Include = "SalgradeHistoryId,ColumnName,PreviousValue,NewValue,Date,SalgradetId")] SalgradeHistory entity)
+        public  ActionResult> Edit([Bind(Include = "SalgradeHistoryId,ColumnName,PreviousValue,NewValue,Date,SalgradetId")] SalgradeHistory entity)
         {
             if (ModelState.IsValid)
             {
                 // **********************************************************************************************************************************************************
-                SalgradeHistory temp = await service.Get(entity.SalgradeHistoryId);
-                await service.RemoveByEntity(temp);
-                await service.Insert(entity);
+                SalgradeHistory temp =  service.Get(entity.SalgradeHistoryId);
+                 service.RemoveByEntity(temp);
+                 service.Insert(entity);
             }
             /////// return View(SalgradeHistory);
             return RedirectToAction("Index");
         }
 
 
-        public async Task<ActionResult> Delete(int? id)
+        public  ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SalgradeHistory entity = await service.Get(id);
+            SalgradeHistory entity =  service.Get(id);
             if (entity == null)
             {
                 return HttpNotFound();
@@ -112,10 +112,10 @@ namespace HRM.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public  ActionResult> DeleteConfirmed(int id)
         {
-            SalgradeHistory entity = await service.Get(id);
-            await service.RemoveByEntity(entity);
+            SalgradeHistory entity =  service.Get(id);
+             service.RemoveByEntity(entity);
             return RedirectToAction("Index");
         }
 

@@ -19,19 +19,19 @@ namespace HRM.Controllers
         private IDomainService<EmployeeDesignation> service = new ServiceFactory().Create<EmployeeDesignation>();
 
 
-        public async Task<ActionResult> Index()
+        public  ActionResult> Index()
         {
-            return View(await service.GetAll());
+            return View( service.GetAll());
         }
 
 
-        public async Task<ActionResult> Details(int? id)
+        public  ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmployeeDesignation entity = await service.Get(id);
+            EmployeeDesignation entity =  service.Get(id);
 
             if (entity == null)
             {
@@ -51,11 +51,11 @@ namespace HRM.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         // ****************************************************************************************************************************************************************
-        public async Task<ActionResult> Create([Bind(Include = "EmployeeDesignationId,EmployeeId,DesignationId")] EmployeeDesignation entity)
+        public  ActionResult> Create([Bind(Include = "EmployeeDesignationId,EmployeeId,DesignationId")] EmployeeDesignation entity)
         {
             if (ModelState.IsValid)
             {
-                await service.Insert(entity);
+                 service.Insert(entity);
                 return RedirectToAction("Index");
             }
 
@@ -63,13 +63,13 @@ namespace HRM.Controllers
         }
 
 
-        public async Task<ActionResult> Edit(int? id)
+        public  ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmployeeDesignation entity = await service.Get(id);
+            EmployeeDesignation entity =  service.Get(id);
             if (entity == null)
             {
                 return HttpNotFound();
@@ -81,27 +81,27 @@ namespace HRM.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         // ******************************************************************************************************************************************************************
-        public async Task<ActionResult> Edit([Bind(Include = "EmployeeDesignationId,EmployeeId,DesignationId")] EmployeeDesignation entity)
+        public  ActionResult> Edit([Bind(Include = "EmployeeDesignationId,EmployeeId,DesignationId")] EmployeeDesignation entity)
         {
             if (ModelState.IsValid)
             {
                 // **********************************************************************************************************************************************************
-                EmployeeDesignation temp = await service.Get(entity.EmployeeDesignationId);
-                await service.RemoveByEntity(temp);
-                await service.Insert(entity);
+                EmployeeDesignation temp =  service.Get(entity.EmployeeDesignationId);
+                 service.RemoveByEntity(temp);
+                 service.Insert(entity);
             }
             /////// return View(EmployeeDesignation);
             return RedirectToAction("Index");
         }
 
 
-        public async Task<ActionResult> Delete(int? id)
+        public  ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmployeeDesignation entity = await service.Get(id);
+            EmployeeDesignation entity =  service.Get(id);
             if (entity == null)
             {
                 return HttpNotFound();
@@ -112,10 +112,10 @@ namespace HRM.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public  ActionResult> DeleteConfirmed(int id)
         {
-            EmployeeDesignation entity = await service.Get(id);
-            await service.RemoveByEntity(entity);
+            EmployeeDesignation entity =  service.Get(id);
+             service.RemoveByEntity(entity);
             return RedirectToAction("Index");
         }
 

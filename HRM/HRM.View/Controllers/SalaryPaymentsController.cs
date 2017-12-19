@@ -15,17 +15,17 @@ namespace HRM.View.Controllers
     {
         private ICommonViewService Service = ServiceFactory.GetCommonViewService();
         // GET: SalaryPayment
-        public async Task<ActionResult> Index()
+        public  ActionResult Index()
         {
             Console.WriteLine("Entered salary payments display");
 
-            //ViewBag.Employees = Service.Test().Result;
-            IEnumerable<EmployeeTotalSalary> result = await Service.CalculateAllEmployeeTotalSalary();
+            //ViewBag.Employees = Service.Test();
+            IEnumerable<EmployeeTotalSalary> result =  Service.CalculateAllEmployeeTotalSalary();
             Console.WriteLine("Result received");
             Console.WriteLine("aa*****************************");
             Console.WriteLine("aa*****************************");
-            //return View(result);
-            return View();
+            return View(result);
+            //return View();
         }
     }
 }

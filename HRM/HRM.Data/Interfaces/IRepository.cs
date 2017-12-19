@@ -10,12 +10,11 @@ namespace HRM.Data.Interfaces
 {
     public interface IRepository <TEntity> where TEntity : class
     {
-        Task<IEnumerable<TEntity>> GetAll();
-        Task<TEntity> Get<Tkey>(Tkey id);
-        Task<bool> Insert(TEntity entity);
-        Task<bool> Update(TEntity entity, int key);
-        //Task<bool> RemoveByKey<TKey>(TKey id);
-        Task<bool> RemoveByEntity(TEntity entity);
+        IEnumerable<TEntity> GetAll();
+        TEntity Get<Tkey>(Tkey id);
+        bool Insert(TEntity entity);
+        bool Update(TEntity entity, int key);
+        bool RemoveByEntity(TEntity entity);
 
     }
 }

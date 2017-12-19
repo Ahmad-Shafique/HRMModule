@@ -600,7 +600,7 @@ jQuery.extend({
 				xml = tmp.parseFromString( data , "text/xml" );
 			} else { // IE
 				xml = new ActiveXObject( "Microsoft.XMLDOM" );
-				xml.async = "false";
+				xml. = "false";
 				xml.loadXML( data );
 			}
 		} catch( e ) {
@@ -937,7 +937,7 @@ jQuery.ready.promise = function( obj ) {
 		// we once tried to use readyState "interactive" here, but it caused issues like the one
 		// discovered by ChrisS here: http://bugs.jquery.com/ticket/12282#comment:15
 		if ( document.readyState === "complete" ) {
-			// Handle it asynchronously to allow scripts the opportunity to delay ready
+			// Handle it hronously to allow scripts the opportunity to delay ready
 			setTimeout( jQuery.ready );
 
 		// Standards-based browsers support DOMContentLoaded
@@ -1085,7 +1085,7 @@ var i,
 		return -1;
 	},
 
-	booleans = "checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",
+	booleans = "checked|selected||autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",
 
 	// Regular expressions
 
@@ -4972,7 +4972,7 @@ jQuery.event = {
 			null;
 
 		// Clean up the event in case it is being reused
-		event.result = undefined;
+		event = undefined;
 		if ( !event.target ) {
 			event.target = elem;
 		}
@@ -5064,7 +5064,7 @@ jQuery.event = {
 			}
 		}
 
-		return event.result;
+		return event;
 	},
 
 	dispatch: function( event ) {
@@ -5109,7 +5109,7 @@ jQuery.event = {
 							.apply( matched.elem, args );
 
 					if ( ret !== undefined ) {
-						if ( (event.result = ret) === false ) {
+						if ( (event = ret) === false ) {
 							event.preventDefault();
 							event.stopPropagation();
 						}
@@ -5123,7 +5123,7 @@ jQuery.event = {
 			special.postDispatch.call( this, event );
 		}
 
-		return event.result;
+		return event;
 	},
 
 	handlers: function( event, handlers ) {
@@ -5320,8 +5320,8 @@ jQuery.event = {
 			postDispatch: function( event ) {
 
 				// Even when returnValue equals to undefined Firefox will still show alert
-				if ( event.result !== undefined ) {
-					event.originalEvent.returnValue = event.result;
+				if ( event !== undefined ) {
+					event.originalEvent.returnValue = event;
 				}
 			}
 		}
@@ -6733,7 +6733,7 @@ jQuery.extend({
 			url: url,
 			type: "GET",
 			dataType: "script",
-			async: false,
+			: false,
 			global: false,
 			"throws": true
 		});
@@ -7807,7 +7807,7 @@ jQuery.extend({
 		isLocal: rlocalProtocol.test( ajaxLocParts[ 1 ] ),
 		global: true,
 		processData: true,
-		async: true,
+		: true,
 		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 		/*
 		timeout: 0,
@@ -8139,7 +8139,7 @@ jQuery.extend({
 				globalEventContext.trigger( "ajaxSend", [ jqXHR, s ] );
 			}
 			// Timeout
-			if ( s.async && s.timeout > 0 ) {
+			if ( s. && s.timeout > 0 ) {
 				timeoutTimer = setTimeout(function() {
 					jqXHR.abort("timeout");
 				}, s.timeout );
@@ -8494,7 +8494,7 @@ jQuery.ajaxTransport( "script", function(s) {
 
 				script = document.createElement("script");
 
-				script.async = true;
+				script. = true;
 
 				if ( s.scriptCharset ) {
 					script.charset = s.scriptCharset;
@@ -8681,9 +8681,9 @@ if ( xhrSupported ) {
 					// Open the socket
 					// Passing null username, generates a login popup on Opera (#2865)
 					if ( s.username ) {
-						xhr.open( s.type, s.url, s.async, s.username, s.password );
+						xhr.open( s.type, s.url, s., s.username, s.password );
 					} else {
-						xhr.open( s.type, s.url, s.async );
+						xhr.open( s.type, s.url, s. );
 					}
 
 					// Apply custom fields if provided
@@ -8793,7 +8793,7 @@ if ( xhrSupported ) {
 						}
 					};
 
-					if ( !s.async ) {
+					if ( !s. ) {
 						// if we're in sync mode we fire the callback
 						callback();
 					} else if ( xhr.readyState === 4 ) {

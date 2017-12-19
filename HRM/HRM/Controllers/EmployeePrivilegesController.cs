@@ -17,19 +17,19 @@ namespace HRM.Controllers
         private HRMDbContext db = new HRMDbContext();
 
         // GET: EmployeePrivileges
-        public async Task<ActionResult> Index()
+        public  ActionResult> Index()
         {
-            return View(await db.EmployeePrivileges.ToListAsync());
+            return View( db.EmployeePrivileges.ToList());
         }
 
         // GET: EmployeePrivileges/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public  ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmployeePrivilege employeePrivilege = await db.EmployeePrivileges.FindAsync(id);
+            EmployeePrivilege employeePrivilege =  db.EmployeePrivileges.Find(id);
             if (employeePrivilege == null)
             {
                 return HttpNotFound();
@@ -48,12 +48,12 @@ namespace HRM.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "EmployeePrivilegeId,EmployeeId,PrivilegeId")] EmployeePrivilege employeePrivilege)
+        public  ActionResult> Create([Bind(Include = "EmployeePrivilegeId,EmployeeId,PrivilegeId")] EmployeePrivilege employeePrivilege)
         {
             if (ModelState.IsValid)
             {
                 db.EmployeePrivileges.Add(employeePrivilege);
-                await db.SaveChangesAsync();
+                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -61,13 +61,13 @@ namespace HRM.Controllers
         }
 
         // GET: EmployeePrivileges/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public  ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmployeePrivilege employeePrivilege = await db.EmployeePrivileges.FindAsync(id);
+            EmployeePrivilege employeePrivilege =  db.EmployeePrivileges.Find(id);
             if (employeePrivilege == null)
             {
                 return HttpNotFound();
@@ -80,25 +80,25 @@ namespace HRM.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "EmployeePrivilegeId,EmployeeId,PrivilegeId")] EmployeePrivilege employeePrivilege)
+        public  ActionResult> Edit([Bind(Include = "EmployeePrivilegeId,EmployeeId,PrivilegeId")] EmployeePrivilege employeePrivilege)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(employeePrivilege).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(employeePrivilege);
         }
 
         // GET: EmployeePrivileges/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public  ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmployeePrivilege employeePrivilege = await db.EmployeePrivileges.FindAsync(id);
+            EmployeePrivilege employeePrivilege =  db.EmployeePrivileges.Find(id);
             if (employeePrivilege == null)
             {
                 return HttpNotFound();
@@ -109,11 +109,11 @@ namespace HRM.Controllers
         // POST: EmployeePrivileges/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public  ActionResult> DeleteConfirmed(int id)
         {
-            EmployeePrivilege employeePrivilege = await db.EmployeePrivileges.FindAsync(id);
+            EmployeePrivilege employeePrivilege =  db.EmployeePrivileges.Find(id);
             db.EmployeePrivileges.Remove(employeePrivilege);
-            await db.SaveChangesAsync();
+             db.SaveChanges();
             return RedirectToAction("Index");
         }
 

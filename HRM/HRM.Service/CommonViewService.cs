@@ -24,42 +24,42 @@ namespace HRM.Service
         }
 
 
-        public Task<bool> AddBonusToEmployeeList(int departmentId, Bonuses bonus, string employeeIdsList)
+        public bool AddBonusToEmployeeList(int departmentId, Bonuses bonus, string employeeIdsList)
         {
             return repository.AddBonusToEmployeeList(departmentId,bonus,employeeIdsList);
         }
 
-        public Task<bool> AddDepartmentWideBonus(int departmentId, Bonuses bonus)
+        public bool AddDepartmentWideBonus(int departmentId, Bonuses bonus)
         {
             return repository.AddDepartmentWideBonus(departmentId, bonus);
         }
 
-        public Task<bool> AddEmployeesToTrainingProgram(int trainingId, string employeeIdsString)
+        public bool AddEmployeesToTrainingProgram(int trainingId, string employeeIdsString)
         {
             return repository.AddEmployeesToTrainingProgram(trainingId, employeeIdsString);
         }
 
-        public Task<bool> AddTrainingsToEmployee(int employeeId, string trainingIdsString)
+        public bool AddTrainingsToEmployee(int employeeId, string trainingIdsString)
         {
             return repository.AddTrainingsToEmployee(employeeId, trainingIdsString);
         }
 
-        public Task<bool> ApproveHireRequests(string hireRequestIdsString)
+        public bool ApproveHireRequests(string hireRequestIdsString)
         {
             return repository.ApproveHireRequests(hireRequestIdsString);
         }
 
-        public Task<bool> AssignCandidatesToInterview(int interviewId, string candidateIdsList)
+        public bool AssignCandidatesToInterview(int interviewId, string candidateIdsList)
         {
             return repository.AssignCandidatesToInterview(interviewId, candidateIdsList);
         }
 
-        public Task<bool> AssignEquipmentsToADepartment(int departmentId, string equipmentIdsList)
+        public bool AssignEquipmentsToADepartment(int departmentId, string equipmentIdsList)
         {
             return repository.AssignEquipmentsToADepartment(departmentId, equipmentIdsList);
         }
 
-        public Task<bool> AssignTransportsToAnArea(int transportAreaId, string transportIdsList)
+        public bool AssignTransportsToAnArea(int transportAreaId, string transportIdsList)
         {
             return repository.AssignTransportsToAnArea(transportAreaId, transportIdsList);
         }
@@ -96,15 +96,15 @@ namespace HRM.Service
             return repository.GetTrainingAndRelatedEmployees(trainingId);
         }
 
-        public Task<dynamic> Test()
+        public dynamic Test()
         {
             return repository.Test();
         }
 
 
-        public async Task<IEnumerable<EmployeeTotalSalary>> CalculateAllEmployeeTotalSalary()
+        public  IEnumerable<EmployeeTotalSalary> CalculateAllEmployeeTotalSalary()
         {
-            return await repository.CalculateAllEmployeeTotalSalary();
+            return  repository.CalculateAllEmployeeTotalSalary();
         }
     }
 }

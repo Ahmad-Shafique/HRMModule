@@ -19,19 +19,19 @@ namespace HRM.Controllers
         private IDomainService<EmployeePerformanceMetric> service = new ServiceFactory().Create<EmployeePerformanceMetric>();
 
 
-        public async Task<ActionResult> Index()
+        public  ActionResult> Index()
         {
-            return View(await service.GetAll());
+            return View( service.GetAll());
         }
 
 
-        public async Task<ActionResult> Details(int? id)
+        public  ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmployeePerformanceMetric entity = await service.Get(id);
+            EmployeePerformanceMetric entity =  service.Get(id);
 
             if (entity == null)
             {
@@ -51,12 +51,12 @@ namespace HRM.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         // ****************************************************************************************************************************************************************
-        public async Task<ActionResult> Create([Bind(Include = "EmployeePerformanceMetricId,IllegalLeave,ProjectMissedDateLineCount,TotalProjects,AverageProjectScore,TotalTraining,AverageTrainingScore,Year,EmployeeId")]
+        public  ActionResult> Create([Bind(Include = "EmployeePerformanceMetricId,IllegalLeave,ProjectMissedDateLineCount,TotalProjects,AverageProjectScore,TotalTraining,AverageTrainingScore,Year,EmployeeId")]
                          EmployeePerformanceMetric entity)
         {
             if (ModelState.IsValid)
             {
-                await service.Insert(entity);
+                 service.Insert(entity);
                 return RedirectToAction("Index");
             }
 
@@ -64,13 +64,13 @@ namespace HRM.Controllers
         }
 
 
-        public async Task<ActionResult> Edit(int? id)
+        public  ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmployeePerformanceMetric entity = await service.Get(id);
+            EmployeePerformanceMetric entity =  service.Get(id);
             if (entity == null)
             {
                 return HttpNotFound();
@@ -82,28 +82,28 @@ namespace HRM.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         // ******************************************************************************************************************************************************************
-        public async Task<ActionResult> Edit([Bind(Include = "EmployeePerformanceMetricId,IllegalLeave,ProjectMissedDateLineCount,TotalProjects,AverageProjectScore,TotalTraining,AverageTrainingScore,Year,EmployeeId")]
+        public  ActionResult> Edit([Bind(Include = "EmployeePerformanceMetricId,IllegalLeave,ProjectMissedDateLineCount,TotalProjects,AverageProjectScore,TotalTraining,AverageTrainingScore,Year,EmployeeId")]
                          EmployeePerformanceMetric entity)
         {
             if (ModelState.IsValid)
             {
                 // **********************************************************************************************************************************************************
-                EmployeePerformanceMetric temp = await service.Get(entity.EmployeePerformanceMetricId);
-                await service.RemoveByEntity(temp);
-                await service.Insert(entity);
+                EmployeePerformanceMetric temp =  service.Get(entity.EmployeePerformanceMetricId);
+                 service.RemoveByEntity(temp);
+                 service.Insert(entity);
             }
             /////// return View(EmployeePerformanceMetric);
             return RedirectToAction("Index");
         }
 
 
-        public async Task<ActionResult> Delete(int? id)
+        public  ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmployeePerformanceMetric entity = await service.Get(id);
+            EmployeePerformanceMetric entity =  service.Get(id);
             if (entity == null)
             {
                 return HttpNotFound();
@@ -114,10 +114,10 @@ namespace HRM.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public  ActionResult> DeleteConfirmed(int id)
         {
-            EmployeePerformanceMetric entity = await service.Get(id);
-            await service.RemoveByEntity(entity);
+            EmployeePerformanceMetric entity =  service.Get(id);
+             service.RemoveByEntity(entity);
             return RedirectToAction("Index");
         }
 

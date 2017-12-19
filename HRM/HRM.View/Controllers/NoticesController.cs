@@ -17,14 +17,14 @@ namespace HRM.View.Controllers
         private IDomainService<NoticeComment> CommentService = new ServiceFactory().Create<NoticeComment>();
 
 
-        public async Task<ActionResult> Index()
+        public  ActionResult Index()
         {
-            ViewBag.Notices = await service.GetAll();
+            ViewBag.Notices =  service.GetAll();
             return View();
         }
 
 
-        public async Task<ActionResult> Details(int? id)
+        public  ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -32,7 +32,7 @@ namespace HRM.View.Controllers
             }
 
             Console.WriteLine("Id found : " + id);
-            Notice entity = await service.Get(id);
+            Notice entity =  service.Get(id);
             Console.WriteLine("Notice header is : " + entity.NoticeTitle);
 
             if (entity == null)
@@ -44,7 +44,7 @@ namespace HRM.View.Controllers
             ViewBag.NoticeDetails = entity.NoticeDetails;
             ViewBag.NoticeId = id;
             
-            IEnumerable<NoticeComment> comments = await CommentService.GetAll();
+            IEnumerable<NoticeComment> comments =  CommentService.GetAll();
             ViewBag.Comments = comments.Where(item => item.NoticeId == entity.NoticeId);
             return View();
         }
@@ -59,11 +59,11 @@ namespace HRM.View.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "NoticeId,NoticeTitle,NoticeDetails,NoticeDate")] Notice entity)
+        public  ActionResult Create([Bind(Include = "NoticeId,NoticeTitle,NoticeDetails,NoticeDate")] Notice entity)
         {
             if (ModelState.IsValid)
             {
-                await service.Insert(entity);
+                 service.Insert(entity);
                 return RedirectToAction("Index");
             }
 
@@ -71,13 +71,13 @@ namespace HRM.View.Controllers
         }
 
 
-        public async Task<ActionResult> Edit(int? id)
+        public  ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Notice entity = await service.Get(id);
+            Notice entity =  service.Get(id);
             if (entity == null)
             {
                 return HttpNotFound();
@@ -88,27 +88,27 @@ namespace HRM.View.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "NoticeId,NoticeTitle,NoticeDetails,NoticeDate")] Notice entity)
+        public  ActionResult Edit([Bind(Include = "NoticeId,NoticeTitle,NoticeDetails,NoticeDate")] Notice entity)
         {
             if (ModelState.IsValid)
             {
 
-                Notice temp = await service.Get(entity.NoticeId);
-                await service.RemoveByEntity(temp);
-                await service.Insert(entity);
+                Notice temp =  service.Get(entity.NoticeId);
+                 service.RemoveByEntity(temp);
+                 service.Insert(entity);
             }
             /////// return View(Notice);
             return RedirectToAction("Index");
         }
 
 
-        public async Task<ActionResult> Delete(int? id)
+        public  ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Notice entity = await service.Get(id);
+            Notice entity =  service.Get(id);
             if (entity == null)
             {
                 return HttpNotFound();
@@ -119,15 +119,15 @@ namespace HRM.View.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public  ActionResult DeleteConfirmed(int id)
         {
-            Notice entity = await service.Get(id);
-            await service.RemoveByEntity(entity);
+            Notice entity =  service.Get(id);
+             service.RemoveByEntity(entity);
             return RedirectToAction("Index");
         }
 
         [HttpPost]
-        public async Task<ActionResult> SubmitComment(int noticeId, string comment)
+        public  ActionResult SubmitComment(int noticeId, string comment)
         {
             NoticeComment noticeComment = new NoticeComment
             {
@@ -144,7 +144,7 @@ namespace HRM.View.Controllers
                 NoticeId = noticeId,
                 Comment = comment
             };
-            await CommentService.Insert(noticeComment);
+             CommentService.Insert(noticeComment);
             return RedirectToAction("Details",new { id = noticeId });
         }
 

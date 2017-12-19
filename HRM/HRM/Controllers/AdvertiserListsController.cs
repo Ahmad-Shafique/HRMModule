@@ -21,20 +21,20 @@ namespace HRM.Controllers
         private IDomainService<AdvertiserList> service = new ServiceFactory().Create<AdvertiserList>();
 
         // GET: AdvertiserLists
-        public async Task<ActionResult> Index()
+        public  ActionResult> Index()
         {
-            //return View(await db.AdvertiserLists.ToListAsync());
-            return View(await service.GetAll());
+            //return View( db.AdvertiserLists.ToList());
+            return View( service.GetAll());
         }
 
         // GET: AdvertiserLists/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public  ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdvertiserList advertiserList = await service.Get(id);
+            AdvertiserList advertiserList =  service.Get(id);
             if (advertiserList == null)
             {
                 return HttpNotFound();
@@ -53,11 +53,11 @@ namespace HRM.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "AdvertiserListId,AdvertiserName,Description,ContactInfo")] AdvertiserList advertiserList)
+        public  ActionResult> Create([Bind(Include = "AdvertiserListId,AdvertiserName,Description,ContactInfo")] AdvertiserList advertiserList)
         {
             if (ModelState.IsValid)
             {
-                await service.Insert(advertiserList);
+                 service.Insert(advertiserList);
                 return RedirectToAction("Index");
             }
 
@@ -65,14 +65,14 @@ namespace HRM.Controllers
         }
 
         // GET: AdvertiserLists/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public  ActionResult> Edit(int? id)
         {
             Console.WriteLine(id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdvertiserList advertiserList = await service.Get(id);
+            AdvertiserList advertiserList =  service.Get(id);
             if (advertiserList == null)
             {
                 return HttpNotFound();
@@ -85,15 +85,15 @@ namespace HRM.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "AdvertiserListId,AdvertiserName,Description,ContactInfo")] AdvertiserList advertiserList)
+        public  ActionResult> Edit([Bind(Include = "AdvertiserListId,AdvertiserName,Description,ContactInfo")] AdvertiserList advertiserList)
         {
             if (ModelState.IsValid)
             {
-                //AdvertiserList temp = await service.Get(advertiserList.AdvertiserListId);
-                //await service.RemoveByEntity(temp);
-                //await service.Insert(advertiserList);
+                //AdvertiserList temp =  service.Get(advertiserList.AdvertiserListId);
+                // service.RemoveByEntity(temp);
+                // service.Insert(advertiserList);
 
-                await service.Update(advertiserList,advertiserList.AdvertiserListId);
+                 service.Update(advertiserList,advertiserList.AdvertiserListId);
 
 
                 return RedirectToAction("Index");
@@ -102,13 +102,13 @@ namespace HRM.Controllers
         }
 
         // GET: AdvertiserLists/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public  ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdvertiserList advertiserList = await service.Get(id);
+            AdvertiserList advertiserList =  service.Get(id);
             if (advertiserList == null)
             {
                 return HttpNotFound();
@@ -119,10 +119,10 @@ namespace HRM.Controllers
         // POST: AdvertiserLists/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public  ActionResult> DeleteConfirmed(int id)
         {
-            AdvertiserList item = await service.Get(id);
-            bool x = await service.RemoveByEntity(item);
+            AdvertiserList item =  service.Get(id);
+            bool x =  service.RemoveByEntity(item);
             return RedirectToAction("Index");
         }
 

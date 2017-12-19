@@ -13,18 +13,18 @@ namespace HRM.Service.Interfaces
         dynamic GetTrainingAndRelatedEmployees(int trainingId);
         dynamic GetEmployeeAndRelatedTraining(int employeeId);
         dynamic GetAllEmployeeDetails();
-        Task<bool> AddEmployeesToTrainingProgram(int trainingId, string employeeIdsString);
-        Task<bool> AddTrainingsToEmployee(int employeeId, string trainingIdsString);
-        Task<bool> ApproveHireRequests(string hireRequestIdsString);
+        bool AddEmployeesToTrainingProgram(int trainingId, string employeeIdsString);
+        bool AddTrainingsToEmployee(int employeeId, string trainingIdsString);
+        bool ApproveHireRequests(string hireRequestIdsString);
         dynamic GetAllEmployeePerformance();
-        Task<bool> AddDepartmentWideBonus(int departmentId, Bonuses bonus);
-        Task<bool> AddBonusToEmployeeList(int departmentId, Bonuses bonus, string employeeIdsList);
-        Task<bool> AssignTransportsToAnArea(int transportAreaId, string transportIdsList);
+        bool AddDepartmentWideBonus(int departmentId, Bonuses bonus);
+        bool AddBonusToEmployeeList(int departmentId, Bonuses bonus, string employeeIdsList);
+        bool AssignTransportsToAnArea(int transportAreaId, string transportIdsList);
         IEnumerable<TransportVehicle> GetAvailableTransport();
-        Task<bool> AssignEquipmentsToADepartment(int departmentId, string equipmentIdsList);
-        Task<bool> AssignCandidatesToInterview(int interviewId, string candidateIdsList);
+        bool AssignEquipmentsToADepartment(int departmentId, string equipmentIdsList);
+        bool AssignCandidatesToInterview(int interviewId, string candidateIdsList);
         IEnumerable<TemporaryCV> GetAllUnassignedTemporaryCVs();
-        Task<IEnumerable<EmployeeTotalSalary>> CalculateAllEmployeeTotalSalary();
-        Task<dynamic> Test();
+        IEnumerable<EmployeeTotalSalary> CalculateAllEmployeeTotalSalary();
+        dynamic Test();
     }
 }

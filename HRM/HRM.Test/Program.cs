@@ -14,17 +14,17 @@ namespace HRM.Test
     {
         class Test
         {
-            public static async Task<dynamic> TestMethod()
+            public static  dynamic TestMethod()
             {
                 ICommonViewService Service = ServiceFactory.GetCommonViewService();
-                return await Service.CalculateAllEmployeeTotalSalary(); 
+                return  Service.CalculateAllEmployeeTotalSalary(); 
             }
         }
 
         static void Main(string[] args)
         {
 
-            //var result = Test.TestMethod().Result;
+            //var result = Test.TestMethod();
 
             //Console.WriteLine("Printing result now: ");
 
@@ -38,13 +38,13 @@ namespace HRM.Test
 
 
 
-            //var result = new ServiceFactory().Create<Department>().GetAll().Result;
+            //var result = new ServiceFactory().Create<Department>().GetAll();
             //foreach (var item in result)
             //{
             //    Console.WriteLine(item.DepartmentName);
             //}
 
-            //var result = new ServiceFactory().Create<Equipment>().GetAll().Result;
+            //var result = new ServiceFactory().Create<Equipment>().GetAll();
             //foreach (var item in result)
             //{
             //    Console.WriteLine(item.BuyPrice);
@@ -56,14 +56,14 @@ namespace HRM.Test
             //    Console.WriteLine(item.EmployeeName + " " + item.ProjectScore + " " + item.TrainingScore + " " + item.AggregateScore);
             //}
 
-            //var result = new ServiceFactory().Create<Interview>().GetAll().Result;
-            //var result2 = new ServiceFactory().Create<Interviewee>().GetAll().Result;
+            //var result = new ServiceFactory().Create<Interview>().GetAll();
+            //var result2 = new ServiceFactory().Create<Interviewee>().GetAll();
             //Console.WriteLine(result.Count());
             //Console.WriteLine(result2.Count());
 
 
 
-            var result = ServiceFactory.GetCommonViewService().CalculateAllEmployeeTotalSalary().Result;
+            var result = ServiceFactory.GetCommonViewService().CalculateAllEmployeeTotalSalary();
             Console.WriteLine("In program");
             foreach(var item in result)
             {

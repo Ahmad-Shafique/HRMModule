@@ -19,19 +19,19 @@ namespace HRM.Controllers
         private IDomainService<Bonuses> service = new ServiceFactory().Create<Bonuses>();
 
         // GET: Bonuses
-        public async Task<ActionResult> Index()
+        public  ActionResult> Index()
         {
-            return View(await service.GetAll());
+            return View( service.GetAll());
         }
 
         // GET: Bonuses/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public  ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bonuses bonuses = await service.Get(id);
+            Bonuses bonuses =  service.Get(id);
             if (bonuses == null)
             {
                 return HttpNotFound();
@@ -50,11 +50,11 @@ namespace HRM.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "BonusesId,BonusId,BonusValue,BonusDescription,BonusesDate")] Bonuses bonuses)
+        public  ActionResult> Create([Bind(Include = "BonusesId,BonusId,BonusValue,BonusDescription,BonusesDate")] Bonuses bonuses)
         {
             if (ModelState.IsValid)
             {
-                await service.Insert(bonuses);
+                 service.Insert(bonuses);
                 return RedirectToAction("Index");
             }
 
@@ -62,13 +62,13 @@ namespace HRM.Controllers
         }
 
         // GET: Bonuses/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public  ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bonuses bonuses = await service.Get(id);
+            Bonuses bonuses =  service.Get(id);
             if (bonuses == null)
             {
                 return HttpNotFound();
@@ -81,25 +81,25 @@ namespace HRM.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "BonusesId,BonusId,BonusValue,BonusDescription,BonusesDate")] Bonuses bonuses)
+        public  ActionResult> Edit([Bind(Include = "BonusesId,BonusId,BonusValue,BonusDescription,BonusesDate")] Bonuses bonuses)
         {
             if (ModelState.IsValid)
             {
-                Bonuses temp = await service.Get(bonuses.BonusesId);
-                await service.RemoveByEntity(temp);
-                await service.Insert(bonuses);
+                Bonuses temp =  service.Get(bonuses.BonusesId);
+                 service.RemoveByEntity(temp);
+                 service.Insert(bonuses);
             }
             return View(bonuses);
         }
 
         // GET: Bonuses/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public  ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bonuses bonuses = await service.Get(id);
+            Bonuses bonuses =  service.Get(id);
             if (bonuses == null)
             {
                 return HttpNotFound();
@@ -110,10 +110,10 @@ namespace HRM.Controllers
         // POST: Bonuses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public  ActionResult> DeleteConfirmed(int id)
         {
-            Bonuses item = await service.Get(id);
-            bool x = await service.RemoveByEntity(item);
+            Bonuses item =  service.Get(id);
+            bool x =  service.RemoveByEntity(item);
             return RedirectToAction("Index");
         }
 

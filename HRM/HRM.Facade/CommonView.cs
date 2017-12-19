@@ -16,9 +16,9 @@ namespace HRM.Facade
         public virtual dynamic GetTrainingAndRelatedEmployees(int trainingId)
         {
             
-            IEnumerable<Training> trainingList = new RepositoryFactory().Create<Training>().GetAll().Result;
-            IEnumerable<Employee> employeeList = new RepositoryFactory().Create<Employee>().GetAll().Result;
-            IEnumerable<TrainingEmployee> trainingEmployeeList = new TrainingEmployeeRepository().GetAll().Result;
+            IEnumerable<Training> trainingList = new RepositoryFactory().Create<Training>().GetAll();
+            IEnumerable<Employee> employeeList = new RepositoryFactory().Create<Employee>().GetAll();
+            IEnumerable<TrainingEmployee> trainingEmployeeList = new TrainingEmployeeRepository().GetAll();
 
             try
             {
@@ -46,9 +46,9 @@ namespace HRM.Facade
 
         public virtual dynamic GetEmployeeAndRelatedTraining(int employeeId)
         {
-            IEnumerable<Training> trainingList = new RepositoryFactory().Create<Training>().GetAll().Result;
-            IEnumerable<Employee> employeeList = new RepositoryFactory().Create<Employee>().GetAll().Result;
-            IEnumerable<TrainingEmployee> trainingEmployeeList = new RepositoryFactory().Create<TrainingEmployee>().GetAll().Result;
+            IEnumerable<Training> trainingList = new RepositoryFactory().Create<Training>().GetAll();
+            IEnumerable<Employee> employeeList = new RepositoryFactory().Create<Employee>().GetAll();
+            IEnumerable<TrainingEmployee> trainingEmployeeList = new RepositoryFactory().Create<TrainingEmployee>().GetAll();
 
             try
             {
@@ -74,7 +74,7 @@ namespace HRM.Facade
         }
 
 
-        public virtual async Task<bool> AddEmployeesToTrainingProgram(int trainingId , List<int> employeeIdList)
+        public virtual  bool AddEmployeesToTrainingProgram(int trainingId , List<int> employeeIdList)
         {
             try
             {
@@ -85,7 +85,7 @@ namespace HRM.Facade
                     item.TrainingId = trainingId;
                     item.EmployeeId = id;
 
-                    await comboRepo.Insert(item);
+                     comboRepo.Insert(item);
                 }
 
                 return true;
@@ -98,7 +98,7 @@ namespace HRM.Facade
             
         }
 
-        public virtual async Task<bool> AddEmployeesToTrainingProgram(int trainingId, string employeeIdsString)
+        public virtual  bool AddEmployeesToTrainingProgram(int trainingId, string employeeIdsString)
         {
             try
             {
@@ -108,7 +108,7 @@ namespace HRM.Facade
                 {
                     idList.Add(Int32.Parse(s));
                 }
-                return await AddEmployeesToTrainingProgram(trainingId, idList);
+                return  AddEmployeesToTrainingProgram(trainingId, idList);
 
             }
             catch(Exception e)
@@ -120,7 +120,7 @@ namespace HRM.Facade
         }
 
 
-        public virtual async Task<bool> AddTrainingsToEmployee(int employeeId, List<int> trainingList)
+        public virtual  bool AddTrainingsToEmployee(int employeeId, List<int> trainingList)
         {
             try
             {
@@ -131,7 +131,7 @@ namespace HRM.Facade
                     item.EmployeeId = employeeId;
                     item.TrainingId = id;
 
-                    await comboRepo.Insert(item);
+                     comboRepo.Insert(item);
                 }
 
                 return true;
@@ -144,7 +144,7 @@ namespace HRM.Facade
 
         }
 
-        public virtual async Task<bool> AddTrainingsToEmployee(int employeeId, string trainingIdsString)
+        public virtual  bool AddTrainingsToEmployee(int employeeId, string trainingIdsString)
         {
             try
             {
@@ -155,7 +155,7 @@ namespace HRM.Facade
                     if(s.Trim() != "" && s!=null  )
                     idList.Add(Int32.Parse(s));
                 }
-                return await AddEmployeesToTrainingProgram(employeeId, idList);
+                return  AddEmployeesToTrainingProgram(employeeId, idList);
 
             }
             catch (Exception e)
@@ -170,8 +170,8 @@ namespace HRM.Facade
         {
             IRepository<Employee> empRepo = new RepositoryFactory().Create<Employee>();
             IRepository<EmployeeBio> empBioRepo = new RepositoryFactory().Create<EmployeeBio>();
-            return from emp in empRepo.GetAll().Result
-                   join empBio in empBioRepo.GetAll().Result on emp.EmployeeId equals empBio.EmployeeId
+            return from emp in empRepo.GetAll()
+                   join empBio in empBioRepo.GetAll() on emp.EmployeeId equals empBio.EmployeeId
                    select new EmployeeAndBio
                     {
                         EmployeeId = emp.EmployeeId,
@@ -197,7 +197,7 @@ namespace HRM.Facade
         }
 
 
-        public virtual async Task<bool> ApproveHireRequests(string hireRequestIdsString)
+        public virtual  bool ApproveHireRequests(string hireRequestIdsString)
         {
             try
             {
@@ -208,9 +208,9 @@ namespace HRM.Facade
                     if(item.Trim() != null && item.Trim() != "")
                     {
                         int key = int.Parse(item);
-                        HireRequest tempReq = await hireRepo.Get(key);
+                        HireRequest tempReq =  hireRepo.Get(key);
                         tempReq.HireRequestStatus = 1;
-                        await hireRepo.Update(tempReq, key);
+                         hireRepo.Update(tempReq, key);
                     }
                 }
                 return true;
@@ -228,8 +228,8 @@ namespace HRM.Facade
         {
             IRepository<Employee> empRepo = new RepositoryFactory().Create<Employee>();
             IRepository<EmployeePerformanceMetric> empBioRepo = new RepositoryFactory().Create<EmployeePerformanceMetric>();
-            return from emp in empRepo.GetAll().Result
-                   join empPerf in empBioRepo.GetAll().Result on emp.EmployeeId equals empPerf.EmployeeId
+            return from emp in empRepo.GetAll()
+                   join empPerf in empBioRepo.GetAll() on emp.EmployeeId equals empPerf.EmployeeId
                    select new EmployeePerformance
                    {
                        EmployeeId = emp.EmployeeId,
@@ -243,7 +243,7 @@ namespace HRM.Facade
         }
 
 
-        public virtual async Task<bool> AddDepartmentWideBonus(int departmentId, Bonuses bonus)
+        public virtual  bool AddDepartmentWideBonus(int departmentId, Bonuses bonus)
         {
             
             try
@@ -252,8 +252,8 @@ namespace HRM.Facade
                 IRepository<Bonus> bonusRepo = new RepositoryFactory().Create<Bonus>();
                 IRepository<Bonuses> bonusesRepo = new RepositoryFactory().Create<Bonuses>();
 
-                var salaryBonus = from empSal in empSalRepo.GetAll().Result
-                                  join bon in bonusRepo.GetAll().Result on empSal.BonusId equals bon.BonusId
+                var salaryBonus = from empSal in empSalRepo.GetAll()
+                                  join bon in bonusRepo.GetAll() on empSal.BonusId equals bon.BonusId
                                   select new
                                   {
                                       BonusId = empSal.BonusId
@@ -268,11 +268,11 @@ namespace HRM.Facade
                         BonusDescription = bonus.BonusDescription,
                         BonusesDate = bonus.BonusesDate
                     };
-                    await bonusesRepo.Insert(bonusesItem);
+                     bonusesRepo.Insert(bonusesItem);
 
-                    Bonus tempBonus = bonusRepo.Get(item.BonusId).Result;
+                    Bonus tempBonus = bonusRepo.Get(item.BonusId);
                     tempBonus.BonusValue += bonus.BonusValue;
-                    await bonusRepo.Update(tempBonus, item.BonusId);
+                     bonusRepo.Update(tempBonus, item.BonusId);
                 }
                 return true;
             }
@@ -284,7 +284,7 @@ namespace HRM.Facade
         }
 
 
-        public virtual async Task<bool> AddBonusToEmployeeList (int departmentId, Bonuses bonus , string employeeIdsList)
+        public virtual  bool AddBonusToEmployeeList (int departmentId, Bonuses bonus , string employeeIdsList)
         {
 
             try
@@ -295,8 +295,8 @@ namespace HRM.Facade
 
                 var idList = employeeIdsList.Trim().Split(',');
 
-                var salaryBonus = from empSal in empSalRepo.GetAll().Result
-                                  join bon in bonusRepo.GetAll().Result on empSal.BonusId equals bon.BonusId
+                var salaryBonus = from empSal in empSalRepo.GetAll()
+                                  join bon in bonusRepo.GetAll() on empSal.BonusId equals bon.BonusId
                                   select new
                                   {
                                       EmployeeId = empSal.EmployeeId,
@@ -314,11 +314,11 @@ namespace HRM.Facade
                         BonusDescription = bonus.BonusDescription,
                         BonusesDate = bonus.BonusesDate
                     };
-                    await bonusesRepo.Insert(bonusesItem);
+                     bonusesRepo.Insert(bonusesItem);
 
-                    Bonus tempBonus = bonusRepo.Get(item.BonusId).Result;
+                    Bonus tempBonus = bonusRepo.Get(item.BonusId);
                     tempBonus.BonusValue += bonus.BonusValue;
-                    await bonusRepo.Update(tempBonus, item.BonusId);
+                     bonusRepo.Update(tempBonus, item.BonusId);
                 }
                 return true;
             }
@@ -330,7 +330,7 @@ namespace HRM.Facade
         }
 
 
-        public virtual async Task<bool> AssignTransportsToAnArea(int transportAreaId, string transportIdsList)
+        public virtual  bool AssignTransportsToAnArea(int transportAreaId, string transportIdsList)
         {
             try
             {
@@ -345,22 +345,22 @@ namespace HRM.Facade
                     {
                         int id = Int32.Parse(tempId);
 
-                        await tAVRepo.Insert(new TransportAreaVehicle
+                         tAVRepo.Insert(new TransportAreaVehicle
                         {
                             TransportAreaId = transportAreaId,
                             TransportVehicleId = id
                         });
 
-                        TransportVehicle temp = tVRepo.Get(id).Result;
+                        TransportVehicle temp = tVRepo.Get(id);
                         temp.status = "assigned";
-                        await tVRepo.Update(temp, id);
+                         tVRepo.Update(temp, id);
                         newCapacity += temp.Capacity;
                     }
                 }
 
-                TransportArea tempArea = TARepo.Get(transportAreaId).Result;
+                TransportArea tempArea = TARepo.Get(transportAreaId);
                 tempArea.AssignedCapacity += newCapacity;
-                await TARepo.Update(tempArea, tempArea.TransportAreaId);
+                 TARepo.Update(tempArea, tempArea.TransportAreaId);
                 return true;
             }
             catch(Exception e)
@@ -373,11 +373,11 @@ namespace HRM.Facade
 
         public virtual IEnumerable<TransportVehicle> GetAvailableTransport()
         {
-            return new RepositoryFactory().Create<TransportVehicle>().GetAll().Result.Where(item => (item.status == "free" || item.status == "available" || item.status == null || item.status.Trim() == ""));
+            return new RepositoryFactory().Create<TransportVehicle>().GetAll().Where(item => (item.status == "free" || item.status == "available" || item.status == null || item.status.Trim() == ""));
         }
 
 
-        public virtual async Task<bool> AssignEquipmentsToADepartment(int departmentId, string equipmentIdsList)
+        public virtual  bool AssignEquipmentsToADepartment(int departmentId, string equipmentIdsList)
         {
             IRepository<Equipment> eRepo = new RepositoryFactory().Create<Equipment>();
             IRepository<EquipmentAndDepartment> eDRepo = new RepositoryFactory().Create<EquipmentAndDepartment>();
@@ -391,15 +391,15 @@ namespace HRM.Facade
                     {
                         int id = Int32.Parse(tempId);
 
-                        await eDRepo.Insert(new EquipmentAndDepartment
+                         eDRepo.Insert(new EquipmentAndDepartment
                         {
                             DepartmentId = departmentId,
                             EquipmentId = id
                         });
 
-                        Equipment temp = eRepo.Get(id).Result;
+                        Equipment temp = eRepo.Get(id);
                         temp.Status = "assigned";
-                        await eRepo.Update(temp, id);
+                         eRepo.Update(temp, id);
                     }
                 }
                 return true;
@@ -412,7 +412,7 @@ namespace HRM.Facade
         }
 
 
-        public virtual async Task<bool> AssignCandidatesToInterview(int interviewId, string candidateIdsList)
+        public virtual  bool AssignCandidatesToInterview(int interviewId, string candidateIdsList)
         {
 
             try
@@ -428,22 +428,22 @@ namespace HRM.Facade
                     {
                         int id = Int32.Parse(tempId);
 
-                        await iCRepo.Insert(new Interviewee
+                         iCRepo.Insert(new Interviewee
                         {
                             InterviewId = interviewId,
                             IntervieweeId = id
                         });
 
-                        TemporaryCV temp = tCVRepo.Get(id).Result;
+                        TemporaryCV temp = tCVRepo.Get(id);
                         temp.Status = "assigned";
-                        await tCVRepo.Update(temp, id);
+                         tCVRepo.Update(temp, id);
                         newCapacity += 1;
                     }
                 }
 
-                Interview tempInter = iRepo.Get(interviewId).Result;
+                Interview tempInter = iRepo.Get(interviewId);
                 tempInter.NumberOfCandidatesAssigned += newCapacity;
-                await iRepo.Update(tempInter, tempInter.InterviewId);
+                 iRepo.Update(tempInter, tempInter.InterviewId);
                 return true;
             }
             catch (Exception e)
@@ -456,16 +456,16 @@ namespace HRM.Facade
 
         public virtual IEnumerable<TemporaryCV> GetAllUnassignedTemporaryCVs()
         {
-            return new TemporaryCVRepository().GetAll().Result.Where(item => (item.Status == "free" || item.Status == "available" || item.Status == null || item.Status.Trim()==""));
+            return new TemporaryCVRepository().GetAll().Where(item => (item.Status == "free" || item.Status == "available" || item.Status == null || item.Status.Trim()==""));
         }
 
 
 
-        public virtual async Task<IEnumerable<EmployeeTotalSalary>> CalculateAllEmployeeTotalSalary()
+        public virtual  IEnumerable<EmployeeTotalSalary> CalculateAllEmployeeTotalSalary()
         {
-            IEnumerable<SalaryComponents> salCList = await new RepositoryFactory().Create<SalaryComponents>().GetAll();
+            IEnumerable<SalaryComponents> salCList =  new RepositoryFactory().Create<SalaryComponents>().GetAll();
 
-            IEnumerable<EmployeeSalary> empSalList = await new RepositoryFactory().Create<EmployeeSalary>().GetAll();
+            IEnumerable<EmployeeSalary> empSalList =  new RepositoryFactory().Create<EmployeeSalary>().GetAll();
 
             List<EmployeeSalary> newEmpSalList = new List<EmployeeSalary>();
             foreach (EmployeeSalary empSalItem in empSalList)
@@ -488,9 +488,9 @@ namespace HRM.Facade
             }
             IEnumerable<EmployeeSalary> ienumerableEmpSal = newEmpSalList;
 
-            IEnumerable<EmployeeTotalSalary> resultList = from emp in new EmployeeRepository().GetAll().Result
+            IEnumerable<EmployeeTotalSalary> resultList = from emp in new EmployeeRepository().GetAll()
                              join empSal in ienumerableEmpSal on emp.EmployeeId equals empSal.EmployeeId
-                             join salBonus in new BonusRepository().GetAll().Result on empSal.BonusId equals salBonus.BonusId
+                             join salBonus in new BonusRepository().GetAll() on empSal.BonusId equals salBonus.BonusId
                              select new EmployeeTotalSalary
                              {
                                  EmployeeId = emp.EmployeeId,
@@ -512,9 +512,9 @@ namespace HRM.Facade
 
 
 
-        public virtual async Task<dynamic> Test()
+        public virtual  dynamic Test()
         {
-            return await new RepositoryFactory().Create<Employee>().GetAll();
+            return  new RepositoryFactory().Create<Employee>().GetAll();
         }
 
 

@@ -15,17 +15,17 @@ namespace HRM.View.Controllers
         private IDomainService<Employee> Service = new ServiceFactory().Create<Employee>();
         private ICommonViewService CommonService = ServiceFactory.GetCommonViewService();
         // GET: Employee
-        public async Task<ActionResult> Index()
+        public  ActionResult Index()
         {
             return View();
         }
 
         //Action for displaying employees
         [HttpGet]
-        public async Task<ActionResult> Display()
+        public  ActionResult Display()
         {
             Console.WriteLine("*******************************   Entered display method");
-            IEnumerable<Employee> empList = await Service.GetAll();
+            IEnumerable<Employee> empList =  Service.GetAll();
             Console.WriteLine("Recieved list from db : " + empList);
             return View(empList);
         }
@@ -40,7 +40,7 @@ namespace HRM.View.Controllers
             }
 
             //search and return employees with the 'serachTerm' name
-            List<Employee> empList = Service.GetAll().Result.ToList().Where(x => x.EmployeeName.Contains(searchTerm)).ToList();
+            List<Employee> empList = Service.GetAll().ToList().Where(x => x.EmployeeName.Contains(searchTerm)).ToList();
             return View(empList);
         }
 
@@ -55,11 +55,11 @@ namespace HRM.View.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "EmployeeId,EmployeeName,EmployeeEmail,EmployeePassword,Salary,MGR,DateOfBirth")] Employee employee)
+        public  ActionResult Create([Bind(Include = "EmployeeId,EmployeeName,EmployeeEmail,EmployeePassword,Salary,MGR,DateOfBirth")] Employee employee)
         {
             if (ModelState.IsValid)
             {
-                await Service.Insert(employee);
+                 Service.Insert(employee);
                 return RedirectToAction("Index");
             }
 
