@@ -13,10 +13,10 @@
             <ul class="dropdown-menu">
                 <li>@Html.ActionLink("Test Department", "Equip", new { Id = 1 })</li>
 
-                @*@foreach (Department dept in ViewBag.Departments)
+                @foreach (Department dept in ViewBag.Departments)
                 {
                     <li>@Html.ActionLink(dept.DepartmentName , "Equip" , new { Id = dept.DepartmentId})</li>
-                }*@
+                }
             </ul>
         </li>
 

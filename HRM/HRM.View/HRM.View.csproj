@@ -223,6 +223,7 @@
     <Content Include="Views\Bonuses\Index.cshtml" />
     <Content Include="Views\Trainings\Index.cshtml" />
     <Content Include="Views\Budgets\Index.cshtml" />
+    <Content Include="Views\SalaryPayments\SalaryComponents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

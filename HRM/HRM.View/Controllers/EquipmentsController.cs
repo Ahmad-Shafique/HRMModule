@@ -18,15 +18,15 @@ namespace HRM.View.Controllers
         // GET: Equipments
         public  ActionResult Index()
         {
-            //ViewBag.Departments = DepartmentService.GetAll();
+            ViewBag.Departments = DepartmentService.GetAll();
             return View();
         }
 
         public  ActionResult Equip(int? Id)
         {
-            //ViewBag.Equipments = EquipmentService.GetAll();
-            //Department dept =  DepartmentService.Get(Id);
-            //ViewBag.DepartmentName = dept.DepartmentName;
+            ViewBag.Equipments = EquipmentService.GetAll();
+            Department dept =  DepartmentService.Get(Id);
+            ViewBag.DepartmentName = dept.DepartmentName;
 
             return View();
         }

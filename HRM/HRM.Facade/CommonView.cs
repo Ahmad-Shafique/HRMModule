@@ -474,11 +474,11 @@ namespace HRM.Facade
                 {
                     if (sC.Type.Trim() == "credit")
                     {
-                        empSalItem.TotalSalary -= (empSalItem.BasicSalary * sC.ComponentValue);
+                        empSalItem.TotalSalary -= (empSalItem.BasicSalary * sC.ComponentValue/100);
                     }
                     else if (sC.Type.Trim() == "debit")
                     {
-                        empSalItem.TotalSalary += (empSalItem.BasicSalary * sC.ComponentValue);
+                        empSalItem.TotalSalary += (empSalItem.BasicSalary * sC.ComponentValue/100);
                     }
 
 
@@ -499,12 +499,6 @@ namespace HRM.Facade
                                  BonusSalary = salBonus.BonusValue
                              };
 
-            //Console.WriteLine("Finished all employee total salary calculation");
-            //Console.WriteLine(resultList.Count());
-            //foreach(var item in resultList)
-            //{
-            //    Console.WriteLine(item.EmployeeName + " " + item.TotalSalary);
-            //}
 
             return resultList;
 

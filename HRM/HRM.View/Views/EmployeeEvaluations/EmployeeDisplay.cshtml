@@ -19,9 +19,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @*@if(ViewBag.Employees != null)
+                            @if(ViewBag.Employees != null)
                             {
-                                @foreach (var ep in ViewBag.Employees)
+                                foreach (var ep in ViewBag.Employees)
                                 {
                                     <tr>
                                         <td>@ep.EmployeeName</td>
@@ -31,7 +31,7 @@
                                         <td>@ep.AggregateScore %</td>
                                     </tr>
                                 }
-                            }*@
+                            }
                             
                         </tbody>
                     </table>

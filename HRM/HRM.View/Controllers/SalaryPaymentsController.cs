@@ -19,13 +19,13 @@ namespace HRM.View.Controllers
         {
             Console.WriteLine("Entered salary payments display");
 
-            //ViewBag.Employees = Service.Test();
-            IEnumerable<EmployeeTotalSalary> result =  Service.CalculateAllEmployeeTotalSalary();
+            ViewBag.Employees = Service.Test();
+            ViewBag.EmployeeTotalSalary =  Service.CalculateAllEmployeeTotalSalary();
             Console.WriteLine("Result received");
             Console.WriteLine("aa*****************************");
             Console.WriteLine("aa*****************************");
-            return View(result);
-            //return View();
+            //return View(result);
+            return View();
         }
     }
 }

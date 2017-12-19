@@ -17,9 +17,9 @@ namespace HRM.View.Controllers
         // GET: Hire
         public ActionResult Index()
         {
-            //IEnumerable<HireRequest> hireReqs = HireRequestService.GetAll();
-            //return View(hireReqs);
-            return View();
+            IEnumerable<HireRequest> hireReqs = HireRequestService.GetAll();
+            return View(hireReqs);
+            //return View();
         }
 
         //[HttpPost]

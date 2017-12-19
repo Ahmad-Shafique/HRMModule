@@ -24,6 +24,6 @@ namespace HRM.Entity
         public int MGR { get; set; }
 
         public DateTime DateofBirth { get; set; }
-
+        public string Status { get; set; }
     }
 }

@@ -102,16 +102,16 @@ insert into Designations (DesignationName) values ('emulation');
 
 
 
-insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Anaëlle', 'lclowsley0@trellian.com', 'iWv8xc', 36403, 1, '9/23/1987');
-insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Marie-thérèse', 'chammerson1@auda.org.au', 'RTmW9YWp', 44292, 2, '1/26/1993');
-insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Léone', 'mwebb2@cpanel.net', '4vbI6DHQ', 41741, 3, '10/4/1989');
-insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Laurélie', 'fsimond3@bravesites.com', 'A5HTWjjiT', 42694, 4, '12/14/1986');
-insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Adèle', 'wschachter4@g.co', 'DolW8kV', 39497, 5, '4/28/1993');
-insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Loïca', 'tmaccallum5@salon.com', 'djtNd8hy', 47357, 6, '4/24/1992');
-insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('André', 'cgerssam6@ibm.com', 'RuuHUYjlq5', 48808, 7, '8/10/1985');
-insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Félicie', 'jgoddard7@cyberchimps.com', 'Xe4mph3hNP', 32360, 8, '6/22/1981');
-insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Méryl', 'ldurrett8@qq.com', 'pMyPEGM', 57908, 9, '1/19/1992');
-insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth) values ('Yáo', 'lsmallsman9@arstechnica.com', 'mEeREGB', 49488, 10, '12/29/1989');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth, Status) values ('Anaëlle', 'lclowsley0@trellian.com', 'iWv8xc', 36403, 1, '9/23/1987', 'active');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth, Status) values ('Marie-thérèse', 'chammerson1@auda.org.au', 'RTmW9YWp', 44292, 2, '1/26/1993', 'active');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth, Status) values ('Léone', 'mwebb2@cpanel.net', '4vbI6DHQ', 41741, 3, '10/4/1989', 'active');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth, Status) values ('Laurélie', 'fsimond3@bravesites.com', 'A5HTWjjiT', 42694, 4, '12/14/1986', 'active');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth, Status) values ('Adèle', 'wschachter4@g.co', 'DolW8kV', 39497, 5, '4/28/1993', 'active');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth, Status) values ('Loïca', 'tmaccallum5@salon.com', 'djtNd8hy', 47357, 6, '4/24/1992', 'active');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth, Status) values ('André', 'cgerssam6@ibm.com', 'RuuHUYjlq5', 48808, 7, '8/10/1985', 'active');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth, Status) values ('Félicie', 'jgoddard7@cyberchimps.com', 'Xe4mph3hNP', 32360, 8, '6/22/1981', 'active');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth, Status) values ('Méryl', 'ldurrett8@qq.com', 'pMyPEGM', 57908, 9, '1/19/1992', 'active');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, Salary, MGR, DateofBirth, Status) values ('Yáo', 'lsmallsman9@arstechnica.com', 'mEeREGB', 49488, 10, '12/29/1989', 'active');
 
 
 

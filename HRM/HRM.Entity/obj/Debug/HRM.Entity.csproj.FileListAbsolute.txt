@@ -18,3 +18,4 @@ C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Entity\bin\Debug\EntityFramework.SqlS
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Entity\obj\Debug\HRM.Entity.csproj.CoreCompileInputs.cache
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Entity\obj\Debug\HRM.Entity.dll
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Entity\obj\Debug\HRM.Entity.pdb
+C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Entity\obj\Debug\HRM.Entity.csprojResolveAssemblyReference.cache
