@@ -15,7 +15,7 @@
             <div class="panel panel-info">
                 <div class="panel-heading" style="background-color:black">
                     <div class="row">
-                        <form action="./display" id="searchForm" method="post">
+                        <form action="/Employees/Display" id="searchForm" method="post">
                             <div class="form-group col-md-3 col-md-offset-8" style="padding-right: 0">
                                 <input id="searchTerm" class="form-control" type="text" name="searchTerm" placeholder="Search by name" />
                             </div>
@@ -37,6 +37,11 @@
                                     @emp.EmployeeName <br />
                                     @(DateTime.Now.Year - emp.DateofBirth.Year) years old <br />
                                     @*@emp.Designation <br />*@
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = emp.EmployeeId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = emp.EmployeeId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = emp.EmployeeId })
                                 </td>
                             </tr>
                             <tr><td colspan="2"><hr /></td></tr>

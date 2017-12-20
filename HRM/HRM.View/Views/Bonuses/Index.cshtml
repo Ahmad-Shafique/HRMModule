@@ -4,12 +4,25 @@
 }
 
 
-    <!--assigning bonus whole div start-->
+
+<form method="post" action="">
+    <input type="number" value="@ViewBag.Id" name="EmpId" hidden />
+    Amount: <br />
+    <input type="text" name="BonusAmount" />
+    <br />
+    Reason:<br />
+    <input type="text" name="BonusReason" />
+    <br />
+    <button type="submit" class="btn btn-primary">Confirm</button>
+</form>
+
+
+    @*<!--assigning bonus whole div start-->
     <div class="row">
         <!--8 column for select criteria-->
         <div class="col-sm-8" id="AssingingBonusDetails">
 
-            @*<div class="dropdown">
+            <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                     Select Department
                     <span class="caret"></span>
@@ -19,20 +32,12 @@
                     <li><a href="#">HR</a></li>
                     <li><a href="#">Pay Roll</a></li>
                 </ul>
-            </div>*@
+            </div>
             <br />
-            <form method="post" action=""> 
-                <input type="number" value="@ViewBag.Id" name="EmpId" hidden />
-                Amount: <br />
-                <input type="text" name="BonusAmount" />
-                <br />
-                Reason:<br />
-                <input type="text" name="BonusReason" />
-                <button type="submit" class="btn btn-primary">Confirm</button>
-            </form>
-
 
         </div>
+
+
         <!--4 column for selected employee lis for bonus-->
         <div class="col-sm-4" hidden>
             Selected Employee's <br />
@@ -42,5 +47,5 @@
 
     </div>
 
-    <!--assgining bnus whole div ends-->
+    <!--assgining bnus whole div ends-->*@
 

@@ -20,9 +20,11 @@ namespace HRM.View.Controllers
 
         public ActionResult AwardBonus(FormCollection form)
         {
-            Bonuses bonus = new Bonuses();
-            bonus.BonusValue = Int32.Parse(form["BonusAmount"]);
-            bonus.BonusDescription = form["BonusReason"];
+            Bonuses bonus = new Bonuses
+            {
+                BonusValue = Int32.Parse(form["BonusAmount"]),
+                BonusDescription = form["BonusReason"]
+            };
             ServiceFactory.GetCommonViewService().AssignBonusToEmployee(bonus, Int32.Parse(form["EmpId"]));
             return RedirectToAction("EmployeeDisplay", "EmployeeEvaluations");
         }

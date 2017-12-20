@@ -49,7 +49,7 @@ namespace HRM.Data
             catch (Exception e)
             {
                 Console.WriteLine("Error in fetching data : " + e);
-                return context.Set<TEntity>().ElementAtOrDefault(Int32.Parse(id.ToString()));
+                return context.Set<TEntity>().First();
             }
             
         }
