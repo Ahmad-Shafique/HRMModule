@@ -31,33 +31,48 @@ namespace HRM.View.Controllers
 
             ViewBag.EmployeeTotalSalary = sortedByTotalSalary;
 
-            TSND += "[";
-            TSVD += "[";
+            //TSND += "[";
+            //TSVD += "[";
             size = sortedByTotalSalary.Count();
             iterationNumber = 0;
             foreach (var item in sortedByTotalSalary)
             {
+                if (iterationNumber >= 5) break;
                 if (iterationNumber++ < size - 1)
                 {
-                    TSND += "\"" + item.EmployeeName + "\",";
+                    TSND +=  item.EmployeeName + ",";
+                    //TSND += "\"" + item.EmployeeName + "\",";
                     TSVD += item.TotalSalary + ",";
                 }
                 else
                 {
-                    TSND += "\"" + item.EmployeeName + "\"";
+                    //TSND += "\"" + item.EmployeeName + "\"";
+                    TSND += item.EmployeeName;
                     TSVD += item.TotalSalary;
                 }
                 
             }
-            TSND += "]";
-            TSVD += "]";
+            //TSND += "]";
+            //TSVD += "]";
 
             TBND += "[";
             TBVD += "[";
+            iterationNumber = 0;
             foreach (var item in sortedByTotalSalary)
             {
-                TBND += "\"" + item.EmployeeName + "\",";
-                TBVD += item.BonusSalary + ",";
+                if (iterationNumber >= 5) break;
+                if (iterationNumber++ < size - 1)
+                {
+                    TBND += item.EmployeeName + ",";
+                    //TSND += "\"" + item.EmployeeName + "\",";
+                    TBVD += item.BonusSalary + ",";
+                }
+                else
+                {
+                    //TSND += "\"" + item.EmployeeName + "\"";
+                    TBND += item.EmployeeName;
+                    TBVD += item.BonusSalary;
+                }
             }
             TBND += "]";
             TBVD += "]";
@@ -66,7 +81,7 @@ namespace HRM.View.Controllers
             ViewBag.totalSalaryChartNameData = TSND;
             ViewBag.totalSalaryChartValueData = TSVD;
             ViewBag.totalBonusChartNameData = TBND;
-            ViewBag.totalBonusChartNameData = TBVD;
+            ViewBag.totalBonusChartValueData = TBVD;
             Console.WriteLine("Result received");
             Console.WriteLine("aa*****************************");
             Console.WriteLine("aa*****************************");

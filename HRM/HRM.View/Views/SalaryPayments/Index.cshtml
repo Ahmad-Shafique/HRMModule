@@ -5,18 +5,23 @@
     ViewBag.Title = "Index";
 }
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
 
-<div class="container" style="text-align: center">
+<div onload="myChart()" class="container" style="text-align: center">
     <h2>Salary Details</h2> <hr />
 
-    <p id="totalSalaryChartNameData" hidden>@ViewBag.totalSalaryChartNameData</p>
-    <p id="totalSalaryChartValueData" hidden>@ViewBag.totalSalaryChartValueData</p>
-    <p id="totalBonusChartNameData" hidden>@ViewBag.totalBonusChartNameData</p>
-    <p id="totalBonusChartValueData" hidden>@ViewBag.totalBonusChartNameData</p>
 
+    <div class="=row" style="height:400px;">
+        <div class="col-sm-6">
+            <canvas id="totalSalaryChart"></canvas>
+        </div>
 
-    <canvas id="totalSalaryChart" style="height:250px"></canvas>
+        <div  class="col-sm-6">
+            <canvas id="totalBonusChart"></canvas>
+        </div>
+    </div>
+    
 
 
     <div class="row">
@@ -58,8 +63,128 @@
             </div>
         </div>
     </div>
+
+
+    <p id="totalSalaryChartNameData" hidden>@ViewBag.totalSalaryChartNameData</p>
+    <p id="totalSalaryChartValueData" hidden>@ViewBag.totalSalaryChartValueData</p>
+    <p id="totalBonusChartNameData" hidden>@ViewBag.totalBonusChartNameData</p>
+    <p id="totalBonusChartValueData" hidden>@ViewBag.totalBonusChartValueData</p>
 </div>
 
+
+<script>
+    console.log(document.getElementById("totalSalaryChartNameData").innerHTML);
+    console.log(document.getElementById("totalSalaryChartValueData").innerHTML);
+</script>
+<script>
+    //alert("hmm");
+    //alert(document.getElementById("totalSalaryChartNameData").innerHTML);
+    //var cars = ["Saab", "Volvo", "BMW"];
+    //var p = [100, 200, 300];
+    var nameData = document.getElementById("totalSalaryChartNameData").innerHTML;
+    var Salarydata = document.getElementById("totalSalaryChartValueData").innerHTML;
+    //console.log(nameData);
+    var ChartNameData = nameData.split(",");
+    var ChartValueData = Salarydata.split(",").map(Number);
+
+    //alert(nameData);
+    var ctx = document.getElementById("totalSalaryChart");
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: ChartNameData,
+            datasets: [{
+                label: '#Highest Paid Employee',
+                //data: [12, 19, 3, 5, 2, 3],
+                data: ChartValueData,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+
+</script>
+
+<script>
+    //alert("hmm");
+    //alert(document.getElementById("totalSalaryChartNameData").innerHTML);
+    //var cars = ["Saab", "Volvo", "BMW"];
+    //var p = [100, 200, 300];
+    var nameData = document.getElementById("totalBonusChartNameData").innerHTML;
+    var Bonusdata = document.getElementById("totalBonusChartValueData").innerHTML;
+    //console.log(nameData);
+    var ChartNameData = nameData.split(",");
+    var ChartValueData = Bonusdata.split(",").map(Number);
+
+    //alert(nameData);
+    var ctx = document.getElementById("totalBonusChart");
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: ChartNameData,
+            datasets: [{
+                label: '#Highest Performer Employee',
+                //data: [12, 19, 3, 5, 2, 3],
+                data: ChartValueData,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+
+</script>
 
 
 

@@ -188,6 +188,8 @@
     <Content Include="Scripts\ionicons.min.css" />
     <Content Include="Scripts\js\adminlte.min.js" />
     <Content Include="Scripts\js\bootstrap.min.js" />
+    <Content Include="Scripts\js\Chart.min.js" />
+    <Content Include="Scripts\js\gulpfile.js" />
     <Content Include="Scripts\js\jquery.min.js" />
     <Content Include="Scripts\skins\skin-black-light.css" />
     <Content Include="Scripts\skins\skin-black-light.min.css" />

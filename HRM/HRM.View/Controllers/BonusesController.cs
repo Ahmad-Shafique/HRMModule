@@ -11,6 +11,7 @@ namespace HRM.View.Controllers
     public class BonusesController : Controller
     {
         // GET: Bonuses
+        [HttpGet]
         public ActionResult Index(int? Id)
         {
             if(Id == null) return RedirectToAction("EmployeeDisplay", "EmployeeEvaluations");
@@ -18,7 +19,8 @@ namespace HRM.View.Controllers
             return View();
         }
 
-        public ActionResult AwardBonus(FormCollection form)
+        [HttpPost]
+        public ActionResult Index(FormCollection form)
         {
             Bonuses bonus = new Bonuses
             {

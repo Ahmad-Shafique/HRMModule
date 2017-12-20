@@ -3,18 +3,27 @@
     ViewBag.Title = "Index";
 }
 
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
 
 
-<form method="post" action="">
-    <input type="number" value="@ViewBag.Id" name="EmpId" hidden />
-    Amount: <br />
-    <input type="text" name="BonusAmount" />
-    <br />
-    Reason:<br />
-    <input type="text" name="BonusReason" />
-    <br />
-    <button type="submit" class="btn btn-primary">Confirm</button>
-</form>
+        <input type="number" value="@ViewBag.Id" name="EmpId" hidden />
+        Amount: <br />
+        <input type="text" name="BonusAmount" />
+        <br />
+        Reason:<br />
+        <input type="text" name="BonusReason" />
+        <br />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
 
 
     @*<!--assigning bonus whole div start-->
