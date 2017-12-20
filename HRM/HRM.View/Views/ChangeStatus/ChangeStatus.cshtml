@@ -1,0 +1,27 @@
+﻿@using HRM.Entity;
+@{
+    ViewBag.Title = "ChangeStatus";
+}
+
+<div class="container">
+    <ul class="nav navbar-nav">
+
+        <li class="active dropdown">
+            @ViewBag.EmployeeName
+            <br />
+            <a class="" data-toggle="dropdown">Change Status <i class="caret"></i> </a>
+
+            <ul class="dropdown-menu">
+
+                <li>@ViewBag.Status</li>
+                <li>@Html.ActionLink("active", "Change", new { Id = ViewBag.EmployeeId, Status = "active" })</li>
+                <li>@Html.ActionLink("on leave", "Change", new { Id = ViewBag.EmployeeId, Status = "onLeave" })</li>
+                <li>@Html.ActionLink("former", "Change", new { Id = ViewBag.EmployeeId, Status = "former" })</li>
+
+
+            </ul>
+        </li>
+
+    </ul>
+</div>
+

@@ -1,0 +1,21 @@
+﻿@using HRM.Entity;
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <ul class="nav navbar-nav">
+
+        <li class="active dropdown">
+            <a class="" data-toggle="dropdown">Select Employee <i class="caret"></i> </a>
+            <ul class="dropdown-menu">
+                @foreach (Employee emp in ViewBag.Employees)
+                {
+                    <li>@Html.ActionLink(emp.EmployeeName, "ChangeStatus", new { Id = emp.EmployeeId })</li>
+                }
+            </ul>
+        </li>
+
+    </ul>
+</div>
+

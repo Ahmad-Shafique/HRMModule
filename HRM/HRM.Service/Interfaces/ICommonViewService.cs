@@ -27,5 +27,6 @@ namespace HRM.Service.Interfaces
         IEnumerable<TemporaryCV> GetAllUnassignedTemporaryCVs();
         IEnumerable<EmployeeTotalSalary> CalculateAllEmployeeTotalSalary();
         dynamic Test();
+        IEnumerable<EmployeePromotion> GetEmployeePromotionView();
     }
 }

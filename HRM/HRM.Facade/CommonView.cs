@@ -574,6 +574,55 @@ namespace HRM.Facade
 
 
 
+        public virtual IEnumerable<EmployeePromotion> GetEmployeePromotionView()
+        {
+            IEnumerable<EmployeePromotion> resultBasic = from emp in new RepositoryFactory().Create<Employee>().GetAll()
+                         join empSal in new RepositoryFactory().Create<EmployeeSalary>().GetAll() on emp.EmployeeId equals empSal.EmployeeId
+                         join salRank in new RepositoryFactory().Create<SalaryRank>().GetAll() on empSal.SalaryRankId equals salRank.SalaryRankId
+                         select new EmployeePromotion
+                         {
+                             EmployeeId = emp.EmployeeId,
+                             EmployeeName = emp.EmployeeName,
+                             SalaryRankId = empSal.SalaryRankId,
+                             BasicSalary = salRank.RankValue,
+                             RankName = salRank.RankName
+                         };
+
+            IEnumerable<EmployeePerformance> performance = GetAllEmployeePerformance();
+            List<EmployeePromotion> finalResult = new List<EmployeePromotion>();
+
+            var joinedList = from res in resultBasic
+                             join perf in performance on res.EmployeeId equals perf.EmployeeId
+                             select new
+                             {
+                                 EmployeeId = res.EmployeeId,
+                                 EmployeeName = res.EmployeeName,
+                                 SalaryRankId = res.SalaryRankId,
+                                 BasicSalary = res.BasicSalary,
+                                 RankName = res.RankName,
+                                 AggregateScore = perf.AggregateScore
+                             };
+
+            foreach(var item in joinedList)
+            {
+                EmployeePromotion empPromo = new EmployeePromotion()
+                {
+                    EmployeeId = item.EmployeeId,
+                    EmployeeName = item.EmployeeName,
+                    SalaryRankId = item.SalaryRankId,
+                    BasicSalary = item.BasicSalary,
+                    RankName = item.RankName
+                };
+                if (item.AggregateScore > 70) empPromo.RecommendationStatus = 1;
+                else if (item.AggregateScore < 30) empPromo.RecommendationStatus = 0;
+                else empPromo.RecommendationStatus = -1;
+
+                finalResult.Add(empPromo);
+            }
+
+
+            return finalResult;
+        }
 
 
 

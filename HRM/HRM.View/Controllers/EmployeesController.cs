@@ -81,6 +81,20 @@ namespace HRM.View.Controllers
             if (ModelState.IsValid)
             {
                 Service.Insert(employee);
+                var employeeList = Service.GetAll().Where(item => item.EmployeeEmail == employee.EmployeeEmail);
+                foreach(var items in employeeList)
+                {
+                    EmployeeBio employeeBio = new EmployeeBio
+                    {
+                        EmployeeAddress = "No address given",
+                        DateofBirth = items.DateofBirth,
+                        HireDate = DateTime.Now,
+                        EmployeeId = items.EmployeeId
+                    };
+
+                    new ServiceFactory().Create<EmployeeBio>().Insert(employeeBio);
+                }
+
                 return RedirectToAction("Index");
             }
 

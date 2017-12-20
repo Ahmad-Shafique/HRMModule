@@ -111,5 +111,10 @@ namespace HRM.Service
         {
             return  repository.CalculateAllEmployeeTotalSalary();
         }
+
+        public IEnumerable<EmployeePromotion> GetEmployeePromotionView()
+        {
+            return repository.GetEmployeePromotionView();
+        }
     }
 }
