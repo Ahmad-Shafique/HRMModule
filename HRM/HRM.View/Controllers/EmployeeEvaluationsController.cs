@@ -1,4 +1,5 @@
 ﻿using HRM.Entity;
+using HRM.Entity.Facade;
 using HRM.Service;
 using HRM.Service.Interfaces;
 using System;
@@ -20,9 +21,15 @@ namespace HRM.View.Controllers
             return View();
         }
 
+
         public ActionResult EmployeeDisplay(int? DepartmentId)
         {
-            ViewBag.Employees = CommonService.GetAllEmployeePerformance();
+            IEnumerable<EmployeePerformance> result = CommonService.GetAllEmployeePerformance();
+
+            if(DepartmentId != null) result = result.Where(item => item.DepartmentId == DepartmentId);
+
+            result = result.OrderBy(item => -item.AggregateScore);
+            ViewBag.Employees = result;
             return View();
         }
     }

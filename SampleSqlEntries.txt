@@ -546,6 +546,20 @@ insert into TransportVehicles (VehicleNumber, DriverName, Capacity, status) valu
 
 
 
+insert into SalaryRanks (RankName, RankValue) values ('quam', 25577);
+insert into SalaryRanks (RankName, RankValue) values ('pede', 73921);
+insert into SalaryRanks (RankName, RankValue) values ('volutpat', 71337);
+insert into SalaryRanks (RankName, RankValue) values ('at', 27548);
+insert into SalaryRanks (RankName, RankValue) values ('bibendum', 40382);
+insert into SalaryRanks (RankName, RankValue) values ('vulputate', 71234);
+insert into SalaryRanks (RankName, RankValue) values ('primis', 99495);
+insert into SalaryRanks (RankName, RankValue) values ('non', 61465);
+insert into SalaryRanks (RankName, RankValue) values ('leo', 90836);
+insert into SalaryRanks (RankName, RankValue) values ('quam', 55547);
+
+
+
+
 
 
 

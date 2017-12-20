@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HRM.Entity;
+using HRM.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,81 +11,21 @@ namespace HRM.View.Controllers
     public class BonusesController : Controller
     {
         // GET: Bonuses
-        public ActionResult Index()
+        public ActionResult Index(int? Id)
         {
+            if(Id == null) return RedirectToAction("EmployeeDisplay", "EmployeeEvaluations");
+            ViewBag.Id = Id;
             return View();
         }
 
-        // GET: Bonuses/Details/5
-        public ActionResult Details(int id)
+        public ActionResult AwardBonus(FormCollection form)
         {
-            return View();
+            Bonuses bonus = new Bonuses();
+            bonus.BonusValue = Int32.Parse(form["BonusAmount"]);
+            bonus.BonusDescription = form["BonusReason"];
+            ServiceFactory.GetCommonViewService().AssignBonusToEmployee(bonus, Int32.Parse(form["EmpId"]));
+            return RedirectToAction("EmployeeDisplay", "EmployeeEvaluations");
         }
 
-        // GET: Bonuses/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Bonuses/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Bonuses/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Bonuses/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Bonuses/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Bonuses/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

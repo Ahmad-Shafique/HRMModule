@@ -227,7 +227,9 @@ namespace HRM.Facade
         {
             IRepository<Employee> empRepo = new RepositoryFactory().Create<Employee>();
             IRepository<EmployeePerformanceMetric> empBioRepo = new RepositoryFactory().Create<EmployeePerformanceMetric>();
+            IRepository<EmployeeDepartment> empDeptRepo = new RepositoryFactory().Create<EmployeeDepartment>();
             return from emp in empRepo.GetAll()
+                   join empDept in empDeptRepo.GetAll() on emp.EmployeeId equals empDept.EmployeeId
                    join empPerf in empBioRepo.GetAll() on emp.EmployeeId equals empPerf.EmployeeId
                    select new EmployeePerformance
                    {
@@ -237,7 +239,9 @@ namespace HRM.Facade
                        ProjectScore = empPerf.AverageProjectScore,
                        TrainingScore = empPerf.AverageTrainingScore,
                        AttendanceScore = 100,
-                       AggregateScore = (empPerf.AverageProjectScore + empPerf.AverageTrainingScore + 100) /3
+                       AggregateScore = (empPerf.AverageProjectScore + empPerf.AverageTrainingScore + 100) / 3,
+
+                       DepartmentId = empDept.EmployeeDepartmentId
                    };
         }
 
@@ -318,6 +322,50 @@ namespace HRM.Facade
                     Bonus tempBonus = bonusRepo.Get(item.BonusId);
                     tempBonus.BonusValue += bonus.BonusValue;
                      bonusRepo.Update(tempBonus, item.BonusId);
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
+
+        public virtual bool AssignBonusToEmployee(Bonuses bonus, int EmployeeId)
+        {
+
+            try
+            {
+                EmployeeSalaryRepository empSalRepo = new EmployeeSalaryRepository();
+                BonusRepository bonusRepo = new BonusRepository();
+                BonusesRepository bonusesRepo = new BonusesRepository();
+
+
+                var salaryBonus = from empSal in empSalRepo.GetAll()
+                                  join bon in bonusRepo.GetAll() on empSal.BonusId equals bon.BonusId
+                                  select new
+                                  {
+                                      EmployeeId = empSal.EmployeeId,
+                                      BonusId = empSal.BonusId
+                                  };
+
+                salaryBonus = salaryBonus.Where(item => item.EmployeeId == EmployeeId);
+
+                foreach (var item in salaryBonus)
+                {
+                    Bonuses bonusesItem = new Bonuses
+                    {
+                        BonusId = item.BonusId,
+                        BonusValue = bonus.BonusValue,
+                        BonusDescription = bonus.BonusDescription,
+                        BonusesDate = bonus.BonusesDate
+                    };
+                    bonusesRepo.Insert(bonusesItem);
+
+                    Bonus tempBonus = bonusRepo.Get(item.BonusId);
+                    tempBonus.BonusValue += bonus.BonusValue;
+                    bonusRepo.Update(tempBonus, item.BonusId);
                 }
                 return true;
             }
@@ -481,7 +529,7 @@ namespace HRM.Facade
             {
                 foreach (SalaryComponents sC in salCList)
                 {
-                    int basicSalary = salRankValues[empSalItem.SalaryRankId];
+                    int basicSalary = salRankValues.ContainsKey(empSalItem.SalaryRankId) ? salRankValues[empSalItem.SalaryRankId]:10000 ;
                     if (sC.Type.Trim() == "credit")
                     {
                         empSalItem.TotalSalary -= (basicSalary * sC.ComponentValue/100);

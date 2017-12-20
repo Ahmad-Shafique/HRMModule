@@ -29,6 +29,11 @@ namespace HRM.Service
             return repository.AddBonusToEmployeeList(departmentId,bonus,employeeIdsList);
         }
 
+        public bool AssignBonusToEmployee(Bonuses bonus, int EmployeeId)
+        {
+            return repository.AssignBonusToEmployee(bonus, EmployeeId);
+        }
+
         public bool AddDepartmentWideBonus(int departmentId, Bonuses bonus)
         {
             return repository.AddDepartmentWideBonus(departmentId, bonus);

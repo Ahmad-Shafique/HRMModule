@@ -19,6 +19,7 @@ namespace HRM.Service.Interfaces
         dynamic GetAllEmployeePerformance();
         bool AddDepartmentWideBonus(int departmentId, Bonuses bonus);
         bool AddBonusToEmployeeList(int departmentId, Bonuses bonus, string employeeIdsList);
+        bool AssignBonusToEmployee(Bonuses bonus, int EmployeeId);
         bool AssignTransportsToAnArea(int transportAreaId, string transportIdsList);
         IEnumerable<TransportVehicle> GetAvailableTransport();
         bool AssignEquipmentsToADepartment(int departmentId, string equipmentIdsList);

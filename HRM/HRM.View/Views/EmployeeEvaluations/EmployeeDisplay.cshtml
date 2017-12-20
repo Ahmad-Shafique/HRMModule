@@ -16,6 +16,7 @@
                                 <th style="padding-left: 5%">Training</th>
                                 <th style="padding-left: 5%">Attendance</th>
                                 <th style="padding-left: 5%">Aggregate</th>
+                                <th style="padding-left: 5%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -29,6 +30,8 @@
                                         <td>@ep.TrainingScore %</td>
                                         <td>@ep.AttendanceScore %</td>
                                         <td>@ep.AggregateScore %</td>
+                                        <td>@Html.ActionLink("Award bonus", "Index", "BonusesController", new { Id = ep.EmployeeId }, new { @class = "btn btn-primary" })
+                                        </td>
                                     </tr>
                                 }
                             }
@@ -37,7 +40,7 @@
                     </table>
                 </div>
                 <div class="panel-footer">
-                    <a href="/EmployeeEvaluation/Index" class="btn">Back</a>
+                    <a href="/EmployeeEvaluations/Index" class="btn">Back</a>
                 </div>
             </div>
         </div>

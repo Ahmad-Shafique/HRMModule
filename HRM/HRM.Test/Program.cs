@@ -67,7 +67,10 @@ namespace HRM.Test
             Console.WriteLine("In program");
             foreach(var item in result)
             {
-                Console.WriteLine(item.EmployeeName + " : " + item.TotalSalary);
+                Console.WriteLine(item.EmployeeName );
+                Console.WriteLine("Basic Salary: " + item.BasicSalary);
+                Console.WriteLine("Bonus Salary: " + item.BonusSalary);
+                Console.WriteLine("Total Salary: " + item.TotalSalary);
             }
 
 
