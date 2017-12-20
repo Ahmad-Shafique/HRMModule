@@ -3,25 +3,43 @@
     ViewBag.Title = "ChangeStatus";
 }
 
-<div class="container">
-    <ul class="nav navbar-nav">
 
-        <li class="active dropdown">
-            @ViewBag.EmployeeName
-            <br />
-            <a class="" data-toggle="dropdown">Change Status <i class="caret"></i> </a>
+<div style="text-align: center" class="container">
+    <h2>Application Entry</h2> <hr />
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <ul class="nav navbar-nav">
 
-            <ul class="dropdown-menu">
+                        <li class="active dropdown">
+                            @ViewBag.EmployeeName
+                            <br />
+                            Age : @(DateTime.Now.Year - ViewBag.DateofBirth.Year) years
+                            <br />
+                            Email : @ViewBag.Email
+                            <br />
+                            Manager Id : @ViewBag.ManagerId
+                            <br />
 
-                <li>@ViewBag.Status</li>
-                <li>@Html.ActionLink("active", "Change", new { Id = ViewBag.EmployeeId, Status = "active" })</li>
-                <li>@Html.ActionLink("on leave", "Change", new { Id = ViewBag.EmployeeId, Status = "onLeave" })</li>
-                <li>@Html.ActionLink("former", "Change", new { Id = ViewBag.EmployeeId, Status = "former" })</li>
+                            <a class="" data-toggle="dropdown">Change Status <i class="caret"></i> </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li>@ViewBag.Status</li>
+                                <li>@Html.ActionLink("active", "Change", new { Id = ViewBag.EmployeeId, Status = "active" })</li>
+                                <li>@Html.ActionLink("on leave", "Change", new { Id = ViewBag.EmployeeId, Status = "onLeave" })</li>
+                                <li>@Html.ActionLink("former", "Change", new { Id = ViewBag.EmployeeId, Status = "former" })</li>
 
 
-            </ul>
-        </li>
+                            </ul>
+                        </li>
 
-    </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 

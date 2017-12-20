@@ -23,7 +23,9 @@ namespace HRM.View.Controllers
             ViewBag.EmployeeName = emp.EmployeeName;
             ViewBag.EmployeeId = emp.EmployeeId;
             ViewBag.Status = emp.Status;
-            ViewBag.Employee = emp;
+            ViewBag.DateOfBirth = emp.DateofBirth;
+            ViewBag.Email = emp.EmployeeEmail;
+            ViewBag.ManagerId = emp.MGR;
             return View();
         }
 

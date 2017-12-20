@@ -3,19 +3,38 @@
     ViewBag.Title = "Index";
 }
 
-<div class="container">
-    <ul class="nav navbar-nav">
+<div style="text-align: center" class="container">
+    <h2>Application Entry</h2> <hr />
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <ul class="nav navbar-nav">
 
-        <li class="active dropdown">
-            <a class="" data-toggle="dropdown">Select Employee <i class="caret"></i> </a>
-            <ul class="dropdown-menu">
-                @foreach (Employee emp in ViewBag.Employees)
-                {
-                    <li>@Html.ActionLink(emp.EmployeeName, "ChangeStatus", new { Id = emp.EmployeeId })</li>
-                }
-            </ul>
-        </li>
+                        <li class="active dropdown">
+                            <a class="" data-toggle="dropdown">Select Employee <i class="caret"></i> </a>
+                            <ul class="dropdown-menu">
+                                @foreach (Employee emp in ViewBag.Employees)
+                                {
+                                    <li>@Html.ActionLink(emp.EmployeeName, "ChangeStatus", new { Id = emp.EmployeeId })</li>
+                                }
+                            </ul>
+                        </li>
+                        <li>
+                            <form method="post" action="">
+                                <input type="text" name="searchString" />
+                                <button type="submit" class="btn btn-block">Search</button>
+                            </form>
+                            
+                        </li>
 
-    </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
 

@@ -186,9 +186,9 @@ desired effect
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            @*<li>
+                            <li>
                                 @Html.ActionLink("Budget management", "Index", "Budgets")
-                            </li>*@
+                            </li>
                             <li>
                                 @Html.ActionLink("Salary management", "Index", "SalaryPayments")
                             </li>
@@ -199,36 +199,23 @@ desired effect
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-link"></i> <span>Employee promotion</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-
-                            <li>
-                                @Html.ActionLink("Promote employees", "Index", "EmployeePromotion")
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
                             <i class="fa fa-link"></i> <span>Change Employee Status</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-
                             <li>
-                                @Html.ActionLink("Promote employees", "Index", "ChangeStatus")
+                                @Html.ActionLink("Promote employees", "Index", "EmployeePromotion")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Change employee active state", "Index", "ChangeStatus")
                             </li>
 
                         </ul>
                     </li>
 
-                    @*@<li class="treeview">
+                    <li class="treeview">
                         <a href="#">
                             <i class="fa fa-link"></i> <span>Equipments</span>
                             <span class="pull-right-container">
@@ -271,6 +258,19 @@ desired effect
                     </li>
                     <li class="treeview">
                         <a href="#">
+                            <i class="fa fa-link"></i> <span>Project</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                @Html.ActionLink("Project Management", "", "")
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
                             <i class="fa fa-link"></i> <span>Transportation</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
@@ -281,7 +281,7 @@ desired effect
                                 @Html.ActionLink("Transport management", "Index", "Transportations")
                             </li>
                         </ul>
-                    </li>*@
+                    </li>
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>

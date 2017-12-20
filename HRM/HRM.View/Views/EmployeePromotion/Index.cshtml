@@ -26,11 +26,18 @@
                                     <tr>
                                         <td>
                                             @ep.EmployeeName<br />
-                                            Salary Grade# @ep.RankName <br />
+                                            Salary Grade# @ep.SalaryRankId <br />
+                                            Current Rank name: @ep.RankName <br />
                                             Basic Salary: @ep.BasicSalary<br />
+                                            Standard benefits
                                             
                                         </td>
-                                        <td>@Html.ActionLink("Promote" , "Promote" , "EmployeePromotion", new { Id=ep.EmployeeId } ,new { @class="btn btn-primary" })</td>
+                                        <td>
+                                            @Html.ActionLink("Promote" , "Promote" , "EmployeePromotion", new { Id=ep.EmployeeId } ,new { @class="btn btn-primary" })<br />
+                                            Next Salary Rank : 3<br />
+                                            Next Rank title : Project manager<br />
+                                            Next rank basic salary: 70000 taka
+                                        </td>
                                         <td>
                                         @if (ep.RecommendationStatus == 1)
                                         {

@@ -1,0 +1,12 @@
+<div style="text-align: center" class="container">
+    <h2>Application Entry</h2> <hr />
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <!-- Page goes here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

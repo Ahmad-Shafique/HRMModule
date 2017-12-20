@@ -47,20 +47,43 @@
     </div>
     <!--Notice list div auto gnerated view ta ehkn e add korlei hbe-->
     <div id="NoticelistDiv" style="background-color:lightgray">
-        @if(ViewBag.Notices != null)
-        {
-            foreach(Notice notice in ViewBag.Notices)
+        <table>
+            <tr>
+                <th>
+                    Notice Title
+                </th>
+                <th>
+                    Notice last update
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+            @if (ViewBag.Notices != null)
             {
-                @Html.ActionLink(notice.NoticeTitle, "Details", new { id = notice.NoticeId}, new { @class = "navbar-brand" })
-                <b>@notice.NoticeDate.Date</b>
-                <hr />
+                foreach (Notice notice in ViewBag.Notices)
+                {
+                    <tr>
+                        <td>
+                            @Html.ActionLink(notice.NoticeTitle, "Details", new { id = notice.NoticeId }, new { @class = "navbar-brand" })
+                        </td>
+                        <td>
+                            <b>@notice.NoticeDate.Date</b>
+                        </td>
+                        <td>
+                            @Html.ActionLink("Change notice", "Edit", new { id = notice.NoticeId }, new { @class = "btn btn-primary" })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Remove notice", "Delete", new { id = notice.NoticeId }, new { @class = "btn btn-primary" })
+                        </td>
+                    </tr>
+
+                    
+                }
             }
-        }
-        @*<a href="#"><b>Company Will remain close till x to y</b></a><br />
-        <b>25 Jan 2016</b>
-        <hr />
-        <a href="#"><b>There is an meeting on Upcoming project</b></a><br />
-        <b>2 Jan 2016</b>*@
+        </table>
+        
+        
 
     </div>
 
