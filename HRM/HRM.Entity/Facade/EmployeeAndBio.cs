@@ -12,7 +12,6 @@ namespace HRM.Entity.Facade
         public string EmployeeName { get; set; }
         public string EmployeeEmail { get; set; }
         public string EmployeePassword { get; set; }
-        public int Salary { get; set; }
         public int MGR { get; set; }
 
         public string EmployeeContactNo { get; set; }

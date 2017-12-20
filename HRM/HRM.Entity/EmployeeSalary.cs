@@ -22,6 +22,7 @@ namespace HRM.Entity
         public int Status { get; set; }
         public int BonusId { get; set; }
         public int BonusValue { get; set; }
+        public int SalaryRankId { get; set; }
 
     }
 }

@@ -178,7 +178,6 @@ namespace HRM.Facade
                         EmployeeName = emp.EmployeeName,
                         EmployeeEmail = emp.EmployeeEmail,
                         EmployeePassword = emp.EmployeePassword,
-                        Salary = emp.Salary,
                         MGR = emp.MGR,
 
                         EmployeeContactNo = empBio.EmployeeContactNo,
@@ -467,18 +466,29 @@ namespace HRM.Facade
 
             IEnumerable<EmployeeSalary> empSalList =  new RepositoryFactory().Create<EmployeeSalary>().GetAll();
 
+            IEnumerable<SalaryRank> salRankList = new RepositoryFactory().Create<SalaryRank>().GetAll();
+
             List<EmployeeSalary> newEmpSalList = new List<EmployeeSalary>();
+
+            Dictionary<int, int> salRankValues = new Dictionary<int, int>();
+            foreach(SalaryRank item in salRankList)
+            {
+                salRankValues.Add(item.SalaryRankId, item.RankValue);
+            }
+
+            
             foreach (EmployeeSalary empSalItem in empSalList)
             {
                 foreach (SalaryComponents sC in salCList)
                 {
+                    int basicSalary = salRankValues[empSalItem.SalaryRankId];
                     if (sC.Type.Trim() == "credit")
                     {
-                        empSalItem.TotalSalary -= (empSalItem.BasicSalary * sC.ComponentValue/100);
+                        empSalItem.TotalSalary -= (basicSalary * sC.ComponentValue/100);
                     }
                     else if (sC.Type.Trim() == "debit")
                     {
-                        empSalItem.TotalSalary += (empSalItem.BasicSalary * sC.ComponentValue/100);
+                        empSalItem.TotalSalary += (basicSalary * sC.ComponentValue/100);
                     }
 
 
@@ -489,14 +499,17 @@ namespace HRM.Facade
             IEnumerable<EmployeeSalary> ienumerableEmpSal = newEmpSalList;
 
             IEnumerable<EmployeeTotalSalary> resultList = from emp in new EmployeeRepository().GetAll()
-                             join empSal in ienumerableEmpSal on emp.EmployeeId equals empSal.EmployeeId
-                             join salBonus in new BonusRepository().GetAll() on empSal.BonusId equals salBonus.BonusId
+                                                          join empSal in ienumerableEmpSal on emp.EmployeeId equals empSal.EmployeeId
+                                                          join salRank in new RepositoryFactory().Create<SalaryRank>().GetAll() on empSal.SalaryRankId equals salRank.SalaryRankId
+                                                          join salBonus in new BonusRepository().GetAll() on empSal.BonusId equals salBonus.BonusId
                              select new EmployeeTotalSalary
                              {
                                  EmployeeId = emp.EmployeeId,
                                  EmployeeName = emp.EmployeeName,
                                  TotalSalary = empSal.TotalSalary + salBonus.BonusValue,
-                                 BonusSalary = salBonus.BonusValue
+                                 BonusSalary = salBonus.BonusValue,
+                                 BasicSalary = salRank.RankValue
+
                              };
 
 
@@ -510,7 +523,6 @@ namespace HRM.Facade
         {
             return  new RepositoryFactory().Create<Employee>().GetAll();
         }
-
 
 
 

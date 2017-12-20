@@ -45,7 +45,6 @@
     <Compile Include="BonusesService.cs" />
     <Compile Include="BonusService.cs" />
     <Compile Include="CircularTemplateService.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="CommonViewService.cs" />
     <Compile Include="DepartmentDesignationService.cs" />
     <Compile Include="DepartmentHistoryService.cs" />
@@ -79,6 +78,7 @@
     <Compile Include="ProjectService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalaryComponentsService.cs" />
+    <Compile Include="SalaryRankService.cs" />
     <Compile Include="SalgradeHistory.cs" />
     <Compile Include="SalgradeService.cs" />
     <Compile Include="ServiceFactory.cs" />

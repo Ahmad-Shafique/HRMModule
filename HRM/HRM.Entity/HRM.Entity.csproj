@@ -68,6 +68,7 @@
     <Compile Include="Facade\EmployeeAndRelatedTrainings.cs" />
     <Compile Include="Facade\EmployeePerformance.cs" />
     <Compile Include="Facade\EmployeeTotalSalary.cs" />
+    <Compile Include="Facade\LoginInfo.cs" />
     <Compile Include="Facade\TrainingAndRelatedEmployees.cs" />
     <Compile Include="MonthlyBudget.cs" />
     <Compile Include="NoticeComment.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="ProjectEmployee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalaryComponents.cs" />
+    <Compile Include="SalaryRank.cs" />
     <Compile Include="Salgrade.cs" />
     <Compile Include="SalgradeHistory.cs" />
     <Compile Include="SupportingDocument.cs" />
