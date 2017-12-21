@@ -159,7 +159,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InterviewsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\Notices1Controller.cs" />
     <Compile Include="Controllers\NoticesController.cs" />
     <Compile Include="Controllers\SalaryPaymentsController.cs" />
     <Compile Include="Controllers\SalaryRanksController.cs" />
@@ -278,6 +277,15 @@
     <Content Include="Views\EmployeePromotion\Index.cshtml" />
     <Content Include="Views\ChangeStatus\Index.cshtml" />
     <Content Include="Views\ChangeStatus\ChangeStatus.cshtml" />
+    <Content Include="Views\Equipments\Create.cshtml" />
+    <Content Include="Views\Equipments\Delete.cshtml" />
+    <Content Include="Views\Equipments\Details.cshtml" />
+    <Content Include="Views\Equipments\Edit.cshtml" />
+    <Content Include="Views\Equipments\Manage.cshtml" />
+    <Content Include="Views\Hire\Create.cshtml" />
+    <Content Include="Views\Hire\Delete.cshtml" />
+    <Content Include="Views\Hire\Details.cshtml" />
+    <Content Include="Views\Hire\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

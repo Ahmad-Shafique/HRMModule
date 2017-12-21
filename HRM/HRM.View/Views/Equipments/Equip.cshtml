@@ -16,17 +16,17 @@
     @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />*@
 </head>
 <body>
+    <p id="departmentId" hidden>@ViewBag.DepartmentId</p>
     <h1>@ViewBag.DepartmentName</h1>
     <div>
-        @*@foreach (var item in ViewBag.Equipments)
+        @foreach (var item in ViewBag.Equipments)
         {
             <input type="checkbox" name="EnabledEquipment" value="@item.EquipmentId" />
-            @item.Name<br />
-        }*@
+            <p><b><strong>          Equipment Name</strong></b></p>
+        }
     </div>
 
     <button id="buttonAssignEquipment" class="btn btn-primary" >Assign Equipmemt</button>
-    <button class="btn btn-primary">Add Equipment</button>
 
 
 </body>

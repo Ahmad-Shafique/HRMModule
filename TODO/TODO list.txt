@@ -37,3 +37,4 @@ Extra TODO for future iteration/s of the project:
 7. Add Employee assignment to transport area and make transportation assignment functional
 8. Fix redirection after comment is posted
 9. Make salary components customized for different salary grades
+10. Add document sharing system
