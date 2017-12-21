@@ -16,8 +16,8 @@ namespace HRM.View.Controllers
         // GET: Interviews
         public ActionResult Index()
         {
-            //ViewBag.Interviews = InterviewService.GetAll();
-            //ViewBag.Interviewees = IntervieweeService.GetAll();
+            ViewBag.Interviews = InterviewService.GetAll();
+            ViewBag.Interviewees = IntervieweeService.GetAll();
             return View();
         }
     }

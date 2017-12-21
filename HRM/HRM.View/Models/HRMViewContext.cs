@@ -26,5 +26,7 @@ namespace HRM.View.Models
         public System.Data.Entity.DbSet<HRM.Entity.Equipment> Equipments { get; set; }
 
         public System.Data.Entity.DbSet<HRM.Entity.HireRequest> HireRequests { get; set; }
+
+        public System.Data.Entity.DbSet<HRM.Entity.TemporaryCV> TemporaryCVs { get; set; }
     }
 }

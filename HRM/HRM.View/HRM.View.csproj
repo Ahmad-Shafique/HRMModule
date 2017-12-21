@@ -150,6 +150,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BonusesController.cs" />
     <Compile Include="Controllers\BudgetsController.cs" />
+    <Compile Include="Controllers\CandidatesController.cs" />
     <Compile Include="Controllers\ChangeStatusController.cs" />
     <Compile Include="Controllers\EmployeePromotionController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
@@ -286,6 +287,11 @@
     <Content Include="Views\Hire\Delete.cshtml" />
     <Content Include="Views\Hire\Details.cshtml" />
     <Content Include="Views\Hire\Edit.cshtml" />
+    <Content Include="Views\Candidates\Create.cshtml" />
+    <Content Include="Views\Candidates\Delete.cshtml" />
+    <Content Include="Views\Candidates\Details.cshtml" />
+    <Content Include="Views\Candidates\Edit.cshtml" />
+    <Content Include="Views\Candidates\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

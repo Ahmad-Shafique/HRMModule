@@ -23,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            @*@foreach (Interview interview in ViewBag.Interviews)
+            @foreach (Interview interview in ViewBag.Interviews)
             {
                 <tr>
                     <td>@interview.InterviewId</td>
@@ -35,7 +35,7 @@
                         <button id="buttonCandidateAddition" class="btn btn-primary" data-toggle="modal" data-target="#candidateModal">Add Cadidate</button>
                     </td>
                 </tr>
-            }*@
+            }
         </tbody>
     </table>
     <button id="buttonInterviewAddition" class="btn btn-primary" data-toggle="modal" data-target="#interviewModal">Create Interview</button><br />
@@ -47,10 +47,10 @@
             <div class="modal-content">
                 <div class="modal-header">Candidate list</div>
                 <div class="modal-body">
-                    @*@foreach (Interviewee pers in ViewBag.Interviewees)
+                    @foreach (Interviewee pers in ViewBag.Interviewees)
                     {
                         @pers.IntervieweeId<input type="checkbox" name="EnabledCandidates" value="@pers.IntervieweeId" />
-                    }*@
+                    }
                 </div>
                 <div class="modal-footer">
                     <button id="buttonConfirmCandidates" class="btn btn-block" data-dismiss="modal">Confirm</button>

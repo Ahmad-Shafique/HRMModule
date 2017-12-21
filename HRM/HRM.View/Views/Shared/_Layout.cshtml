@@ -164,18 +164,19 @@ desired effect
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-link"></i> <span>Notice</span>
+                            <i class="fa fa-link"></i> <span>Change Employee Status</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
                             <li>
-                                @Html.ActionLink("View notice", "Index", "Notices")
+                                @Html.ActionLink("Promote employees", "Index", "EmployeePromotion")
                             </li>
                             <li>
-                                @Html.ActionLink("Add notice", "Create", "Notices")
+                                @Html.ActionLink("Change employee active state", "Index", "ChangeStatus")
                             </li>
+
                         </ul>
                     </li>
                     <li class="treeview">
@@ -199,22 +200,39 @@ desired effect
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-link"></i> <span>Change Employee Status</span>
+                            <i class="fa fa-link"></i> <span>Notice</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
                             <li>
-                                @Html.ActionLink("Promote employees", "Index", "EmployeePromotion")
+                                @Html.ActionLink("View notice", "Index", "Notices")
                             </li>
                             <li>
-                                @Html.ActionLink("Change employee active state", "Index", "ChangeStatus")
+                                @Html.ActionLink("Add notice", "Create", "Notices")
                             </li>
-
                         </ul>
                     </li>
-
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-link"></i> <span>Policy and conformation</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                @Html.ActionLink("View policies", "", "")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Manage policies", "", "")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Examine employees", "", "")
+                            </li>
+                        </ul>
+                    </li>
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-link"></i> <span>Equipments</span>
@@ -238,8 +256,15 @@ desired effect
                         <ul class="treeview-menu">
                             <li>
                                 @Html.ActionLink("Hiring management", "Index", "Hire")
+                            </li>
+                            <li>
                                 @Html.ActionLink("Confirm Hire Requests", "ConfirmHires", "Hire")
+                            </li>
+                            <li>
                                 @Html.ActionLink("Interview management", "Index", "Interviews")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Candidates management", "Index", "Candidates")
                             </li>
                         </ul>
                     </li>
