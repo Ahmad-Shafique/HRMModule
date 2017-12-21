@@ -5,23 +5,37 @@
 
 @using (Html.BeginForm())
 {
-    <div class="form-horizontal">
+
+    <div style="text-align: center" class="container">
+        <h2>Assign Bonus to employee</h2> <hr />
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-info">
+                    <div class="panel-body">
+                        <div class="form-horizontal">
 
 
-        <input type="number" value="@ViewBag.Id" name="EmpId" hidden />
-        Amount: <br />
-        <input type="text" name="BonusAmount" />
-        <br />
-        Reason:<br />
-        <input type="text" name="BonusReason" />
-        <br />
+                            <input type="number" value="@ViewBag.Id" name="EmpId" hidden />
+                            Amount: <br />
+                            <input type="text" name="BonusAmount" />
+                            <br />
+                            Reason:<br />
+                            <input type="text" name="BonusReason" />
+                            <br />
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                            <div class="form-group">
+                                <div >
+                                    <input type="submit" value="Assign" class="btn btn-default" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    
 }
 
 

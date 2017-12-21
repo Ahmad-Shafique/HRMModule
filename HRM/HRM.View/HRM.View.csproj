@@ -312,6 +312,9 @@
     <Content Include="Views\CompanyPolicies\Details.cshtml" />
     <Content Include="Views\CompanyPolicies\Edit.cshtml" />
     <Content Include="Views\CompanyPolicies\Index.cshtml" />
+    <Content Include="Views\Employees\IndividualDisplay.cshtml" />
+    <Content Include="Views\SalaryPayments\IndividualSalaryInfo.cshtml" />
+    <Content Include="Views\CompanyPolicies\ViewPolicies.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

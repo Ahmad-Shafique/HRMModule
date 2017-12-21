@@ -1,0 +1,35 @@
+﻿@model IEnumerable<HRM.Entity.CompanyPolicy>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyDescription)
+        </th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyDescription)
+            </td>
+        </tr>
+    }
+
+</table>

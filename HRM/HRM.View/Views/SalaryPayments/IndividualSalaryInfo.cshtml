@@ -1,0 +1,31 @@
+﻿@using HRM.Entity;
+@using HRM.Entity.Facade;
+@{
+    ViewBag.Title = "IndividualSalaryInfo";
+}
+
+<div style="text-align: center" class="container">
+    <h2>Salary Calculation Details</h2> <hr />
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    @foreach (EmployeeTotalSalary item in ViewBag.Result)
+                    {
+                        <p>Employee</p> @item.EmployeeName
+                        <br />
+                        <p><b>Basic Salary : 98392</b></p>
+                        <p>Salary Components:</p><br />
+                        <p>Transport fee : 98392 * 10 % = 232323</p>
+                        <p>Provident fund : 98392 * 10 % = 232323</p>
+                        <p>Rent  : 98392 * 10 % = 232323</p>
+                        <p>Medical expenses : 98392 * 10 % = 232323</p>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

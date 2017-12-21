@@ -12,7 +12,7 @@ namespace HRM.Service.Interfaces
     {
         dynamic GetTrainingAndRelatedEmployees(int trainingId);
         dynamic GetEmployeeAndRelatedTraining(int employeeId);
-        dynamic GetAllEmployeeDetails();
+        IEnumerable<EmployeeAndBio> GetAllEmployeeDetails();
         bool AddEmployeesToTrainingProgram(int trainingId, string employeeIdsString);
         bool AddTrainingsToEmployee(int employeeId, string trainingIdsString);
         bool ApproveHireRequests(string hireRequestIdsString);

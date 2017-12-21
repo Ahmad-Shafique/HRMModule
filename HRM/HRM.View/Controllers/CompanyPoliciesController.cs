@@ -115,5 +115,11 @@ namespace HRM.View.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public ActionResult ViewPolicies()
+        {
+            return View(Service.GetAll());
+        }
+
     }
 }

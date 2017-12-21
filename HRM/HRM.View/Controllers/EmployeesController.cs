@@ -1,4 +1,5 @@
 ﻿using HRM.Entity;
+using HRM.Entity.Facade;
 using HRM.Service;
 using HRM.Service.Interfaces;
 using System;
@@ -155,6 +156,12 @@ namespace HRM.View.Controllers
             Service.RemoveByEntity(employee);
             return RedirectToAction("Index");
         }
+
+        //public ActionResult IndividualDisplay(int? id)
+        //{
+        //    ViewBag.Employee = CommonService.GetAllEmployeeDetails().Where(Item => Item.EmployeeId == id);
+        //    return View();
+        //}
 
 
 

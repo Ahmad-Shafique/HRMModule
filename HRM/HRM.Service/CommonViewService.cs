@@ -71,7 +71,7 @@ namespace HRM.Service
 
         
 
-        public dynamic GetAllEmployeeDetails()
+        public IEnumerable<EmployeeAndBio> GetAllEmployeeDetails()
         {
             return repository.GetAllEmployeeDetails();
         }

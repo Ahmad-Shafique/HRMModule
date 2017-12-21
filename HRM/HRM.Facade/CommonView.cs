@@ -166,7 +166,7 @@ namespace HRM.Facade
 
         }
 
-        public virtual dynamic GetAllEmployeeDetails()
+        public virtual IEnumerable<EmployeeAndBio> GetAllEmployeeDetails()
         {
             IRepository<Employee> empRepo = new RepositoryFactory().Create<Employee>();
             IRepository<EmployeeBio> empBioRepo = new RepositoryFactory().Create<EmployeeBio>();

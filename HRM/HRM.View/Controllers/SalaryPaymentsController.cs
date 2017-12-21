@@ -15,12 +15,12 @@ namespace HRM.View.Controllers
     {
         private ICommonViewService Service = ServiceFactory.GetCommonViewService();
         // GET: SalaryPayment
-        public  ActionResult Index()
+        public ActionResult Index()
         {
             Console.WriteLine("Entered salary payments display");
 
             ViewBag.Employees = Service.Test();
-            var result =  Service.CalculateAllEmployeeTotalSalary();
+            var result = Service.CalculateAllEmployeeTotalSalary();
             var sortedByTotalSalary = result.OrderBy(item => -item.TotalSalary);
             var sortedByTotalBonus = result.OrderBy(item => -item.BonusSalary);
             string TSND = "";
@@ -40,7 +40,7 @@ namespace HRM.View.Controllers
                 if (iterationNumber >= 5) break;
                 if (iterationNumber++ < size - 1)
                 {
-                    TSND +=  item.EmployeeName + ",";
+                    TSND += item.EmployeeName + ",";
                     //TSND += "\"" + item.EmployeeName + "\",";
                     TSVD += item.TotalSalary + ",";
                 }
@@ -50,7 +50,7 @@ namespace HRM.View.Controllers
                     TSND += item.EmployeeName;
                     TSVD += item.TotalSalary;
                 }
-                
+
             }
             //TSND += "]";
             //TSVD += "]";
@@ -87,6 +87,13 @@ namespace HRM.View.Controllers
             Console.WriteLine("aa*****************************");
             //return View(result);
             return View();
+        }
+        public ActionResult IndividualSalaryInfo(int? id)
+        {
+                ViewBag.Result = Service.CalculateAllEmployeeTotalSalary().Where(item => item.EmployeeId == id);
+                ViewBag.SalaryComponents = new ServiceFactory().Create<SalaryComponents>().GetAll();
+
+                return View();
         }
     }
 }
