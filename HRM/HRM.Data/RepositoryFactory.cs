@@ -47,9 +47,11 @@ namespace HRM.Data
             Repositories.Add(typeof(Training), typeof(TrainingRepository));
             Repositories.Add(typeof(Equipment), typeof(EquipmentRepository));
             Repositories.Add(typeof(TransportArea), typeof(TransportAreaRepository));
+            Repositories.Add(typeof(TransportVehicle), typeof(TransportVehicleRepository));
             Repositories.Add(typeof(NoticeComment), typeof(NoticeCommentRepository));
             Repositories.Add(typeof(TrainingEmployee), typeof(TrainingEmployeeRepository));
             Repositories.Add(typeof(SalaryRank), typeof(SalaryRankRepository));
+            Repositories.Add(typeof(CompanyPolicy), typeof(CompanyPolicyRepository));
 
 
         }

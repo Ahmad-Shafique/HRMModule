@@ -46,6 +46,7 @@
     <Compile Include="BonusService.cs" />
     <Compile Include="CircularTemplateService.cs" />
     <Compile Include="CommonViewService.cs" />
+    <Compile Include="CompanyPolicyService.cs" />
     <Compile Include="DepartmentDesignationService.cs" />
     <Compile Include="DepartmentHistoryService.cs" />
     <Compile Include="DepartmentService.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="TrainingEmployeeService.cs" />
     <Compile Include="TrainingService.cs" />
     <Compile Include="TransportAreaService.cs" />
+    <Compile Include="TransportVehicleService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HRM.Data\HRM.Data.csproj">

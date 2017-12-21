@@ -47,8 +47,10 @@ namespace HRM.Service
             Repositories.Add(typeof(Training), typeof(TrainingService));
             Repositories.Add(typeof(Equipment), typeof(EquipmentService));
             Repositories.Add(typeof(TransportArea), typeof(TransportAreaService));
+            Repositories.Add(typeof(TransportVehicle), typeof(TransportVehicleService));
             Repositories.Add(typeof(NoticeComment), typeof(NoticeCommentService));
             Repositories.Add(typeof(SalaryRank), typeof(SalaryRankService));
+            Repositories.Add(typeof(CompanyPolicy), typeof(CompanyPolicyService));
 
         }
 

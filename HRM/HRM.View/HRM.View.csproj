@@ -152,6 +152,7 @@
     <Compile Include="Controllers\BudgetsController.cs" />
     <Compile Include="Controllers\CandidatesController.cs" />
     <Compile Include="Controllers\ChangeStatusController.cs" />
+    <Compile Include="Controllers\CompanyPoliciesController.cs" />
     <Compile Include="Controllers\EmployeePromotionController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\EmployeeEvaluationsController.cs" />
@@ -161,10 +162,13 @@
     <Compile Include="Controllers\InterviewsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NoticesController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\SalaryPaymentsController.cs" />
     <Compile Include="Controllers\SalaryRanksController.cs" />
     <Compile Include="Controllers\TrainingsController.cs" />
+    <Compile Include="Controllers\TransportAreasController.cs" />
     <Compile Include="Controllers\TransportationsController.cs" />
+    <Compile Include="Controllers\TransportVehiclesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -292,6 +296,22 @@
     <Content Include="Views\Candidates\Details.cshtml" />
     <Content Include="Views\Candidates\Edit.cshtml" />
     <Content Include="Views\Candidates\Index.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\TransportAreas\Create.cshtml" />
+    <Content Include="Views\TransportAreas\Delete.cshtml" />
+    <Content Include="Views\TransportAreas\Details.cshtml" />
+    <Content Include="Views\TransportAreas\Edit.cshtml" />
+    <Content Include="Views\TransportAreas\Index.cshtml" />
+    <Content Include="Views\TransportVehicles\Create.cshtml" />
+    <Content Include="Views\TransportVehicles\Delete.cshtml" />
+    <Content Include="Views\TransportVehicles\Details.cshtml" />
+    <Content Include="Views\TransportVehicles\Edit.cshtml" />
+    <Content Include="Views\TransportVehicles\Index.cshtml" />
+    <Content Include="Views\CompanyPolicies\Create.cshtml" />
+    <Content Include="Views\CompanyPolicies\Delete.cshtml" />
+    <Content Include="Views\CompanyPolicies\Details.cshtml" />
+    <Content Include="Views\CompanyPolicies\Edit.cshtml" />
+    <Content Include="Views\CompanyPolicies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

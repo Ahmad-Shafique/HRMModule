@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.Entity", "HRM.Entity\HRM.Entity.csproj", "{86E8C7B0-F401-4F4A-8BE1-FFADC30C7257}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MidLayer", "MidLayer", "{844D099F-FDD0-4EFE-9D2F-F11FEBA4FBF7}"
+	ProjectSection(SolutionItems) = preProject
+		HRM.Test\App.config = HRM.Test\App.config
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.Data", "HRM.Data\HRM.Data.csproj", "{2EB3ADBB-D7F3-4E00-AD69-33B2E9E73F37}"
 EndProject

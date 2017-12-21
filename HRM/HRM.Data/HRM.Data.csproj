@@ -54,6 +54,7 @@
     <Compile Include="BonusesRepository.cs" />
     <Compile Include="BonusRepository.cs" />
     <Compile Include="CircularTemplateRepository.cs" />
+    <Compile Include="CompanyPolicyRepository.cs" />
     <Compile Include="DepartmentDesignationRepository.cs" />
     <Compile Include="DepartmentHistoryRepository.cs" />
     <Compile Include="DepartmentRepository.cs" />

@@ -12,12 +12,13 @@ namespace HRM.View.Controllers
     public class TransportationsController : Controller
     {
         private IDomainService<TransportArea> AreaService = new ServiceFactory().Create<TransportArea>();
-        private IDomainService<Equipment> EquipmentService = new ServiceFactory().Create<Equipment>();
+        private IDomainService<TransportVehicle> VehicleService = new ServiceFactory().Create<TransportVehicle>();
+        private IDomainService<Employee> EmployeeService = new ServiceFactory().Create<Employee>();
         private ICommonViewService CommonService = ServiceFactory.GetCommonViewService();
         // GET: Transportation
         public ActionResult Index()
         {
-            //ViewBag.areas = AreaService.GetAll();
+            ViewBag.areas = AreaService.GetAll();
 
 
             return View();
@@ -25,18 +26,20 @@ namespace HRM.View.Controllers
 
         public ActionResult Area(int? AreaId)
         {
-            //ViewBag.Employees = CommonService. Data.DummyData.Employees().Where(e => e.AreaId == AreaId);
-            //ViewBag.vehicles = Data.DummyData.TransportVehicles();
+            //ViewBag.Employees = EmployeeService.GetAll().Where(e => e.AreaId == AreaId);
+            ViewBag.Employees = EmployeeService.GetAll();
+            ViewBag.vehicles = VehicleService.GetAll();
             //TransportArea t = Data.DummyData.TransportAreas().SingleOrDefault(area => area.TransportAreaId == AreaId);
-            //if (t == null)
-            //{
-            //    t = new TransportArea();
-            //    t.AreaDemand = 50;
-            //    t.AreaName = "Mohakhali";
-            //}
-            //ViewBag.AreaDemand = t.AreaDemand;
-            //ViewBag.CurrentCapacity = 5;
-            //ViewBag.AreaName = t.AreaName;
+            TransportArea t = AreaService.GetAll().SingleOrDefault(area => area.TransportAreaId == AreaId);
+            if (t == null)
+            {
+                t = new TransportArea();
+                t.AreaDemand = 50;
+                t.AreaName = "Mohakhali";
+            }
+            ViewBag.AreaDemand = t.AreaDemand;
+            ViewBag.CurrentCapacity = 5;
+            ViewBag.AreaName = t.AreaName;
 
 
 

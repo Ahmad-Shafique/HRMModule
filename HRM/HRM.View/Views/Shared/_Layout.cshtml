@@ -216,7 +216,7 @@ desired effect
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-link"></i> <span>Policy and conformation</span>
+                            <i class="fa fa-link"></i> <span>Legal Section</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
@@ -226,10 +226,10 @@ desired effect
                                 @Html.ActionLink("View policies", "", "")
                             </li>
                             <li>
-                                @Html.ActionLink("Manage policies", "", "")
+                                @Html.ActionLink("Manage policies", "Index", "CompanyPolicies")
                             </li>
                             <li>
-                                @Html.ActionLink("Examine employees", "", "")
+                                @Html.ActionLink("Examine employees", "Display", "Employees")
                             </li>
                         </ul>
                     </li>
@@ -290,7 +290,7 @@ desired effect
                         </a>
                         <ul class="treeview-menu">
                             <li>
-                                @Html.ActionLink("Project Management", "", "")
+                                @Html.ActionLink("Project Management", "Index", "Projects")
                             </li>
                         </ul>
                     </li>
