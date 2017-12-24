@@ -148,7 +148,7 @@ namespace HRM.View.Controllers
             return RedirectToAction("Details",new { id = noticeId });
         }
 
-        //protected override void Dispose(bool disposing)
+        //protected virtual void Dispose(bool disposing)
         //{
         //    if (disposing)
         //    {

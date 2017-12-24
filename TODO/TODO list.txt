@@ -28,7 +28,7 @@ display interviewee name)
 
 
 Extra TODO for future iteration/s of the project:
-1. Improve interview schdule maintenance system (add start tiem, end time, date etc.)
+1. Improve interview schdule maintenance system (add start time, end time, date etc.)
 2. Add time period for leave approval display
 3. Attendance providing should have a option for late attendance and the amount by which attendance was missed
 4. Editable employee bio
@@ -38,3 +38,8 @@ Extra TODO for future iteration/s of the project:
 8. Fix redirection after comment is posted
 9. Make salary components customized for different salary grades
 10. Add document sharing system
+11. History of people involved in policy management
+12. History of the person making salary payment/s
+13. History of person involved in equipment management/assignment
+14. History of people approving leave requests
+15. History of people changing employee status      

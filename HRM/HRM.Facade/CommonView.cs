@@ -13,7 +13,7 @@ namespace HRM.Facade
 {
     class CommonView: ICommonView
     {
-        public virtual dynamic GetTrainingAndRelatedEmployees(int trainingId)
+        public virtual IEnumerable<TrainingAndRelatedEmployees> GetTrainingAndRelatedEmployees(int trainingId)
         {
             
             IEnumerable<Training> trainingList = new RepositoryFactory().Create<Training>().GetAll();
@@ -39,12 +39,12 @@ namespace HRM.Facade
             catch (Exception e)
             {
                 Console.WriteLine("Error in combining training and employee : " + e);
-                return new List<dynamic>();
+                return new List<TrainingAndRelatedEmployees>();
             }
         }
 
 
-        public virtual dynamic GetEmployeeAndRelatedTraining(int employeeId)
+        public virtual IEnumerable<EmployeeAndRelatedTrainings> GetEmployeeAndRelatedTraining(int employeeId)
         {
             IEnumerable<Training> trainingList = new RepositoryFactory().Create<Training>().GetAll();
             IEnumerable<Employee> employeeList = new RepositoryFactory().Create<Employee>().GetAll();
@@ -69,7 +69,7 @@ namespace HRM.Facade
             catch (Exception e)
             {
                 Console.WriteLine("Error in combining training and employee : " + e);
-                return new List<dynamic>();
+                return new List<EmployeeAndRelatedTrainings>();
             }
         }
 
@@ -223,26 +223,35 @@ namespace HRM.Facade
         }
 
 
-        public virtual dynamic GetAllEmployeePerformance()
+        public virtual IEnumerable<EmployeePerformance> GetAllEmployeePerformance()
         {
-            IRepository<Employee> empRepo = new RepositoryFactory().Create<Employee>();
-            IRepository<EmployeePerformanceMetric> empBioRepo = new RepositoryFactory().Create<EmployeePerformanceMetric>();
-            IRepository<EmployeeDepartment> empDeptRepo = new RepositoryFactory().Create<EmployeeDepartment>();
-            return from emp in empRepo.GetAll()
-                   join empDept in empDeptRepo.GetAll() on emp.EmployeeId equals empDept.EmployeeId
-                   join empPerf in empBioRepo.GetAll() on emp.EmployeeId equals empPerf.EmployeeId
-                   select new EmployeePerformance
-                   {
-                       EmployeeId = emp.EmployeeId,
-                       EmployeeName = emp.EmployeeName,
+            try
+            {
+                IRepository<Employee> empRepo = new RepositoryFactory().Create<Employee>();
+                IRepository<EmployeePerformanceMetric> empBioRepo = new RepositoryFactory().Create<EmployeePerformanceMetric>();
+                IRepository<EmployeeDepartment> empDeptRepo = new RepositoryFactory().Create<EmployeeDepartment>();
+                return from emp in empRepo.GetAll()
+                       join empDept in empDeptRepo.GetAll() on emp.EmployeeId equals empDept.EmployeeId
+                       join empPerf in empBioRepo.GetAll() on emp.EmployeeId equals empPerf.EmployeeId
+                       select new EmployeePerformance
+                       {
+                           EmployeeId = emp.EmployeeId,
+                           EmployeeName = emp.EmployeeName,
 
-                       ProjectScore = empPerf.AverageProjectScore,
-                       TrainingScore = empPerf.AverageTrainingScore,
-                       AttendanceScore = 100,
-                       AggregateScore = (empPerf.AverageProjectScore + empPerf.AverageTrainingScore + 100) / 3,
+                           ProjectScore = empPerf.AverageProjectScore,
+                           TrainingScore = empPerf.AverageTrainingScore,
+                           AttendanceScore = 100,
+                           AggregateScore = (empPerf.AverageProjectScore + empPerf.AverageTrainingScore + 100) / 3,
 
-                       DepartmentId = empDept.EmployeeDepartmentId
-                   };
+                           DepartmentId = empDept.EmployeeDepartmentId
+                       };
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                return new List<EmployeePerformance>();
+            }
+            
         }
 
 

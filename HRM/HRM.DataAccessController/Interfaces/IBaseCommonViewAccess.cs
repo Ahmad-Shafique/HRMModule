@@ -6,17 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRM.Facade.Interfaces
+namespace HRM.DataAccessController.Interfaces
 {
-    public interface ICommonView : IFacade
+    public interface IBaseCommonViewAccess
     {
-        IEnumerable<TrainingAndRelatedEmployees> GetTrainingAndRelatedEmployees(int trainingId);
-        IEnumerable<EmployeeAndRelatedTrainings> GetEmployeeAndRelatedTraining(int employeeId);
+        dynamic GetTrainingAndRelatedEmployees(int trainingId);
+        dynamic GetEmployeeAndRelatedTraining(int employeeId);
         IEnumerable<EmployeeAndBio> GetAllEmployeeDetails();
         bool AddEmployeesToTrainingProgram(int trainingId, string employeeIdsString);
         bool AddTrainingsToEmployee(int employeeId, string trainingIdsString);
         bool ApproveHireRequests(string hireRequestIdsString);
-        IEnumerable<EmployeePerformance> GetAllEmployeePerformance();
+        dynamic GetAllEmployeePerformance();
         bool AddDepartmentWideBonus(int departmentId, Bonuses bonus);
         bool AddBonusToEmployeeList(int departmentId, Bonuses bonus, string employeeIdsList);
         bool AssignBonusToEmployee(Bonuses bonus, int EmployeeId);
