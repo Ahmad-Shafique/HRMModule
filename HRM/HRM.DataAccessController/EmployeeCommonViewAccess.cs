@@ -62,9 +62,9 @@ namespace HRM.DataAccessController
             return new List<EmployeeAndBio>();
         }
 
-        public override dynamic GetAllEmployeePerformance()
+        public override IEnumerable<EmployeePerformance> GetAllEmployeePerformance()
         {
-            return repository.GetAllEmployeePerformance();
+            return new List<EmployeePerformance>();
         }
 
         public override IEnumerable<TemporaryCV> GetAllUnassignedTemporaryCVs()
@@ -77,14 +77,14 @@ namespace HRM.DataAccessController
             return repository.GetAvailableTransport();
         }
 
-        public override dynamic GetEmployeeAndRelatedTraining(int employeeId)
+        public override IEnumerable<EmployeeAndRelatedTrainings> GetEmployeeAndRelatedTraining(int employeeId)
         {
-            return repository.GetEmployeeAndRelatedTraining(employeeId);
+            return new List<EmployeeAndRelatedTrainings>();
         }
 
-        public override dynamic GetTrainingAndRelatedEmployees(int trainingId)
+        public override IEnumerable<TrainingAndRelatedEmployees> GetTrainingAndRelatedEmployees(int trainingId)
         {
-            return repository.GetTrainingAndRelatedEmployees(trainingId);
+            return new List<TrainingAndRelatedEmployees>();
         }
 
         public override dynamic Test()
@@ -95,12 +95,12 @@ namespace HRM.DataAccessController
 
         public override IEnumerable<EmployeeTotalSalary> CalculateAllEmployeeTotalSalary()
         {
-            return repository.CalculateAllEmployeeTotalSalary();
+            return new List<EmployeeTotalSalary>();
         }
 
         public override IEnumerable<EmployeePromotion> GetEmployeePromotionView()
         {
-            return repository.GetEmployeePromotionView();
+            return new List<EmployeePromotion>();
         }
     }
 }

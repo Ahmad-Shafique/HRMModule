@@ -1,4 +1,6 @@
-﻿using HRM.Entity;
+﻿using HRM.DataAccessController;
+using HRM.Entity;
+using HRM.Entity.Accessory;
 using HRM.Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -64,5 +66,12 @@ namespace HRM.Service
         {
             return new CommonViewService();
         }
+
+        public static LoginObject Authenticate(int id, string password)
+        {
+            return UserSelector<Employee>.Authenticate(id, password);
+        }
+
+        
     }
 }

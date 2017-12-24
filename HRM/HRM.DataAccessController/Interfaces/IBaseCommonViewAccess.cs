@@ -10,13 +10,13 @@ namespace HRM.DataAccessController.Interfaces
 {
     public interface IBaseCommonViewAccess
     {
-        dynamic GetTrainingAndRelatedEmployees(int trainingId);
-        dynamic GetEmployeeAndRelatedTraining(int employeeId);
+        IEnumerable<TrainingAndRelatedEmployees> GetTrainingAndRelatedEmployees(int trainingId);
+        IEnumerable<EmployeeAndRelatedTrainings> GetEmployeeAndRelatedTraining(int employeeId);
         IEnumerable<EmployeeAndBio> GetAllEmployeeDetails();
         bool AddEmployeesToTrainingProgram(int trainingId, string employeeIdsString);
         bool AddTrainingsToEmployee(int employeeId, string trainingIdsString);
         bool ApproveHireRequests(string hireRequestIdsString);
-        dynamic GetAllEmployeePerformance();
+        IEnumerable<EmployeePerformance> GetAllEmployeePerformance();
         bool AddDepartmentWideBonus(int departmentId, Bonuses bonus);
         bool AddBonusToEmployeeList(int departmentId, Bonuses bonus, string employeeIdsList);
         bool AssignBonusToEmployee(Bonuses bonus, int EmployeeId);

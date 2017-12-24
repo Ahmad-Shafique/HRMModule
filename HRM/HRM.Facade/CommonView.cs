@@ -8,11 +8,53 @@ using HRM.Data;
 using HRM.Facade.Interfaces;
 using HRM.Data.Interfaces;
 using HRM.Entity.Facade;
+using HRM.Entity.Accessory;
 
 namespace HRM.Facade
 {
     class CommonView: ICommonView
     {
+        public virtual LoginObject Authenticate(int id, string password)
+        {
+            IEnumerable<Employee> employeeList = new RepositoryFactory().Create<Employee>().GetAll();
+            IEnumerable<EmployeeBio> employeeBioList = new RepositoryFactory().Create<EmployeeBio>().GetAll();
+            IEnumerable<EmployeePrivilege> employeePrivilegeList = new RepositoryFactory().Create<EmployeePrivilege>().GetAll();
+
+            try
+            {
+                LoginObject returnable = new LoginObject(0, null, null, null, 0) ;
+                var result = from emp in employeeList
+                             join empBio in employeeBioList on emp.EmployeeId equals empBio.EmployeeId
+                             join empPriv in employeePrivilegeList on emp.EmployeeId equals empPriv.EmployeeId
+                             select new
+                             {
+                                 Id = emp.EmployeeId,
+                                 Password = emp.EmployeePassword,
+                                 Image = empBio.Image,
+                                 Name = emp.EmployeeName,
+                                 privilege = empPriv.PrivilegeId
+                             };
+                var finalResult = result.Where(item => item.Id == id && item.Password == password);
+                if(finalResult != null)
+                {
+                    foreach(var item in finalResult)
+                    {
+                        Token token = new Token();
+                        token.Id = item.Id;
+                        token.PrivilegeToken = item.privilege.ToString();
+                        returnable = new LoginObject(item.Id, item.Image, item.Image, token, item.privilege);
+                    }
+                    
+                }
+                return returnable;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                return new LoginObject(0, null, null, null, 0);
+            }
+        }
+
         public virtual IEnumerable<TrainingAndRelatedEmployees> GetTrainingAndRelatedEmployees(int trainingId)
         {
             

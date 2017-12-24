@@ -74,7 +74,7 @@ namespace HRM.DataAccessController
             return repository.GetAllEmployeeDetails();
         }
 
-        public virtual dynamic GetAllEmployeePerformance()
+        public virtual IEnumerable<EmployeePerformance> GetAllEmployeePerformance()
         {
             return repository.GetAllEmployeePerformance();
         }
@@ -89,12 +89,12 @@ namespace HRM.DataAccessController
             return repository.GetAvailableTransport();
         }
 
-        public virtual dynamic GetEmployeeAndRelatedTraining(int employeeId)
+        public virtual IEnumerable<EmployeeAndRelatedTrainings> GetEmployeeAndRelatedTraining(int employeeId)
         {
             return repository.GetEmployeeAndRelatedTraining(employeeId);
         }
 
-        public virtual dynamic GetTrainingAndRelatedEmployees(int trainingId)
+        public virtual IEnumerable<TrainingAndRelatedEmployees> GetTrainingAndRelatedEmployees(int trainingId)
         {
             return repository.GetTrainingAndRelatedEmployees(trainingId);
         }
