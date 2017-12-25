@@ -30,8 +30,8 @@ namespace HRM.Facade
                              {
                                  Id = emp.EmployeeId,
                                  Password = emp.EmployeePassword,
-                                 Image = empBio.Image,
                                  Name = emp.EmployeeName,
+                                 Image = empBio.Image,
                                  privilege = empPriv.PrivilegeId
                              };
                 var finalResult = result.Where(item => item.Id == id && item.Password == password);
@@ -42,7 +42,7 @@ namespace HRM.Facade
                         Token token = new Token();
                         token.Id = item.Id;
                         token.PrivilegeToken = item.privilege.ToString();
-                        returnable = new LoginObject(item.Id, item.Image, item.Image, token, item.privilege);
+                        returnable = new LoginObject(item.Id, item.Name, item.Image, token, item.privilege);
                     }
                     
                 }
