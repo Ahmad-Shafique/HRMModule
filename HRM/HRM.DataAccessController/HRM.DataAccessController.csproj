@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="BaseCommonViewAccess.cs" />
     <Compile Include="BaseCrudAccess.cs" />
+    <Compile Include="DepartmentHeadCommonViewAccess.cs" />
+    <Compile Include="DepartmentHeadCrudAccess.cs" />
     <Compile Include="EmployeeCommonViewAccess.cs" />
     <Compile Include="EmployeeCrudAccess.cs" />
     <Compile Include="Interfaces\IBaseCommonViewAccess.cs" />

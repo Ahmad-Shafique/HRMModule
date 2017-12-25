@@ -33,14 +33,21 @@ namespace HRM.DataAccessController
         {
             // Return user with appropriate access level 
             //throw new NotImplementedException();
+
             return new BaseCrudAccess<TEntity>();
+            //if (token.PrivilegeToken == "1") return new EmployeeCrudAccess<TEntity>();
+            //return new NoCrudAccess<TEntity>(); 
         }
 
         public static IBaseCommonViewAccess GetCommonViewAccess(Token token)
         {
             // Return common view with appropriate access level
             //throw new NotImplementedException();
+
+
             return new BaseCommonViewAccess();
+            //if (token.PrivilegeToken == "1") return new EmployeeCommonViewAccess();
+            //return new NoCommonViewAccess();
             
         }
 
