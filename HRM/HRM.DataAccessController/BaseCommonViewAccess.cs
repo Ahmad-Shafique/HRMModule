@@ -1,5 +1,6 @@
 ﻿using HRM.DataAccessController.Interfaces;
 using HRM.Entity;
+using HRM.Entity.Accessory;
 using HRM.Entity.Facade;
 using HRM.Facade;
 using HRM.Facade.Interfaces;
@@ -19,6 +20,11 @@ namespace HRM.DataAccessController
         protected internal BaseCommonViewAccess()
         {
             repository = FacadeFactory.GetCommonView();
+        }
+
+        public virtual LoginObject Authenticate(int id, string password)
+        {
+            return repository.Authenticate(id, password);
         }
 
 

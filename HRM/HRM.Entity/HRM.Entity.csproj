@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accessory\LoginObject.cs" />
+    <Compile Include="Accessory\Token.cs" />
     <Compile Include="AdvertiserList.cs" />
     <Compile Include="Attendance.cs" />
     <Compile Include="Bonus.cs" />

@@ -64,6 +64,7 @@
     <Compile Include="EmployeeDepartmentRepository.cs" />
     <Compile Include="EmployeeHistoryRepository.cs" />
     <Compile Include="EmployeePerformanceMetricRepository.cs" />
+    <Compile Include="EmployeePrivilegeRepository.cs" />
     <Compile Include="EmployeeRepository.cs" />
     <Compile Include="EmployeeSalaryRepository.cs" />
     <Compile Include="EquipmentAndDepartmentRepository.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Interfaces\IEmployeeDepartmentRepository.cs" />
     <Compile Include="Interfaces\IEmployeeHistoryRepository.cs" />
     <Compile Include="Interfaces\IEmployeePerformanceMetricRepository.cs" />
+    <Compile Include="Interfaces\IEmployeePrivilegeRepository.cs" />
     <Compile Include="Interfaces\IEmployeeRepository.cs" />
     <Compile Include="Interfaces\IEmployeeSalaryRepository.cs" />
     <Compile Include="Interfaces\IEquipmentRepository.cs" />

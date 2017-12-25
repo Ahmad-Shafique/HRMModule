@@ -1,4 +1,5 @@
 ﻿using HRM.Entity;
+using HRM.Entity.Accessory;
 using HRM.Entity.Facade;
 using System;
 using System.Collections.Generic;
@@ -10,13 +11,14 @@ namespace HRM.Service.Interfaces
 {
     public interface ICommonViewService
     {
-        dynamic GetTrainingAndRelatedEmployees(int trainingId);
-        dynamic GetEmployeeAndRelatedTraining(int employeeId);
+        LoginObject Authenticate(int id, string password);
+        IEnumerable<TrainingAndRelatedEmployees> GetTrainingAndRelatedEmployees(int trainingId);
+        IEnumerable<EmployeeAndRelatedTrainings> GetEmployeeAndRelatedTraining(int employeeId);
         IEnumerable<EmployeeAndBio> GetAllEmployeeDetails();
         bool AddEmployeesToTrainingProgram(int trainingId, string employeeIdsString);
         bool AddTrainingsToEmployee(int employeeId, string trainingIdsString);
         bool ApproveHireRequests(string hireRequestIdsString);
-        dynamic GetAllEmployeePerformance();
+        IEnumerable<EmployeePerformance> GetAllEmployeePerformance();
         bool AddDepartmentWideBonus(int departmentId, Bonuses bonus);
         bool AddBonusToEmployeeList(int departmentId, Bonuses bonus, string employeeIdsList);
         bool AssignBonusToEmployee(Bonuses bonus, int EmployeeId);

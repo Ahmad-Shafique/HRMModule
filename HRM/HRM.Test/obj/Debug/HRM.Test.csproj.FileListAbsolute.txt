@@ -37,3 +37,5 @@ C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Test\obj\Debug\HRM.Test.csprojResolve
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Test\obj\Debug\HRM.Test.csproj.CoreCompileInputs.cache
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Test\obj\Debug\HRM.Test.exe
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Test\obj\Debug\HRM.Test.pdb
+C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Test\bin\Debug\HRM.DataAccessController.dll
+C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Test\bin\Debug\HRM.DataAccessController.pdb

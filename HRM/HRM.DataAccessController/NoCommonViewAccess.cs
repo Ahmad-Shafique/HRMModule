@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRM.DataAccessController
 {
-    class EmployeeCommonViewAccess : BaseCommonViewAccess
+    class NoCommonViewAccess : BaseCommonViewAccess
     {
         public override bool AddBonusToEmployeeList(int departmentId, Bonuses bonus, string employeeIdsList)
         {
@@ -74,7 +74,7 @@ namespace HRM.DataAccessController
 
         public override IEnumerable<TransportVehicle> GetAvailableTransport()
         {
-            return repository.GetAvailableTransport();
+            return new List<TransportVehicle>();
         }
 
         public override IEnumerable<EmployeeAndRelatedTrainings> GetEmployeeAndRelatedTraining(int employeeId)

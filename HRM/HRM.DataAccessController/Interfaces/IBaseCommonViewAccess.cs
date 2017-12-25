@@ -1,4 +1,5 @@
 ﻿using HRM.Entity;
+using HRM.Entity.Accessory;
 using HRM.Entity.Facade;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace HRM.DataAccessController.Interfaces
 {
     public interface IBaseCommonViewAccess
     {
+        LoginObject Authenticate(int id, string password);
         IEnumerable<TrainingAndRelatedEmployees> GetTrainingAndRelatedEmployees(int trainingId);
         IEnumerable<EmployeeAndRelatedTrainings> GetEmployeeAndRelatedTraining(int employeeId);
         IEnumerable<EmployeeAndBio> GetAllEmployeeDetails();

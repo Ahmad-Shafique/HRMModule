@@ -13,6 +13,7 @@ namespace HRM.Service
     public class ServiceFactory
     {
         private readonly IDictionary<Type, Type> Repositories = new Dictionary<Type, Type>();
+        public static Token token = new Token();
 
         public ServiceFactory()
         {
@@ -69,7 +70,9 @@ namespace HRM.Service
 
         public static LoginObject Authenticate(int id, string password)
         {
-            return UserSelector<Employee>.Authenticate(id, password);
+            LoginObject received = UserSelector<Employee>.Authenticate(id, password);
+            ServiceFactory.token = received.Token;
+            return received;
         }
 
         

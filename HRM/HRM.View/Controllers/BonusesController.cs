@@ -27,6 +27,7 @@ namespace HRM.View.Controllers
                 BonusValue = Int32.Parse(form["BonusAmount"]),
                 BonusDescription = form["BonusReason"]
             };
+            new ServiceFactory().Create<Employee>().GetAll();
             ServiceFactory.GetCommonViewService().AssignBonusToEmployee(bonus, Int32.Parse(form["EmpId"]));
             return RedirectToAction("EmployeeDisplay", "EmployeeEvaluations");
         }

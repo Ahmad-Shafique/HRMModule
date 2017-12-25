@@ -1,5 +1,7 @@
-﻿using HRM.Data;
-using HRM.Data.Interfaces;
+﻿
+using HRM.DataAccessController;
+using HRM.DataAccessController.Interfaces;
+using HRM.Entity.Accessory;
 using HRM.Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -11,11 +13,12 @@ namespace HRM.Service
 {
     public abstract class DomainService<TEntity> : IDomainService<TEntity> where TEntity : class
     {
-        protected internal IRepository<TEntity> repository;
+        protected internal IBaseCrudAccess<TEntity> repository;
+        
 
         public DomainService()
         {
-            repository = new RepositoryFactory().Create<TEntity>();
+            repository =  UserSelector<TEntity>.Getnstance().GetCrudAccess(ServiceFactory.token);
         }
 
         public virtual  bool Insert(TEntity entity)

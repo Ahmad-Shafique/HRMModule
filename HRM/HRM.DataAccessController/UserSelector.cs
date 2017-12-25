@@ -32,13 +32,16 @@ namespace HRM.DataAccessController
         public IBaseCrudAccess<TEntity> GetCrudAccess(Token token ) 
         {
             // Return user with appropriate access level 
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return new BaseCrudAccess<TEntity>();
         }
 
         public static IBaseCommonViewAccess GetCommonViewAccess(Token token)
         {
             // Return common view with appropriate access level
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return new BaseCommonViewAccess();
+            
         }
 
         public static LoginObject Authenticate(int Id, string password)

@@ -27,3 +27,5 @@ C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\obj\Debug\HRM.Service.csprojR
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\obj\Debug\HRM.Service.csproj.CoreCompileInputs.cache
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\obj\Debug\HRM.Service.dll
 C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\obj\Debug\HRM.Service.pdb
+C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\HRM.DataAccessController.dll
+C:\Users\Redoubt\Desktop\HRMModule\HRM\HRM.Service\bin\Debug\HRM.DataAccessController.pdb

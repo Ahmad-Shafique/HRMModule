@@ -5,22 +5,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HRM.Entity;
-using HRM.Data.Interfaces;
-using HRM.Data;
 using HRM.Facade.Interfaces;
 using HRM.Facade;
 using HRM.Entity.Facade;
+using HRM.DataAccessController.Interfaces;
+using HRM.DataAccessController;
+using HRM.Entity.Accessory;
 
 namespace HRM.Service
 {
     
     class CommonViewService : ICommonViewService
     {
-        protected internal ICommonView repository;
+        protected internal IBaseCommonViewAccess repository;
 
         public CommonViewService()
         {
-            repository = FacadeFactory.GetCommonView();
+            repository = UserSelector<Employee>.GetCommonViewAccess(ServiceFactory.token);
+        }
+
+        public LoginObject Authenticate(int id, string password)
+        {
+            return repository.Authenticate(id, password);
         }
 
 
@@ -76,7 +82,7 @@ namespace HRM.Service
             return repository.GetAllEmployeeDetails();
         }
 
-        public dynamic GetAllEmployeePerformance()
+        public IEnumerable<EmployeePerformance> GetAllEmployeePerformance()
         {
             return repository.GetAllEmployeePerformance();
         }
@@ -91,12 +97,12 @@ namespace HRM.Service
             return repository.GetAvailableTransport();
         }
 
-        public dynamic GetEmployeeAndRelatedTraining(int employeeId)
+        public IEnumerable<EmployeeAndRelatedTrainings> GetEmployeeAndRelatedTraining(int employeeId)
         {
             return repository.GetEmployeeAndRelatedTraining(employeeId);
         }
 
-        public dynamic GetTrainingAndRelatedEmployees(int trainingId)
+        public IEnumerable<TrainingAndRelatedEmployees> GetTrainingAndRelatedEmployees(int trainingId)
         {
             return repository.GetTrainingAndRelatedEmployees(trainingId);
         }
