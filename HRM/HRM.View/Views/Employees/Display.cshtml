@@ -39,9 +39,16 @@
                                     @*@emp.Designation <br />*@
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Edit", "Edit", new { id = emp.EmployeeId }) |
-                                    @Html.ActionLink("Details", "Details", new { id = emp.EmployeeId }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = emp.EmployeeId })
+                                    @if(Session["DisplayAccess"].ToString() == ViewAccessCodes.HRExecutiveViewCode || Session["DisplayAccess"].ToString() == ViewAccessCodes.HRHeadViewCode)
+                                    {
+                                        @Html.ActionLink("Edit", "Edit", new { id = emp.EmployeeId })
+                                    }
+                                     | @Html.ActionLink("Details", "Details", new { id = emp.EmployeeId }) | 
+                                    @if(Session["DisplayAccess"].ToString() == ViewAccessCodes.HRHeadViewCode)
+                                    {
+                                         @Html.ActionLink("Delete", "Delete", new { id = emp.EmployeeId })
+                                    }
+                                    
                                 </td>
                             </tr>
                             <tr><td colspan="2"><hr /></td></tr>
