@@ -1,0 +1,105 @@
+﻿@model IEnumerable<HRM.Entity.EmployeeBio>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeContactNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateofBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HireDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Intro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Objectives)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hobbies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interests)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Certificates)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobExperience)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Eduction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeContactNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateofBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HireDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Intro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Objectives)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hobbies)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Interests)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Certificates)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobExperience)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Eduction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EmployeeBioId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmployeeBioId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmployeeBioId })
+        </td>
+    </tr>
+}
+
+</table>

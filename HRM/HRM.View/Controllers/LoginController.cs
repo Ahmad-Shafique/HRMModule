@@ -46,27 +46,14 @@ namespace HRM.View.Controllers
             {
                 Console.WriteLine("Unable to log in !!!");
             }
+            return RedirectToAction("Index");
+        }
 
 
-            //Employee employee = Service.Get(collection["Id"]);
-            //if (employee.EmployeeId == Int32.Parse(collection["Id"]) && (employee.EmployeePassword == collection["Password"]))
-            //{
-            //    if (employee.Status == "active" || employee.Status == "onLeave")
-            //    {
-            //        Session["Id"] = employee.EmployeeId;
-            //        Session["Name"] = employee.EmployeeName;
-            //        return RedirectToAction("Display", "Employees");
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("Insufficient privilege");
-            //    }
-
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Unable to log in !!!");
-            //}
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            Session.Abandon();
             return RedirectToAction("Index");
         }
 

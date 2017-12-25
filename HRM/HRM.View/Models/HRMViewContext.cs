@@ -19,20 +19,6 @@ namespace HRM.View.Models
         {
         }
 
-        public System.Data.Entity.DbSet<HRM.Entity.Employee> Employees { get; set; }
-
-        public System.Data.Entity.DbSet<HRM.Entity.Notice> Notices { get; set; }
-
-        public System.Data.Entity.DbSet<HRM.Entity.Equipment> Equipments { get; set; }
-
-        public System.Data.Entity.DbSet<HRM.Entity.HireRequest> HireRequests { get; set; }
-
-        public System.Data.Entity.DbSet<HRM.Entity.TemporaryCV> TemporaryCVs { get; set; }
-
-        public System.Data.Entity.DbSet<HRM.Entity.TransportArea> TransportAreas { get; set; }
-
-        public System.Data.Entity.DbSet<HRM.Entity.TransportVehicle> TransportVehicles { get; set; }
-
-        public System.Data.Entity.DbSet<HRM.Entity.CompanyPolicy> CompanyPolicies { get; set; }
+        public System.Data.Entity.DbSet<HRM.Entity.EmployeeBio> EmployeeBios { get; set; }
     }
 }

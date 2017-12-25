@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BiographyController.cs" />
     <Compile Include="Controllers\BonusesController.cs" />
     <Compile Include="Controllers\BudgetsController.cs" />
     <Compile Include="Controllers\CandidatesController.cs" />
@@ -174,6 +175,7 @@
     </Compile>
     <Compile Include="Models\HRMViewContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewAccessCodes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -315,6 +317,11 @@
     <Content Include="Views\Employees\IndividualDisplay.cshtml" />
     <Content Include="Views\SalaryPayments\IndividualSalaryInfo.cshtml" />
     <Content Include="Views\CompanyPolicies\ViewPolicies.cshtml" />
+    <Content Include="Views\Biography\Create.cshtml" />
+    <Content Include="Views\Biography\Delete.cshtml" />
+    <Content Include="Views\Biography\Details.cshtml" />
+    <Content Include="Views\Biography\Edit.cshtml" />
+    <Content Include="Views\Biography\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
