@@ -1,0 +1,48 @@
+﻿@using HRM.Entity.Facade
+@using HRM.Entity
+@{
+    ViewBag.Title = "PromotionLanding";
+}
+@{ 
+    var Rank = ViewBag.Rank;
+}
+
+
+
+<div class="container">
+    <h2>Promotion Portal </h2> <hr />
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-body">
+
+                    <h3>@ViewBag.Name</h3>
+                    <hr />
+                    <p>Salary Rank: </p> @ViewBag.RankName
+                    <br />
+                    <p>Basic Salary: </p> @ViewBag.RankValue
+                    <br />
+                    <ul class="nav navbar-nav">
+
+                        <li class="active dropdown">
+                            <a class="" data-toggle="dropdown">Change Rank<i class="caret"></i> </a>
+                            <ul class="dropdown-menu">
+                                @foreach (SalaryRank salRank in ViewBag.SalaryRanks)
+                                {
+                                    <li>@Html.ActionLink(salRank.RankName, "Promote", new { Id = ViewBag.Id, SalaryRankId = salRank.SalaryRankId })</li>
+                                }
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

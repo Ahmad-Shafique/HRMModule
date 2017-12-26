@@ -15,6 +15,8 @@ namespace HRM.View.Controllers
         private ICommonViewService CommonService = ServiceFactory.GetCommonViewService();
         private IDomainService<SalaryComponents> SalaryComponentsService = new ServiceFactory().Create<SalaryComponents>();
         private IDomainService<EmployeeSalary> SalaryService = new ServiceFactory().Create<EmployeeSalary>();
+        private IDomainService<SalaryRank> SalaryRankService = new ServiceFactory().Create<SalaryRank>();
+
 
         public ActionResult Index()
         {
@@ -24,12 +26,31 @@ namespace HRM.View.Controllers
             return View();
         }
 
-        public ActionResult Promote(int? Id)
+        public ActionResult PromotionLanding(int? Id, string Name)
         {
-            EmployeeSalary empSal = SalaryService.Get(Id);
-            empSal.SalaryRankId += 1;
+            var employeeSalary = SalaryService.GetAll().Single(item => item.EmployeeId == Id);
+            var Ranks = SalaryRankService.GetAll();
+            //ViewBag.Salary = employeeSalary;
+            ViewBag.Id = Id;
+            ViewBag.SalaryRanks = Ranks;
+            SalaryRank Rank = Ranks.Single(item => item.SalaryRankId == employeeSalary.SalaryRankId);
+            ViewBag.RankName = Rank.RankName;
+            ViewBag.RankValue = Rank.RankValue;
+            ViewBag.Name = Name;
+
+            return View();
+
+        }
+
+
+        public ActionResult Promote (int? Id, int SalaryRankId)
+        {
+            EmployeeSalary empSal = SalaryService.GetAll().Single(item => item.EmployeeId == Id);
+            empSal.SalaryRankId = SalaryRankId;
             SalaryService.Update(empSal, empSal.EmployeeSalaryId);
+
             return RedirectToAction("Index");
         }
+
     }
 }

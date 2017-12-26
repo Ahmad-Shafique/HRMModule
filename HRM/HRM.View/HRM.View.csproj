@@ -195,6 +195,7 @@
     <Content Include="Scripts\AdminLTE.min.css" />
     <Content Include="Scripts\bootstrap.min.css" />
     <Content Include="Scripts\font-awesome.min.css" />
+    <Content Include="Scripts\interviewScript.js" />
     <Content Include="Scripts\ionicons.min.css" />
     <Content Include="Scripts\js\adminlte.min.js" />
     <Content Include="Scripts\js\bootstrap.min.js" />
@@ -341,6 +342,7 @@
     <Content Include="Views\SupportingDocuments\Details.cshtml" />
     <Content Include="Views\SupportingDocuments\Edit.cshtml" />
     <Content Include="Views\SupportingDocuments\Index.cshtml" />
+    <Content Include="Views\EmployeePromotion\PromotionLanding.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

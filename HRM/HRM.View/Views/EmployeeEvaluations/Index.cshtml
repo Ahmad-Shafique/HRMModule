@@ -3,19 +3,34 @@
     ViewBag.Title = "Index";
 }
 
-<div class="container">
-    <ul class="nav navbar-nav">
 
-        <li class="active dropdown">
-            <a class="" data-toggle="dropdown">Select Department <i class="caret"></i> </a>
-            <ul class="dropdown-menu">
-                <li>@Html.ActionLink("First department", "EmployeeDisplay", new { DepartmentId = 1 })</li>
-                @foreach (Department dept in ViewBag.Departments)
-                {
-                    <li>@Html.ActionLink(dept.DepartmentName, "EmployeeDisplay", new { DepartmentId = dept.DepartmentId})</li>
-                }
-            </ul>
-        </li>
+<div style="text-align: center" class="container">
+    <h2>Application Entry</h2> <hr />
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <div class="container">
+                        <ul class="nav navbar-nav">
 
-    </ul>
+                            <li class="active dropdown">
+                                <a class="" data-toggle="dropdown">Select Department <i class="caret"></i> </a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("First department", "EmployeeDisplay", new { DepartmentId = 1 })</li>
+                                    @foreach (Department dept in ViewBag.Departments)
+                                    {
+                                        <li>@Html.ActionLink(dept.DepartmentName, "EmployeeDisplay", new { DepartmentId = dept.DepartmentId })</li>
+                                    }
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
