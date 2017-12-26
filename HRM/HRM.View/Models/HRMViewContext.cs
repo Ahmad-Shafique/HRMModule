@@ -22,5 +22,7 @@ namespace HRM.View.Models
         public System.Data.Entity.DbSet<HRM.Entity.EmployeeBio> EmployeeBios { get; set; }
 
         public System.Data.Entity.DbSet<HRM.Entity.LeaveApplication> LeaveApplications { get; set; }
+
+        public System.Data.Entity.DbSet<HRM.Entity.LeaveApplicationCategory> LeaveApplicationCategories { get; set; }
     }
 }

@@ -41,7 +41,10 @@
     <!--    notice optons-->
     <div id="NoticeOptions">
         <button type="button" class="btn" id="NoticeListbtn" disabled>View All</button>
-        @Html.ActionLink("Add New Notices", "Create", new { @class = "btn btn-primary btn-large" })
+        @if (Session["DisplayAccess"].ToString() != ViewAccessCodes.EmployeeViewCode)
+        {
+            @Html.ActionLink("Add New Notices", "Create", new { @class = "btn btn-primary btn-large" })
+        }
         @*<button type="button" class="btn" id="Createnoticebtn">"Add New Notices</button>*@
         <hr />
     </div>
@@ -70,12 +73,16 @@
                         <td>
                             <b>@notice.NoticeDate.Date</b>
                         </td>
-                        <td>
-                            @Html.ActionLink("Change notice", "Edit", new { id = notice.NoticeId }, new { @class = "btn btn-primary" })
-                        </td>
-                        <td>
-                            @Html.ActionLink("Remove notice", "Delete", new { id = notice.NoticeId }, new { @class = "btn btn-primary" })
-                        </td>
+                        @if (Session["DisplayAccess"].ToString() != ViewAccessCodes.EmployeeViewCode)
+                        {
+                            <td>
+                                @Html.ActionLink("Change notice", "Edit", new { id = notice.NoticeId }, new { @class = "btn btn-primary" })
+                            </td>
+                            <td>
+                                @Html.ActionLink("Remove notice", "Delete", new { id = notice.NoticeId }, new { @class = "btn btn-primary" })
+                            </td>
+                        }
+                        
                     </tr>
 
                     

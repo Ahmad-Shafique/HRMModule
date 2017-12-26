@@ -183,12 +183,12 @@ insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (1, 1);
 insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (2, 2);
 insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (3, 3);
 insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (4, 4);
-insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (5, 5);
-insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (6, 6);
-insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (7, 7);
-insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (8, 8);
-insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (9, 9);
-insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (10, 10);
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (5, 1);
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (6, 1);
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (7, 1);
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (8, 1);
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (9, 1);
+insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (10, 1);
 
 
 

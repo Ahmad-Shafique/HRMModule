@@ -38,6 +38,7 @@ namespace HRM.Service
             Repositories.Add(typeof(Interviewee), typeof(IntervieweeService));
             Repositories.Add(typeof(Interview), typeof(InterviewService));
             Repositories.Add(typeof(LeaveApplication), typeof(LeaveApplicationService));
+            Repositories.Add(typeof(LeaveApplicationCategory), typeof(LeaveApplicationCategoryService));
             Repositories.Add(typeof(NoticeEmployee), typeof(NoticeEmployeeService));
             Repositories.Add(typeof(Notice), typeof(NoticeService));
             Repositories.Add(typeof(Privilege), typeof(PrivilegeService));

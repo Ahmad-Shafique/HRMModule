@@ -161,6 +161,7 @@
     <Compile Include="Controllers\HireController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InterviewsController.cs" />
+    <Compile Include="Controllers\LeaveApplicationCategoriesController.cs" />
     <Compile Include="Controllers\LeaveApplicationsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NoticesController.cs" />
@@ -329,6 +330,11 @@
     <Content Include="Views\LeaveApplications\Edit.cshtml" />
     <Content Include="Views\LeaveApplications\Index.cshtml" />
     <Content Include="Views\LeaveApplications\LeaveApproval.cshtml" />
+    <Content Include="Views\LeaveApplicationCategories\Create.cshtml" />
+    <Content Include="Views\LeaveApplicationCategories\Delete.cshtml" />
+    <Content Include="Views\LeaveApplicationCategories\Details.cshtml" />
+    <Content Include="Views\LeaveApplicationCategories\Edit.cshtml" />
+    <Content Include="Views\LeaveApplicationCategories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
