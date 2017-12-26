@@ -17,11 +17,15 @@ namespace HRM.View.Controllers
         // GET: EmployeeEvaluation
         public ActionResult Index()
         {
+            if(Session["DisplayAccess"].ToString() == ViewAccessCodes.DepartmentHeadViewCode)
+            {
+                return RedirectToAction("EmployeeDisplay", new { DepartmentId = Session["DepartmentId"] });
+            }
             ViewBag.Departments = DepartmentService.GetAll();
             return View();
         }
 
-
+        
         public ActionResult EmployeeDisplay(int? DepartmentId)
         {
             IEnumerable<EmployeePerformance> result = CommonService.GetAllEmployeePerformance();

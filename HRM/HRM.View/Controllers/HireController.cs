@@ -18,6 +18,13 @@ namespace HRM.View.Controllers
         public ActionResult Index()
         {
             IEnumerable<HireRequest> hireReqs = HireRequestService.GetAll();
+
+            if(Session["DisplayAccess"].ToString() == ViewAccessCodes.DepartmentHeadViewCode)
+            {
+                int DepartmentId = Int32.Parse(Session["DepartmentId"].ToString());
+                hireReqs = hireReqs.Where(item => item.DepartmentId == DepartmentId);
+            }
+
             return View(hireReqs);
             //return View();
         }

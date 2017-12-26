@@ -16,10 +16,11 @@ namespace HRM.View.Controllers
     {
         private IDomainService<Employee> Service = new ServiceFactory().Create<Employee>();
         private ICommonViewService CommonService = ServiceFactory.GetCommonViewService();
+        private IDomainService<EmployeeDepartment> EmployeeDepartmentService = new ServiceFactory().Create<EmployeeDepartment>();
         // GET: Employee
         public  ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Display");
         }
 
         //Action for displaying employees
@@ -28,6 +29,24 @@ namespace HRM.View.Controllers
         {
             Console.WriteLine("*******************************   Entered display method");
             IEnumerable<Employee> empList =  Service.GetAll();
+            if(Session["DisplayAccess"].ToString() == ViewAccessCodes.DepartmentHeadViewCode)
+            {
+                int DepartmentId = Int32.Parse(Session["DepartmentId"].ToString());
+                IEnumerable<EmployeeDepartment> empDeptList = EmployeeDepartmentService.GetAll().Where(item => item.DepartmentId == DepartmentId);
+                List<int> IdsList = new List<int>();
+                foreach(EmployeeDepartment item in empDeptList)
+                {
+                    if (item.DepartmentId == DepartmentId) IdsList.Add(item.EmployeeId);
+                }
+                List<Employee> filteredList = new List<Employee>();
+                foreach(Employee emp in empList)
+                {
+                    if (IdsList.Contains(emp.EmployeeId)) filteredList.Add(emp);
+                }
+
+                return View(filteredList);
+            }
+            
             Console.WriteLine("Recieved list from db : " + empList);
             return View(empList);
         }

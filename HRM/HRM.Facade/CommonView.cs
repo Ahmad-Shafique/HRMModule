@@ -19,30 +19,36 @@ namespace HRM.Facade
             IEnumerable<Employee> employeeList = new RepositoryFactory().Create<Employee>().GetAll();
             IEnumerable<EmployeeBio> employeeBioList = new RepositoryFactory().Create<EmployeeBio>().GetAll();
             IEnumerable<EmployeePrivilege> employeePrivilegeList = new RepositoryFactory().Create<EmployeePrivilege>().GetAll();
+            IEnumerable<EmployeeDepartment> employeeDepartmentList = new RepositoryFactory().Create<EmployeeDepartment>().GetAll();
 
             try
             {
-                LoginObject returnable = new LoginObject(0, null, null, null, 0) ;
+                LoginObject returnable = new LoginObject(0, null, null, null, 0, DateTime.Now,0) ;
                 var result = from emp in employeeList
                              join empBio in employeeBioList on emp.EmployeeId equals empBio.EmployeeId
                              join empPriv in employeePrivilegeList on emp.EmployeeId equals empPriv.EmployeeId
+                             join empDept in employeeDepartmentList on emp.EmployeeId equals empDept.EmployeeId 
                              select new
                              {
                                  Id = emp.EmployeeId,
                                  Password = emp.EmployeePassword,
                                  Name = emp.EmployeeName,
                                  Image = empBio.Image,
-                                 privilege = empPriv.PrivilegeId
+                                 privilege = empPriv.PrivilegeId,
+                                 HireDate = empBio.HireDate,
+                                 DepartmentId = empDept.DepartmentId
                              };
                 var finalResult = result.Where(item => item.Id == id && item.Password == password);
                 if(finalResult != null)
                 {
                     foreach(var item in finalResult)
                     {
-                        Token token = new Token();
-                        token.Id = item.Id;
-                        token.PrivilegeToken = item.privilege.ToString();
-                        returnable = new LoginObject(item.Id, item.Name, item.Image, token, item.privilege);
+                        Token token = new Token
+                        {
+                            Id = item.Id,
+                            PrivilegeToken = item.privilege.ToString()
+                        };
+                        returnable = new LoginObject(item.Id, item.Name, item.Image, token, item.privilege, item.HireDate, item.DepartmentId);
                     }
                     
                 }
@@ -51,7 +57,7 @@ namespace HRM.Facade
             catch(Exception e)
             {
                 Console.WriteLine(e);
-                return new LoginObject(0, null, null, null, 0);
+                return new LoginObject(0, null, null, null, 0, DateTime.Now,0);
             }
         }
 

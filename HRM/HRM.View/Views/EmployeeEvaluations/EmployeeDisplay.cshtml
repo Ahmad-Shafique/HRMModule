@@ -30,8 +30,13 @@
                                         <td>@ep.TrainingScore %</td>
                                         <td>@ep.AttendanceScore %</td>
                                         <td>@ep.AggregateScore %</td>
-                                        <td>@Html.ActionLink("Award bonus", "Index", "Bonuses", new { Id = ep.EmployeeId }, new { @class = "btn btn-primary" })
-                                        </td>
+                                        @if (ep.EmployeeId.ToString() != Session["Id"].ToString())
+                                        {
+                                            <td>
+                                                @Html.ActionLink("Award bonus", "Index", "Bonuses", new { Id = ep.EmployeeId }, new { @class = "btn btn-primary" })
+                                            </td>
+                                        }
+                                        
                                     </tr>
                                 }
                             }

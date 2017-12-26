@@ -8,13 +8,15 @@ namespace HRM.Entity.Accessory
 {
     public class LoginObject
     {
-        public LoginObject(int id, string name, string image, Token token ,int accessCode)
+        public LoginObject(int id, string name, string image, Token token ,int accessCode, DateTime hireDate, int departmentId)
         {
             this.Id = id;
             this.Name = name;
             this.Image = image;
             this.Token = token;
             this.ViewAccessCode = accessCode;
+            this.HireDate = hireDate;
+            this.DepartmentId = departmentId;
         }
 
         public int Id { get; }
@@ -22,5 +24,7 @@ namespace HRM.Entity.Accessory
         public string Image { get; }
         public Token Token { get; }
         public int ViewAccessCode { get; }
+        public DateTime HireDate { get; }
+        public int DepartmentId { get; }
     }
 }

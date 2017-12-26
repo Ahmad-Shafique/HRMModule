@@ -34,7 +34,13 @@ namespace HRM.View.Controllers
                     Session["Image"] = obj.Image;
                     Session["Token"] = obj.Token;
                     Session["DisplayAccess"] = obj.ViewAccessCode;
-                    return RedirectToAction("Display", "Employees");
+                    Session["HireDate"] = obj.HireDate;
+                    if(obj.ViewAccessCode == 2)
+                    {
+                        Session["DepartmentId"] = obj.DepartmentId;
+                    }
+                    if (obj.ViewAccessCode == 1) return RedirectToAction("Index", "Notices");
+                    else return RedirectToAction("Display", "Employees");
                 }
                 else
                 {

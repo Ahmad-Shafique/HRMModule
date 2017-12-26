@@ -101,7 +101,7 @@ desired effect
 
                                         <p>
                                             @Session["Name"] 
-                                            <small>Member since Nov. 2012</small>
+                                            <small>Member since @Session["HireDate"].ToString().AsDateTime().Date</small>
                                         </p>
                                     </li>
                                     <!-- Menu Footer-->

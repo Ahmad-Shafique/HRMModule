@@ -54,6 +54,7 @@ namespace HRM.View.Controllers
         {
             if (ModelState.IsValid)
             {
+                leaveApplication.EmployeeId = Int32.Parse(Session["Id"].ToString());
                 Service.Insert(leaveApplication);
                 return RedirectToAction("Index");
             }
