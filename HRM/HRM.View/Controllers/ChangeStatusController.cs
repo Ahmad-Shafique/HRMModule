@@ -1,5 +1,6 @@
 ﻿using HRM.Entity;
 using HRM.Service;
+using HRM.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace HRM.View.Controllers
 {
     public class ChangeStatusController : Controller
     {
+        private IDomainService<Employee> Service = new ServiceFactory().Create<Employee>();
+
         // GET: ChangeStatus
         public ActionResult Index()
         {
@@ -31,9 +34,9 @@ namespace HRM.View.Controllers
 
         public ActionResult Change(int Id, string Status)
         {
-            Employee emp = new ServiceFactory().Create<Employee>().Get(Id);
+            Employee emp = Service.Get(Id);
             emp.Status = Status;
-            new ServiceFactory().Create<Employee>().Update(emp, emp.EmployeeId);
+            Service.Update(emp, emp.EmployeeId);
             return RedirectToAction("Index");
         }
     }

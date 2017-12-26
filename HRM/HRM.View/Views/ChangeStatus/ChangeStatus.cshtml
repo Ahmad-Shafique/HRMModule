@@ -4,7 +4,7 @@
 }
 
 
-<div style="text-align: center" class="container">
+<div class="container">
     <h2>Change Status</h2> <hr />
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -30,7 +30,6 @@
                                 <li>@Html.ActionLink("active", "Change", new { Id = ViewBag.EmployeeId, Status = "active" })</li>
                                 <li>@Html.ActionLink("on leave", "Change", new { Id = ViewBag.EmployeeId, Status = "onLeave" })</li>
                                 <li>@Html.ActionLink("former", "Change", new { Id = ViewBag.EmployeeId, Status = "former" })</li>
-
 
                             </ul>
                         </li>
