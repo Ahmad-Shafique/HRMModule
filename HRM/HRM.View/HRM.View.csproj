@@ -168,6 +168,7 @@
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\SalaryPaymentsController.cs" />
     <Compile Include="Controllers\SalaryRanksController.cs" />
+    <Compile Include="Controllers\SupportingDocumentsController.cs" />
     <Compile Include="Controllers\TrainingsController.cs" />
     <Compile Include="Controllers\TransportAreasController.cs" />
     <Compile Include="Controllers\TransportationsController.cs" />
@@ -335,6 +336,11 @@
     <Content Include="Views\LeaveApplicationCategories\Details.cshtml" />
     <Content Include="Views\LeaveApplicationCategories\Edit.cshtml" />
     <Content Include="Views\LeaveApplicationCategories\Index.cshtml" />
+    <Content Include="Views\SupportingDocuments\Create.cshtml" />
+    <Content Include="Views\SupportingDocuments\Delete.cshtml" />
+    <Content Include="Views\SupportingDocuments\Details.cshtml" />
+    <Content Include="Views\SupportingDocuments\Edit.cshtml" />
+    <Content Include="Views\SupportingDocuments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

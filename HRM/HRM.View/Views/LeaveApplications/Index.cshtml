@@ -12,13 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.LeaveApplicationCategoryId)
+            <b>Category</b>
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ApplicationDescription)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LeaveApplicationDuration)
+            <b>Duration</b>
         </th>
         <th>
             @Html.DisplayNameFor(model => model.StartDate)
@@ -30,11 +30,9 @@
             @Html.DisplayNameFor(model => model.Applydate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ApplicationsStatus)
+            <b>Status</b>
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EmployeeId)
-        </th>
+        <th></th>
         <th></th>
     </tr>
 
@@ -62,12 +60,12 @@
             @Html.DisplayFor(modelItem => item.ApplicationsStatus)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EmployeeId)
-        </td>
-        <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.LeaveApplicationId }) |
             @Html.ActionLink("Details", "Details", new { id=item.LeaveApplicationId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.LeaveApplicationId })
+        </td>
+        <td>
+            @Html.ActionLink("Manage supporting documents", "Index", "SupportingDocuments", new { MainId = item.LeaveApplicationId }, null) 
         </td>
     </tr>
 }
