@@ -18,7 +18,7 @@
                         <table style="width: 100%; text-align:center" class="table table-striped">
                             <tr>
                                 <th>Urgency</th>
-                                <th>Rank</th>
+                                @*<th>Rank</th>*@
                                 <th>Designation</th>
                                 <th>Required Employee</th>
                                 <th>Action</th>
@@ -27,11 +27,11 @@
                             {
                                 <tr>
                                     <td>@hire.Urgency</td>
-                                    <td>@hire.DesignationName</td>
+                                    @*<td>@hire.DesignationName</td>*@
                                     <td>@hire.DesignationName</td>
                                     <td>@hire.EmployeeRequired</td>
                                     <td>
-                                        @Html.ActionLink("Edit", "Edit", new { id = hire.HireRequestId } ,  new { @class="btn btn-primary"}) 
+                                        @*@Html.ActionLink("Edit", "Edit", new { id = hire.HireRequestId } ,  new { @class="btn btn-primary"})*@ 
                                         @Html.ActionLink("Details", "Details", new { id = hire.HireRequestId }, new { @class = "btn btn-primary" }) 
                                         @Html.ActionLink("Delete", "Delete", new { id = hire.HireRequestId },  new { @class = "btn btn-primary" })
                                     </td>

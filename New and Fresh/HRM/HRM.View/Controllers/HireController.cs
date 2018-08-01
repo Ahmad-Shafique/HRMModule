@@ -80,8 +80,11 @@ namespace HRM.View.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "HireRequestId,DesignationName,EmployeeRequired,RequestDate,Urgency,HireRequestStatus,DepartmentId")] HireRequest hireRequest)
+        public ActionResult Create([Bind(Include = "HireRequestId,DesignationName,EmployeeRequired,Urgency")] HireRequest hireRequest)
         {
+            hireRequest.RequestDate = DateTime.Now;
+            hireRequest.HireRequestStatus = 0;
+            if (Session["DepartmentId"] != null) hireRequest.DepartmentId = Int32.Parse(Session["DepartmentId"].ToString());
             if (ModelState.IsValid)
             {
                 HireRequestService.Insert(hireRequest);
@@ -111,8 +114,10 @@ namespace HRM.View.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "HireRequestId,DesignationName,EmployeeRequired,RequestDate,Urgency,HireRequestStatus,DepartmentId")] HireRequest hireRequest)
+        public ActionResult Edit([Bind(Include = "HireRequestId,DesignationName,EmployeeRequired,Urgency,HireRequestStatus")] HireRequest hireRequest)
         {
+            if (Session["DepartmentId"] != null) hireRequest.DepartmentId = Int32.Parse(Session["DepartmentId"].ToString());
+
             if (ModelState.IsValid)
             {
                 HireRequestService.Update(hireRequest, hireRequest.HireRequestId);
