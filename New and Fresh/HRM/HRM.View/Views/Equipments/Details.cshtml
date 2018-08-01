@@ -1,0 +1,42 @@
+﻿@model HRM.Entity.Equipment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Equipment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipmentTypeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipmentTypeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BuyPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuyPrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EquipmentId }) |
+    @Html.ActionLink("Back to List", "Manage")
+</p>

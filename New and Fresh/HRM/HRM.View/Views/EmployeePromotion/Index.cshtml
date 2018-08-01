@@ -1,0 +1,65 @@
+﻿@using HRM.Entity;
+@using HRM.Entity.Facade;
+@{
+    ViewBag.Title = "Employee Promotion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="text-align: center" class="container">
+    <h2>Employee Promotion</h2> <hr />
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <table class="table table-striped" style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th style="padding-left: 5%">Employee</th>
+                                <th style="padding-left: 5%">Change Grade</th>
+                                <th style="padding-left: 5%">Recommended</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (ViewBag.Employees != null)
+                            {
+                                foreach (EmployeePromotion ep in ViewBag.Employees)
+                                {
+                                    <tr>
+                                        <td>
+                                            @ep.EmployeeName<br />
+                                            Salary Grade# @ep.SalaryRankId <br />
+                                            Current Rank name: @ep.RankName <br />
+                                            Basic Salary: @ep.BasicSalary<br />
+                                            Standard benefits
+                                            
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Promote" , "PromotionLanding", "EmployeePromotion", new { Id=ep.EmployeeId, Name=ep.EmployeeName } ,new { @class="btn btn-primary" })<br />
+                                            Next Salary Rank : 3<br />
+                                            Next Rank title : Project manager<br />
+                                            Next rank basic salary: 70000 taka
+                                        </td>
+                                        <td>
+                                        @if (ep.RecommendationStatus == 1)
+                                        {
+                                            <p><b>Promotion recommended</b></p>
+                                        }
+                                        else if(ep.RecommendationStatus == 0 ){
+                                            <p>No recommendations</p>
+                                        }
+                                        else
+                                        {
+                                            <p><b>WARNING!! Low performing employee</b></p>
+                                        }
+                                        </td>
+
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

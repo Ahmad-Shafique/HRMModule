@@ -1,0 +1,62 @@
+﻿@model IEnumerable<HRM.Entity.Employee>
+@using HRM.Entity;
+@{
+    ViewBag.Title = "Display";
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+@section scripts{
+    
+}
+
+<div style="text-align: center" class="container">
+    <h2>Employees</h2> <hr />
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading" style="background-color:black">
+                    <div class="row">
+                        <form action="/Employees/Display" id="searchForm" method="post">
+                            <div class="form-group col-md-3 col-md-offset-8" style="padding-right: 0">
+                                <input id="searchTerm" class="form-control" type="text" name="searchTerm" placeholder="Search by name" />
+                            </div>
+                            <div class="col-md-1">
+                                <button id="searchButton" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table style="width: 100%">
+                        @foreach (Employee emp in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <img src="~/images/user-image-with-black-background_318-34564.jpg" height="100" width="100" /> 
+                                </td>
+                                <td>
+                                    @emp.EmployeeName <br />
+                                    @(DateTime.Now.Year - emp.DateofBirth.Year) years old <br />
+                                    @*@emp.Designation <br />*@
+                                </td>
+                                <td>
+                                    @if(Session["DisplayAccess"].ToString() == ViewAccessCodes.HRExecutiveViewCode || Session["DisplayAccess"].ToString() == ViewAccessCodes.HRHeadViewCode)
+                                    {
+                                        @Html.ActionLink("Edit", "Edit", new { id = emp.EmployeeId })
+                                    }
+                                     | @Html.ActionLink("Details", "Details", new { id = emp.EmployeeId }) | 
+                                    @if(Session["DisplayAccess"].ToString() == ViewAccessCodes.HRHeadViewCode)
+                                    {
+                                         @Html.ActionLink("Delete", "Delete", new { id = emp.EmployeeId })
+                                    }
+                                    
+                                </td>
+                            </tr>
+                            <tr><td colspan="2"><hr /></td></tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

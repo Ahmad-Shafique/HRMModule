@@ -1,0 +1,77 @@
+﻿@using HRM.Entity;
+@{
+    ViewBag.Title = "Index";
+}
+@section scripts 
+{
+    @*<script src="~/Scripts/interviewScript.js"></script>*@
+}
+
+<div style="text-align: center">
+    <h2>Current Interview Schedules</h2>
+    <hr />
+
+    <table style="width: 100%">
+        <thead>
+            <tr>
+                <td>Interview</td>
+                <td>Schedule</td>
+                <td>Start time</td>
+                <td>End time</td>
+                <td>Candidates</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Interview interview in ViewBag.Interviews)
+            {
+                <tr>
+                    <td>@interview.InterviewId</td>
+                    <td>@interview.Schedule.Day/@interview.Schedule.Month/@interview.Schedule.Year</td>
+                    <td>@interview.StartTime.TimeOfDay</td>
+                    <td>@interview.EndTime.TimeOfDay</td>
+                    <td>5</td>
+                    <td>
+                        <button id="buttonCandidateAddition" class="btn btn-primary" data-toggle="modal" data-target="#candidateModal">Add Cadidate</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button id="buttonInterviewAddition" class="btn btn-primary" data-toggle="modal" data-target="#interviewModal">Create Interview</button><br />
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="candidateModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">Candidate list</div>
+                <div class="modal-body">
+                    @foreach (Interviewee pers in ViewBag.Interviewees)
+                    {
+                        @pers.IntervieweeId<input type="checkbox" name="EnabledCandidates" value="@pers.IntervieweeId" />
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button id="buttonConfirmCandidates" class="btn btn-block" data-dismiss="modal">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="interviewModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">Interview Schedule</div>
+                <div class="modal-body">
+                    <input class="form-control" type="date" name="schedule" placeholder="Interview Schedule" id="scheduleText" />
+                </div>
+                <div class="modal-footer">
+                    <button id="CreateInterview" class="btn btn-block" data-dismiss="modal">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<HRM.Entity.Facade.EmployeeTotalSalary>
+@using HRM.Entity;
+@{
+    ViewBag.Title = "SalaryComponents";
+}
+
+<h2>SalaryComponents</h2>
+
+<div class="container" style="text-align: center">
+    <h2>Salary Details</h2> <hr />
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <table class="table table-striped" style="width: 100%">
+                        <tr>
+                            <th style="text-align: center">Employee</th>
+                            <th style="text-align: center">Select Grade</th>
+                            <th style="text-align: center">Recomended</th>
+                        </tr>
+                      
+                        @foreach (EmployeeTotalSalary es in Model)
+                        {
+                            <tr>
+                                <td>@es.EmployeeName</td>
+                                <td>Taka: @es.TotalSalary </td>
+                                <td><button class="btn btn-primary">Pay</button></td>
+
+                            </tr>
+                        }
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

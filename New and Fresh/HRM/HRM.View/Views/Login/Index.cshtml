@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div style="text-align: center" class="container">
+    <h2>Application Entry</h2> <hr />
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <form action="/Login/VerifyUser" method="post">
+                        UserId: <br />
+                        <input type="text" placeholder="121" name="Id" />
+                        <br />
+                        <br />
+                        Password: <br />
+                        <input type="password" placeholder="3212121" name="Password" />
+                        <br />
+                        <button type="submit">Log in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

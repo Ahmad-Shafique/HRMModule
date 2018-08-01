@@ -1,0 +1,46 @@
+﻿@using HRM.Entity;
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div style="text-align: center" class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <ul class="nav navbar-nav">
+
+                        <li class="active dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Choose Department to manage equipment</a>
+                            <ul class="dropdown-menu">
+                                @foreach (Department dept in ViewBag.Departments)
+                                {
+                                    <li>
+                                        
+                                        @Html.ActionLink(dept.DepartmentName, "Equip", new { Id = dept.DepartmentId } , new { @class="btn btn-default"})
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                        <li>
+                            @Html.ActionLink("Manage equipment" , "Manage" , null , new { @class="btn btn-block" })
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    
+</div>
+
+
+
+

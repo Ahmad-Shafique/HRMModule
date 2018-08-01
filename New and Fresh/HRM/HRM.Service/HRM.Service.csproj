@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB917A7B-91D1-47C8-A663-941CBF035B0A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HRM.Service</RootNamespace>
+    <AssemblyName>HRM.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdvertiserListService.cs" />
+    <Compile Include="AttendanceService.cs" />
+    <Compile Include="BonusesService.cs" />
+    <Compile Include="BonusService.cs" />
+    <Compile Include="CircularTemplateService.cs" />
+    <Compile Include="CommonViewService.cs" />
+    <Compile Include="CompanyPolicyService.cs" />
+    <Compile Include="DepartmentDesignationService.cs" />
+    <Compile Include="DepartmentHistoryService.cs" />
+    <Compile Include="DepartmentService.cs" />
+    <Compile Include="DesignationService.cs" />
+    <Compile Include="DomainService.cs" />
+    <Compile Include="EmployeeAttendanceService.cs" />
+    <Compile Include="EmployeeBioService.cs" />
+    <Compile Include="EmployeeDepartmentService.cs" />
+    <Compile Include="EmployeeDesignationService.cs" />
+    <Compile Include="EmployeePerformanceMetricService.cs" />
+    <Compile Include="EmployeePrivilegeService.cs" />
+    <Compile Include="EmployeeSalaryService.cs" />
+    <Compile Include="EmployeeService.cs" />
+    <Compile Include="EmployeeHistoryService.cs" />
+    <Compile Include="EquipmentService.cs" />
+    <Compile Include="HireRequestService.cs" />
+    <Compile Include="HireThreadService.cs" />
+    <Compile Include="Interfaces\IAdvertiserListService.cs" />
+    <Compile Include="Interfaces\ICommonViewService.cs" />
+    <Compile Include="Interfaces\IDomainService.cs" />
+    <Compile Include="IntervieweeService.cs" />
+    <Compile Include="InterviewService.cs" />
+    <Compile Include="LeaveApplicationCategoryService.cs" />
+    <Compile Include="LeaveApplicationService.cs" />
+    <Compile Include="NoticeCommentService.cs" />
+    <Compile Include="NoticeEmployeeService.cs" />
+    <Compile Include="NoticeService.cs" />
+    <Compile Include="PrivilegeService.cs" />
+    <Compile Include="ProjectEmployeeService.cs" />
+    <Compile Include="ProjectService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalaryComponentsService.cs" />
+    <Compile Include="SalaryRankService.cs" />
+    <Compile Include="SalgradeHistory.cs" />
+    <Compile Include="SalgradeService.cs" />
+    <Compile Include="ServiceFactory.cs" />
+    <Compile Include="SupportingDocumentService.cs" />
+    <Compile Include="TemporaryCVService.cs" />
+    <Compile Include="TrainingEmployeeService.cs" />
+    <Compile Include="TrainingService.cs" />
+    <Compile Include="TransportAreaService.cs" />
+    <Compile Include="TransportVehicleService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HRM.DataAccessController\HRM.DataAccessController.csproj">
+      <Project>{6e675b0f-2176-44a9-aafc-4b89c92eec1f}</Project>
+      <Name>HRM.DataAccessController</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HRM.Entity\HRM.Entity.csproj">
+      <Project>{86E8C7B0-F401-4F4A-8BE1-FFADC30C7257}</Project>
+      <Name>HRM.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HRM.Facade\HRM.Facade.csproj">
+      <Project>{3D73C751-B9E6-4BAD-8918-73971BB3099B}</Project>
+      <Name>HRM.Facade</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

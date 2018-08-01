@@ -1,0 +1,90 @@
+﻿@model IEnumerable<HRM.Entity.LeaveApplication>
+
+@{
+    ViewBag.Title = "LeaveApproval";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveApplicationCategoryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveApplicationDuration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndtDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Applydate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationsStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeaveApplicationCategoryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeaveApplicationDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndtDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Applydate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationsStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeId)
+            </td>
+            <td>
+                @Html.ActionLink("Approve", "Approve", new { id = item.LeaveApplicationId }, new { @class = "btn btn-primary" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

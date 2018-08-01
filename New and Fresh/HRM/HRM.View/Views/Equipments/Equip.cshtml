@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Equip";
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/equipmentScript.js"></script>
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />*@
+</head>
+<body>
+    <p id="departmentId" hidden>@ViewBag.DepartmentId</p>
+    <h1>@ViewBag.DepartmentName</h1>
+    <div>
+        @foreach (var item in ViewBag.Equipments)
+        {
+            <input type="checkbox" name="EnabledEquipment" value="@item.EquipmentId" />
+            <p><b><strong>          Equipment Name</strong></b></p>
+        }
+    </div>
+
+    <button id="buttonAssignEquipment" class="btn btn-primary" >Assign Equipmemt</button>
+
+
+</body>
+</html>
+
+
+

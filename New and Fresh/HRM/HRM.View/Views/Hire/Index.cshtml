@@ -1,0 +1,53 @@
+﻿@using HRM.Entity;
+@model IEnumerable<HireRequest>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts {
+<script src="~/Scripts/HireScripts/indexScripts.js"></script>
+}
+
+<div style="text-align: center" class="container">
+    <h2>Department Name</h2> <hr />
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-info">
+                <form action="/Hire/ConfirmHires" method="post">
+                    <div class="panel-body">
+                        <table style="width: 100%; text-align:center" class="table table-striped">
+                            <tr>
+                                <th>Urgency</th>
+                                <th>Rank</th>
+                                <th>Designation</th>
+                                <th>Required Employee</th>
+                                <th>Action</th>
+                            </tr>
+                            @foreach (HireRequest hire in Model)
+                            {
+                                <tr>
+                                    <td>@hire.Urgency</td>
+                                    <td>@hire.DesignationName</td>
+                                    <td>@hire.DesignationName</td>
+                                    <td>@hire.EmployeeRequired</td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = hire.HireRequestId } ,  new { @class="btn btn-primary"}) 
+                                        @Html.ActionLink("Details", "Details", new { id = hire.HireRequestId }, new { @class = "btn btn-primary" }) 
+                                        @Html.ActionLink("Delete", "Delete", new { id = hire.HireRequestId },  new { @class = "btn btn-primary" })
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

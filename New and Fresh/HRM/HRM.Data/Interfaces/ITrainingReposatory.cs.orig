@@ -1,0 +1,21 @@
+<<<<<<< HEAD
+﻿using HRM.Entity;
+using System;
+=======
+﻿using System;
+>>>>>>> 08dbc42a29f76af19054f27c53b671679bd7686a
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HRM.Data.Interfaces
+{
+<<<<<<< HEAD
+    public interface ITrainingReposatory : IReposatory<Training>
+=======
+    interface ITrainingReposatory
+>>>>>>> 08dbc42a29f76af19054f27c53b671679bd7686a
+    {
+    }
+}

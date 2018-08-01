@@ -1,0 +1,250 @@
+﻿@model IEnumerable<HRM.Entity.Facade.EmployeeTotalSalary>
+@using HRM.Entity.Facade;
+@using HRM.Entity;
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+
+<div onload="myChart()" class="container" style="text-align: center">
+    <h2>Salary Details</h2> <hr />
+
+
+    <div class="=row" style="height:400px;">
+        <div class="col-sm-6">
+            <canvas id="totalSalaryChart"></canvas>
+        </div>
+
+        <div  class="col-sm-6">
+            <canvas id="totalBonusChart"></canvas>
+        </div>
+    </div>
+    
+
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    
+                    <table class="table table-striped" style="width: 100%">
+                        <tr>
+                            <th style="text-align: center">Employee</th>
+                            <th style="text-align: center">Basic Salary</th>
+                            <th style="text-align: center">Bonus</th>
+                            <th style="text-align: center">Total Salary</th>
+                            <th style="text-align: center">Action</th>
+                        </tr>
+                        @*@foreach(var item in ViewBag.Employees)
+                        {
+                            <tr>
+                                <td>@item.EmployeeName</td>
+                            </tr>
+                        }*@
+                        @foreach (EmployeeTotalSalary es in ViewBag.EmployeeTotalSalary)
+                        {
+                            <tr>
+                                <td>@es.EmployeeName</td>
+                                <td>Taka: @es.BasicSalary </td>
+                                <td>Taka: @es.BonusSalary</td>
+                                <td>Taka: @es.TotalSalary  @Html.ActionLink("Details", "IndividualSalaryInfo",new { id=es.EmployeeId}, new { @class="btn btn-default"})</td>
+                                <td><button class="btn btn-primary">Pay</button></td>
+
+                            </tr>
+                        }
+                    </table>
+
+
+                    @Html.ActionLink("Show employee comprehensive evaluation" , "EmployeeDisplay", "EmployeeEvaluations" ,
+                                       null,  new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <p id="totalSalaryChartNameData" hidden>@ViewBag.totalSalaryChartNameData</p>
+    <p id="totalSalaryChartValueData" hidden>@ViewBag.totalSalaryChartValueData</p>
+    <p id="totalBonusChartNameData" hidden>@ViewBag.totalBonusChartNameData</p>
+    <p id="totalBonusChartValueData" hidden>@ViewBag.totalBonusChartValueData</p>
+</div>
+
+
+<script>
+    console.log(document.getElementById("totalSalaryChartNameData").innerHTML);
+    console.log(document.getElementById("totalSalaryChartValueData").innerHTML);
+</script>
+<script>
+    //alert("hmm");
+    //alert(document.getElementById("totalSalaryChartNameData").innerHTML);
+    //var cars = ["Saab", "Volvo", "BMW"];
+    //var p = [100, 200, 300];
+    var nameData = document.getElementById("totalSalaryChartNameData").innerHTML;
+    var Salarydata = document.getElementById("totalSalaryChartValueData").innerHTML;
+    //console.log(nameData);
+    var ChartNameData = nameData.split(",");
+    var ChartValueData = Salarydata.split(",").map(Number);
+
+    //alert(nameData);
+    var ctx = document.getElementById("totalSalaryChart");
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: ChartNameData,
+            datasets: [{
+                label: '#Highest Paid Employee',
+                //data: [12, 19, 3, 5, 2, 3],
+                data: ChartValueData,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+
+</script>
+
+<script>
+    //alert("hmm");
+    //alert(document.getElementById("totalSalaryChartNameData").innerHTML);
+    //var cars = ["Saab", "Volvo", "BMW"];
+    //var p = [100, 200, 300];
+    var nameData = document.getElementById("totalBonusChartNameData").innerHTML;
+    var Bonusdata = document.getElementById("totalBonusChartValueData").innerHTML;
+    //console.log(nameData);
+    var ChartNameData = nameData.split(",");
+    var ChartValueData = Bonusdata.split(",").map(Number);
+
+    //alert(nameData);
+    var ctx = document.getElementById("totalBonusChart");
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: ChartNameData,
+            datasets: [{
+                label: '#Highest Performer Employee',
+                //data: [12, 19, 3, 5, 2, 3],
+                data: ChartValueData,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+
+</script>
+
+
+
+
+
+@*<script>
+
+    var areaChartData = {
+        labels: document.getElementById("totalSalaryChartNameData").innerHTML,
+        datasets: [
+            {
+                label: 'Electronics',
+                fillColor: 'rgba(210, 214, 222, 1)',
+                strokeColor: 'rgba(210, 214, 222, 1)',
+                pointColor: 'rgba(210, 214, 222, 1)',
+                pointStrokeColor: '#c1c7d1',
+                pointHighlightFill: '#fff',
+                pointHighlightStroke: 'rgba(220,220,220,1)',
+                data: document.getElementById("totalSalaryChartValueData").innerHTML,
+            }
+        ]
+    }
+
+    //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = document.getElementById('totalSalaryChart').getContext('2d')
+    var barChart = new Chart(barChartCanvas)
+    var barChartData = areaChartData
+    barChartData.datasets[0].fillColor = '#00a65a'
+    barChartData.datasets[0].strokeColor = '#00a65a'
+    barChartData.datasets[0].pointColor = '#00a65a'
+    var barChartOptions = {
+        //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+        scaleBeginAtZero: true,
+        //Boolean - Whether grid lines are shown across the chart
+        scaleShowGridLines: true,
+        //String - Colour of the grid lines
+        scaleGridLineColor: 'rgba(0,0,0,.05)',
+        //Number - Width of the grid lines
+        scaleGridLineWidth: 1,
+        //Boolean - Whether to show horizontal lines (except X axis)
+        scaleShowHorizontalLines: true,
+        //Boolean - Whether to show vertical lines (except Y axis)
+        scaleShowVerticalLines: true,
+        //Boolean - If there is a stroke on each bar
+        barShowStroke: true,
+        //Number - Pixel width of the bar stroke
+        barStrokeWidth: 2,
+        //Number - Spacing between each of the X value sets
+        barValueSpacing: 5,
+        //Number - Spacing between data sets within X values
+        barDatasetSpacing: 1,
+        //String - A legend template
+        legendTemplate: '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].fillColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
+        //Boolean - whether to make the chart responsive
+        responsive: true,
+        maintainAspectRatio: true
+    }
+
+    barChartOptions.datasetFill = false
+    barChart.Bar(barChartData, barChartOptions)
+</script>*@
