@@ -1,4 +1,6 @@
-﻿@using HRM.Entity;
+﻿@model HRM.Entity.NoticeComment
+
+@using HRM.Entity;
 @{
     ViewBag.Title = "Details";
 }
@@ -48,17 +50,42 @@
             @ViewBag.NoticeDetails
         </p>
         <p style="color:blue">Seen By :  30</p>
-        <input id="commentText" type="text" width="100" placeholder="Write a comment..." />
-        <input id="commentSubmit" type="submit" value="Comment" />
+        @*<input id="commentText" type="text" width="100" placeholder="Write a comment..." />
+        <input id="commentSubmit" type="submit" value="Comment" />*@
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Notice</h4>
+            @*@Html.HiddenFor(model => model.NoticeId, ViewBag.NoticeId);*@
+            @Html.EditorFor(model => model.NoticeId, new { htmlAttributes = new { @class = "form-control", @style = "display: none", @Value = ViewBag.NoticeId } })
+            @Html.EditorFor(model => model.EmployeeId, new { htmlAttributes = new { @class = "form-control", @style = "display: none", @Value = ViewBag.NoticeId } })
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Make comment" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+        }
     </div>
 
     <button type="button" class="btn" id="Showcomment">Show Comments</button>
     <div id="commentsDiv" hidden>
         @foreach (NoticeComment comment in ViewBag.Comments)
         {
-            <hr/>
+            <hr />
             <a><b>@comment.EmployeeName</b></a>
-            <br/>@comment.Comment
+            <br />@comment.Comment
         }
     </div>
 </body>
@@ -72,3 +99,6 @@
         $.post("/Notices/SubmitComment", data);
     });
 </script>
+
+
+

@@ -1,8 +1,10 @@
 ﻿using HRM.Entity;
+using HRM.Entity.DevAccessory;
 using HRM.Service;
 using HRM.Service.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -15,6 +17,7 @@ namespace HRM.View.Controllers
     {
         private IDomainService<Notice> service = new ServiceFactory().Create<Notice>();
         private IDomainService<NoticeComment> CommentService = new ServiceFactory().Create<NoticeComment>();
+        
 
 
         public  ActionResult Index()
@@ -46,7 +49,33 @@ namespace HRM.View.Controllers
             
             IEnumerable<NoticeComment> comments =  CommentService.GetAll();
             ViewBag.Comments = comments.Where(item => item.NoticeId == entity.NoticeId);
+
+
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Details(NoticeComment noticeComment)
+        {
+            if (noticeComment.Comment != null)
+            {
+                noticeComment.EmployeeId = Int32.Parse(Session["Id"].ToString());
+                noticeComment.EmployeeName = Session["Name"].ToString();
+
+                if (Debugger.IsAttached)
+                {
+                    Output.Write("Inside Notice comment section");
+                    Output.Write("noticeComment contains: " + noticeComment.Comment + " : " + noticeComment.NoticeId
+                        + " : " + noticeComment.EmployeeName);
+                }
+
+                CommentService.Insert(noticeComment);
+
+
+            }
+
+            return RedirectToAction("Details", noticeComment.NoticeId);
         }
 
 
@@ -63,7 +92,7 @@ namespace HRM.View.Controllers
         {
             if (ModelState.IsValid)
             {
-                 service.Insert(entity);
+                service.Insert(entity);
                 return RedirectToAction("Index");
             }
 
