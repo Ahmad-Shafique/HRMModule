@@ -5,7 +5,7 @@
 
 
 <div style="text-align: center" class="container">
-    <h2>Application Entry</h2> <hr />
+    <h2>Employees</h2> <hr />
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-info">
@@ -16,7 +16,7 @@
                             <li class="active dropdown">
                                 <a class="" data-toggle="dropdown">Select Department <i class="caret"></i> </a>
                                 <ul class="dropdown-menu">
-                                    <li>@Html.ActionLink("First department", "EmployeeDisplay", new { DepartmentId = 1 })</li>
+                                    <li>@Html.ActionLink("Sample only department", "EmployeeDisplay", new { DepartmentId = 1 })</li>
                                     @foreach (Department dept in ViewBag.Departments)
                                     {
                                         <li>@Html.ActionLink(dept.DepartmentName, "EmployeeDisplay", new { DepartmentId = dept.DepartmentId })</li>
