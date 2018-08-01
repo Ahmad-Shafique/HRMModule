@@ -31,7 +31,7 @@ namespace HRM.Data
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error in fetching data list : " + e);
+                System.Diagnostics.Debug.WriteLine("Error in fetching data list : " + e);
                 return new List<TEntity>();
             }
             
@@ -48,7 +48,7 @@ namespace HRM.Data
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error in fetching data : " + e);
+                Debug.WriteLine("Error in fetching data : " + e);
                 return context.Set<TEntity>().First();
             }
             
@@ -66,7 +66,7 @@ namespace HRM.Data
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Debug.WriteLine(e);
                 return false;
             }
         }
@@ -90,7 +90,7 @@ namespace HRM.Data
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error in data update : " + e);
+                Debug.WriteLine("Error in data update : " + e);
                 return false;
             }
         }
@@ -108,7 +108,7 @@ namespace HRM.Data
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error in data deletion : " + e);
+                Debug.WriteLine("Error in data deletion : " + e);
                 return false;
             }
 
