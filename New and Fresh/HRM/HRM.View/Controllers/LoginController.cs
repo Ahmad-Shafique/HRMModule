@@ -50,6 +50,7 @@ namespace HRM.View.Controllers
                         Session["Token"] = obj.Token;
                         Session["DisplayAccess"] = obj.ViewAccessCode;
                         Session["HireDate"] = obj.HireDate;
+                        Session["EmployeeBioId"] = obj.EmployeeBioId;
                         if (obj.ViewAccessCode == 2)
                         {
                             Session["DepartmentId"] = obj.DepartmentId;

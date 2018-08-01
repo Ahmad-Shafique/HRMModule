@@ -55,7 +55,7 @@ namespace HRM.Facade
 
             try
             {
-                LoginObject returnable = new LoginObject(0, null, null, null, 0, DateTime.Now,0) ;
+                LoginObject returnable = new LoginObject(0, null, null, null, 0, DateTime.Now,0,0) ;
                 var result = from emp in employeeList
                              join empBio in employeeBioList on emp.EmployeeId equals empBio.EmployeeId
                              join empPriv in employeePrivilegeList on emp.EmployeeId equals empPriv.EmployeeId
@@ -68,7 +68,8 @@ namespace HRM.Facade
                                  Image = empBio.Image,
                                  privilege = empPriv.PrivilegeId,
                                  HireDate = empBio.HireDate,
-                                 DepartmentId = empDept.DepartmentId
+                                 DepartmentId = empDept.DepartmentId,
+                                 EmployeeBioId = empBio.EmployeeBioId
                              };
 
                 if (Debugger.IsAttached)
@@ -92,7 +93,7 @@ namespace HRM.Facade
                             Id = item.Id,
                             PrivilegeToken = item.privilege.ToString()
                         };
-                        returnable = new LoginObject(item.Id, item.Name, item.Image, token, item.privilege, item.HireDate, item.DepartmentId);
+                        returnable = new LoginObject(item.Id, item.Name, item.Image, token, item.privilege, item.HireDate, item.DepartmentId, item.EmployeeBioId);
                     }
                     
                 }
@@ -101,7 +102,7 @@ namespace HRM.Facade
             catch(Exception e)
             {
                 Output.WriteLine(e);
-                return new LoginObject(0, null, null, null, 0, DateTime.Now,0);
+                return new LoginObject(0, null, null, null, 0, DateTime.Now,0,0);
             }
         }
 

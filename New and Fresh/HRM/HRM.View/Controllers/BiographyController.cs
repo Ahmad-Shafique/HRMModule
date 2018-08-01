@@ -10,6 +10,8 @@ using HRM.Entity;
 using HRM.View.Models;
 using HRM.Service.Interfaces;
 using HRM.Service;
+using System.Diagnostics;
+using HRM.Entity.DevAccessory;
 
 namespace HRM.View.Controllers
 {
@@ -26,7 +28,16 @@ namespace HRM.View.Controllers
         // GET: Biography/Details/5
         public ActionResult Details()
         {
-            EmployeeBio employeeBio = Service.Get(Int32.Parse(Session["Id"].ToString()));
+            EmployeeBio employeeBio = Service.Get(Int32.Parse(Session["EmployeeBioId"].ToString()));
+
+
+            if (Debugger.IsAttached)
+            {
+                Output.Write("Employee bio found is: ");
+                Output.Write(employeeBio.EmployeeId + " : " + employeeBio.EmployeeContactNo + 
+                    " : " + employeeBio.HireDate);
+            }
+
             if (employeeBio == null)
             {
                 return HttpNotFound();
@@ -65,6 +76,13 @@ namespace HRM.View.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             EmployeeBio employeeBio = Service.Get(id);
+            if (Debugger.IsAttached)
+            {
+                Output.Write("In Get method of employeebio edit");
+                Output.Write("Found the following information from service for employee bio: ");
+                Output.Write(employeeBio.EmployeeId + " : " + employeeBio.EmployeeContactNo + " : "
+                    + employeeBio.HireDate);
+            }
             if (employeeBio == null)
             {
                 return HttpNotFound();
@@ -79,6 +97,12 @@ namespace HRM.View.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "EmployeeBioId,EmployeeContactNo,EmployeeAddress,DateofBirth,HireDate,Intro,Objectives,Hobbies,Interests,Certificates,JobExperience,Eduction,EmployeeId,Image")] EmployeeBio employeeBio)
         {
+            if (Debugger.IsAttached)
+            {
+                Output.Write("In post method of employee bio update");
+                Output.Write("ModelState informations are: " + ModelState.Values);
+            }
+
             if (ModelState.IsValid)
             {
                 Service.Update(employeeBio, employeeBio.EmployeeBioId);
