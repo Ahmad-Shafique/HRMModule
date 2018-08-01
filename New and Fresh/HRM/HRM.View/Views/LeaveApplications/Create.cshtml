@@ -33,7 +33,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.LeaveApplicationDuration, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.LeaveApplicationDuration, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.LeaveApplicationDuration, new { htmlAttributes = new { @class = "form-control" , disabled=true } })
                 @Html.ValidationMessageFor(model => model.LeaveApplicationDuration, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -65,7 +65,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ApplicationsStatus, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ApplicationsStatus, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ApplicationsStatus, new { htmlAttributes = new { @class = "form-control", disabled = true } })
                 @Html.ValidationMessageFor(model => model.ApplicationsStatus, "", new { @class = "text-danger" })
             </div>
         </div>

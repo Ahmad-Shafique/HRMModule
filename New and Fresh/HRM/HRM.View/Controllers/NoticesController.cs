@@ -88,8 +88,9 @@ namespace HRM.View.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public  ActionResult Create([Bind(Include = "NoticeId,NoticeTitle,NoticeDetails,NoticeDate")] Notice entity)
+        public  ActionResult Create([Bind(Include = "NoticeId,NoticeTitle,NoticeDetails")] Notice entity)
         {
+            entity.NoticeDate = DateTime.Now;
             if (ModelState.IsValid)
             {
                 service.Insert(entity);

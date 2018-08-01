@@ -10,6 +10,8 @@ using HRM.Entity;
 using HRM.View.Models;
 using HRM.Service.Interfaces;
 using HRM.Service;
+using System.Diagnostics;
+using HRM.Entity.DevAccessory;
 
 namespace HRM.View.Controllers
 {
@@ -55,6 +57,13 @@ namespace HRM.View.Controllers
             if (ModelState.IsValid)
             {
                 leaveApplication.EmployeeId = Int32.Parse(Session["Id"].ToString());
+                leaveApplication.LeaveApplicationDuration = Int32.Parse((leaveApplication.EndtDate - leaveApplication.StartDate).TotalDays.ToString());
+
+                if (Debugger.IsAttached)
+                {
+                    Output.Write("Calculated duration is: " + leaveApplication.LeaveApplicationDuration);
+                }
+
                 Service.Insert(leaveApplication);
                 return RedirectToAction("Index");
             }
@@ -82,8 +91,16 @@ namespace HRM.View.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "LeaveApplicationId,LeaveApplicationCategoryId,ApplicationDescription,LeaveApplicationDuration,StartDate,EndtDate,Applydate,ApplicationsStatus,EmployeeId")] LeaveApplication leaveApplication)
+        public ActionResult Edit([Bind(Include = "LeaveApplicationId,LeaveApplicationCategoryId,ApplicationDescription,StartDate,EndtDate,Applydate,EmployeeId")] LeaveApplication leaveApplication)
         {
+            leaveApplication.ApplicationsStatus = 0;
+            leaveApplication.LeaveApplicationDuration = Int32.Parse((leaveApplication.EndtDate - leaveApplication.StartDate).TotalDays.ToString());
+
+            if (Debugger.IsAttached)
+            {
+                Output.Write("Calculated duration is: " + leaveApplication.LeaveApplicationDuration);
+            }
+
             if (ModelState.IsValid)
             {
                 Service.Update(leaveApplication, leaveApplication.LeaveApplicationId);

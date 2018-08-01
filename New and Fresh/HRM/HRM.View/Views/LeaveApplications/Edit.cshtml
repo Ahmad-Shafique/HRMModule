@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.LeaveApplicationDuration, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.LeaveApplicationDuration, htmlAttributes: new { @class = "control-label col-md-2", disabled = true })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.LeaveApplicationDuration, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.LeaveApplicationDuration, "", new { @class = "text-danger" })
@@ -43,13 +43,13 @@
         <div class="form-group">
             @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control", disabled=true } })
                 @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EndtDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.EndtDate, htmlAttributes: new { @class = "control-label col-md-2", disabled = true })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.EndtDate, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.EndtDate, "", new { @class = "text-danger" })
@@ -57,7 +57,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Applydate, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Applydate, htmlAttributes: new { @class = "control-label col-md-2", disabled = true })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Applydate, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Applydate, "", new { @class = "text-danger" })
@@ -67,7 +67,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ApplicationsStatus, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ApplicationsStatus, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ApplicationsStatus, new { htmlAttributes = new { @class = "form-control", disabled = true } })
                 @Html.ValidationMessageFor(model => model.ApplicationsStatus, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -75,7 +75,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.EmployeeId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EmployeeId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.EmployeeId, new { htmlAttributes = new { @class = "form-control", disabled = true } })
                 @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -10,6 +10,7 @@ using HRM.Entity;
 using HRM.View.Models;
 using HRM.Service.Interfaces;
 using HRM.Service;
+using HRM.Entity.DevAccessory;
 
 namespace HRM.View.Controllers
 {
@@ -43,6 +44,7 @@ namespace HRM.View.Controllers
         // GET: SupportingDocuments/Create
         public ActionResult Create()
         {
+            ViewBag.LeaveApplicationId = SupportingDocumentsController.MainId;
             return View();
         }
 
@@ -51,8 +53,10 @@ namespace HRM.View.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SupportingDocumentId,SupportingDocumentName,SupportingDocumentLink,LeaveApplicationId")] SupportingDocument supportingDocument)
+        public ActionResult Create([Bind(Include = "SupportingDocumentId,SupportingDocumentName,SupportingDocumentLink")] SupportingDocument supportingDocument)
         {
+            supportingDocument.LeaveApplicationId = SupportingDocumentsController.MainId;
+            Output.Write("Leave application id for supporting document: " + supportingDocument.LeaveApplicationId);
             if (ModelState.IsValid)
             {
                 Service.Insert(supportingDocument);
@@ -74,6 +78,8 @@ namespace HRM.View.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.LeaveApplicationId = SupportingDocumentsController.MainId;
+
             return View(supportingDocument);
         }
 
@@ -82,8 +88,10 @@ namespace HRM.View.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SupportingDocumentId,SupportingDocumentName,SupportingDocumentLink,LeaveApplicationId")] SupportingDocument supportingDocument)
+        public ActionResult Edit([Bind(Include = "SupportingDocumentId,SupportingDocumentName,SupportingDocumentLink")] SupportingDocument supportingDocument)
         {
+            supportingDocument.LeaveApplicationId = SupportingDocumentsController.MainId;
+            Output.Write("Leave application id for supporting document: " + supportingDocument.LeaveApplicationId);
             if (ModelState.IsValid)
             {
                 Service.Update(supportingDocument, supportingDocument.SupportingDocumentId);

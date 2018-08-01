@@ -30,13 +30,13 @@
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.LeaveApplicationId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.LeaveApplicationId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.LeaveApplicationId, new { htmlAttributes = new { @class = "form-control" }, disabled=true, @Value= ViewBag.LeaveApplicationId })
                 @Html.ValidationMessageFor(model => model.LeaveApplicationId, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
