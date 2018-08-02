@@ -610,60 +610,147 @@ namespace HRM.Facade
 
 
 
-        public virtual  IEnumerable<EmployeeTotalSalary> CalculateAllEmployeeTotalSalary()
-        {
-            IEnumerable<SalaryComponents> salCList =  new RepositoryFactory().Create<SalaryComponents>().GetAll();
+        //public virtual  IEnumerable<EmployeeTotalSalary> CalculateAllEmployeeTotalSalary()
+        //{
+        //    IEnumerable<SalaryComponents> salCList =  new RepositoryFactory().Create<SalaryComponents>().GetAll();
 
-            IEnumerable<EmployeeSalary> empSalList =  new RepositoryFactory().Create<EmployeeSalary>().GetAll();
+        //    IEnumerable<EmployeeSalary> empSalList =  new RepositoryFactory().Create<EmployeeSalary>().GetAll();
 
-            IEnumerable<SalaryRank> salRankList = new RepositoryFactory().Create<SalaryRank>().GetAll();
+        //    IEnumerable<SalaryRank> salRankList = new RepositoryFactory().Create<SalaryRank>().GetAll();
 
-            List<EmployeeSalary> newEmpSalList = new List<EmployeeSalary>();
+        //    List<EmployeeSalary> newEmpSalList = new List<EmployeeSalary>();
 
-            Dictionary<int, int> salRankValues = new Dictionary<int, int>();
-            foreach(SalaryRank item in salRankList)
-            {
-                salRankValues.Add(item.SalaryRankId, item.RankValue);
-            }
+        //    Dictionary<int, int> salRankValues = new Dictionary<int, int>();
+        //    foreach(SalaryRank item in salRankList)
+        //    {
+        //        salRankValues.Add(item.SalaryRankId, item.RankValue);
+        //    }
 
             
-            foreach (EmployeeSalary empSalItem in empSalList)
+        //    foreach (EmployeeSalary empSalItem in empSalList)
+        //    {
+        //        foreach (SalaryComponents sC in salCList)
+        //        {
+        //            int basicSalary = salRankValues.ContainsKey(empSalItem.SalaryRankId) ? salRankValues[empSalItem.SalaryRankId]:10000 ;
+        //            if (sC.Type.Trim() == "credit")
+        //            {
+        //                empSalItem.TotalSalary -= (basicSalary * sC.ComponentValue/100);
+        //            }
+        //            else if (sC.Type.Trim() == "debit")
+        //            {
+        //                empSalItem.TotalSalary += (basicSalary * sC.ComponentValue/100);
+        //            }
+
+
+        //        }
+
+        //        newEmpSalList.Add(empSalItem);
+        //    }
+        //    IEnumerable<EmployeeSalary> ienumerableEmpSal = newEmpSalList;
+
+        //    IEnumerable<EmployeeTotalSalary> resultList = from emp in new EmployeeRepository().GetAll()
+        //                                                  join empSal in ienumerableEmpSal on emp.EmployeeId equals empSal.EmployeeId
+        //                                                  join salRank in new RepositoryFactory().Create<SalaryRank>().GetAll() on empSal.SalaryRankId equals salRank.SalaryRankId
+        //                                                  join salBonus in new BonusRepository().GetAll() on empSal.BonusId equals salBonus.BonusId
+        //                     select new EmployeeTotalSalary
+        //                     {
+        //                         EmployeeId = emp.EmployeeId,
+        //                         EmployeeName = emp.EmployeeName,
+        //                         TotalSalary = empSal.TotalSalary + salBonus.BonusValue,
+        //                         BonusSalary = salBonus.BonusValue,
+        //                         BasicSalary = salRank.RankValue
+
+        //                     };
+
+
+        //    return resultList;
+
+        //}
+
+        public virtual IEnumerable<EmployeeTotalSalary> CalculateAllEmployeeTotalSalary()
+        {
+            ICollection<SalaryComponents> salCList = new RepositoryFactory().Create<SalaryComponents>().GetAll().ToList();
+
+            IEnumerable<EmployeeSalary> empSalList = new RepositoryFactory().Create<EmployeeSalary>().GetAll();
+
+            IEnumerable<Employee> employeeList = new RepositoryFactory().Create<Employee>().GetAll();
+
+            List<EmployeeTotalSalary> returnableResult = new List<EmployeeTotalSalary>();
+
+            int numberOfSalaryComponents = salCList.Count;
+
+
+            var result = from emp in employeeList
+                         join empSal in empSalList on emp.EmployeeId equals empSal.EmployeeId
+                         select new EmployeeTotalSalary
+                         {
+                             EmployeeId = emp.EmployeeId,
+                             EmployeeName = emp.EmployeeName,
+                             SalaryRank = empSal.SalaryRankId,
+                             BasicSalary = empSal.BasicSalary,
+                             BonusSalary = empSal.BonusValue,
+                             TotalSalary = empSal.BasicSalary + empSal.BonusValue
+                         };
+
+            if (Debugger.IsAttached)
             {
+                Output.Write("Total salaries before adding components: ");
+                foreach(var item in result)
+                {
+                    Output.Write(item.EmployeeId + " : " + item.EmployeeName + " : " + item.TotalSalary);
+                }
+            }
+
+
+
+            foreach (EmployeeTotalSalary empTotSal in result)
+            {
+                Output.Write("In total salary update loop");
+
+                double total = empTotSal.TotalSalary;
+
+                Output.Write("total salary before update: " + total);
+
                 foreach (SalaryComponents sC in salCList)
                 {
-                    int basicSalary = salRankValues.ContainsKey(empSalItem.SalaryRankId) ? salRankValues[empSalItem.SalaryRankId]:10000 ;
+                    double component = sC.ComponentValue * empTotSal.BasicSalary;
+                    double value = component / 100;
+                    Output.Write("Salary component is: " + sC.ComponentName + " : " + sC.ComponentValue + " : " + sC.Type);
+                    Output.Write("component is: " + component + " \nvalue is: " + value);
                     if (sC.Type.Trim() == "credit")
                     {
-                        empSalItem.TotalSalary -= (basicSalary * sC.ComponentValue/100);
+                        total -= value;
                     }
                     else if (sC.Type.Trim() == "debit")
                     {
-                        empSalItem.TotalSalary += (basicSalary * sC.ComponentValue/100);
+                        total += value;
                     }
 
+                    Output.Write("total value now: " + total);
 
                 }
 
-                newEmpSalList.Add(empSalItem);
+
+                empTotSal.TotalSalary = (int)total;
+
+                Output.Write("Updated total salary: " + empTotSal.TotalSalary);
+
+                returnableResult.Add(empTotSal);
+
             }
-            IEnumerable<EmployeeSalary> ienumerableEmpSal = newEmpSalList;
 
-            IEnumerable<EmployeeTotalSalary> resultList = from emp in new EmployeeRepository().GetAll()
-                                                          join empSal in ienumerableEmpSal on emp.EmployeeId equals empSal.EmployeeId
-                                                          join salRank in new RepositoryFactory().Create<SalaryRank>().GetAll() on empSal.SalaryRankId equals salRank.SalaryRankId
-                                                          join salBonus in new BonusRepository().GetAll() on empSal.BonusId equals salBonus.BonusId
-                             select new EmployeeTotalSalary
-                             {
-                                 EmployeeId = emp.EmployeeId,
-                                 EmployeeName = emp.EmployeeName,
-                                 TotalSalary = empSal.TotalSalary + salBonus.BonusValue,
-                                 BonusSalary = salBonus.BonusValue,
-                                 BasicSalary = salRank.RankValue
-
-                             };
+            if (Debugger.IsAttached)
+            {
+                Output.Write("Total salaries after adding components: ");
+                foreach (var item in returnableResult)
+                {
+                    Output.Write(item.EmployeeId + " : " + item.EmployeeName + " : " + item.TotalSalary);
+                }
+            }
 
 
-            return resultList;
+
+            return returnableResult;
 
         }
 
@@ -725,6 +812,37 @@ namespace HRM.Facade
 
             return finalResult;
         }
+
+
+
+        //public virtual IEnumerable<EmployeeAndBio> GetEmployeeTotalSalary()
+        //{
+        //    IRepository<Employee> empRepo = new RepositoryFactory().Create<Employee>();
+        //    IRepository<EmployeeBio> empBioRepo = new RepositoryFactory().Create<EmployeeBio>();
+        //    return from emp in empRepo.GetAll()
+        //           join empBio in empBioRepo.GetAll() on emp.EmployeeId equals empBio.EmployeeId
+        //           select new EmployeeAndBio
+        //           {
+        //               EmployeeId = emp.EmployeeId,
+        //               EmployeeName = emp.EmployeeName,
+        //               EmployeeEmail = emp.EmployeeEmail,
+        //               EmployeePassword = emp.EmployeePassword,
+        //               MGR = emp.MGR,
+
+        //               EmployeeContactNo = empBio.EmployeeContactNo,
+        //               EmployeeAddress = empBio.EmployeeAddress,
+        //               DateofBirth = empBio.DateofBirth,
+        //               HireDate = empBio.HireDate,
+        //               Intro = empBio.Intro,
+        //               Objectives = empBio.Objectives,
+        //               Hobbies = empBio.Hobbies,
+        //               Interests = empBio.Interests,
+        //               Certificates = empBio.Certificates,
+        //               JobExperience = empBio.JobExperience,
+        //               Education = empBio.Eduction,
+        //               Image = empBio.Image
+        //           };
+        //}
 
 
 
