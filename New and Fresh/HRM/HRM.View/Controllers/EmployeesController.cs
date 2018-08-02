@@ -96,8 +96,9 @@ namespace HRM.View.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmployeeId,EmployeeName,EmployeeEmail,EmployeePassword,MGR,DateofBirth,Status")] Employee employee)
+        public ActionResult Create([Bind(Include = "EmployeeId,EmployeeName,EmployeeEmail,EmployeePassword,MGR,DateofBirth")] Employee employee)
         {
+            employee.Status = "New";
             if (ModelState.IsValid)
             {
                 Service.Insert(employee);

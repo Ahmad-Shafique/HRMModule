@@ -10,8 +10,11 @@ namespace HRM.Entity.Facade
     {
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }
-        public int TotalSalary { get; set; }
-        public int BonusSalary { get; set; }
+        public int SalaryGrade { get; set; }
         public int BasicSalary { get; set; }
+        public int BonusSalary { get; set; }
+        public int[] SalaryComponents { get; set; }
+        public int TotalSalary { get; set; }
+        
     }
 }

@@ -19,7 +19,7 @@ namespace HRM.Entity
 
         [Required, MaxLength(20), MinLength(6)]
         public string EmployeePassword { get; set; }
-        [Required, Range(10000, 300000)]
+        //[Required, Range(1, 300000)]
         public int MGR { get; set; }
 
         public DateTime DateofBirth { get; set; }
