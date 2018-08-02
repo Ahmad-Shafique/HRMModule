@@ -1,27 +1,14 @@
-﻿insert into Bonus (BonusValue, BonusTime) values (98, '04/14/2017');
-insert into Bonus (BonusValue, BonusTime) values (67, '10/29/2017');
-insert into Bonus (BonusValue, BonusTime) values (7, '03/22/2017');
-insert into Bonus (BonusValue, BonusTime) values (47, '06/30/2017');
-insert into Bonus (BonusValue, BonusTime) values (74, '09/01/2017');
-insert into Bonus (BonusValue, BonusTime) values (37, '12/11/2017');
-insert into Bonus (BonusValue, BonusTime) values (4, '05/02/2017');
-insert into Bonus (BonusValue, BonusTime) values (61, '02/14/2017');
-insert into Bonus (BonusValue, BonusTime) values (75, '09/26/2017');
-insert into Bonus (BonusValue, BonusTime) values (26, '08/30/2017');
+﻿insert into Bonus (BonusValue, BonusTime) values (250, '04/14/2017');
+insert into Bonus (BonusValue, BonusTime) values (500, '10/29/2017');
+insert into Bonus (BonusValue, BonusTime) values (300, '03/22/2017');
+insert into Bonus (BonusValue, BonusTime) values (1000, '06/30/2017');
 
 
 
-insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (1, 164, 'Nulla ut erat id mauris vulputate elementum. Nullam varius.', '11/11/2017');
-insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (2, 245, 'Integer ac leo. Pellentesque ultrices mattis odio.', '05/22/2017');
-insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (3, 203, 'Nulla facilisi.', '05/31/2017');
-insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (4, 804, 'Aenean auctor gravida sem.', '11/28/2017');
-insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (5, 510, 'Donec posuere metus vitae ipsum.', '07/15/2017');
-insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (6, 803, 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.', '10/11/2017');
-insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (7, 405, 'Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', '11/09/2017');
-insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (8, 456, 'Curabitur at ipsum ac tellus semper interdum.', '07/28/2017');
-insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (9, 557, 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.', '01/28/2017');
-insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (10, 680, 'Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.', '10/27/2017');
-
+insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (1, 250, 'Nulla ut erat id mauris vulputate elementum. Nullam varius.', '11/11/2017');
+insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (2, 500, 'Integer ac leo. Pellentesque ultrices mattis odio.', '05/22/2017');
+insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (3, 300, 'Nulla facilisi.', '05/31/2017');
+insert into Bonuses (BonusId, BonusValue, BonusDescription, BonusesDate) values (4, 1000, 'Aenean auctor gravida sem.', '11/28/2017');
 
 
 insert into BudgetTransactions (MonthlyBudgetId, Type, TypeId, Amount, Description, TransactionDate) values (1, 'Nunc purus.', 1, 33833, 'In blandit ultrices enim.', '02/28/2017');
@@ -65,14 +52,6 @@ insert into CompanyPolicies (PolicyName, PolicyDescription) values ('eleifend do
 
 insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('vel ipsum', 'Myrzakent', 'Fusce consequat. Nulla nisl. Nunc nisl.', 1);
 insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('amet cursus', 'Caçador', 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.', 2);
-insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('maecenas', 'San Antonio', 'Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna.', 3);
-insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('quisque id', 'Zhujiang', 'Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.', 4);
-insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('et commodo', 'Mene de Mauroa', 'Nulla ut erat id mauris vulputate elementum. Nullam varius.', 5);
-insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('dui proin', 'Tianzhu', 'Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.', 6);
-insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('adipiscing', 'Wilwerwiltz', 'Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus.', 7);
-insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('ullamcorper', 'Weitang', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.', 8);
-insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('duis ac', 'Achoma', 'Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla.', 9);
-insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('dui', 'Baklashi', 'Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla.', 10);
 
 
 
@@ -102,10 +81,10 @@ insert into Designations (DesignationName) values ('emulation');
 
 
 
-insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, MGR, DateofBirth, Status) values ('Anaëlle', 'lclowsley0@trellian.com', 'iWv8xc', 1, '9/23/1987', 'active');
-insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, MGR, DateofBirth, Status) values ('Marie-thérèse', 'chammerson1@auda.org.au', 'RTmW9YWp', 2, '1/26/1993', 'active');
-insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, MGR, DateofBirth, Status) values ('Léone', 'mwebb2@cpanel.net', '4vbI6DHQ', 3, '10/4/1989', 'active');
-insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, MGR, DateofBirth, Status) values ('Laurélie', 'fsimond3@bravesites.com', 'A5HTWjjiT', 4, '12/14/1986', 'active');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, MGR, DateofBirth, Status) values ('Anaëlle', 'lclowsley0@trellian.com', '1', 1, '9/23/1987', 'active');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, MGR, DateofBirth, Status) values ('Marie-thérèse', 'chammerson1@auda.org.au', '2', 2, '1/26/1993', 'active');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, MGR, DateofBirth, Status) values ('Léone', 'mwebb2@cpanel.net', '3', 3, '10/4/1989', 'active');
+insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, MGR, DateofBirth, Status) values ('Laurélie', 'fsimond3@bravesites.com', '4', 4, '12/14/1986', 'active');
 insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, MGR, DateofBirth, Status) values ('Adèle', 'wschachter4@g.co', 'DolW8kV', 5, '4/28/1993', 'active');
 insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, MGR, DateofBirth, Status) values ('Loïca', 'tmaccallum5@salon.com', 'djtNd8hy', 6, '4/24/1992', 'active');
 insert into Employees (EmployeeName, EmployeeEmail, EmployeePassword, MGR, DateofBirth, Status) values ('André', 'cgerssam6@ibm.com', 'RuuHUYjlq5', 7, '8/10/1985', 'active');
@@ -129,15 +108,15 @@ insert into EmployeeBios (EmployeeContactNo, EmployeeAddress, DateofBirth, HireD
 
 
 insert into EmployeeDepartments (EmployeeId, DepartmentId) values (1, 1);
-insert into EmployeeDepartments (EmployeeId, DepartmentId) values (2, 2);
-insert into EmployeeDepartments (EmployeeId, DepartmentId) values (3, 3);
-insert into EmployeeDepartments (EmployeeId, DepartmentId) values (4, 4);
-insert into EmployeeDepartments (EmployeeId, DepartmentId) values (5, 5);
-insert into EmployeeDepartments (EmployeeId, DepartmentId) values (6, 6);
-insert into EmployeeDepartments (EmployeeId, DepartmentId) values (7, 7);
-insert into EmployeeDepartments (EmployeeId, DepartmentId) values (8, 8);
-insert into EmployeeDepartments (EmployeeId, DepartmentId) values (9, 9);
-insert into EmployeeDepartments (EmployeeId, DepartmentId) values (10, 10);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (2, 1);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (3, 9);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (4, 9);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (5, 1);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (6, 2);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (7, 2);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (8, 2);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (9, 2);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (10, 2);
 
 
 
@@ -192,16 +171,16 @@ insert into EmployeePrivileges (EmployeeId, PrivilegeId) values (10, 1);
 
 
 
-insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (1, 27702, 0, '', 2017, 1, 1, 276, 1);
-insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (2, 36337, 0, '', 2017, 0, 2, 895, 1);
-insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (3, 35951, 0, '', 2017, 1, 3, 242, 2);
-insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (4, 37405, 0, '', 2017, 1, 4, 253, 2);
-insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (5, 20579, 0, '', 2017, 1, 5, 991, 3);
-insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (6, 22327, 0, '', 2017, 1, 6, 472, 3);
-insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (7, 26443, 0, '', 2017, 0, 7, 400, 3);
-insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (8, 32175, 0, '', 2017, 1, 8, 219, 4 );
-insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (9, 24786, 0, '', 2017, 0, 9, 120, 4);
-insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (10, 38844, 0, '', 2017, 0, 10, 250, 4);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (1, 10000, 0, '', 2017, 1, 1, 250, 1);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (2, 25000, 0, '', 2017, 0, 2, 500, 3);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (3, 15000, 0, '', 2017, 1, 3, 300, 2);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (4, 30000, 0, '', 2017, 1, 4, 1000, 4);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (5, 10000, 0, '', 2017, 1, 5, 0, 1);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (6, 10000, 0, '', 2017, 1, 6, 0, 1);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (7, 10000, 0, '', 2017, 0, 7, 0, 1);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (8, 10000, 0, '', 2017, 1, 8, 0, 1 );
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (9, 10000, 0, '', 2017, 0, 9, 0, 1);
+insert into EmployeeSalaries (EmployeeId, BasicSalary, TotalSalary, SalaryMonth, Year, Status, BonusId, BonusValue, SalaryRankId) values (10, 10000, 0, '', 2017, 0, 10, 0, 1);
 
 
 
@@ -546,16 +525,10 @@ insert into TransportVehicles (VehicleNumber, DriverName, Capacity, status) valu
 
 
 
-insert into SalaryRanks (RankName, RankValue) values ('quam', 25577);
-insert into SalaryRanks (RankName, RankValue) values ('pede', 73921);
-insert into SalaryRanks (RankName, RankValue) values ('volutpat', 71337);
-insert into SalaryRanks (RankName, RankValue) values ('at', 27548);
-insert into SalaryRanks (RankName, RankValue) values ('bibendum', 40382);
-insert into SalaryRanks (RankName, RankValue) values ('vulputate', 71234);
-insert into SalaryRanks (RankName, RankValue) values ('primis', 99495);
-insert into SalaryRanks (RankName, RankValue) values ('non', 61465);
-insert into SalaryRanks (RankName, RankValue) values ('leo', 90836);
-insert into SalaryRanks (RankName, RankValue) values ('quam', 55547);
+insert into SalaryRanks (RankName, RankValue) values ('Employee', 10000);
+insert into SalaryRanks (RankName, RankValue) values ('HR Executive', 15000);
+insert into SalaryRanks (RankName, RankValue) values ('Department Head', 25000);
+insert into SalaryRanks (RankName, RankValue) values ('HR Head', 30000);
 
 
 
