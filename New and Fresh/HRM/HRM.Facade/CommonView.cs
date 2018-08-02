@@ -689,7 +689,8 @@ namespace HRM.Facade
                              SalaryRank = empSal.SalaryRankId,
                              BasicSalary = empSal.BasicSalary,
                              BonusSalary = empSal.BonusValue,
-                             TotalSalary = empSal.BasicSalary + empSal.BonusValue
+                             TotalSalary = empSal.TotalSalary,
+                             EmployeeSalaryId = empSal.EmployeeSalaryId
                          };
 
             if (Debugger.IsAttached)
@@ -705,35 +706,46 @@ namespace HRM.Facade
 
             foreach (EmployeeTotalSalary empTotSal in result)
             {
-                Output.Write("In total salary update loop");
 
-                double total = empTotSal.TotalSalary;
-
-                Output.Write("total salary before update: " + total);
-
-                foreach (SalaryComponents sC in salCList)
+                if(empTotSal.TotalSalary == 0)
                 {
-                    double component = sC.ComponentValue * empTotSal.BasicSalary;
-                    double value = component / 100;
-                    Output.Write("Salary component is: " + sC.ComponentName + " : " + sC.ComponentValue + " : " + sC.Type);
-                    Output.Write("component is: " + component + " \nvalue is: " + value);
-                    if (sC.Type.Trim() == "credit")
+                    empTotSal.Paid = false;
+                    
+                    Output.Write("In total salary update loop");
+
+                    double total = empTotSal.BasicSalary + empTotSal.BonusSalary;
+
+                    Output.Write("total salary before update: " + total);
+
+                    foreach (SalaryComponents sC in salCList)
                     {
-                        total -= value;
-                    }
-                    else if (sC.Type.Trim() == "debit")
-                    {
-                        total += value;
+                        double component = sC.ComponentValue * empTotSal.BasicSalary;
+                        double value = component / 100;
+                        Output.Write("Salary component is: " + sC.ComponentName + " : " + sC.ComponentValue + " : " + sC.Type);
+                        Output.Write("component is: " + component + " \nvalue is: " + value);
+                        if (sC.Type.Trim() == "credit")
+                        {
+                            total -= value;
+                        }
+                        else if (sC.Type.Trim() == "debit")
+                        {
+                            total += value;
+                        }
+
+                        Output.Write("total value now: " + total);
+
                     }
 
-                    Output.Write("total value now: " + total);
+
+                    empTotSal.TotalSalary = (int)total;
+
+                    Output.Write("Updated total salary: " + empTotSal.TotalSalary);
 
                 }
-
-
-                empTotSal.TotalSalary = (int)total;
-
-                Output.Write("Updated total salary: " + empTotSal.TotalSalary);
+                else
+                {
+                    empTotSal.Paid = true;
+                }
 
                 returnableResult.Add(empTotSal);
 

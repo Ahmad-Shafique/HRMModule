@@ -14,13 +14,18 @@
                     {
                         <p>Employee</p> @item.EmployeeName
                         <br />
-                        <p><b>Basic Salary : 98392</b></p>
-                        <p>Salary Components:</p><br />
-                        <p>Transport fee : 98392 * 10 % = 232323</p>
-                        <p>Provident fund : 98392 * 10 % = 232323</p>
-                        <p>Rent  : 98392 * 10 % = 232323</p>
-                        <p>Medical expenses : 98392 * 10 % = 232323</p>
+                        <p>Basic Salary :    @item.BasicSalary</p>
+                        <p>Bonus :           @item.BonusSalary</p>
+                        <p><b>Total Salary : @item.TotalSalary</b></p>
 
+                    }
+                    <br />
+                    <br />
+                    <br />
+                    <p>Other Salary Components:</p>
+                    @foreach (SalaryComponents sC in ViewBag.SalaryComponents)
+                    {
+                        <p>@sC.ComponentName :  @sC.ComponentValue % </p>
                     }
                 </div>
             </div>

@@ -15,6 +15,7 @@ namespace HRM.Entity.Facade
         public int[] SalaryComponents { get; set; }
         public int BonusSalary { get; set; }
         public int TotalSalary { get; set; }
-        
+        public int EmployeeSalaryId { get; set; }
+        public bool Paid { get; set; }
     }
 }

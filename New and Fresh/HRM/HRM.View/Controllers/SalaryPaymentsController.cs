@@ -1,9 +1,11 @@
 ﻿using HRM.Entity;
+using HRM.Entity.DevAccessory;
 using HRM.Entity.Facade;
 using HRM.Service;
 using HRM.Service.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -14,6 +16,7 @@ namespace HRM.View.Controllers
     public class SalaryPaymentsController : Controller
     {
         private ICommonViewService Service = ServiceFactory.GetCommonViewService();
+        private IDomainService<EmployeeSalary> SalaryPaymentService = new ServiceFactory().Create<EmployeeSalary>();
         // GET: SalaryPayment
         public ActionResult Index()
         {
@@ -50,7 +53,6 @@ namespace HRM.View.Controllers
                     TSND += item.EmployeeName;
                     TSVD += item.TotalSalary;
                 }
-
             }
             //TSND += "]";
             //TSVD += "]";
@@ -88,12 +90,31 @@ namespace HRM.View.Controllers
             //return View(result);
             return View();
         }
+
         public ActionResult IndividualSalaryInfo(int? id)
         {
                 ViewBag.Result = Service.CalculateAllEmployeeTotalSalary().Where(item => item.EmployeeId == id);
                 ViewBag.SalaryComponents = new ServiceFactory().Create<SalaryComponents>().GetAll();
-
+                
                 return View();
+        }
+
+        public ActionResult PaySalary(int? id, int totalSalary)
+        {
+            if(id.HasValue)
+            {
+                
+                EmployeeSalary employeeSalary = SalaryPaymentService.Get(id);
+                employeeSalary.TotalSalary = totalSalary;
+
+                if (Debugger.IsAttached)
+                {
+                    Output.Write("Id value for employeeSalary is : " + id.Value);
+                }
+               
+                SalaryPaymentService.Update(employeeSalary, id.Value);
+            }
+            return RedirectToAction("Index");
         }
     }
 }

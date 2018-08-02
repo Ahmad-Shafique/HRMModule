@@ -50,7 +50,15 @@
                                 <td>Taka: @es.BasicSalary </td>
                                 <td>Taka: @es.BonusSalary</td>
                                 <td>Taka: @es.TotalSalary  @Html.ActionLink("Details", "IndividualSalaryInfo",new { id=es.EmployeeId}, new { @class="btn btn-default"})</td>
-                                <td><button class="btn btn-primary">Pay</button></td>
+                                @*<td><button class="btn btn-primary">Pay</button></td>*@
+                                <td>
+                                    @if (!es.Paid )
+                                    {
+                                        @Html.ActionLink("Pay" , "PaySalary",
+                                           new { id = es.EmployeeSalaryId, totalSalary = es.TotalSalary },  new { @class = "btn btn-primary" })
+                                    }
+
+                                </td>
 
                             </tr>
                         }
