@@ -1,0 +1,42 @@
+﻿@model HRM.Entity.SalaryComponents
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SalaryComponents</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SalaryComponentsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
