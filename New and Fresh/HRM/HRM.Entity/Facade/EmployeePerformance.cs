@@ -15,5 +15,6 @@ namespace HRM.Entity.Facade
         public int AttendanceScore { get; set; }
         public int AggregateScore { get; set; }
         public int DepartmentId { get; set; }
+        public int EmployeeSalaryId { get; set; }
     }
 }

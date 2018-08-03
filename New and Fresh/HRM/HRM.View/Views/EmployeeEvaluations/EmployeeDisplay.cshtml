@@ -33,7 +33,7 @@
                                         @if (ep.EmployeeId.ToString() != Session["Id"].ToString())
                                         {
                                             <td>
-                                                @Html.ActionLink("Award bonus", "Index", "Bonuses", new { Id = ep.EmployeeId }, new { @class = "btn btn-primary" })
+                                                @Html.ActionLink("Award bonus", "Index", "Bonuses", new { Id = ep.EmployeeSalaryId }, new { @class = "btn btn-primary" })
                                             </td>
                                         }
                                         

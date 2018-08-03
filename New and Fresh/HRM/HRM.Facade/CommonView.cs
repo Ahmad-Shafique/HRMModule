@@ -323,9 +323,11 @@ namespace HRM.Facade
                 IRepository<Employee> empRepo = new RepositoryFactory().Create<Employee>();
                 IRepository<EmployeePerformanceMetric> empBioRepo = new RepositoryFactory().Create<EmployeePerformanceMetric>();
                 IRepository<EmployeeDepartment> empDeptRepo = new RepositoryFactory().Create<EmployeeDepartment>();
+                IRepository<EmployeeSalary> empSalary = new RepositoryFactory().Create<EmployeeSalary>();
                 return from emp in empRepo.GetAll()
                        join empDept in empDeptRepo.GetAll() on emp.EmployeeId equals empDept.EmployeeId
                        join empPerf in empBioRepo.GetAll() on emp.EmployeeId equals empPerf.EmployeeId
+                       join empSal in empSalary.GetAll() on emp.EmployeeId equals empSal.EmployeeId
                        select new EmployeePerformance
                        {
                            EmployeeId = emp.EmployeeId,
@@ -336,7 +338,9 @@ namespace HRM.Facade
                            AttendanceScore = 100,
                            AggregateScore = (empPerf.AverageProjectScore + empPerf.AverageTrainingScore + 100) / 3,
 
-                           DepartmentId = empDept.EmployeeDepartmentId
+                           DepartmentId = empDept.EmployeeDepartmentId,
+
+                           EmployeeSalaryId = empSal.EmployeeSalaryId
                        };
             }
             catch(Exception e)
