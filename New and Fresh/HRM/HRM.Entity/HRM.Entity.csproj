@@ -107,6 +107,7 @@
     <Compile Include="TransportArea.cs" />
     <Compile Include="TransportAreaVehicle.cs" />
     <Compile Include="TransportVehicle.cs" />
+    <Compile Include="WorkDay.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

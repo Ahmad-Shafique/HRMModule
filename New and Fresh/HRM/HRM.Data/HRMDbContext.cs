@@ -64,6 +64,7 @@ namespace HRM.Data
         public DbSet<EquipmentTransaction> EquipmentTransactions { get; set; }
         public DbSet<EquipmentType> EquipmentTypes { get; set; }
         public DbSet<SalaryRank> SalaryRanks { get; set; }
+        public DbSet<WorkDay> WorkDays { get; set; }
 
 
 

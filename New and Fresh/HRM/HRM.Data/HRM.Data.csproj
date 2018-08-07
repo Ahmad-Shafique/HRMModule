@@ -103,6 +103,7 @@
     <Compile Include="Interfaces\ISupportingDocumentRepository.cs" />
     <Compile Include="Interfaces\ITrainingEmployeeRepository.cs" />
     <Compile Include="Interfaces\ITrainingRepository.cs" />
+    <Compile Include="Interfaces\IWorkDayRepository.cs" />
     <Compile Include="IntervieweeRepository.cs" />
     <Compile Include="InterviewRepository.cs" />
     <Compile Include="LeaveApplicationCategoryRepository.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="TransportAreaRepository.cs" />
     <Compile Include="TransportAreaVehicleRepository.cs" />
     <Compile Include="TransportVehicleRepository.cs" />
+    <Compile Include="WorkDayRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
