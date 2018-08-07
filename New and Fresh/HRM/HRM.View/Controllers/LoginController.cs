@@ -53,6 +53,7 @@ namespace HRM.View.Controllers
                         Session["HireDate"] = obj.HireDate.ToString("yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture);
                         //Output.Write("Hire date is: " + Session["HireDate"].ToString());
                         Session["EmployeeBioId"] = obj.EmployeeBioId;
+                        Session["WorkDay"] = obj.Working; 
                         if (obj.ViewAccessCode == 2)
                         {
                             Session["DepartmentId"] = obj.DepartmentId;

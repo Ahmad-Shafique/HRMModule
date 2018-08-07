@@ -54,6 +54,8 @@ namespace HRM.Data
             Repositories.Add(typeof(TrainingEmployee), typeof(TrainingEmployeeRepository));
             Repositories.Add(typeof(SalaryRank), typeof(SalaryRankRepository));
             Repositories.Add(typeof(CompanyPolicy), typeof(CompanyPolicyRepository));
+            Repositories.Add(typeof(WorkDay), typeof(WorkDayRepository));
+
 
 
         }

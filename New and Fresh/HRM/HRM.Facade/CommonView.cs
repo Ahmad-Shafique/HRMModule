@@ -23,6 +23,7 @@ namespace HRM.Facade
             IEnumerable<EmployeeBio> employeeBioList = new RepositoryFactory().Create<EmployeeBio>().GetAll();
             IEnumerable<EmployeePrivilege> employeePrivilegeList = new RepositoryFactory().Create<EmployeePrivilege>().GetAll();
             IEnumerable<EmployeeDepartment> employeeDepartmentList = new RepositoryFactory().Create<EmployeeDepartment>().GetAll();
+            List<WorkDay> workDaysList = new RepositoryFactory().Create<WorkDay>().GetAll().ToList();
 
             if (Debugger.IsAttached)
             {
@@ -55,7 +56,7 @@ namespace HRM.Facade
 
             try
             {
-                LoginObject returnable = new LoginObject(0, null, null, null, 0, DateTime.Now,0,0) ;
+                LoginObject returnable = new LoginObject(0, null, null, null, 0, DateTime.Now,0,0, false) ;
                 var result = from emp in employeeList
                              join empBio in employeeBioList on emp.EmployeeId equals empBio.EmployeeId
                              join empPriv in employeePrivilegeList on emp.EmployeeId equals empPriv.EmployeeId
@@ -93,16 +94,31 @@ namespace HRM.Facade
                             Id = item.Id,
                             PrivilegeToken = item.privilege.ToString()
                         };
-                        returnable = new LoginObject(item.Id, item.Name, item.Image, token, item.privilege, item.HireDate, item.DepartmentId, item.EmployeeBioId);
+                        returnable = new LoginObject(item.Id, item.Name, item.Image, token, item.privilege, item.HireDate, item.DepartmentId, item.EmployeeBioId, false);
                     }
                     
                 }
+                if(workDaysList.Count > 0)
+                {
+                    workDaysList = workDaysList.Where(e => e.EmployeeId == returnable.Id).ToList();
+                    if(workDaysList.Count > 0)
+                    {
+                        workDaysList = workDaysList.Where(e => e.StartTime.Month == DateTime.Now.Month && e.StartTime.Day == DateTime.Now.Day).ToList();
+                        if (workDaysList[0] != null && workDaysList[0].StartTime != null)
+                        {
+                            returnable.Working = true;
+                        }
+                    }
+                    
+                }
+                
+                
                 return returnable;
             }
             catch(Exception e)
             {
                 Output.WriteLine(e);
-                return new LoginObject(0, null, null, null, 0, DateTime.Now,0,0);
+                return new LoginObject(0, null, null, null, 0, DateTime.Now, 0, 0, false);
             }
         }
 
