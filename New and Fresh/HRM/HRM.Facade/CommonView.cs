@@ -25,33 +25,33 @@ namespace HRM.Facade
             IEnumerable<EmployeeDepartment> employeeDepartmentList = new RepositoryFactory().Create<EmployeeDepartment>().GetAll();
             List<WorkDay> workDaysList = new RepositoryFactory().Create<WorkDay>().GetAll().ToList();
 
-            if (Debugger.IsAttached)
-            {
-                foreach(var obj in employeeList)
-                {
-                    Output.Write("Employee list: ");
-                    Output.Write(obj.EmployeeId + " : " + obj.EmployeeName + " : " + obj.EmployeePassword);
-                }
+            //if (Debugger.IsAttached)
+            //{
+            //    foreach(var obj in employeeList)
+            //    {
+            //        Output.Write("Employee list: ");
+            //        Output.Write(obj.EmployeeId + " : " + obj.EmployeeName + " : " + obj.EmployeePassword);
+            //    }
 
-                foreach (var obj in employeeBioList)
-                {
-                    Output.Write("Employee Bio list: ");
-                    Output.Write(obj.EmployeeId + " : " + obj.EmployeeContactNo );
-                }
+            //    foreach (var obj in employeeBioList)
+            //    {
+            //        Output.Write("Employee Bio list: ");
+            //        Output.Write(obj.EmployeeId + " : " + obj.EmployeeContactNo );
+            //    }
 
-                foreach (var obj in employeePrivilegeList)
-                {
-                    Output.Write("Employee privilege list: ");
-                    Output.Write(obj.EmployeePrivilegeId + " : " + obj.EmployeeId + " : " + obj.PrivilegeId);
-                }
+            //    foreach (var obj in employeePrivilegeList)
+            //    {
+            //        Output.Write("Employee privilege list: ");
+            //        Output.Write(obj.EmployeePrivilegeId + " : " + obj.EmployeeId + " : " + obj.PrivilegeId);
+            //    }
 
-                foreach (var obj in employeeDepartmentList)
-                {
-                    Output.Write("Employee department list: ");
-                    Output.Write(obj.DepartmentId + " : " + obj.EmployeeId );
-                }
+            //    foreach (var obj in employeeDepartmentList)
+            //    {
+            //        Output.Write("Employee department list: ");
+            //        Output.Write(obj.DepartmentId + " : " + obj.EmployeeId );
+            //    }
 
-            }
+            //}
             
 
             try
@@ -334,13 +334,16 @@ namespace HRM.Facade
 
         public virtual IEnumerable<EmployeePerformance> GetAllEmployeePerformance()
         {
+
             try
             {
                 IRepository<Employee> empRepo = new RepositoryFactory().Create<Employee>();
                 IRepository<EmployeePerformanceMetric> empBioRepo = new RepositoryFactory().Create<EmployeePerformanceMetric>();
                 IRepository<EmployeeDepartment> empDeptRepo = new RepositoryFactory().Create<EmployeeDepartment>();
                 IRepository<EmployeeSalary> empSalary = new RepositoryFactory().Create<EmployeeSalary>();
-                return from emp in empRepo.GetAll()
+                IRepository<WorkDay> workDaysMainList = new RepositoryFactory().Create<WorkDay>();
+                List<EmployeePerformance> finalList = new List<EmployeePerformance>();
+                List<EmployeePerformance> intermediaryList = (from emp in empRepo.GetAll()
                        join empDept in empDeptRepo.GetAll() on emp.EmployeeId equals empDept.EmployeeId
                        join empPerf in empBioRepo.GetAll() on emp.EmployeeId equals empPerf.EmployeeId
                        join empSal in empSalary.GetAll() on emp.EmployeeId equals empSal.EmployeeId
@@ -351,17 +354,29 @@ namespace HRM.Facade
 
                            ProjectScore = empPerf.AverageProjectScore,
                            TrainingScore = empPerf.AverageTrainingScore,
-                           AttendanceScore = 100,
+                           AttendanceScore = 0,
                            AggregateScore = (empPerf.AverageProjectScore + empPerf.AverageTrainingScore + 100) / 3,
 
                            DepartmentId = empDept.EmployeeDepartmentId,
 
                            EmployeeSalaryId = empSal.EmployeeSalaryId
-                       };
+                       }).ToList();
+
+                foreach(EmployeePerformance empPerf in intermediaryList)
+                {
+                    List<WorkDay> workDaysList = workDaysMainList.GetAll().Where(e=>e.EmployeeId==empPerf.EmployeeId
+                                                                                && e.StartTime.Year == DateTime.Now.Year
+                                                                                && e.StartTime.Month == DateTime.Now.Month).ToList();
+                    empPerf.AttendanceScore = (workDaysList.Count * 100) / DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+
+
+                    finalList.Add(empPerf);
+                }
+                return finalList;
             }
             catch(Exception e)
             {
-                Console.WriteLine(e);
+                Output.WriteLine(e);
                 return new List<EmployeePerformance>();
             }
             
