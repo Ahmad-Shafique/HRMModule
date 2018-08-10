@@ -50,15 +50,15 @@ insert into CompanyPolicies (PolicyName, PolicyDescription) values ('eleifend do
 
 
 
-insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('vel ipsum', 'Myrzakent', 'Fusce consequat. Nulla nisl. Nunc nisl.', 1);
-insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('amet cursus', 'Caçador', 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.', 2);
+insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('vel ipsum', 'Myrzakent', 'Fusce consequat. Nulla nisl. Nunc nisl.', 3);
+insert into Departments (DepartmentName, DepartmentLocation, DepartmentDescription, DepartmentHeadId) values ('amet cursus', 'Caçador', 'Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.', 3);
 
 
 
-insert into DepartmentDesignations (DepartmentId, DesignationId) values (1, 1);
-insert into DepartmentDesignations (DepartmentId, DesignationId) values (1, 3);
-insert into DepartmentDesignations (DepartmentId, DesignationId) values (2, 2);
-insert into DepartmentDesignations (DepartmentId, DesignationId) values (2, 4);
+insert into DepartmentDesignations (DepartmentId, DesignationId) values (1, 2);
+insert into DepartmentDesignations (DepartmentId, DesignationId) values (1, 4);
+insert into DepartmentDesignations (DepartmentId, DesignationId) values (2, 1);
+insert into DepartmentDesignations (DepartmentId, DesignationId) values (2, 3);
 
 
 
@@ -95,10 +95,10 @@ insert into EmployeeBios (EmployeeContactNo, EmployeeAddress, DateofBirth, HireD
 
 
 
-insert into EmployeeDepartments (EmployeeId, DepartmentId) values (1, 1);
-insert into EmployeeDepartments (EmployeeId, DepartmentId) values (2, 2);
-insert into EmployeeDepartments (EmployeeId, DepartmentId) values (3, 1);
-insert into EmployeeDepartments (EmployeeId, DepartmentId) values (4, 2);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (1, 2);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (2, 1);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (3, 2);
+insert into EmployeeDepartments (EmployeeId, DepartmentId) values (4, 1);
 insert into EmployeeDepartments (EmployeeId, DepartmentId) values (5, 3);
 insert into EmployeeDepartments (EmployeeId, DepartmentId) values (6, 3);
 insert into EmployeeDepartments (EmployeeId, DepartmentId) values (7, 3);
@@ -108,16 +108,16 @@ insert into EmployeeDepartments (EmployeeId, DepartmentId) values (10, 3);
 
 
 
-insert into EmployeeDesignations (EmployeeId, DesignationId) values (1, 1);
-insert into EmployeeDesignations (EmployeeId, DesignationId) values (2, 3);
-insert into EmployeeDesignations (EmployeeId, DesignationId) values (3, 2);
-insert into EmployeeDesignations (EmployeeId, DesignationId) values (4, 4);
-insert into EmployeeDesignations (EmployeeId, DesignationId) values (5, 1);
-insert into EmployeeDesignations (EmployeeId, DesignationId) values (6, 1);
-insert into EmployeeDesignations (EmployeeId, DesignationId) values (7, 1);
-insert into EmployeeDesignations (EmployeeId, DesignationId) values (8, 1);
-insert into EmployeeDesignations (EmployeeId, DesignationId) values (9, 1);
-insert into EmployeeDesignations (EmployeeId, DesignationId) values (10, 1);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (1, 3);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (2, 1);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (3, 4);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (4, 2);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (5, 3);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (6, 3);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (7, 3);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (8, 3);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (9, 3);
+insert into EmployeeDesignations (EmployeeId, DesignationId) values (10, 3);
 
 
 insert into EmployeeIdentificationCards (EmployeeId, CardHolderName, CardHolderImage, CardExpiry) values (1, 'Christophe Baseley', 'http://dummyimage.com/222x210.bmp/ff4444/ffffff', '5/7/2023');
