@@ -89,6 +89,7 @@
     <Compile Include="TrainingService.cs" />
     <Compile Include="TransportAreaService.cs" />
     <Compile Include="TransportVehicleService.cs" />
+    <Compile Include="WorkDayService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HRM.DataAccessController\HRM.DataAccessController.csproj">

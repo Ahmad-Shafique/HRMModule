@@ -28,5 +28,7 @@ namespace HRM.View.Models
         public System.Data.Entity.DbSet<HRM.Entity.SupportingDocument> SupportingDocuments { get; set; }
 
         public System.Data.Entity.DbSet<HRM.Entity.SalaryComponents> SalaryComponents { get; set; }
+
+        public System.Data.Entity.DbSet<HRM.Entity.WorkDay> WorkDays { get; set; }
     }
 }

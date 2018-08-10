@@ -1,4 +1,5 @@
 ﻿using HRM.Data.Interfaces;
+using HRM.Data.Utilities;
 using HRM.Entity;
 using HRM.Entity.DevAccessory;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Data
 {
-    public class WorkDayRepository : Repository<WorkDay>, IWorkDayRepository
+    class WorkDayRepository : Repository<WorkDay>, IWorkDayRepository
     {
 
         override
@@ -21,20 +22,35 @@ namespace HRM.Data
 
             try
             {
-                if(entity.EndTime == null)
+                Output.WriteLine("Year of date is entity is: " + entity.StartTime.Year + " : " + entity.EndTime.Year);
+                Output.Write(entity.EndTime.Date);
+                if (entity.EndTime == new CheckRange().GetMinimumDateRange())
                 {
                     List<WorkDay> workDays = this.GetAll().ToList();
+                    List<WorkDay> l1, l2, l3;
                     Output.Write("Number of entries in workdays: " + workDays.Count);
-                    workDays.All(e => e.EmployeeId == entity.EmployeeId);
+                    workDays = workDays.Where(e => e.EmployeeId == entity.EmployeeId).ToList();
                     Output.Write("Number of entries in workdays for selected employee: " + workDays.Count);
-                    workDays.All(e => e.StartTime.Month == DateTime.Now.Month);
+                    workDays = workDays.Where(e => e.StartTime.Month == DateTime.Now.Month).ToList();
                     Output.Write("Number of entries in workdays for selected employee this month: " + workDays.Count);
-                    workDays.All(e => e.StartTime.Day == DateTime.Now.Day);
+                    workDays = workDays.Where(e => e.StartTime.Day == DateTime.Now.Day).ToList();
                     Output.Write("Number of entries in workdays for selected employee this month this day: " + workDays.Count);
                     if (workDays.Count == 0)
                     {
-                        return base.Insert(entity);
-                        
+                        try
+                        {
+                            context.WorkDays.Add(entity);
+                            return context.SaveChanges() > 0;
+                        }
+                        catch (Exception e)
+                        {
+                            Output.Write(e);
+                            return false;
+                        }
+
+
+                        //return base.Insert(entity);
+
                     }
                     return false;
                 }

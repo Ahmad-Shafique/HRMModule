@@ -127,6 +127,7 @@
     <Compile Include="TransportAreaRepository.cs" />
     <Compile Include="TransportAreaVehicleRepository.cs" />
     <Compile Include="TransportVehicleRepository.cs" />
+    <Compile Include="Utilities\CheckRange.cs" />
     <Compile Include="WorkDayRepository.cs" />
   </ItemGroup>
   <ItemGroup>

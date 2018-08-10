@@ -55,6 +55,8 @@ namespace HRM.Service
             Repositories.Add(typeof(NoticeComment), typeof(NoticeCommentService));
             Repositories.Add(typeof(SalaryRank), typeof(SalaryRankService));
             Repositories.Add(typeof(CompanyPolicy), typeof(CompanyPolicyService));
+            Repositories.Add(typeof(WorkDay), typeof(WorkDayService));
+            
 
         }
 

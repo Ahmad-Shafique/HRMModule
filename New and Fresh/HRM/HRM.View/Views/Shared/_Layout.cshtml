@@ -109,21 +109,22 @@ desired effect
                                         <div class="pull-left">
                                             @Html.ActionLink("Profile", "Details", "Biography", null, new { @class = "btn btn-default btn-flat" })
                                         </div>
+
+                                        <div class="pull-right">
+                                            @Html.ActionLink("Sign out", "Logout", "Login", null, new { @class = "btn btn-default btn-flat" })
+                                        </div>
                                         @if (Session["WorkDay"] == null || !(bool)@Session["WorkDay"])
                                         {
                                             <div class="pull-right">
-                                                @Html.ActionLink("Start Work Day", "Logout", "Login", null, new { @class = "btn btn-default btn-flat" })
+                                                @Html.ActionLink("Start Work Day", "StartWorkDay", "WorkDays", null, new { @class = "btn btn-default btn-flat" })
                                             </div>
                                         }
                                         else if ((bool)@Session["WorkDay"])
                                         {
                                             <div class="pull-right">
-                                                @Html.ActionLink("End Work Day", "Logout", "Login", null, new { @class = "btn btn-default btn-flat" })
+                                                @Html.ActionLink("End Work Day", "EndWorkDay", "WorkDays", null, new { @class = "btn btn-default btn-flat" })
                                             </div>
                                         }
-                                        <div class="pull-right">
-                                            @Html.ActionLink("Sign out", "Logout", "Login", null, new { @class = "btn btn-default btn-flat" })
-                                        </div>
                                     </li>
                                 </ul>
                             </li>

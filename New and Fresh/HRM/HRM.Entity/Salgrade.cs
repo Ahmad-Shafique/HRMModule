@@ -16,6 +16,5 @@ namespace HRM.Entity
         public int LowSalary { get; set; }
         [Required, Range(10000, 300000)]
         public int HighSalary { get; set; }
-
     }
 }
