@@ -95,6 +95,7 @@
     <Compile Include="Interfaces\IIntervieweeRepository.cs" />
     <Compile Include="Interfaces\IInterviewRepository.cs" />
     <Compile Include="Interfaces\ILeaveApplicationRepository.cs" />
+    <Compile Include="Interfaces\INoticeEmployeeRepository.cs" />
     <Compile Include="Interfaces\INoticeRepository.cs" />
     <Compile Include="Interfaces\IProjectRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="LeaveApplicationCategoryRepository.cs" />
     <Compile Include="LeaveApplicationRepository.cs" />
     <Compile Include="NoticeCommentRepository.cs" />
+    <Compile Include="NoticeEmployeeRepository.cs" />
     <Compile Include="NoticeRepository.cs" />
     <Compile Include="PrivilegeRepository.cs" />
     <Compile Include="Program.cs" />

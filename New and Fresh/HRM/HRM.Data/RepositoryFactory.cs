@@ -37,7 +37,7 @@ namespace HRM.Data
             Repositories.Add(typeof(Interview), typeof(InterviewRepository));
             Repositories.Add(typeof(LeaveApplication), typeof(LeaveApplicationRepository));
             Repositories.Add(typeof(LeaveApplicationCategory), typeof(LeaveApplicationCategoryRepository));
-            //Repositories.Add(typeof(NoticeEmployee), typeof(NoticeEmployeeRepository));
+            Repositories.Add(typeof(NoticeEmployee), typeof(NoticeEmployeeRepository));
             Repositories.Add(typeof(Notice), typeof(NoticeRepository));
             Repositories.Add(typeof(Privilege), typeof(PrivilegeRepository));
             Repositories.Add(typeof(Project), typeof(ProjectRepository));

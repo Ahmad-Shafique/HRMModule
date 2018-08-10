@@ -17,10 +17,12 @@ namespace HRM.View.Controllers
     {
         private IDomainService<Notice> service = new ServiceFactory().Create<Notice>();
         private IDomainService<NoticeComment> CommentService = new ServiceFactory().Create<NoticeComment>();
-        
+        private IDomainService<NoticeEmployee> seenService = new ServiceFactory().Create<NoticeEmployee>();
 
 
-        public  ActionResult Index()
+
+
+        public ActionResult Index()
         {
             ViewBag.Notices =  service.GetAll();
             return View();
@@ -29,14 +31,17 @@ namespace HRM.View.Controllers
 
         public  ActionResult Details(int? id)
         {
+            NoticeEmployee noticeEmployee;
+            IEnumerable<NoticeComment> comments;
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Console.WriteLine("Id found : " + id);
+            //Output.WriteLine("Id found : " + id);
             Notice entity =  service.Get(id);
-            Console.WriteLine("Notice header is : " + entity.NoticeTitle);
+            //Output.WriteLine("Notice header is : " + entity.NoticeTitle);
 
             if (entity == null)
             {
@@ -47,8 +52,16 @@ namespace HRM.View.Controllers
             ViewBag.NoticeDetails = entity.NoticeDetails;
             ViewBag.NoticeId = id;
             
-            IEnumerable<NoticeComment> comments =  CommentService.GetAll();
+            
+            comments =  CommentService.GetAll();
             ViewBag.Comments = comments.Where(item => item.NoticeId == entity.NoticeId);
+
+            noticeEmployee = new NoticeEmployee();
+            noticeEmployee.EmployeeId = Int32.Parse(Session["Id"].ToString());
+            noticeEmployee.NoticeId = id.Value;
+
+            seenService.Insert(noticeEmployee);
+            ViewBag.Seen = seenService.GetAll().Where(e => e.NoticeId == id.Value).ToList().Count;
 
 
             return View();
