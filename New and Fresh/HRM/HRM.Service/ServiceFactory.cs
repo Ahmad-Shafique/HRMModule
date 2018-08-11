@@ -43,12 +43,14 @@ namespace HRM.Service
             Repositories.Add(typeof(Notice), typeof(NoticeService));
             Repositories.Add(typeof(Privilege), typeof(PrivilegeService));
             Repositories.Add(typeof(Project), typeof(ProjectService));
+            Repositories.Add(typeof(ProjectEmployee), typeof(ProjectEmployeeService));
             Repositories.Add(typeof(SalaryComponents), typeof(SalaryComponentsService));
             Repositories.Add(typeof(SalgradeHistory), typeof(SalgradeHistoryService));
             Repositories.Add(typeof(Salgrade), typeof(SalgradeService));
             Repositories.Add(typeof(SupportingDocument), typeof(SupportingDocumentService));
             Repositories.Add(typeof(TemporaryCV), typeof(TemporaryCVService));
             Repositories.Add(typeof(Training), typeof(TrainingService));
+            Repositories.Add(typeof(TrainingEmployee), typeof(TrainingEmployeeService));
             Repositories.Add(typeof(Equipment), typeof(EquipmentService));
             Repositories.Add(typeof(TransportArea), typeof(TransportAreaService));
             Repositories.Add(typeof(TransportVehicle), typeof(TransportVehicleService));

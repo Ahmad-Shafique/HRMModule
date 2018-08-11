@@ -8,7 +8,7 @@ using HRM.Entity;
 
 namespace HRM.Data
 {
-    public class ProjectEmployeeRepository : Repository<ProejctEmployee>, TrainingEmployeeRepository
+    public class ProjectEmployeeRepository : Repository<ProjectEmployee>, IProjectEmployeeRepository
     {
 
     }
