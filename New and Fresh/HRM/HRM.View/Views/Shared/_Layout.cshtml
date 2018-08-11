@@ -58,7 +58,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-purple sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
 
         <!-- Main Header -->
@@ -542,6 +542,32 @@ desired effect
                                     </li>
                                     <li>
                                         @Html.ActionLink("Leave Category Management", "Index", "LeaveApplicationCategories")
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-link"></i> <span>Manage Projects</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        @Html.ActionLink("View and Manage projects", "Index", "Projects")
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-link"></i> <span>Manage Training Programs</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        @Html.ActionLink("View and Manage Training Programs", "Index", "Trainings")
                                     </li>
                                 </ul>
                             </li>

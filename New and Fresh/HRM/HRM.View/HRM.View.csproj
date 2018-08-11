@@ -299,7 +299,6 @@
     <Content Include="Views\Notices\Edit.cshtml" />
     <Content Include="Views\Notices\Index.cshtml" />
     <Content Include="Views\Bonuses\Index.cshtml" />
-    <Content Include="Views\Trainings\Index.cshtml" />
     <Content Include="Views\Budgets\Index.cshtml" />
     <Content Include="Views\SalaryPayments\SalaryComponents.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -321,6 +320,16 @@
     <Content Include="Views\WorkDays\Details.cshtml" />
     <Content Include="Views\WorkDays\Edit.cshtml" />
     <Content Include="Views\WorkDays\Index.cshtml" />
+    <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Projects\Delete.cshtml" />
+    <Content Include="Views\Projects\Details.cshtml" />
+    <Content Include="Views\Projects\Edit.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Trainings\Create.cshtml" />
+    <Content Include="Views\Trainings\Delete.cshtml" />
+    <Content Include="Views\Trainings\Details.cshtml" />
+    <Content Include="Views\Trainings\Edit.cshtml" />
+    <Content Include="Views\Trainings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -352,7 +361,6 @@
     <Content Include="Views\Candidates\Details.cshtml" />
     <Content Include="Views\Candidates\Edit.cshtml" />
     <Content Include="Views\Candidates\Index.cshtml" />
-    <Content Include="Views\Projects\Index.cshtml" />
     <Content Include="Views\TransportAreas\Create.cshtml" />
     <Content Include="Views\TransportAreas\Delete.cshtml" />
     <Content Include="Views\TransportAreas\Details.cshtml" />

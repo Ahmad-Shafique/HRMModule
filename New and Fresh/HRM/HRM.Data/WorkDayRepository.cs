@@ -27,7 +27,6 @@ namespace HRM.Data
                 if (entity.EndTime == new CheckRange().GetMinimumDateRange())
                 {
                     List<WorkDay> workDays = this.GetAll().ToList();
-                    List<WorkDay> l1, l2, l3;
                     Output.Write("Number of entries in workdays: " + workDays.Count);
                     workDays = workDays.Where(e => e.EmployeeId == entity.EmployeeId).ToList();
                     Output.Write("Number of entries in workdays for selected employee: " + workDays.Count);

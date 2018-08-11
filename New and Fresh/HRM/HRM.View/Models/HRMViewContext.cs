@@ -32,5 +32,7 @@ namespace HRM.View.Models
         public System.Data.Entity.DbSet<HRM.Entity.WorkDay> WorkDays { get; set; }
 
         public System.Data.Entity.DbSet<HRM.Entity.Project> Projects { get; set; }
+
+        public System.Data.Entity.DbSet<HRM.Entity.Training> Trainings { get; set; }
     }
 }
