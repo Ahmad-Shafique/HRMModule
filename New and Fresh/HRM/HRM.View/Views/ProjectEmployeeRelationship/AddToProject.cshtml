@@ -7,9 +7,21 @@
 
 <h2>AddToProject</h2>
 <h3>Project name: @ViewBag.ProjectTitle </h3>
-@foreach(EmployeeIdNameDepartmentId emp in Model)
-{
-<p>emp.EmployeeId + "  :  " + emp.EmployeeName</p>
-    @Html.ActionLink("Add To Project", "AddToProjectConfirmed", new { ProjectId=@ViewBag.ProjectId, EmployeeId=emp.EmployeeId}, new { @class = "btn btn-danger" })
-}
+<table>
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Action</th>
+    </tr>
 
+    @foreach (EmployeeIdNameDepartmentId emp in Model)
+    {
+        <tr>
+            <td>@emp.EmployeeId</td>
+            <td>@emp.EmployeeName</td>
+            <td>
+                @Html.ActionLink("Add To Project", "AddToProjectConfirmed", new { ProjectId = @ViewBag.ProjectId, EmployeeId = emp.EmployeeId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+</table>

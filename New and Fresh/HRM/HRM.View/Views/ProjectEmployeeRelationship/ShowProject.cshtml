@@ -9,14 +9,28 @@
 
 <br />
 <p>Employees involved: </p>
-<br />
-@foreach(EmployeeIdAndName item in Model.ListOfEmployees)
-{
-<p>
-    <strong>item.EmployeeName   </strong>
-    @Html.ActionLink("Remove employee from project", "RemoveFromProject", new { ProjectId=Model.ProjectId, EmployeeId = item.EmployeeId })
-</p>
-}
-@Html.ActionLink("Add employee to project", "AddToProject", new { ProjectId =  Model.ProjectId })
+<table>
+    <tr>
+        <th>Employee Id   </th>
+        <th>Employee Name </th>
+        <th>Action        </th>
+    </tr>
+    
+    @foreach (EmployeeIdAndName item in Model.ListOfEmployees)
+    {
+        <tr>
+            <td>
+                @item.EmployeeId
+            </td>
+            <td>
+                @item.EmployeeName
+            </td>
+            <td>
+                @Html.ActionLink("Remove employee from project", "RemoveFromProject", new { ProjectId = Model.ProjectId, EmployeeId = item.EmployeeId })
+            </td>
+        </tr>
 
+    }
+    @Html.ActionLink("Add employee to project", "AddToProject", new { ProjectId = Model.ProjectId })
+</table>
 
