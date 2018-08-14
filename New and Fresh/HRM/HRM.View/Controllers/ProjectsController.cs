@@ -20,7 +20,9 @@ namespace HRM.View.Controllers
         // GET: Projects
         public ActionResult Index()
         {
-            return View(Service.GetAll());
+            int deptId=0;
+            Int32.TryParse(Session["Department"].ToString(), out deptId);
+            return View(Service.GetAll().Where(e=>e.DepartmentId==deptId));
         }
 
         // GET: Projects/Details/5

@@ -4,8 +4,8 @@
     ViewBag.Title = "ShowProject";
 }
 
-<h1>@Html.DisplayFor(model=>model.ProjectTitle)</h1>
-<h3>@Html.DisplayFor(model=>model.ProjectDescription)</h3>
+<h1>@Html.DisplayFor(model => model.ProjectTitle)</h1>
+<h3>@Html.DisplayFor(model => model.ProjectDescription)</h3>
 
 <br />
 <p>Employees involved: </p>
@@ -15,7 +15,7 @@
         <th>Employee Name </th>
         <th>Action        </th>
     </tr>
-    
+
     @foreach (EmployeeIdAndName item in Model.ListOfEmployees)
     {
         <tr>
@@ -31,6 +31,8 @@
         </tr>
 
     }
-    @Html.ActionLink("Add employee to project", "AddToProject", new { ProjectId = Model.ProjectId })
+
 </table>
+@Html.ActionLink("Add employee to project", "AddToProject", new { ProjectId = Model.ProjectId }, new { @class="btn btn-Danger"})
+@Html.ActionLink("Back","Index", null , new { @class="btn btn-danger"})
 
