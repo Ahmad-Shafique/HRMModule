@@ -1,0 +1,15 @@
+﻿@using HRM.Entity
+@using HRM.Entity.Facade
+@model IEnumerable<HRM.Entity.Facade.EmployeeIdNameDepartmentId>
+@{
+    ViewBag.Title = "AddToProject";
+}
+
+<h2>AddToProject</h2>
+<h3>Project name: @ViewBag.ProjectTitle </h3>
+@foreach(EmployeeIdNameDepartmentId emp in Model)
+{
+<p>emp.EmployeeId + "  :  " + emp.EmployeeName</p>
+    @Html.ActionLink("Add To Project", "AddToProjectConfirmed", new { ProjectId=@ViewBag.ProjectId, EmployeeId=emp.EmployeeId}, new { @class = "btn btn-danger" })
+}
+

@@ -31,5 +31,6 @@ namespace HRM.DataAccessController.Interfaces
         dynamic Test();
         IEnumerable<EmployeePromotion> GetEmployeePromotionView();
         List<ProjectAndAllAssociatedEmployees> GetListOfAllProjectsAndTheirAssociatedEmployee();
+        IEnumerable<EmployeeIdNameDepartmentId> GetEmployeeIdNameDepartmentIdList();
     }
 }

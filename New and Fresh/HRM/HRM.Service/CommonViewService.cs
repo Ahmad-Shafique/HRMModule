@@ -128,5 +128,10 @@ namespace HRM.Service
             return repository.GetListOfAllProjectsAndTheirAssociatedEmployee();
         }
 
+        public IEnumerable<EmployeeIdNameDepartmentId> GetEmployeeIdNameDepartmentIdList()
+        {
+            return repository.GetEmployeeIdNameDepartmentIdList();
+        }
+
     }
 }

@@ -70,6 +70,7 @@
     <Compile Include="Facade\EmployeeAndBio.cs" />
     <Compile Include="Facade\EmployeeAndRelatedTrainings.cs" />
     <Compile Include="Facade\EmployeeIdAndName.cs" />
+    <Compile Include="Facade\EmployeeIdNameDepartmentId.cs" />
     <Compile Include="Facade\EmployeePerformance.cs" />
     <Compile Include="Facade\EmployeePromotion.cs" />
     <Compile Include="Facade\EmployeeTotalSalary.cs" />

@@ -927,5 +927,23 @@ namespace HRM.Facade
             return result;
         }
 
+        public virtual IEnumerable<EmployeeIdNameDepartmentId> GetEmployeeIdNameDepartmentIdList()
+        {
+            IEnumerable<Employee> employeeList = new RepositoryFactory().Create<Employee>().GetAll();
+            IEnumerable<EmployeeDepartment> employeeDept = new RepositoryFactory().Create<EmployeeDepartment>().GetAll();
+
+
+            IEnumerable<EmployeeIdNameDepartmentId> returnList = from emp in employeeList
+                                                              join empDept in employeeDept on emp.EmployeeId equals empDept.EmployeeId
+                                                              select new EmployeeIdNameDepartmentId
+                                                              {
+                                                                  EmployeeId = emp.EmployeeId,
+                                                                  EmployeeName = emp.EmployeeName,
+                                                                  DepartmentId = empDept.DepartmentId
+                                                              };
+
+            return returnList;
+        }
+
     }
 }

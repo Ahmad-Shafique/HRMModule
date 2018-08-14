@@ -332,8 +332,10 @@
     <Content Include="Views\Trainings\Details.cshtml" />
     <Content Include="Views\Trainings\Edit.cshtml" />
     <Content Include="Views\Trainings\Index.cshtml" />
-    <Content Include="Views\ProjectEmployeeRelationship\Index.cshtml" />
     <Content Include="Views\TrainingEmployeeRelationship\Index.cshtml" />
+    <Content Include="Views\ProjectEmployeeRelationship\Index.cshtml" />
+    <Content Include="Views\ProjectEmployeeRelationship\ShowProject.cshtml" />
+    <Content Include="Views\ProjectEmployeeRelationship\AddToProject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

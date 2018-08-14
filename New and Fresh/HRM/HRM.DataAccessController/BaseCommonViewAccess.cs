@@ -14,7 +14,7 @@ namespace HRM.DataAccessController
 {
     class BaseCommonViewAccess : IBaseCommonViewAccess
     {
-        
+
         protected internal ICommonView repository;
 
         protected internal BaseCommonViewAccess()
@@ -124,6 +124,11 @@ namespace HRM.DataAccessController
         public List<ProjectAndAllAssociatedEmployees> GetListOfAllProjectsAndTheirAssociatedEmployee()
         {
             return repository.GetListOfAllProjectsAndTheirAssociatedEmployee();
+        }
+
+        public IEnumerable<EmployeeIdNameDepartmentId> GetEmployeeIdNameDepartmentIdList()
+        {
+            return repository.GetEmployeeIdNameDepartmentIdList();
         }
     }
 }

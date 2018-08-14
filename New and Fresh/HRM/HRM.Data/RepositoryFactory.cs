@@ -41,6 +41,7 @@ namespace HRM.Data
             Repositories.Add(typeof(Notice), typeof(NoticeRepository));
             Repositories.Add(typeof(Privilege), typeof(PrivilegeRepository));
             Repositories.Add(typeof(Project), typeof(ProjectRepository));
+            Repositories.Add(typeof(ProjectEmployee), typeof(ProjectEmployeeRepository));
             Repositories.Add(typeof(SalaryComponents), typeof(SalaryComponentsRepository));
             Repositories.Add(typeof(SalgradeHistory), typeof(SalgradeHistoryRepository));
             Repositories.Add(typeof(Salgrade), typeof(SalgradeRepository));

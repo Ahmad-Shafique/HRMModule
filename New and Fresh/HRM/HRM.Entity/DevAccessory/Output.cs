@@ -10,13 +10,28 @@ namespace HRM.Entity.DevAccessory
     {
         public static void Write(Object message)
         {
-            System.Diagnostics.Debug.WriteLine(message.ToString());
+            try
+            {
+                System.Diagnostics.Debug.WriteLine(message.ToString());
+            }
+            catch(Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e);
+            }
         }
 
         public static void WriteLine(Object message)
         {
-            System.Diagnostics.Debug.WriteLine(message.ToString());
-            System.Diagnostics.Debug.WriteLine("\n");
+            try
+            {
+                System.Diagnostics.Debug.WriteLine(message.ToString());
+                System.Diagnostics.Debug.WriteLine("\n");
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e);
+            }
+            
         }
     }
 }

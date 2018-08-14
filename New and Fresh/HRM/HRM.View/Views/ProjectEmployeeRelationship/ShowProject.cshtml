@@ -1,0 +1,22 @@
+﻿@model HRM.Entity.Facade.ProjectAndAllAssociatedEmployees
+@using HRM.Entity.Facade
+@{
+    ViewBag.Title = "ShowProject";
+}
+
+<h1>@Html.DisplayFor(model=>model.ProjectTitle)</h1>
+<h3>@Html.DisplayFor(model=>model.ProjectDescription)</h3>
+
+<br />
+<p>Employees involved: </p>
+<br />
+@foreach(EmployeeIdAndName item in Model.ListOfEmployees)
+{
+<p>
+    <strong>item.EmployeeName   </strong>
+    @Html.ActionLink("Remove employee from project", "RemoveFromProject", new { ProjectId=Model.ProjectId, EmployeeId = item.EmployeeId })
+</p>
+}
+@Html.ActionLink("Add employee to project", "AddToProject", new { ProjectId =  Model.ProjectId })
+
+
