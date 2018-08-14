@@ -891,7 +891,41 @@ namespace HRM.Facade
         //           };
         //}
 
+        public virtual List<ProjectAndAllAssociatedEmployees> GetListOfAllProjectsAndTheirAssociatedEmployee()
+        {
+            IEnumerable<Employee> employeeList = new RepositoryFactory().Create<Employee>().GetAll();
+            IEnumerable<EmployeeBio> employeeBioList = new RepositoryFactory().Create<EmployeeBio>().GetAll();
+            IEnumerable<Project> projectList = new RepositoryFactory().Create<Project>().GetAll();
+            IEnumerable<ProjectEmployee> projectEmployeeAssociation = new RepositoryFactory().Create<ProjectEmployee>().GetAll();
+            List<ProjectAndAllAssociatedEmployees> result = new List<ProjectAndAllAssociatedEmployees>();
 
+
+            IEnumerable<EmployeeIdAndName> employeeAndName = (from emp in employeeList
+                                   join empBio in employeeBioList on emp.EmployeeId equals empBio.EmployeeId
+                                   select new EmployeeIdAndName
+                                   {
+                                       EmployeeId = emp.EmployeeId,
+                                       EmployeeName = emp.EmployeeName
+                                   }).ToList();
+
+            foreach(Project project in projectList)
+            {
+                List<ProjectEmployee> pEA = projectEmployeeAssociation.Where(e => e.ProjectId == project.ProjectId).ToList();
+                ProjectAndAllAssociatedEmployees entity = new ProjectAndAllAssociatedEmployees();
+                entity.ProjectId = project.ProjectId;
+                entity.ProjectTitle = project.ProjectDescription;
+                entity.ProjectDescription = project.ProjectDescription;
+                entity.DepartmentId = project.DepartmentId;
+                foreach(ProjectEmployee p in pEA)
+                {
+                    EmployeeIdAndName eIN = employeeAndName.First(e => e.EmployeeId == p.EmployeeId);
+                    entity.ListOfEmployees.Add(eIN);
+                }
+                result.Add(entity);
+            }
+
+            return result;
+        }
 
     }
 }

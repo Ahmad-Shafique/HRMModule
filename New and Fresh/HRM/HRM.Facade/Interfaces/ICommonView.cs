@@ -30,5 +30,6 @@ namespace HRM.Facade.Interfaces
         IEnumerable<EmployeeTotalSalary> CalculateAllEmployeeTotalSalary();
         dynamic Test();
         IEnumerable<EmployeePromotion> GetEmployeePromotionView();
+        List<ProjectAndAllAssociatedEmployees> GetListOfAllProjectsAndTheirAssociatedEmployee();
     }
 }

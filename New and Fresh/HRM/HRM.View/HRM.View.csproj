@@ -158,10 +158,12 @@
     <Compile Include="Controllers\LeaveApplicationsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NoticesController.cs" />
+    <Compile Include="Controllers\ProjectEmployeeRelationshipController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\SalaryPaymentsController.cs" />
     <Compile Include="Controllers\SalaryRanksController.cs" />
     <Compile Include="Controllers\SupportingDocumentsController.cs" />
+    <Compile Include="Controllers\TrainingEmployeeRelationshipController.cs" />
     <Compile Include="Controllers\TrainingsController.cs" />
     <Compile Include="Controllers\TransportAreasController.cs" />
     <Compile Include="Controllers\TransportationsController.cs" />
@@ -330,6 +332,8 @@
     <Content Include="Views\Trainings\Details.cshtml" />
     <Content Include="Views\Trainings\Edit.cshtml" />
     <Content Include="Views\Trainings\Index.cshtml" />
+    <Content Include="Views\ProjectEmployeeRelationship\Index.cshtml" />
+    <Content Include="Views\TrainingEmployeeRelationship\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

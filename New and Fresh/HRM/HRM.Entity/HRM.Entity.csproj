@@ -69,10 +69,12 @@
     <Compile Include="EquipmentType.cs" />
     <Compile Include="Facade\EmployeeAndBio.cs" />
     <Compile Include="Facade\EmployeeAndRelatedTrainings.cs" />
+    <Compile Include="Facade\EmployeeIdAndName.cs" />
     <Compile Include="Facade\EmployeePerformance.cs" />
     <Compile Include="Facade\EmployeePromotion.cs" />
     <Compile Include="Facade\EmployeeTotalSalary.cs" />
     <Compile Include="Facade\LoginInfo.cs" />
+    <Compile Include="Facade\ProjectAndAllAssociatedEmployees.cs" />
     <Compile Include="Facade\TrainingAndRelatedEmployees.cs" />
     <Compile Include="MonthlyBudget.cs" />
     <Compile Include="NoticeComment.cs" />

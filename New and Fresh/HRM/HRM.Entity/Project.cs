@@ -18,6 +18,8 @@ namespace HRM.Entity
         public DateTime StartDate { get; set; }
         [Required]
         public DateTime EndDate { get; set; }
+        [Range(0,100)]
         public int SuccessRate { get; set; }
+        public int DepartmentId { get; set; }
     }
 }

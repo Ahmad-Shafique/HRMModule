@@ -120,5 +120,10 @@ namespace HRM.DataAccessController
         {
             return repository.GetEmployeePromotionView();
         }
+
+        public List<ProjectAndAllAssociatedEmployees> GetListOfAllProjectsAndTheirAssociatedEmployee()
+        {
+            return repository.GetListOfAllProjectsAndTheirAssociatedEmployee();
+        }
     }
 }

@@ -16,6 +16,8 @@ namespace HRM.Entity
         public string TrainingDescription { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        [Range(0, 100)]
         public int SuccessRate { get; set; }
+        public int DepartmentId { get; set; }
     }
 }

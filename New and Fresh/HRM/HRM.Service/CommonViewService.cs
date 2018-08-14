@@ -122,5 +122,11 @@ namespace HRM.Service
         {
             return repository.GetEmployeePromotionView();
         }
+
+        public List<ProjectAndAllAssociatedEmployees> GetListOfAllProjectsAndTheirAssociatedEmployee()
+        {
+            return repository.GetListOfAllProjectsAndTheirAssociatedEmployee();
+        }
+
     }
 }
