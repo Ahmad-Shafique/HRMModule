@@ -1,18 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using HRM.Data.Utilities;
 using HRM.Entity;
+using HRM.Entity.DevAccessory;
 using HRM.Service;
 using HRM.Service.Interfaces;
 using HRM.View.Models;
 
 namespace HRM.View.Controllers
 {
+    public class SuccessRate
+    {
+        public int projectId { get; set; }
+        [Required,Range(0,100)]
+        public int successRate { get; set; }
+    }
+
     public class ProjectsController : Controller
     {
         private IDomainService<Project> Service = new ServiceFactory().Create<Project>();
@@ -21,8 +31,9 @@ namespace HRM.View.Controllers
         public ActionResult Index()
         {
             int deptId=0;
+            DateTime minVal = new CheckRange().GetMinimumDateRange();
             Int32.TryParse(Session["Department"].ToString(), out deptId);
-            return View(Service.GetAll().Where(e=>e.DepartmentId==deptId));
+            return View(Service.GetAll().Where(e=>e.DepartmentId==deptId && e.EndDate==minVal));
         }
 
         // GET: Projects/Details/5
@@ -55,6 +66,9 @@ namespace HRM.View.Controllers
         {
             if (ModelState.IsValid)
             {
+                project.EndDate = new CheckRange().GetMinimumDateRange();
+                project.SuccessRate = 0;
+                project.DepartmentId = Int32.Parse(Session["Department"].ToString());
                 Service.Insert(project);
                 return RedirectToAction("Index");
             }
@@ -114,6 +128,38 @@ namespace HRM.View.Controllers
         {
             Project project = Service.Get(id);
             Service.RemoveByEntity(project);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult CompleteProject(int? id)
+        {
+            ViewBag.ProjectId = id.Value;
+            SuccessRate s = new SuccessRate();
+            s.projectId = id.Value;
+            return View(s);
+        }
+
+        [HttpPost]
+        public ActionResult CompleteProject(SuccessRate success)
+        {
+            Output.Write(success.projectId + " : " + success.successRate);
+            Project entity = Service.Get(success.projectId);
+            entity.EndDate = DateTime.Now;
+            entity.SuccessRate = success.successRate;
+            Service.Update(entity, entity.ProjectId);
+            return RedirectToAction("Index");
+        }
+
+
+
+        [HttpPost]
+        public ActionResult CompleteProjectConfirmed(SuccessRate success)
+        {
+            Output.Write(success.projectId + " : " + success.successRate);
+            Project entity = Service.Get(success.projectId);
+            entity.EndDate = DateTime.Now;
+            entity.SuccessRate = success.successRate;
+            Service.Update(entity, entity.ProjectId);
             return RedirectToAction("Index");
         }
     }

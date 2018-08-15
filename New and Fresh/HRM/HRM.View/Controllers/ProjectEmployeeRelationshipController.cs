@@ -1,4 +1,5 @@
-﻿using HRM.Entity;
+﻿using HRM.Data.Utilities;
+using HRM.Entity;
 using HRM.Entity.DevAccessory;
 using HRM.Entity.Facade;
 using HRM.Service;
@@ -21,16 +22,26 @@ namespace HRM.View.Controllers
 
         public ProjectEmployeeRelationshipController()
         {
-            
-            projectList = CommonService.GetListOfAllProjectsAndTheirAssociatedEmployee().
-                                        Where(e=>e.DepartmentId==Int32.Parse(Session["Department"].ToString()));
+            try
+            {
+                int deptId = Int32.Parse(Session["Department"].ToString());
+                projectList = CommonService.GetListOfAllProjectsAndTheirAssociatedEmployee().
+                                            Where(e => e.DepartmentId == deptId
+                                            );
+            }catch(Exception e)
+            {
+                Output.Write(e);
+            }
+
+
+
         }
 
         // GET: ProjectEmployeeRelationship
         public ActionResult Index()
         {
-            
-            return View(projectList);
+            if(projectList != null) return View(projectList);
+            return View(new List<ProjectAndAllAssociatedEmployees>());
         }
 
         public ActionResult ShowProject(int? id)

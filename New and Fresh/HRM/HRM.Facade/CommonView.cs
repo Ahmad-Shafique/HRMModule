@@ -11,6 +11,7 @@ using HRM.Entity.Facade;
 using HRM.Entity.Accessory;
 using HRM.Entity.DevAccessory;
 using System.Diagnostics;
+using HRM.Data.Utilities;
 
 namespace HRM.Facade
 {
@@ -898,7 +899,7 @@ namespace HRM.Facade
             IEnumerable<Project> projectList = new RepositoryFactory().Create<Project>().GetAll();
             IEnumerable<ProjectEmployee> projectEmployeeAssociation = new RepositoryFactory().Create<ProjectEmployee>().GetAll();
             List<ProjectAndAllAssociatedEmployees> result = new List<ProjectAndAllAssociatedEmployees>();
-
+            DateTime minVal = new CheckRange().GetMinimumDateRange();
 
             IEnumerable<EmployeeIdAndName> employeeAndName = (from emp in employeeList
                                    join empBio in employeeBioList on emp.EmployeeId equals empBio.EmployeeId
@@ -910,18 +911,23 @@ namespace HRM.Facade
 
             foreach(Project project in projectList)
             {
-                List<ProjectEmployee> pEA = projectEmployeeAssociation.Where(e => e.ProjectId == project.ProjectId).ToList();
-                ProjectAndAllAssociatedEmployees entity = new ProjectAndAllAssociatedEmployees();
-                entity.ProjectId = project.ProjectId;
-                entity.ProjectTitle = project.ProjectDescription;
-                entity.ProjectDescription = project.ProjectDescription;
-                entity.DepartmentId = project.DepartmentId;
-                foreach(ProjectEmployee p in pEA)
+                if(project.EndDate != minVal)
                 {
-                    EmployeeIdAndName eIN = employeeAndName.First(e => e.EmployeeId == p.EmployeeId);
-                    entity.ListOfEmployees.Add(eIN);
+                    List<ProjectEmployee> pEA = projectEmployeeAssociation.Where(e => e.ProjectId == project.ProjectId
+                                                                                  ).ToList();
+                    ProjectAndAllAssociatedEmployees entity = new ProjectAndAllAssociatedEmployees();
+                    entity.ProjectId = project.ProjectId;
+                    entity.ProjectTitle = project.ProjectDescription;
+                    entity.ProjectDescription = project.ProjectDescription;
+                    entity.DepartmentId = project.DepartmentId;
+                    foreach (ProjectEmployee p in pEA)
+                    {
+                        EmployeeIdAndName eIN = employeeAndName.First(e => e.EmployeeId == p.EmployeeId);
+                        entity.ListOfEmployees.Add(eIN);
+                    }
+                    result.Add(entity);
                 }
-                result.Add(entity);
+
             }
 
             return result;

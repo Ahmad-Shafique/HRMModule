@@ -47,7 +47,7 @@
             @Html.DisplayFor(modelItem => item.SuccessRate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProjectId }) |
+            @Html.ActionLink("Complete Project", "CompleteProject", new { id=item.ProjectId }) |
             @Html.ActionLink("Details", "Details", new { id=item.ProjectId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ProjectId })
         </td>

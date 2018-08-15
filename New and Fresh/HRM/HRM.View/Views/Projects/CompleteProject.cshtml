@@ -1,0 +1,25 @@
+﻿@model HRM.View.Controllers.SuccessRate
+@{
+    ViewBag.Title = "CompleteProject";
+}
+
+<table>
+    <tr>
+        <th>
+            Select project success rate (0 to 100)
+        </th>
+    </tr>
+    <tr>
+        <td>
+
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(model => model.projectId)
+                @Html.EditorFor(model => model.successRate)
+                @Html.ValidationMessageFor(model => model.successRate)
+                <button type="submit" class="btn btn-block" value="CompleteForm">Confirm</button>
+            }
+        </td>
+    </tr>
+
+</table>

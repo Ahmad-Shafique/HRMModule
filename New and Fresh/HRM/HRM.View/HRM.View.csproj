@@ -336,6 +336,7 @@
     <Content Include="Views\ProjectEmployeeRelationship\Index.cshtml" />
     <Content Include="Views\ProjectEmployeeRelationship\ShowProject.cshtml" />
     <Content Include="Views\ProjectEmployeeRelationship\AddToProject.cshtml" />
+    <Content Include="Views\Projects\CompleteProject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -414,6 +415,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HRM.Data\HRM.Data.csproj">
+      <Project>{2EB3ADBB-D7F3-4E00-AD69-33B2E9E73F37}</Project>
+      <Name>HRM.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HRM.Entity\HRM.Entity.csproj">
       <Project>{86e8c7b0-f401-4f4a-8be1-ffadc30c7257}</Project>
       <Name>HRM.Entity</Name>
