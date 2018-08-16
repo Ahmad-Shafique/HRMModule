@@ -343,8 +343,39 @@ namespace HRM.Facade
                 IRepository<EmployeeDepartment> empDeptRepo = new RepositoryFactory().Create<EmployeeDepartment>();
                 IRepository<EmployeeSalary> empSalary = new RepositoryFactory().Create<EmployeeSalary>();
                 IRepository<WorkDay> workDaysMainList = new RepositoryFactory().Create<WorkDay>();
+                IRepository<ProjectEmployee> projectEmployeeMainList = new RepositoryFactory().Create<ProjectEmployee>();
+                IRepository<Project> projectMainRepo = new RepositoryFactory().Create<Project>();
                 List<EmployeePerformance> finalList = new List<EmployeePerformance>();
-                List<EmployeePerformance> intermediaryList = (from emp in empRepo.GetAll()
+                List<EmployeePerformance> intermediaryList;
+
+                /* Calculation of performance starts here  
+                 */
+                IEnumerable<Employee> employeePerfNameList = empRepo.GetAll();
+                IEnumerable<ProjectEmployee> empPerfProjEmpList = projectEmployeeMainList.GetAll();
+                IEnumerable<EmployeePerformanceMetric> empPerfList = empBioRepo.GetAll();
+                IEnumerable<Project> empPerfProjList = projectMainRepo.GetAll().Where(e=>e.EndDate != new CheckRange().GetMinimumDateRange());
+                foreach (Employee emp in employeePerfNameList)
+                {
+                    Output.Write("Employee: " + emp.EmployeeName);
+                    List<ProjectEmployee> tempProjList = empPerfProjEmpList.Where(e => e.EmployeeId == emp.EmployeeId).ToList();
+                    double totalProject=0, cumulativeSuccessRate=0, averageSuccessRate=0;
+                    totalProject = tempProjList.Count;
+                    foreach(ProjectEmployee pe in tempProjList)
+                    {
+                        Project p = empPerfProjList.First(e => e.ProjectId == pe.ProjectId);
+                        cumulativeSuccessRate += (double)p.SuccessRate;
+                        Output.Write("cumulative success rate: " + cumulativeSuccessRate);
+                    }
+                    averageSuccessRate = cumulativeSuccessRate / totalProject;
+                    Output.Write("average success rate: " + averageSuccessRate);
+                    EmployeePerformanceMetric empPerfMet = empPerfList.First(e => e.EmployeeId == emp.EmployeeId);
+                    empPerfMet.AverageProjectScore = (int)averageSuccessRate;
+                    empBioRepo.Update(empPerfMet, empPerfMet.EmployeePerformanceMetricId);
+                }
+                /* Calculation of performance ends here  
+                 */
+
+                intermediaryList = (from emp in empRepo.GetAll()
                        join empDept in empDeptRepo.GetAll() on emp.EmployeeId equals empDept.EmployeeId
                        join empPerf in empBioRepo.GetAll() on emp.EmployeeId equals empPerf.EmployeeId
                        join empSal in empSalary.GetAll() on emp.EmployeeId equals empSal.EmployeeId
@@ -369,7 +400,15 @@ namespace HRM.Facade
                                                                                 && e.StartTime.Year == DateTime.Now.Year
                                                                                 && e.StartTime.Month == DateTime.Now.Month).ToList();
                     empPerf.AttendanceScore = (workDaysList.Count * 100) / DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
-
+                    if(empPerf.ProjectScore > 100 || empPerf.ProjectScore < 0)
+                    {
+                        empPerf.ProjectScore = 100;
+                        if (empPerf.TrainingScore > 100 || empPerf.TrainingScore < 0)
+                        {
+                            empPerf.TrainingScore = 100;
+                        }
+                        empPerf.AggregateScore = (empPerf.ProjectScore + empPerf.TrainingScore + empPerf.AttendanceScore) / 3;
+                    }
 
                     finalList.Add(empPerf);
                 }

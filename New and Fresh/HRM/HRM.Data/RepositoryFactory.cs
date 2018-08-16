@@ -41,9 +41,11 @@ namespace HRM.Data
             Repositories.Add(typeof(Notice), typeof(NoticeRepository));
             Repositories.Add(typeof(Privilege), typeof(PrivilegeRepository));
             Repositories.Add(typeof(Project), typeof(ProjectRepository));
+            Repositories.Add(typeof(RankHierarchy), typeof(RankHierarchyRepository));
             Repositories.Add(typeof(ProjectEmployee), typeof(ProjectEmployeeRepository));
             Repositories.Add(typeof(SalaryComponents), typeof(SalaryComponentsRepository));
             Repositories.Add(typeof(SalgradeHistory), typeof(SalgradeHistoryRepository));
+            Repositories.Add(typeof(SalaryRank), typeof(SalaryRankRepository));
             Repositories.Add(typeof(Salgrade), typeof(SalgradeRepository));
             Repositories.Add(typeof(SupportingDocument), typeof(SupportingDocumentRepository));
             Repositories.Add(typeof(TemporaryCV), typeof(TemporaryCVRepository));
@@ -53,7 +55,6 @@ namespace HRM.Data
             Repositories.Add(typeof(TransportVehicle), typeof(TransportVehicleRepository));
             Repositories.Add(typeof(NoticeComment), typeof(NoticeCommentRepository));
             Repositories.Add(typeof(TrainingEmployee), typeof(TrainingEmployeeRepository));
-            Repositories.Add(typeof(SalaryRank), typeof(SalaryRankRepository));
             Repositories.Add(typeof(CompanyPolicy), typeof(CompanyPolicyRepository));
             Repositories.Add(typeof(WorkDay), typeof(WorkDayRepository));
 

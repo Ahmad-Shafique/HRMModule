@@ -99,6 +99,7 @@
     <Compile Include="Interfaces\INoticeRepository.cs" />
     <Compile Include="Interfaces\IProjectEmployeeRepository.cs" />
     <Compile Include="Interfaces\IProjectRepository.cs" />
+    <Compile Include="Interfaces\IRankHierarchyRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\ISalgradeHistoryRepository.cs" />
     <Compile Include="Interfaces\ISalgradeRepository.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="ProjectEmployeeRepository.cs" />
     <Compile Include="ProjectRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RankHierarchyRepository.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="RepositoryFactory.cs" />
     <Compile Include="SalaryComponentsRepository.cs" />

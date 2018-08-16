@@ -44,8 +44,10 @@ namespace HRM.Data
         public DbSet<Privilege> Privileges { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectEmployee> ProjectEmployees { get; set; }
+        public DbSet<RankHierarchy> RankHierarchies { get; set; }
         public DbSet<SalaryComponents> SalaryComponents { get; set; }
         public DbSet<Salgrade> Salgrades { get; set; }
+        public DbSet<SalaryRank> SalaryRanks { get; set; }
         public DbSet<SalgradeHistory> SalgradeHistories{ get; set; }
         public DbSet<SupportingDocument> SupportingDocuments { get; set; }
         public DbSet<TemporaryCV> TemporaryCVs { get; set; }
@@ -63,7 +65,6 @@ namespace HRM.Data
         public DbSet<EquipmentAndDepartment> EquipmentAndDepartments { get; set; }
         public DbSet<EquipmentTransaction> EquipmentTransactions { get; set; }
         public DbSet<EquipmentType> EquipmentTypes { get; set; }
-        public DbSet<SalaryRank> SalaryRanks { get; set; }
         public DbSet<WorkDay> WorkDays { get; set; }
 
 

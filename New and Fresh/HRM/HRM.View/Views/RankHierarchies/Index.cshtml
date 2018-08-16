@@ -1,0 +1,117 @@
+﻿@model IEnumerable<HRM.Entity.RankHierarchy>
+@using HRM.Entity
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+
+            <h2>Index</h2>
+
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DepartmentId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SalaryRankId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NextSalaryRankId)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DepartmentId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SalaryRankId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NextSalaryRankId)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.RankHierarchyId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.RankHierarchyId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.RankHierarchyId })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <h2>Available salary ranks</h2>
+            <table class="table">
+                <tr>
+                    <th>
+                        Salary Rank ID
+                    </th>
+                    <th>
+                        Salary Rank Name
+                    </th>
+                    <th>
+                        Salary Rank Value
+                    </th>
+                </tr>
+
+                @foreach (SalaryRank item in ViewBag.SalaryRanks)
+                {
+                    <tr>
+                        <td>
+                            @item.SalaryRankId
+                        </td>
+                        <td>
+                            @item.RankName
+                        </td>
+                        <td>
+                            @item.RankValue
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+        <div class="col-sm">
+            <h2>Available departments</h2>
+            <table class="table">
+                <tr>
+                    <th>
+                       Department ID
+                    </th>
+                    <th>
+                        Department Name
+                    </th>
+                </tr>
+
+                @foreach (Department item in @ViewBag.Departments)
+                {
+                    <tr>
+                        <td>
+                            @item.DepartmentId
+                        </td>
+                        <td>
+                            @item.DepartmentName
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+    </div>
+</div>

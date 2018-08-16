@@ -176,6 +176,7 @@
     <Compile Include="SalaryComponentsController.cs" />
     <Compile Include="ViewAccessCodes.cs" />
     <Compile Include="Controllers\WorkDaysController.cs" />
+    <Compile Include="Controllers\RankHierarchiesController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -337,6 +338,11 @@
     <Content Include="Views\ProjectEmployeeRelationship\ShowProject.cshtml" />
     <Content Include="Views\ProjectEmployeeRelationship\AddToProject.cshtml" />
     <Content Include="Views\Projects\CompleteProject.cshtml" />
+    <Content Include="Views\RankHierarchies\Create.cshtml" />
+    <Content Include="Views\RankHierarchies\Delete.cshtml" />
+    <Content Include="Views\RankHierarchies\Details.cshtml" />
+    <Content Include="Views\RankHierarchies\Edit.cshtml" />
+    <Content Include="Views\RankHierarchies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

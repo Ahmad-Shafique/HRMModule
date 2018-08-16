@@ -34,5 +34,9 @@ namespace HRM.View.Models
         public System.Data.Entity.DbSet<HRM.Entity.Project> Projects { get; set; }
 
         public System.Data.Entity.DbSet<HRM.Entity.Training> Trainings { get; set; }
+
+        public System.Data.Entity.DbSet<HRM.Entity.EmployeePerformanceMetric> EmployeePerformanceMetrics { get; set; }
+
+        public System.Data.Entity.DbSet<HRM.Entity.RankHierarchy> RankHierarchies { get; set; }
     }
 }

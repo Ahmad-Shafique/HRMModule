@@ -99,6 +99,7 @@
     <Compile Include="Project.cs" />
     <Compile Include="ProjectEmployee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RankHierarchy.cs" />
     <Compile Include="SalaryComponents.cs" />
     <Compile Include="SalaryRank.cs" />
     <Compile Include="Salgrade.cs" />
