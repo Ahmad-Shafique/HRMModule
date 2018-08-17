@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HRM.Entity.Facade
 {
-    public class EmployeePromotion 
+    public class EmployeePromotionDetails
     {
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }

@@ -1,4 +1,5 @@
 ﻿using HRM.Entity;
+using HRM.Entity.DevAccessory;
 using HRM.Entity.Facade;
 using HRM.Service;
 using HRM.Service.Interfaces;
@@ -20,7 +21,10 @@ namespace HRM.View.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Employees = CommonService.GetEmployeePromotionView().OrderBy(item => -item.RecommendationStatus);
+            IEnumerable<EmployeePromotion> employeePromotions = CommonService.GetEmployeePromotionView().OrderBy(item => -item.RecommendationStatus);
+            int currentUserId = Int32.Parse(Session["Id"].ToString());
+            employeePromotions = employeePromotions.Where(e => e.EmployeeId != currentUserId);
+            ViewBag.Employees = employeePromotions;
             ViewBag.SalaryComponents = SalaryComponentsService.GetAll();
             
             return View();
@@ -45,9 +49,20 @@ namespace HRM.View.Controllers
 
         public ActionResult Promote (int? Id, int SalaryRankId)
         {
-            EmployeeSalary empSal = SalaryService.GetAll().Single(item => item.EmployeeId == Id);
-            empSal.SalaryRankId = SalaryRankId;
-            SalaryService.Update(empSal, empSal.EmployeeSalaryId);
+
+            EmployeeSalary empSal = SalaryService.GetAll().First(item => item.EmployeeId == Id);
+            SalaryRank salaryRank = SalaryRankService.Get(SalaryRankId);
+            empSal.SalaryRankId = salaryRank.SalaryRankId;
+            empSal.BasicSalary = salaryRank.RankValue;
+            try
+            {
+                SalaryService.Update(empSal, empSal.EmployeeSalaryId);
+            }
+            catch(Exception e)
+            {
+                Output.Write(e);
+            }
+            
 
             return RedirectToAction("Index");
         }

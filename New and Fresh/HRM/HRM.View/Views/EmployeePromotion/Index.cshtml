@@ -33,10 +33,17 @@
                                             
                                         </td>
                                         <td>
-                                            @Html.ActionLink("Promote" , "PromotionLanding", "EmployeePromotion", new { Id=ep.EmployeeId, Name=ep.EmployeeName } ,new { @class="btn btn-primary" })<br />
-                                            Next Salary Rank : 3<br />
-                                            Next Rank title : Project manager<br />
-                                            Next rank basic salary: 70000 taka
+                                            @if (ep.promotionAvailable)
+                                            {
+                                               @Html.ActionLink("Promote", "Promote", "EmployeePromotion", new { Id = ep.EmployeeId,  SalaryRankId = ep.NextSalaryRankId }, new { @class = "btn btn-primary" })<br />
+                                               <p>Next Salary Rank:        @ep.NextSalaryRankId</p>
+                                               <p>Next Rank title :        @ep.NextRankName</p>
+                                               <p>Next rank basic salary:  @ep.NextBasicSalary</p>
+                                            }else
+                                            {
+                                                <p>Promotion not available</p>
+                                            }
+
                                         </td>
                                         <td>
                                         @if (ep.RecommendationStatus == 1)

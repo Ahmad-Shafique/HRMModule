@@ -83,12 +83,12 @@ namespace HRM.Data
 
                 //context.Entry<TEntity>(entity).State = EntityState.Modified;
                 TEntity existing = context.Set<TEntity>().Find(key);
-                if (Debugger.IsAttached)
-                {
-                    Output.Write("Inside Repository for employeebio");
-                    Output.Write("existing model is: " + existing);
-                    Output.Write("updated model is: " + updated);
-                }
+                //if (Debugger.IsAttached)
+                //{
+                //    Output.Write("Inside Repository for employeebio");
+                //    Output.Write("existing model is: " + existing);
+                //    Output.Write("updated model is: " + updated);
+                //}
                 if (existing != null)
                 {
                     context.Entry(existing).CurrentValues.SetValues(updated);

@@ -852,9 +852,12 @@ namespace HRM.Facade
 
         public virtual IEnumerable<EmployeePromotion> GetEmployeePromotionView()
         {
+            IRepository<SalaryRank> salRankRepo = new RepositoryFactory().Create<SalaryRank>();
+            IEnumerable<SalaryRank> salaryRanks = new RepositoryFactory().Create<SalaryRank>().GetAll();
+            IEnumerable<RankHierarchy> rankHierarchies = new RepositoryFactory().Create<RankHierarchy>().GetAll();
             IEnumerable<EmployeePromotion> resultBasic = from emp in new RepositoryFactory().Create<Employee>().GetAll()
                          join empSal in new RepositoryFactory().Create<EmployeeSalary>().GetAll() on emp.EmployeeId equals empSal.EmployeeId
-                         join salRank in new RepositoryFactory().Create<SalaryRank>().GetAll() on empSal.SalaryRankId equals salRank.SalaryRankId
+                         join salRank in salaryRanks on empSal.SalaryRankId equals salRank.SalaryRankId
                          select new EmployeePromotion
                          {
                              EmployeeId = emp.EmployeeId,
@@ -881,6 +884,27 @@ namespace HRM.Facade
 
             foreach(var item in joinedList)
             {
+                //Output.Write("Employee name: " + item.EmployeeName);
+                RankHierarchy rankHierarchy = new RankHierarchy();
+                SalaryRank salaryRank;
+                try
+                {
+                    rankHierarchy = rankHierarchies.First(e => e.SalaryRankId == item.SalaryRankId);
+                    //Output.Write("Rank hierarchy found");
+                }catch(Exception e)
+                {
+                    //Output.Write(e);
+                }
+
+                if (rankHierarchy.SalaryRankId==0)
+                {
+                    salaryRank = null;
+                }
+                else
+                {
+                    salaryRank = salRankRepo.Get(rankHierarchy.NextSalaryRankId);
+                }
+                
                 EmployeePromotion empPromo = new EmployeePromotion()
                 {
                     EmployeeId = item.EmployeeId,
@@ -889,9 +913,29 @@ namespace HRM.Facade
                     BasicSalary = item.BasicSalary,
                     RankName = item.RankName
                 };
-                if (item.AggregateScore > 70) empPromo.RecommendationStatus = 1;
-                else if (item.AggregateScore < 30) empPromo.RecommendationStatus = 0;
-                else empPromo.RecommendationStatus = -1;
+                if (salaryRank == null)
+                {
+                    empPromo.promotionAvailable = false;
+                    empPromo.RecommendationStatus = 0;
+                    //Output.Write("Promotion availability: " + empPromo.promotionAvailable);
+
+                }
+                else
+                {
+                    empPromo.promotionAvailable = true;
+
+                    if (item.AggregateScore > 70) empPromo.RecommendationStatus = 1;
+                    else if (item.AggregateScore < 30) empPromo.RecommendationStatus = 0;
+                    else empPromo.RecommendationStatus = -1;
+
+                    empPromo.NextSalaryRankId = salaryRank.SalaryRankId;
+                    empPromo.NextRankName = salaryRank.RankName;
+                    empPromo.NextBasicSalary = salaryRank.RankValue;
+                    //Output.Write("Promotion availability: " + empPromo.promotionAvailable);
+
+                }
+
+
 
                 finalResult.Add(empPromo);
             }
