@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Data.Entity.Core;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -99,9 +100,23 @@ namespace HRM.Data
                 }
                 return  context.SaveChanges() > 0;
             }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+
+                    Output.Write("Entity of type \"" + eve.Entry.Entity.GetType().Name +
+                        "\"  in state \"" + eve.Entry.State + "\" has the following validation errors:");
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Output.WriteLine("- Property: \"" + ve.PropertyName + "\", Error: \"" + ve.ErrorMessage+ "\"");
+                    }
+                }
+                throw;
+            }
             catch (Exception e)
             {
-                Console.WriteLine("Error in data update : " + e);
+                Output.WriteLine("Error in data update : " + e);
                 return false;
             }
         }

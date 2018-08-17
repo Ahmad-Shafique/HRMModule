@@ -15,7 +15,6 @@ namespace HRM.Entity
         public int EmployeeId { get; set; }
         [Required, Range(10000, 300000)]
         public int BasicSalary { get; set; }
-        [Required, Range(10000, 300000)]
         public int TotalSalary { get; set; }
         public string SalaryMonth { get; set; }
         public int Year { get; set; }
