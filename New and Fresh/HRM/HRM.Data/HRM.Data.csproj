@@ -111,6 +111,7 @@
     <Compile Include="InterviewRepository.cs" />
     <Compile Include="LeaveApplicationCategoryRepository.cs" />
     <Compile Include="LeaveApplicationRepository.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NoticeCommentRepository.cs" />
     <Compile Include="NoticeEmployeeRepository.cs" />
     <Compile Include="NoticeRepository.cs" />
